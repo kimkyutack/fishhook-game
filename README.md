@@ -38,7 +38,7 @@ npm test
 npm run assets:check
 npm run simulate
 npm run build
-npx wrangler deploy --dry-run
+npx wrangler deploy --env="" --dry-run
 ```
 
 Workers 테스트는 Cloudflare의 실제 로컬 workerd 런타임에서 실행합니다. 환경에 따라 로컬 포트/소켓 권한이 필요합니다. 검증 범위와 실제 결과는 [docs/verification.md](docs/verification.md), 경제 기대값은 [docs/economy.md](docs/economy.md)에 있습니다.
@@ -59,7 +59,7 @@ npm run test:load
 
 ## Git / Cloudflare
 
-독립 Git 저장소는 초기화되어 있습니다. 원격 저장소와 Cloudflare 계정·도메인 연결은 아직 하지 않았습니다. [docs/deployment.md](docs/deployment.md)에 Git remote 설정, Workers Builds의 브랜치·빌드·배포 명령, staging과 production 분리 절차를 정리했습니다.
+독립 Git 저장소는 초기화되어 있습니다. 원격 Git 저장소는 https://github.com/kimkyutack/fishhook-game 이며 main 브랜치가 Cloudflare Worker fishhook-game에 연결되어 있습니다. [docs/deployment.md](docs/deployment.md)에 Git remote 설정, Workers Builds의 브랜치·빌드·배포 명령, staging과 production 분리 절차를 정리했습니다.
 
 ```bash
 npm run deploy:staging

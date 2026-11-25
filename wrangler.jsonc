@@ -1,7 +1,8 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "waterside-village",
+  "name": "fishhook-game",
   "main": "src/server/index.ts",
+  "workers_dev": true,
   "compatibility_date": "2026-11-25",
   "assets": {
     "directory": "./dist",
@@ -20,7 +21,7 @@
   },
   "env": {
     "staging": {
-      "name": "waterside-village-staging",
+      "name": "fishhook-game-staging",
       "durable_objects": {
         "bindings": [{ "name": "GAME_WORLD", "class_name": "GameWorldDO" }],
       },

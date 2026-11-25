@@ -25,5 +25,8 @@
   "ui_pressed": "art/source/ui_pressed.png",
   "ui_disabled": "art/source/ui_disabled.png",
   "ui_speech": "art/source/ui_speech.png",
-  "water": "art/source/water.png"
+  "water": "art/source/water.png",
+  "rod_1_poses": "art/source/rod_1_poses.png",
+  "rod_2_poses": "art/source/rod_2_poses.png",
+  "rod_3_poses": "art/source/rod_3_poses.png"
 }

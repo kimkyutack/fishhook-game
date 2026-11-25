@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-25T08:22:12.246Z",
+  "generatedAt": "2026-11-25T08:28:50.507Z",
   "generator": "built-in image_gen",
   "notes": "Two-head chibi direction supersedes original 2.7-head specification. Atlas frames use fixed scale; 2px padding. No placeholder assets counted as ready. See docs/art-qa.md for visual review limits.",
   "runtimeFiles": 154,
-  "runtimeBytes": 9705436,
+  "runtimeBytes": 9709594,
   "entries": [
     {
       "id": "fish_001",
@@ -1566,8 +1566,8 @@
       "frameWidth": 192,
       "frameHeight": 192,
       "frameCount": 39,
-      "padding": 2,
-      "extrusion": 0,
+      "padding": 1,
+      "extrusion": 1,
       "sourceSize": {
         "width": 1585,
         "height": 992
@@ -2370,8 +2370,8 @@
       "frameWidth": 192,
       "frameHeight": 192,
       "frameCount": 39,
-      "padding": 2,
-      "extrusion": 0,
+      "padding": 1,
+      "extrusion": 1,
       "sourceSize": {
         "width": 1586,
         "height": 992
@@ -3143,8 +3143,8 @@
       "frameWidth": 192,
       "frameHeight": 192,
       "frameCount": 39,
-      "padding": 2,
-      "extrusion": 0,
+      "padding": 1,
+      "extrusion": 1,
       "sourceSize": {
         "width": 1585,
         "height": 992
@@ -3916,8 +3916,8 @@
       "frameWidth": 192,
       "frameHeight": 192,
       "frameCount": 39,
-      "padding": 2,
-      "extrusion": 0,
+      "padding": 1,
+      "extrusion": 1,
       "sourceSize": {
         "width": 1585,
         "height": 992
@@ -4689,8 +4689,8 @@
       "frameWidth": 192,
       "frameHeight": 192,
       "frameCount": 39,
-      "padding": 2,
-      "extrusion": 0,
+      "padding": 1,
+      "extrusion": 1,
       "sourceSize": {
         "width": 1585,
         "height": 992
@@ -5493,8 +5493,8 @@
       "frameWidth": 192,
       "frameHeight": 192,
       "frameCount": 39,
-      "padding": 2,
-      "extrusion": 0,
+      "padding": 1,
+      "extrusion": 1,
       "sourceSize": {
         "width": 1586,
         "height": 992
@@ -6266,8 +6266,8 @@
       "frameWidth": 192,
       "frameHeight": 192,
       "frameCount": 39,
-      "padding": 2,
-      "extrusion": 0,
+      "padding": 1,
+      "extrusion": 1,
       "sourceSize": {
         "width": 1585,
         "height": 992
@@ -7039,8 +7039,8 @@
       "frameWidth": 192,
       "frameHeight": 192,
       "frameCount": 39,
-      "padding": 2,
-      "extrusion": 0,
+      "padding": 1,
+      "extrusion": 1,
       "sourceSize": {
         "width": 1585,
         "height": 992

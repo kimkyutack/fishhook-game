@@ -1170,5 +1170,34 @@
     "fx": "4x3 atlas:4 expanding water ripples,4 water splashes,4 kick impact frames; alpha background.",
     "shore": "Square grassy/sandy perimeter border around transparent center, nine-slice60px at384.",
     "welcome": "Upper environment portion of chibi art reference; no words or UI."
-  }
+  },
+  "equipmentDirections": [
+    {
+      "source": "art/source/rod_1_poses.png",
+      "frames": 16,
+      "grid": [
+        4,
+        4
+      ],
+      "prompt": "Rod 1 preserves base rod design. Columns up,down,left,right. Rows normal,bent,kicked,recover. Orthographic 3/4 raster, same scale, true alpha, no labels or borders. Directional grip/tip anchors are calibrated in src/client/game/animations.ts and recorded in art/manifest.json."
+    },
+    {
+      "source": "art/source/rod_2_poses.png",
+      "frames": 16,
+      "grid": [
+        4,
+        4
+      ],
+      "prompt": "Rod 2 preserves base rod design. Columns up,down,left,right. Rows normal,bent,kicked,recover. Orthographic 3/4 raster, same scale, true alpha, no labels or borders. Directional grip/tip anchors are calibrated in src/client/game/animations.ts and recorded in art/manifest.json."
+    },
+    {
+      "source": "art/source/rod_3_poses.png",
+      "frames": 16,
+      "grid": [
+        4,
+        4
+      ],
+      "prompt": "Rod 3 preserves base rod design. Columns up,down,left,right. Rows normal,bent,kicked,recover. Orthographic 3/4 raster, same scale, true alpha, no labels or borders. Directional grip/tip anchors are calibrated in src/client/game/animations.ts and recorded in art/manifest.json."
+    }
+  ]
 }

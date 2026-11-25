@@ -541,7 +541,10 @@ export class WorldScene extends Phaser.Scene {
       a.chair
         .setVisible(seated)
         .setTexture(`chair_${direction}`)
-        .setPosition(x+(direction==="left"?10:direction==="right"?-10:0), y+12)
+        .setPosition(
+          x + (direction === "left" ? 10 : direction === "right" ? -10 : 0),
+          y + 12,
+        )
         .setDepth(direction === "up" ? y + 3 : y - 1);
       a.target
         .setVisible(action.type === "sabotage" && action.target === id)

@@ -12,7 +12,7 @@
     "test": "vitest run",
     "assets:check": "node --import tsx scripts/check-assets.ts",
     "simulate": "node --import tsx scripts/simulate.ts",
-    "deploy": "npm run build && wrangler deploy",
+    "deploy": "npm run build && wrangler deploy --env=\"\"",
     "deploy:staging": "npm run build && wrangler deploy --env staging",
     "types": "wrangler types",
     "assets:pack": "node --import tsx scripts/pack-assets.ts",

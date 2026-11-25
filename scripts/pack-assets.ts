@@ -95,14 +95,21 @@ for (const g of ["male", "female"])
         y = Math.round((Math.floor(i / 8) * meta.height!) / 5),
         w = Math.round((((i % 8) + 1) * meta.width!) / 8) - x,
         h = Math.round(((Math.floor(i / 8) + 1) * meta.height!) / 5) - y;
-      const buf = await sharp(path)
+      const body = await sharp(path)
         .extract({ left: x, top: y, width: w, height: h })
         .resize(188, 188, { fit: "contain", background: "#00000000" })
+        .png()
+        .toBuffer();
+      const extruded = await sharp(body)
+        .extend({ top: 1, bottom: 1, left: 1, right: 1, extendWith: "copy" })
+        .png()
+        .toBuffer();
+      const buf = await sharp(extruded)
         .extend({
-          top: 2,
-          bottom: 2,
-          left: 2,
-          right: 2,
+          top: 1,
+          bottom: 1,
+          left: 1,
+          right: 1,
           background: "#00000000",
         })
         .png()
@@ -159,8 +166,8 @@ for (const g of ["male", "female"])
       frameWidth: 192,
       frameHeight: 192,
       frameCount: 39,
-      padding: 2,
-      extrusion: 0,
+      padding: 1,
+      extrusion: 1,
       sourceSize: { width: meta.width, height: meta.height },
       frames: metadata,
       root: ROOT,
