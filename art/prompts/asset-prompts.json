@@ -1,0 +1,1174 @@
+{
+  "generator": "built-in image_gen",
+  "fish": [
+    {
+      "id": "fish_001",
+      "runtime": "public/assets/fish/fish_001.png",
+      "runtimeSize": [
+        256,
+        256
+      ],
+      "source": "art/source/cuteFish1.png",
+      "sourceNote": "One cell of the 5x2 original atlas; original per-fish resolution is smaller than the aspirational 1024x1024 specification.",
+      "prompt": "A very cute expressive collectible fish CHARACTER, rounded chubby short body, oversized friendly eyes and smiling small mouth, species-specific silhouette. Soft painted 3D casual game volume, right-facing three-quarter view, upper left light. No realism, neon, text, cards, stars or ground shadows. Full body and fins with true transparent margins. 송사리: slender tiny minnow translucent fan tail."
+    },
+    {
+      "id": "fish_002",
+      "runtime": "public/assets/fish/fish_002.png",
+      "runtimeSize": [
+        256,
+        256
+      ],
+      "source": "art/source/cuteFish1.png",
+      "sourceNote": "One cell of the 5x2 original atlas; original per-fish resolution is smaller than the aspirational 1024x1024 specification.",
+      "prompt": "A very cute expressive collectible fish CHARACTER, rounded chubby short body, oversized friendly eyes and smiling small mouth, species-specific silhouette. Soft painted 3D casual game volume, right-facing three-quarter view, upper left light. No realism, neon, text, cards, stars or ground shadows. Full body and fins with true transparent margins. 참붕어: deep silver carp rounded dorsal fin."
+    },
+    {
+      "id": "fish_003",
+      "runtime": "public/assets/fish/fish_003.png",
+      "runtimeSize": [
+        256,
+        256
+      ],
+      "source": "art/source/cuteFish1.png",
+      "sourceNote": "One cell of the 5x2 original atlas; original per-fish resolution is smaller than the aspirational 1024x1024 specification.",
+      "prompt": "A very cute expressive collectible fish CHARACTER, rounded chubby short body, oversized friendly eyes and smiling small mouth, species-specific silhouette. Soft painted 3D casual game volume, right-facing three-quarter view, upper left light. No realism, neon, text, cards, stars or ground shadows. Full body and fins with true transparent margins. 납자루: short diamond body iridescent cheek."
+    },
+    {
+      "id": "fish_004",
+      "runtime": "public/assets/fish/fish_004.png",
+      "runtimeSize": [
+        256,
+        256
+      ],
+      "source": "art/source/cuteFish1.png",
+      "sourceNote": "One cell of the 5x2 original atlas; original per-fish resolution is smaller than the aspirational 1024x1024 specification.",
+      "prompt": "A very cute expressive collectible fish CHARACTER, rounded chubby short body, oversized friendly eyes and smiling small mouth, species-specific silhouette. Soft painted 3D casual game volume, right-facing three-quarter view, upper left light. No realism, neon, text, cards, stars or ground shadows. Full body and fins with true transparent margins. 붕어: round olive crucian carp serrated dorsal."
+    },
+    {
+      "id": "fish_005",
+      "runtime": "public/assets/fish/fish_005.png",
+      "runtimeSize": [
+        256,
+        256
+      ],
+      "source": "art/source/cuteFish1.png",
+      "sourceNote": "One cell of the 5x2 original atlas; original per-fish resolution is smaller than the aspirational 1024x1024 specification.",
+      "prompt": "A very cute expressive collectible fish CHARACTER, rounded chubby short body, oversized friendly eyes and smiling small mouth, species-specific silhouette. Soft painted 3D casual game volume, right-facing three-quarter view, upper left light. No realism, neon, text, cards, stars or ground shadows. Full body and fins with true transparent margins. 피라미: silver streamlined minnow blue lateral stripe."
+    },
+    {
+      "id": "fish_006",
+      "runtime": "public/assets/fish/fish_006.png",
+      "runtimeSize": [
+        256,
+        256
+      ],
+      "source": "art/source/cuteFish1.png",
+      "sourceNote": "One cell of the 5x2 original atlas; original per-fish resolution is smaller than the aspirational 1024x1024 specification.",
+      "prompt": "A very cute expressive collectible fish CHARACTER, rounded chubby short body, oversized friendly eyes and smiling small mouth, species-specific silhouette. Soft painted 3D casual game volume, right-facing three-quarter view, upper left light. No realism, neon, text, cards, stars or ground shadows. Full body and fins with true transparent margins. 버들치: small stout brown minnow forked tail."
+    },
+    {
+      "id": "fish_007",
+      "runtime": "public/assets/fish/fish_007.png",
+      "runtimeSize": [
+        256,
+        256
+      ],
+      "source": "art/source/cuteFish1.png",
+      "sourceNote": "One cell of the 5x2 original atlas; original per-fish resolution is smaller than the aspirational 1024x1024 specification.",
+      "prompt": "A very cute expressive collectible fish CHARACTER, rounded chubby short body, oversized friendly eyes and smiling small mouth, species-specific silhouette. Soft painted 3D casual game volume, right-facing three-quarter view, upper left light. No realism, neon, text, cards, stars or ground shadows. Full body and fins with true transparent margins. 모래무지: sand-colored bottom fish long snout barbels."
+    },
+    {
+      "id": "fish_008",
+      "runtime": "public/assets/fish/fish_008.png",
+      "runtimeSize": [
+        256,
+        256
+      ],
+      "source": "art/source/cuteFish1.png",
+      "sourceNote": "One cell of the 5x2 original atlas; original per-fish resolution is smaller than the aspirational 1024x1024 specification.",
+      "prompt": "A very cute expressive collectible fish CHARACTER, rounded chubby short body, oversized friendly eyes and smiling small mouth, species-specific silhouette. Soft painted 3D casual game volume, right-facing three-quarter view, upper left light. No realism, neon, text, cards, stars or ground shadows. Full body and fins with true transparent margins. 빙어: translucent slender smelt long jaw."
+    },
+    {
+      "id": "fish_009",
+      "runtime": "public/assets/fish/fish_009.png",
+      "runtimeSize": [
+        256,
+        256
+      ],
+      "source": "art/source/cuteFish1.png",
+      "sourceNote": "One cell of the 5x2 original atlas; original per-fish resolution is smaller than the aspirational 1024x1024 specification.",
+      "prompt": "A very cute expressive collectible fish CHARACTER, rounded chubby short body, oversized friendly eyes and smiling small mouth, species-specific silhouette. Soft painted 3D casual game volume, right-facing three-quarter view, upper left light. No realism, neon, text, cards, stars or ground shadows. Full body and fins with true transparent margins. 살치: silver blade-shaped fish upturned belly."
+    },
+    {
+      "id": "fish_010",
+      "runtime": "public/assets/fish/fish_010.png",
+      "runtimeSize": [
+        256,
+        256
+      ],
+      "source": "art/source/cuteFish1.png",
+      "sourceNote": "One cell of the 5x2 original atlas; original per-fish resolution is smaller than the aspirational 1024x1024 specification.",
+      "prompt": "A very cute expressive collectible fish CHARACTER, rounded chubby short body, oversized friendly eyes and smiling small mouth, species-specific silhouette. Soft painted 3D casual game volume, right-facing three-quarter view, upper left light. No realism, neon, text, cards, stars or ground shadows. Full body and fins with true transparent margins. 줄몰개: tiny striped fish large eyes."
+    },
+    {
+      "id": "fish_011",
+      "runtime": "public/assets/fish/fish_011.png",
+      "runtimeSize": [
+        256,
+        256
+      ],
+      "source": "art/source/cuteFish2.png",
+      "sourceNote": "One cell of the 5x2 original atlas; original per-fish resolution is smaller than the aspirational 1024x1024 specification.",
+      "prompt": "A very cute expressive collectible fish CHARACTER, rounded chubby short body, oversized friendly eyes and smiling small mouth, species-specific silhouette. Soft painted 3D casual game volume, right-facing three-quarter view, upper left light. No realism, neon, text, cards, stars or ground shadows. Full body and fins with true transparent margins. 미꾸라지: long smooth loach rounded fins."
+    },
+    {
+      "id": "fish_012",
+      "runtime": "public/assets/fish/fish_012.png",
+      "runtimeSize": [
+        256,
+        256
+      ],
+      "source": "art/source/cuteFish2.png",
+      "sourceNote": "One cell of the 5x2 original atlas; original per-fish resolution is smaller than the aspirational 1024x1024 specification.",
+      "prompt": "A very cute expressive collectible fish CHARACTER, rounded chubby short body, oversized friendly eyes and smiling small mouth, species-specific silhouette. Soft painted 3D casual game volume, right-facing three-quarter view, upper left light. No realism, neon, text, cards, stars or ground shadows. Full body and fins with true transparent margins. 동자개: yellow catfish short body stout barbels."
+    },
+    {
+      "id": "fish_013",
+      "runtime": "public/assets/fish/fish_013.png",
+      "runtimeSize": [
+        256,
+        256
+      ],
+      "source": "art/source/cuteFish2.png",
+      "sourceNote": "One cell of the 5x2 original atlas; original per-fish resolution is smaller than the aspirational 1024x1024 specification.",
+      "prompt": "A very cute expressive collectible fish CHARACTER, rounded chubby short body, oversized friendly eyes and smiling small mouth, species-specific silhouette. Soft painted 3D casual game volume, right-facing three-quarter view, upper left light. No realism, neon, text, cards, stars or ground shadows. Full body and fins with true transparent margins. 향어: mirror carp broad leather scale patches."
+    },
+    {
+      "id": "fish_014",
+      "runtime": "public/assets/fish/fish_014.png",
+      "runtimeSize": [
+        256,
+        256
+      ],
+      "source": "art/source/cuteFish2.png",
+      "sourceNote": "One cell of the 5x2 original atlas; original per-fish resolution is smaller than the aspirational 1024x1024 specification.",
+      "prompt": "A very cute expressive collectible fish CHARACTER, rounded chubby short body, oversized friendly eyes and smiling small mouth, species-specific silhouette. Soft painted 3D casual game volume, right-facing three-quarter view, upper left light. No realism, neon, text, cards, stars or ground shadows. Full body and fins with true transparent margins. 은어: sleek silver sweetfish golden cheek."
+    },
+    {
+      "id": "fish_015",
+      "runtime": "public/assets/fish/fish_015.png",
+      "runtimeSize": [
+        256,
+        256
+      ],
+      "source": "art/source/cuteFish2.png",
+      "sourceNote": "One cell of the 5x2 original atlas; original per-fish resolution is smaller than the aspirational 1024x1024 specification.",
+      "prompt": "A very cute expressive collectible fish CHARACTER, rounded chubby short body, oversized friendly eyes and smiling small mouth, species-specific silhouette. Soft painted 3D casual game volume, right-facing three-quarter view, upper left light. No realism, neon, text, cards, stars or ground shadows. Full body and fins with true transparent margins. 황어: copper dace long forked tail."
+    },
+    {
+      "id": "fish_016",
+      "runtime": "public/assets/fish/fish_016.png",
+      "runtimeSize": [
+        256,
+        256
+      ],
+      "source": "art/source/cuteFish2.png",
+      "sourceNote": "One cell of the 5x2 original atlas; original per-fish resolution is smaller than the aspirational 1024x1024 specification.",
+      "prompt": "A very cute expressive collectible fish CHARACTER, rounded chubby short body, oversized friendly eyes and smiling small mouth, species-specific silhouette. Soft painted 3D casual game volume, right-facing three-quarter view, upper left light. No realism, neon, text, cards, stars or ground shadows. Full body and fins with true transparent margins. 쉬리: colorful striped shiri pointed snout."
+    },
+    {
+      "id": "fish_017",
+      "runtime": "public/assets/fish/fish_017.png",
+      "runtimeSize": [
+        256,
+        256
+      ],
+      "source": "art/source/cuteFish2.png",
+      "sourceNote": "One cell of the 5x2 original atlas; original per-fish resolution is smaller than the aspirational 1024x1024 specification.",
+      "prompt": "A very cute expressive collectible fish CHARACTER, rounded chubby short body, oversized friendly eyes and smiling small mouth, species-specific silhouette. Soft painted 3D casual game volume, right-facing three-quarter view, upper left light. No realism, neon, text, cards, stars or ground shadows. Full body and fins with true transparent margins. 꺽지: stocky freshwater perch square tail."
+    },
+    {
+      "id": "fish_018",
+      "runtime": "public/assets/fish/fish_018.png",
+      "runtimeSize": [
+        256,
+        256
+      ],
+      "source": "art/source/cuteFish2.png",
+      "sourceNote": "One cell of the 5x2 original atlas; original per-fish resolution is smaller than the aspirational 1024x1024 specification.",
+      "prompt": "A very cute expressive collectible fish CHARACTER, rounded chubby short body, oversized friendly eyes and smiling small mouth, species-specific silhouette. Soft painted 3D casual game volume, right-facing three-quarter view, upper left light. No realism, neon, text, cards, stars or ground shadows. Full body and fins with true transparent margins. 메기: wide whiskered catfish dark smooth skin."
+    },
+    {
+      "id": "fish_019",
+      "runtime": "public/assets/fish/fish_019.png",
+      "runtimeSize": [
+        256,
+        256
+      ],
+      "source": "art/source/cuteFish2.png",
+      "sourceNote": "One cell of the 5x2 original atlas; original per-fish resolution is smaller than the aspirational 1024x1024 specification.",
+      "prompt": "A very cute expressive collectible fish CHARACTER, rounded chubby short body, oversized friendly eyes and smiling small mouth, species-specific silhouette. Soft painted 3D casual game volume, right-facing three-quarter view, upper left light. No realism, neon, text, cards, stars or ground shadows. Full body and fins with true transparent margins. 누치: long silver barbel fish fleshy lips."
+    },
+    {
+      "id": "fish_020",
+      "runtime": "public/assets/fish/fish_020.png",
+      "runtimeSize": [
+        256,
+        256
+      ],
+      "source": "art/source/cuteFish2.png",
+      "sourceNote": "One cell of the 5x2 original atlas; original per-fish resolution is smaller than the aspirational 1024x1024 specification.",
+      "prompt": "A very cute expressive collectible fish CHARACTER, rounded chubby short body, oversized friendly eyes and smiling small mouth, species-specific silhouette. Soft painted 3D casual game volume, right-facing three-quarter view, upper left light. No realism, neon, text, cards, stars or ground shadows. Full body and fins with true transparent margins. 동사리: mottled brown sleeper wide pectoral fins."
+    },
+    {
+      "id": "fish_021",
+      "runtime": "public/assets/fish/fish_021.png",
+      "runtimeSize": [
+        256,
+        256
+      ],
+      "source": "art/source/cuteFish3.png",
+      "sourceNote": "One cell of the 5x2 original atlas; original per-fish resolution is smaller than the aspirational 1024x1024 specification.",
+      "prompt": "A very cute expressive collectible fish CHARACTER, rounded chubby short body, oversized friendly eyes and smiling small mouth, species-specific silhouette. Soft painted 3D casual game volume, right-facing three-quarter view, upper left light. No realism, neon, text, cards, stars or ground shadows. Full body and fins with true transparent margins. 비단잉어: red white koi flowing twin tail."
+    },
+    {
+      "id": "fish_022",
+      "runtime": "public/assets/fish/fish_022.png",
+      "runtimeSize": [
+        256,
+        256
+      ],
+      "source": "art/source/cuteFish3.png",
+      "sourceNote": "One cell of the 5x2 original atlas; original per-fish resolution is smaller than the aspirational 1024x1024 specification.",
+      "prompt": "A very cute expressive collectible fish CHARACTER, rounded chubby short body, oversized friendly eyes and smiling small mouth, species-specific silhouette. Soft painted 3D casual game volume, right-facing three-quarter view, upper left light. No realism, neon, text, cards, stars or ground shadows. Full body and fins with true transparent margins. 금붕어: round orange goldfish twin fan tail."
+    },
+    {
+      "id": "fish_023",
+      "runtime": "public/assets/fish/fish_023.png",
+      "runtimeSize": [
+        256,
+        256
+      ],
+      "source": "art/source/cuteFish3.png",
+      "sourceNote": "One cell of the 5x2 original atlas; original per-fish resolution is smaller than the aspirational 1024x1024 specification.",
+      "prompt": "A very cute expressive collectible fish CHARACTER, rounded chubby short body, oversized friendly eyes and smiling small mouth, species-specific silhouette. Soft painted 3D casual game volume, right-facing three-quarter view, upper left light. No realism, neon, text, cards, stars or ground shadows. Full body and fins with true transparent margins. 가물치: long green snakehead broad head."
+    },
+    {
+      "id": "fish_024",
+      "runtime": "public/assets/fish/fish_024.png",
+      "runtimeSize": [
+        256,
+        256
+      ],
+      "source": "art/source/cuteFish3.png",
+      "sourceNote": "One cell of the 5x2 original atlas; original per-fish resolution is smaller than the aspirational 1024x1024 specification.",
+      "prompt": "A very cute expressive collectible fish CHARACTER, rounded chubby short body, oversized friendly eyes and smiling small mouth, species-specific silhouette. Soft painted 3D casual game volume, right-facing three-quarter view, upper left light. No realism, neon, text, cards, stars or ground shadows. Full body and fins with true transparent margins. 산천어: salmon with dark parr marks pink sides."
+    },
+    {
+      "id": "fish_025",
+      "runtime": "public/assets/fish/fish_025.png",
+      "runtimeSize": [
+        256,
+        256
+      ],
+      "source": "art/source/cuteFish3.png",
+      "sourceNote": "One cell of the 5x2 original atlas; original per-fish resolution is smaller than the aspirational 1024x1024 specification.",
+      "prompt": "A very cute expressive collectible fish CHARACTER, rounded chubby short body, oversized friendly eyes and smiling small mouth, species-specific silhouette. Soft painted 3D casual game volume, right-facing three-quarter view, upper left light. No realism, neon, text, cards, stars or ground shadows. Full body and fins with true transparent margins. 무지개송어: rainbow trout speckled silver pink stripe."
+    },
+    {
+      "id": "fish_026",
+      "runtime": "public/assets/fish/fish_026.png",
+      "runtimeSize": [
+        256,
+        256
+      ],
+      "source": "art/source/cuteFish3.png",
+      "sourceNote": "One cell of the 5x2 original atlas; original per-fish resolution is smaller than the aspirational 1024x1024 specification.",
+      "prompt": "A very cute expressive collectible fish CHARACTER, rounded chubby short body, oversized friendly eyes and smiling small mouth, species-specific silhouette. Soft painted 3D casual game volume, right-facing three-quarter view, upper left light. No realism, neon, text, cards, stars or ground shadows. Full body and fins with true transparent margins. 쏘가리: golden mandarin fish jagged dorsal."
+    },
+    {
+      "id": "fish_027",
+      "runtime": "public/assets/fish/fish_027.png",
+      "runtimeSize": [
+        256,
+        256
+      ],
+      "source": "art/source/cuteFish3.png",
+      "sourceNote": "One cell of the 5x2 original atlas; original per-fish resolution is smaller than the aspirational 1024x1024 specification.",
+      "prompt": "A very cute expressive collectible fish CHARACTER, rounded chubby short body, oversized friendly eyes and smiling small mouth, species-specific silhouette. Soft painted 3D casual game volume, right-facing three-quarter view, upper left light. No realism, neon, text, cards, stars or ground shadows. Full body and fins with true transparent margins. 잉어: bronze common carp two barbels."
+    },
+    {
+      "id": "fish_028",
+      "runtime": "public/assets/fish/fish_028.png",
+      "runtimeSize": [
+        256,
+        256
+      ],
+      "source": "art/source/cuteFish3.png",
+      "sourceNote": "One cell of the 5x2 original atlas; original per-fish resolution is smaller than the aspirational 1024x1024 specification.",
+      "prompt": "A very cute expressive collectible fish CHARACTER, rounded chubby short body, oversized friendly eyes and smiling small mouth, species-specific silhouette. Soft painted 3D casual game volume, right-facing three-quarter view, upper left light. No realism, neon, text, cards, stars or ground shadows. Full body and fins with true transparent margins. 철갑상어: armored sturgeon pointed snout scutes."
+    },
+    {
+      "id": "fish_029",
+      "runtime": "public/assets/fish/fish_029.png",
+      "runtimeSize": [
+        256,
+        256
+      ],
+      "source": "art/source/cuteFish3.png",
+      "sourceNote": "One cell of the 5x2 original atlas; original per-fish resolution is smaller than the aspirational 1024x1024 specification.",
+      "prompt": "A very cute expressive collectible fish CHARACTER, rounded chubby short body, oversized friendly eyes and smiling small mouth, species-specific silhouette. Soft painted 3D casual game volume, right-facing three-quarter view, upper left light. No realism, neon, text, cards, stars or ground shadows. Full body and fins with true transparent margins. 큰입배스: bigmouth bass broad mouth olive back."
+    },
+    {
+      "id": "fish_030",
+      "runtime": "public/assets/fish/fish_030.png",
+      "runtimeSize": [
+        256,
+        256
+      ],
+      "source": "art/source/cuteFish3.png",
+      "sourceNote": "One cell of the 5x2 original atlas; original per-fish resolution is smaller than the aspirational 1024x1024 specification.",
+      "prompt": "A very cute expressive collectible fish CHARACTER, rounded chubby short body, oversized friendly eyes and smiling small mouth, species-specific silhouette. Soft painted 3D casual game volume, right-facing three-quarter view, upper left light. No realism, neon, text, cards, stars or ground shadows. Full body and fins with true transparent margins. 블루길: round bluegill blue gill and spiny dorsal."
+    },
+    {
+      "id": "fish_031",
+      "runtime": "public/assets/fish/fish_031.png",
+      "runtimeSize": [
+        256,
+        256
+      ],
+      "source": "art/source/cuteFish4.png",
+      "sourceNote": "One cell of the 5x2 original atlas; original per-fish resolution is smaller than the aspirational 1024x1024 specification.",
+      "prompt": "A very cute expressive collectible fish CHARACTER, rounded chubby short body, oversized friendly eyes and smiling small mouth, species-specific silhouette. Soft painted 3D casual game volume, right-facing three-quarter view, upper left light. No realism, neon, text, cards, stars or ground shadows. Full body and fins with true transparent margins. 연꽃꼬리잉어: lotus petal tail koi with broad layered pink fins."
+    },
+    {
+      "id": "fish_032",
+      "runtime": "public/assets/fish/fish_032.png",
+      "runtimeSize": [
+        256,
+        256
+      ],
+      "source": "art/source/cuteFish4.png",
+      "sourceNote": "One cell of the 5x2 original atlas; original per-fish resolution is smaller than the aspirational 1024x1024 specification.",
+      "prompt": "A very cute expressive collectible fish CHARACTER, rounded chubby short body, oversized friendly eyes and smiling small mouth, species-specific silhouette. Soft painted 3D casual game volume, right-facing three-quarter view, upper left light. No realism, neon, text, cards, stars or ground shadows. Full body and fins with true transparent margins. 홍옥금붕어: ruby goldfish faceted plump body curled tail."
+    },
+    {
+      "id": "fish_033",
+      "runtime": "public/assets/fish/fish_033.png",
+      "runtimeSize": [
+        256,
+        256
+      ],
+      "source": "art/source/cuteFish4.png",
+      "sourceNote": "One cell of the 5x2 original atlas; original per-fish resolution is smaller than the aspirational 1024x1024 specification.",
+      "prompt": "A very cute expressive collectible fish CHARACTER, rounded chubby short body, oversized friendly eyes and smiling small mouth, species-specific silhouette. Soft painted 3D casual game volume, right-facing three-quarter view, upper left light. No realism, neon, text, cards, stars or ground shadows. Full body and fins with true transparent margins. 나뭇잎지느러미어: leaf-shaped fins green narrow body."
+    },
+    {
+      "id": "fish_034",
+      "runtime": "public/assets/fish/fish_034.png",
+      "runtimeSize": [
+        256,
+        256
+      ],
+      "source": "art/source/cuteFish4.png",
+      "sourceNote": "One cell of the 5x2 original atlas; original per-fish resolution is smaller than the aspirational 1024x1024 specification.",
+      "prompt": "A very cute expressive collectible fish CHARACTER, rounded chubby short body, oversized friendly eyes and smiling small mouth, species-specific silhouette. Soft painted 3D casual game volume, right-facing three-quarter view, upper left light. No realism, neon, text, cards, stars or ground shadows. Full body and fins with true transparent margins. 청옥은어: jade sweetfish long smooth green body."
+    },
+    {
+      "id": "fish_035",
+      "runtime": "public/assets/fish/fish_035.png",
+      "runtimeSize": [
+        256,
+        256
+      ],
+      "source": "art/source/cuteFish4.png",
+      "sourceNote": "One cell of the 5x2 original atlas; original per-fish resolution is smaller than the aspirational 1024x1024 specification.",
+      "prompt": "A very cute expressive collectible fish CHARACTER, rounded chubby short body, oversized friendly eyes and smiling small mouth, species-specific silhouette. Soft painted 3D casual game volume, right-facing three-quarter view, upper left light. No realism, neon, text, cards, stars or ground shadows. Full body and fins with true transparent margins. 수정송어: crystal trout angular transparent fins."
+    },
+    {
+      "id": "fish_036",
+      "runtime": "public/assets/fish/fish_036.png",
+      "runtimeSize": [
+        256,
+        256
+      ],
+      "source": "art/source/cuteFish4.png",
+      "sourceNote": "One cell of the 5x2 original atlas; original per-fish resolution is smaller than the aspirational 1024x1024 specification.",
+      "prompt": "A very cute expressive collectible fish CHARACTER, rounded chubby short body, oversized friendly eyes and smiling small mouth, species-specific silhouette. Soft painted 3D casual game volume, right-facing three-quarter view, upper left light. No realism, neon, text, cards, stars or ground shadows. Full body and fins with true transparent margins. 불꽃지느러미쏘가리: flame-fin mandarin fish jagged orange fin silhouette."
+    },
+    {
+      "id": "fish_037",
+      "runtime": "public/assets/fish/fish_037.png",
+      "runtimeSize": [
+        256,
+        256
+      ],
+      "source": "art/source/cuteFish4.png",
+      "sourceNote": "One cell of the 5x2 original atlas; original per-fish resolution is smaller than the aspirational 1024x1024 specification.",
+      "prompt": "A very cute expressive collectible fish CHARACTER, rounded chubby short body, oversized friendly eyes and smiling small mouth, species-specific silhouette. Soft painted 3D casual game volume, right-facing three-quarter view, upper left light. No realism, neon, text, cards, stars or ground shadows. Full body and fins with true transparent margins. 백금철갑어: platinum sturgeon long armor plates."
+    },
+    {
+      "id": "fish_038",
+      "runtime": "public/assets/fish/fish_038.png",
+      "runtimeSize": [
+        256,
+        256
+      ],
+      "source": "art/source/cuteFish4.png",
+      "sourceNote": "One cell of the 5x2 original atlas; original per-fish resolution is smaller than the aspirational 1024x1024 specification.",
+      "prompt": "A very cute expressive collectible fish CHARACTER, rounded chubby short body, oversized friendly eyes and smiling small mouth, species-specific silhouette. Soft painted 3D casual game volume, right-facing three-quarter view, upper left light. No realism, neon, text, cards, stars or ground shadows. Full body and fins with true transparent margins. 달빛메기: moonlight catfish crescent whiskers."
+    },
+    {
+      "id": "fish_039",
+      "runtime": "public/assets/fish/fish_039.png",
+      "runtimeSize": [
+        256,
+        256
+      ],
+      "source": "art/source/cuteFish4.png",
+      "sourceNote": "One cell of the 5x2 original atlas; original per-fish resolution is smaller than the aspirational 1024x1024 specification.",
+      "prompt": "A very cute expressive collectible fish CHARACTER, rounded chubby short body, oversized friendly eyes and smiling small mouth, species-specific silhouette. Soft painted 3D casual game volume, right-facing three-quarter view, upper left light. No realism, neon, text, cards, stars or ground shadows. Full body and fins with true transparent margins. 유리비늘향어: glass-scaled mirror carp translucent oval body."
+    },
+    {
+      "id": "fish_040",
+      "runtime": "public/assets/fish/fish_040.png",
+      "runtimeSize": [
+        256,
+        256
+      ],
+      "source": "art/source/cuteFish4.png",
+      "sourceNote": "One cell of the 5x2 original atlas; original per-fish resolution is smaller than the aspirational 1024x1024 specification.",
+      "prompt": "A very cute expressive collectible fish CHARACTER, rounded chubby short body, oversized friendly eyes and smiling small mouth, species-specific silhouette. Soft painted 3D casual game volume, right-facing three-quarter view, upper left light. No realism, neon, text, cards, stars or ground shadows. Full body and fins with true transparent margins. 별무늬가물치: star-patterned snakehead elongated speckled body."
+    },
+    {
+      "id": "fish_041",
+      "runtime": "public/assets/fish/fish_041.png",
+      "runtimeSize": [
+        256,
+        256
+      ],
+      "source": "art/source/cuteFish5.png",
+      "sourceNote": "One cell of the 5x2 original atlas; original per-fish resolution is smaller than the aspirational 1024x1024 specification.",
+      "prompt": "A very cute expressive collectible fish CHARACTER, rounded chubby short body, oversized friendly eyes and smiling small mouth, species-specific silhouette. Soft painted 3D casual game volume, right-facing three-quarter view, upper left light. No realism, neon, text, cards, stars or ground shadows. Full body and fins with true transparent margins. 연화왕잉어: regal lotus koi huge layered petal tail crown-shaped dorsal."
+    },
+    {
+      "id": "fish_042",
+      "runtime": "public/assets/fish/fish_042.png",
+      "runtimeSize": [
+        256,
+        256
+      ],
+      "source": "art/source/cuteFish5.png",
+      "sourceNote": "One cell of the 5x2 original atlas; original per-fish resolution is smaller than the aspirational 1024x1024 specification.",
+      "prompt": "A very cute expressive collectible fish CHARACTER, rounded chubby short body, oversized friendly eyes and smiling small mouth, species-specific silhouette. Soft painted 3D casual game volume, right-facing three-quarter view, upper left light. No realism, neon, text, cards, stars or ground shadows. Full body and fins with true transparent margins. 태양금붕어: sun goldfish circular body radial fan fins."
+    },
+    {
+      "id": "fish_043",
+      "runtime": "public/assets/fish/fish_043.png",
+      "runtimeSize": [
+        256,
+        256
+      ],
+      "source": "art/source/cuteFish5.png",
+      "sourceNote": "One cell of the 5x2 original atlas; original per-fish resolution is smaller than the aspirational 1024x1024 specification.",
+      "prompt": "A very cute expressive collectible fish CHARACTER, rounded chubby short body, oversized friendly eyes and smiling small mouth, species-specific silhouette. Soft painted 3D casual game volume, right-facing three-quarter view, upper left light. No realism, neon, text, cards, stars or ground shadows. Full body and fins with true transparent margins. 유리날개어: glass wing fish giant transparent butterfly fins."
+    },
+    {
+      "id": "fish_044",
+      "runtime": "public/assets/fish/fish_044.png",
+      "runtimeSize": [
+        256,
+        256
+      ],
+      "source": "art/source/cuteFish5.png",
+      "sourceNote": "One cell of the 5x2 original atlas; original per-fish resolution is smaller than the aspirational 1024x1024 specification.",
+      "prompt": "A very cute expressive collectible fish CHARACTER, rounded chubby short body, oversized friendly eyes and smiling small mouth, species-specific silhouette. Soft painted 3D casual game volume, right-facing three-quarter view, upper left light. No realism, neon, text, cards, stars or ground shadows. Full body and fins with true transparent margins. 청룡장어: azure dragon eel long serpentine body antler fins."
+    },
+    {
+      "id": "fish_045",
+      "runtime": "public/assets/fish/fish_045.png",
+      "runtimeSize": [
+        256,
+        256
+      ],
+      "source": "art/source/cuteFish5.png",
+      "sourceNote": "One cell of the 5x2 original atlas; original per-fish resolution is smaller than the aspirational 1024x1024 specification.",
+      "prompt": "A very cute expressive collectible fish CHARACTER, rounded chubby short body, oversized friendly eyes and smiling small mouth, species-specific silhouette. Soft painted 3D casual game volume, right-facing three-quarter view, upper left light. No realism, neon, text, cards, stars or ground shadows. Full body and fins with true transparent margins. 오로라송어: aurora trout ribbon dorsal tail silky green purple fins."
+    },
+    {
+      "id": "fish_046",
+      "runtime": "public/assets/fish/fish_046.png",
+      "runtimeSize": [
+        256,
+        256
+      ],
+      "source": "art/source/cuteFish5.png",
+      "sourceNote": "One cell of the 5x2 original atlas; original per-fish resolution is smaller than the aspirational 1024x1024 specification.",
+      "prompt": "A very cute expressive collectible fish CHARACTER, rounded chubby short body, oversized friendly eyes and smiling small mouth, species-specific silhouette. Soft painted 3D casual game volume, right-facing three-quarter view, upper left light. No realism, neon, text, cards, stars or ground shadows. Full body and fins with true transparent margins. 혜성돛새치: comet sailfish long bill enormous triangular sail."
+    },
+    {
+      "id": "fish_047",
+      "runtime": "public/assets/fish/fish_047.png",
+      "runtimeSize": [
+        256,
+        256
+      ],
+      "source": "art/source/cuteFish5.png",
+      "sourceNote": "One cell of the 5x2 original atlas; original per-fish resolution is smaller than the aspirational 1024x1024 specification.",
+      "prompt": "A very cute expressive collectible fish CHARACTER, rounded chubby short body, oversized friendly eyes and smiling small mouth, species-specific silhouette. Soft painted 3D casual game volume, right-facing three-quarter view, upper left light. No realism, neon, text, cards, stars or ground shadows. Full body and fins with true transparent margins. 황금뿔메기: gold horn catfish broad body curved golden horns whiskers."
+    },
+    {
+      "id": "fish_048",
+      "runtime": "public/assets/fish/fish_048.png",
+      "runtimeSize": [
+        256,
+        256
+      ],
+      "source": "art/source/cuteFish5.png",
+      "sourceNote": "One cell of the 5x2 original atlas; original per-fish resolution is smaller than the aspirational 1024x1024 specification.",
+      "prompt": "A very cute expressive collectible fish CHARACTER, rounded chubby short body, oversized friendly eyes and smiling small mouth, species-specific silhouette. Soft painted 3D casual game volume, right-facing three-quarter view, upper left light. No realism, neon, text, cards, stars or ground shadows. Full body and fins with true transparent margins. 달무리철갑어: moon halo sturgeon crescent scutes arching tail."
+    },
+    {
+      "id": "fish_049",
+      "runtime": "public/assets/fish/fish_049.png",
+      "runtimeSize": [
+        256,
+        256
+      ],
+      "source": "art/source/cuteFish5.png",
+      "sourceNote": "One cell of the 5x2 original atlas; original per-fish resolution is smaller than the aspirational 1024x1024 specification.",
+      "prompt": "A very cute expressive collectible fish CHARACTER, rounded chubby short body, oversized friendly eyes and smiling small mouth, species-specific silhouette. Soft painted 3D casual game volume, right-facing three-quarter view, upper left light. No realism, neon, text, cards, stars or ground shadows. Full body and fins with true transparent margins. 운해가오리: cloud manta ray wide diamond wings long wispy tail."
+    },
+    {
+      "id": "fish_050",
+      "runtime": "public/assets/fish/fish_050.png",
+      "runtimeSize": [
+        256,
+        256
+      ],
+      "source": "art/source/cuteFish5.png",
+      "sourceNote": "One cell of the 5x2 original atlas; original per-fish resolution is smaller than the aspirational 1024x1024 specification.",
+      "prompt": "A very cute expressive collectible fish CHARACTER, rounded chubby short body, oversized friendly eyes and smiling small mouth, species-specific silhouette. Soft painted 3D casual game volume, right-facing three-quarter view, upper left light. No realism, neon, text, cards, stars or ground shadows. Full body and fins with true transparent margins. 별바다용어: star sea dragon fish long flowing fins dragon head constellation scales."
+    }
+  ],
+  "characters": [
+    {
+      "id": "male_down",
+      "runtime": "public/assets/characters/male_down.png",
+      "runtimeSize": [
+        1536,
+        960
+      ],
+      "frameSize": [
+        192,
+        192
+      ],
+      "source": "art/source/male_down.png",
+      "prompt": "Cute short TWO-head-tall male chestnut tousled hair teal jacket beige trousers brown boots, fixed orthographic camera40 degrees. Facing down, preserve eye and hair identity. Same head/body scale every frame. 8 columns x5 rows. Frames2 idle,6 walk,3 sit,1 seated,5 cast,2 wait,5 reel,6 STANDING forward lean kick,6 run,3 startled,1 unused idle. Fixed root(0.5,0.875), no equipment or text, actual transparent background.",
+      "motions": {
+        "idle": {
+          "start": 0,
+          "count": 2,
+          "fps": 2,
+          "loop": true
+        },
+        "walk": {
+          "start": 2,
+          "count": 6,
+          "fps": 9,
+          "loop": true
+        },
+        "sit_down": {
+          "start": 8,
+          "count": 3,
+          "fps": 7,
+          "loop": false
+        },
+        "seated_idle": {
+          "start": 11,
+          "count": 1,
+          "fps": 1,
+          "loop": true
+        },
+        "cast": {
+          "start": 12,
+          "count": 5,
+          "fps": 8,
+          "loop": false
+        },
+        "fishing_wait": {
+          "start": 17,
+          "count": 2,
+          "fps": 2,
+          "loop": true
+        },
+        "reel_in": {
+          "start": 19,
+          "count": 5,
+          "fps": 7,
+          "loop": false
+        },
+        "kick": {
+          "start": 24,
+          "count": 6,
+          "fps": 12,
+          "loop": false
+        },
+        "run": {
+          "start": 30,
+          "count": 6,
+          "fps": 12,
+          "loop": true
+        },
+        "startled": {
+          "start": 36,
+          "count": 3,
+          "fps": 7,
+          "loop": false
+        }
+      }
+    },
+    {
+      "id": "male_up",
+      "runtime": "public/assets/characters/male_up.png",
+      "runtimeSize": [
+        1536,
+        960
+      ],
+      "frameSize": [
+        192,
+        192
+      ],
+      "source": "art/source/male_up.png",
+      "prompt": "Cute short TWO-head-tall male chestnut tousled hair teal jacket beige trousers brown boots, fixed orthographic camera40 degrees. Facing up, back of head only, no face. Same head/body scale every frame. 8 columns x5 rows. Frames2 idle,6 walk,3 sit,1 seated,5 cast,2 wait,5 reel,6 STANDING forward lean kick,6 run,3 startled,1 unused idle. Fixed root(0.5,0.875), no equipment or text, actual transparent background.",
+      "motions": {
+        "idle": {
+          "start": 0,
+          "count": 2,
+          "fps": 2,
+          "loop": true
+        },
+        "walk": {
+          "start": 2,
+          "count": 6,
+          "fps": 9,
+          "loop": true
+        },
+        "sit_down": {
+          "start": 8,
+          "count": 3,
+          "fps": 7,
+          "loop": false
+        },
+        "seated_idle": {
+          "start": 11,
+          "count": 1,
+          "fps": 1,
+          "loop": true
+        },
+        "cast": {
+          "start": 12,
+          "count": 5,
+          "fps": 8,
+          "loop": false
+        },
+        "fishing_wait": {
+          "start": 17,
+          "count": 2,
+          "fps": 2,
+          "loop": true
+        },
+        "reel_in": {
+          "start": 19,
+          "count": 5,
+          "fps": 7,
+          "loop": false
+        },
+        "kick": {
+          "start": 24,
+          "count": 6,
+          "fps": 12,
+          "loop": false
+        },
+        "run": {
+          "start": 30,
+          "count": 6,
+          "fps": 12,
+          "loop": true
+        },
+        "startled": {
+          "start": 36,
+          "count": 3,
+          "fps": 7,
+          "loop": false
+        }
+      }
+    },
+    {
+      "id": "male_left",
+      "runtime": "public/assets/characters/male_left.png",
+      "runtimeSize": [
+        1536,
+        960
+      ],
+      "frameSize": [
+        192,
+        192
+      ],
+      "source": "art/source/male_left.png",
+      "prompt": "Cute short TWO-head-tall male chestnut tousled hair teal jacket beige trousers brown boots, fixed orthographic camera40 degrees. Facing left, preserve eye and hair identity. Same head/body scale every frame. 8 columns x5 rows. Frames2 idle,6 walk,3 sit,1 seated,5 cast,2 wait,5 reel,6 STANDING forward lean kick,6 run,3 startled,1 unused idle. Fixed root(0.5,0.875), no equipment or text, actual transparent background.",
+      "motions": {
+        "idle": {
+          "start": 0,
+          "count": 2,
+          "fps": 2,
+          "loop": true
+        },
+        "walk": {
+          "start": 2,
+          "count": 6,
+          "fps": 9,
+          "loop": true
+        },
+        "sit_down": {
+          "start": 8,
+          "count": 3,
+          "fps": 7,
+          "loop": false
+        },
+        "seated_idle": {
+          "start": 11,
+          "count": 1,
+          "fps": 1,
+          "loop": true
+        },
+        "cast": {
+          "start": 12,
+          "count": 5,
+          "fps": 8,
+          "loop": false
+        },
+        "fishing_wait": {
+          "start": 17,
+          "count": 2,
+          "fps": 2,
+          "loop": true
+        },
+        "reel_in": {
+          "start": 19,
+          "count": 5,
+          "fps": 7,
+          "loop": false
+        },
+        "kick": {
+          "start": 24,
+          "count": 6,
+          "fps": 12,
+          "loop": false
+        },
+        "run": {
+          "start": 30,
+          "count": 6,
+          "fps": 12,
+          "loop": true
+        },
+        "startled": {
+          "start": 36,
+          "count": 3,
+          "fps": 7,
+          "loop": false
+        }
+      }
+    },
+    {
+      "id": "male_right",
+      "runtime": "public/assets/characters/male_right.png",
+      "runtimeSize": [
+        1536,
+        960
+      ],
+      "frameSize": [
+        192,
+        192
+      ],
+      "source": "art/source/male_right.png",
+      "prompt": "Cute short TWO-head-tall male chestnut tousled hair teal jacket beige trousers brown boots, fixed orthographic camera40 degrees. Facing right, preserve eye and hair identity. Same head/body scale every frame. 8 columns x5 rows. Frames2 idle,6 walk,3 sit,1 seated,5 cast,2 wait,5 reel,6 STANDING forward lean kick,6 run,3 startled,1 unused idle. Fixed root(0.5,0.875), no equipment or text, actual transparent background.",
+      "motions": {
+        "idle": {
+          "start": 0,
+          "count": 2,
+          "fps": 2,
+          "loop": true
+        },
+        "walk": {
+          "start": 2,
+          "count": 6,
+          "fps": 9,
+          "loop": true
+        },
+        "sit_down": {
+          "start": 8,
+          "count": 3,
+          "fps": 7,
+          "loop": false
+        },
+        "seated_idle": {
+          "start": 11,
+          "count": 1,
+          "fps": 1,
+          "loop": true
+        },
+        "cast": {
+          "start": 12,
+          "count": 5,
+          "fps": 8,
+          "loop": false
+        },
+        "fishing_wait": {
+          "start": 17,
+          "count": 2,
+          "fps": 2,
+          "loop": true
+        },
+        "reel_in": {
+          "start": 19,
+          "count": 5,
+          "fps": 7,
+          "loop": false
+        },
+        "kick": {
+          "start": 24,
+          "count": 6,
+          "fps": 12,
+          "loop": false
+        },
+        "run": {
+          "start": 30,
+          "count": 6,
+          "fps": 12,
+          "loop": true
+        },
+        "startled": {
+          "start": 36,
+          "count": 3,
+          "fps": 7,
+          "loop": false
+        }
+      }
+    },
+    {
+      "id": "female_down",
+      "runtime": "public/assets/characters/female_down.png",
+      "runtimeSize": [
+        1536,
+        960
+      ],
+      "frameSize": [
+        192,
+        192
+      ],
+      "source": "art/source/female_down.png",
+      "prompt": "Cute short TWO-head-tall female auburn bob coral jacket beige trousers brown boots, fixed orthographic camera40 degrees. Facing down, preserve eye and hair identity. Same head/body scale every frame. 8 columns x5 rows. Frames2 idle,6 walk,3 sit,1 seated,5 cast,2 wait,5 reel,6 STANDING forward lean kick,6 run,3 startled,1 unused idle. Fixed root(0.5,0.875), no equipment or text, actual transparent background.",
+      "motions": {
+        "idle": {
+          "start": 0,
+          "count": 2,
+          "fps": 2,
+          "loop": true
+        },
+        "walk": {
+          "start": 2,
+          "count": 6,
+          "fps": 9,
+          "loop": true
+        },
+        "sit_down": {
+          "start": 8,
+          "count": 3,
+          "fps": 7,
+          "loop": false
+        },
+        "seated_idle": {
+          "start": 11,
+          "count": 1,
+          "fps": 1,
+          "loop": true
+        },
+        "cast": {
+          "start": 12,
+          "count": 5,
+          "fps": 8,
+          "loop": false
+        },
+        "fishing_wait": {
+          "start": 17,
+          "count": 2,
+          "fps": 2,
+          "loop": true
+        },
+        "reel_in": {
+          "start": 19,
+          "count": 5,
+          "fps": 7,
+          "loop": false
+        },
+        "kick": {
+          "start": 24,
+          "count": 6,
+          "fps": 12,
+          "loop": false
+        },
+        "run": {
+          "start": 30,
+          "count": 6,
+          "fps": 12,
+          "loop": true
+        },
+        "startled": {
+          "start": 36,
+          "count": 3,
+          "fps": 7,
+          "loop": false
+        }
+      }
+    },
+    {
+      "id": "female_up",
+      "runtime": "public/assets/characters/female_up.png",
+      "runtimeSize": [
+        1536,
+        960
+      ],
+      "frameSize": [
+        192,
+        192
+      ],
+      "source": "art/source/female_up.png",
+      "prompt": "Cute short TWO-head-tall female auburn bob coral jacket beige trousers brown boots, fixed orthographic camera40 degrees. Facing up, back of head only, no face. Same head/body scale every frame. 8 columns x5 rows. Frames2 idle,6 walk,3 sit,1 seated,5 cast,2 wait,5 reel,6 STANDING forward lean kick,6 run,3 startled,1 unused idle. Fixed root(0.5,0.875), no equipment or text, actual transparent background.",
+      "motions": {
+        "idle": {
+          "start": 0,
+          "count": 2,
+          "fps": 2,
+          "loop": true
+        },
+        "walk": {
+          "start": 2,
+          "count": 6,
+          "fps": 9,
+          "loop": true
+        },
+        "sit_down": {
+          "start": 8,
+          "count": 3,
+          "fps": 7,
+          "loop": false
+        },
+        "seated_idle": {
+          "start": 11,
+          "count": 1,
+          "fps": 1,
+          "loop": true
+        },
+        "cast": {
+          "start": 12,
+          "count": 5,
+          "fps": 8,
+          "loop": false
+        },
+        "fishing_wait": {
+          "start": 17,
+          "count": 2,
+          "fps": 2,
+          "loop": true
+        },
+        "reel_in": {
+          "start": 19,
+          "count": 5,
+          "fps": 7,
+          "loop": false
+        },
+        "kick": {
+          "start": 24,
+          "count": 6,
+          "fps": 12,
+          "loop": false
+        },
+        "run": {
+          "start": 30,
+          "count": 6,
+          "fps": 12,
+          "loop": true
+        },
+        "startled": {
+          "start": 36,
+          "count": 3,
+          "fps": 7,
+          "loop": false
+        }
+      }
+    },
+    {
+      "id": "female_left",
+      "runtime": "public/assets/characters/female_left.png",
+      "runtimeSize": [
+        1536,
+        960
+      ],
+      "frameSize": [
+        192,
+        192
+      ],
+      "source": "art/source/female_left.png",
+      "prompt": "Cute short TWO-head-tall female auburn bob coral jacket beige trousers brown boots, fixed orthographic camera40 degrees. Facing left, preserve eye and hair identity. Same head/body scale every frame. 8 columns x5 rows. Frames2 idle,6 walk,3 sit,1 seated,5 cast,2 wait,5 reel,6 STANDING forward lean kick,6 run,3 startled,1 unused idle. Fixed root(0.5,0.875), no equipment or text, actual transparent background.",
+      "motions": {
+        "idle": {
+          "start": 0,
+          "count": 2,
+          "fps": 2,
+          "loop": true
+        },
+        "walk": {
+          "start": 2,
+          "count": 6,
+          "fps": 9,
+          "loop": true
+        },
+        "sit_down": {
+          "start": 8,
+          "count": 3,
+          "fps": 7,
+          "loop": false
+        },
+        "seated_idle": {
+          "start": 11,
+          "count": 1,
+          "fps": 1,
+          "loop": true
+        },
+        "cast": {
+          "start": 12,
+          "count": 5,
+          "fps": 8,
+          "loop": false
+        },
+        "fishing_wait": {
+          "start": 17,
+          "count": 2,
+          "fps": 2,
+          "loop": true
+        },
+        "reel_in": {
+          "start": 19,
+          "count": 5,
+          "fps": 7,
+          "loop": false
+        },
+        "kick": {
+          "start": 24,
+          "count": 6,
+          "fps": 12,
+          "loop": false
+        },
+        "run": {
+          "start": 30,
+          "count": 6,
+          "fps": 12,
+          "loop": true
+        },
+        "startled": {
+          "start": 36,
+          "count": 3,
+          "fps": 7,
+          "loop": false
+        }
+      }
+    },
+    {
+      "id": "female_right",
+      "runtime": "public/assets/characters/female_right.png",
+      "runtimeSize": [
+        1536,
+        960
+      ],
+      "frameSize": [
+        192,
+        192
+      ],
+      "source": "art/source/female_right.png",
+      "prompt": "Cute short TWO-head-tall female auburn bob coral jacket beige trousers brown boots, fixed orthographic camera40 degrees. Facing right, preserve eye and hair identity. Same head/body scale every frame. 8 columns x5 rows. Frames2 idle,6 walk,3 sit,1 seated,5 cast,2 wait,5 reel,6 STANDING forward lean kick,6 run,3 startled,1 unused idle. Fixed root(0.5,0.875), no equipment or text, actual transparent background.",
+      "motions": {
+        "idle": {
+          "start": 0,
+          "count": 2,
+          "fps": 2,
+          "loop": true
+        },
+        "walk": {
+          "start": 2,
+          "count": 6,
+          "fps": 9,
+          "loop": true
+        },
+        "sit_down": {
+          "start": 8,
+          "count": 3,
+          "fps": 7,
+          "loop": false
+        },
+        "seated_idle": {
+          "start": 11,
+          "count": 1,
+          "fps": 1,
+          "loop": true
+        },
+        "cast": {
+          "start": 12,
+          "count": 5,
+          "fps": 8,
+          "loop": false
+        },
+        "fishing_wait": {
+          "start": 17,
+          "count": 2,
+          "fps": 2,
+          "loop": true
+        },
+        "reel_in": {
+          "start": 19,
+          "count": 5,
+          "fps": 7,
+          "loop": false
+        },
+        "kick": {
+          "start": 24,
+          "count": 6,
+          "fps": 12,
+          "loop": false
+        },
+        "run": {
+          "start": 30,
+          "count": 6,
+          "fps": 12,
+          "loop": true
+        },
+        "startled": {
+          "start": 36,
+          "count": 3,
+          "fps": 7,
+          "loop": false
+        }
+      }
+    }
+  ],
+  "environment": {
+    "tiles": "Separate grass, warm stone, water, wood raster tiles; fixed orthographic, soft painted volume, no text.",
+    "objects": "4x2 atlas: tree, moss rocks, fishing stall, chibi shopkeeper, flowers, reeds, lotus, dock; transparent.",
+    "equipment": "6x4 atlas in manifest order, transparent isolated rods, bait, chairs and icons.",
+    "ui": "Individual square blank rounded cream panel, teal primary, cream normal, gray disabled and speech bubble. True alpha outside, opaque center, no clipping or neighboring panels. Pressed uses separately cropped original atlas texture.",
+    "fx": "4x3 atlas:4 expanding water ripples,4 water splashes,4 kick impact frames; alpha background.",
+    "shore": "Square grassy/sandy perimeter border around transparent center, nine-slice60px at384.",
+    "welcome": "Upper environment portion of chibi art reference; no words or UI."
+  }
+}

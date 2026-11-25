@@ -1,0 +1,930 @@
+:root {
+  font-family: "Apple SD Gothic Neo", "Malgun Gothic", system-ui, sans-serif;
+  color: #294c43;
+  font-synthesis: none;
+  font-weight: 500;
+  background: #a3bd85;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+button,
+input,
+select {
+  font: inherit;
+}
+button {
+  cursor: pointer;
+  color: inherit;
+  border: 18px solid transparent;
+  border-image: url("/assets/ui/button.png") 48 fill stretch;
+  padding: 0 7px;
+  min-height: 44px;
+  background: none;
+  font-weight: 700;
+  transition:
+    filter 0.13s,
+    transform 0.13s;
+}
+button:hover {
+  filter: brightness(1.05);
+  transform: translateY(-1px);
+}
+button:active {
+  border-image-source: url("/assets/ui/pressed.png");
+  transform: translateY(1px);
+}
+button:disabled {
+  border-image-source: url("/assets/ui/disabled.png");
+  cursor: default;
+  filter: saturate(0.4);
+  opacity: 0.7;
+  transform: none;
+}
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 3px solid #d29a52;
+  outline-offset: 3px;
+}
+button.primary {
+  border-image-source: url("/assets/ui/primary.png");
+  color: #fffbea;
+}
+.panel {
+  border: 25px solid transparent;
+  border-image: url("/assets/ui/panel.png") 60 fill stretch;
+  background: none;
+}
+.icon {
+  object-fit: contain;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+.stars {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1px;
+}
+.fish-image {
+  object-fit: contain;
+  width: 100%;
+  aspect-ratio: 1;
+  display: block;
+}
+.silhouette {
+  filter: brightness(0) saturate(0);
+  opacity: 0.22;
+}
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+h2 {
+  font-size: 24px;
+}
+h3 {
+  font-size: 16px;
+}
+.welcome {
+  width: 100vw;
+  height: 100dvh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 6vw;
+}
+.welcome-panel {
+  width: 390px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  text-align: center;
+  box-shadow: 0 20px 70px #173d2b30;
+}
+.welcome h1 {
+  font-size: 52px;
+  font-weight: 900;
+  letter-spacing: -4px;
+  margin: 8px 0 24px;
+}
+.welcome label {
+  text-align: left;
+  font-weight: 800;
+}
+.welcome input {
+  border: 1px solid #bbbaa7;
+  background: #fffcf4;
+  border-radius: 12px;
+  height: 56px;
+  font-size: 22px;
+  padding: 12px 16px;
+  width: 100%;
+  color: #294c43;
+}
+.account-note {
+  font-size: 13px;
+  color: #738273;
+}
+.wide {
+  width: 100%;
+  font-size: 18px;
+}
+.quiet {
+  border: none;
+  text-decoration: underline;
+  font-size: 13px;
+  min-height: 28px;
+  padding: 6px;
+}
+.characters {
+  display: flex;
+  gap: 10px;
+}
+.character-choice {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  border: 18px solid transparent;
+  border-image: url("/assets/ui/button.png") 48 fill stretch;
+  min-width: 0;
+  padding: 4px 0;
+}
+.character-choice.selected {
+  border-image-source: url("/assets/ui/primary.png");
+  color: white;
+}
+.character-choice img {
+  height: 170px;
+  width: 135px;
+  object-fit: contain;
+}
+.error {
+  font-size: 14px;
+  color: #a34333;
+}
+.boot {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  font-size: 40px;
+  font-weight: 900;
+}
+.game-shell {
+  height: 100dvh;
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+}
+.world {
+  position: absolute;
+  inset: 0;
+}
+.world canvas {
+  display: block;
+}
+.game-brand {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+  font-size: 28px;
+  font-weight: 900;
+  letter-spacing: -1.5px;
+  color: #fffdf0;
+  text-shadow: 0 2px 4px #32583c88;
+}
+.game-brand span {
+  font-size: 12px;
+  letter-spacing: 0;
+  display: inline-block;
+  margin-left: 12px;
+  background: #385e46;
+  padding: 5px 9px;
+  border-radius: 9px;
+  vertical-align: middle;
+}
+.hud {
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-38%);
+  display: flex;
+  align-items: center;
+  gap: 23px;
+  white-space: nowrap;
+  padding: 0 3px;
+  font-size: 16px;
+  min-height: 66px;
+}
+.hud > span {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+.hud > strong {
+  padding-right: 5px;
+}
+.hud small {
+  font-size: 12px;
+  margin-left: -20px;
+}
+.charges img {
+  width: 25px;
+  height: 25px;
+  object-fit: contain;
+}
+.spent {
+  filter: grayscale(1);
+  opacity: 0.27;
+}
+.ranking {
+  position: absolute;
+  left: 20px;
+  top: 100px;
+  width: 245px;
+  max-height: calc(100vh - 230px);
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+.rank-heading {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  border: none;
+  min-height: 44px;
+  font-size: 20px;
+  text-align: left;
+  padding: 0 0 12px;
+}
+.rank-heading span {
+  margin-left: auto;
+  font-weight: 500;
+}
+.ranking ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  overflow: auto;
+}
+.ranking li {
+  border-bottom: 1px solid #b7b29b35;
+}
+.ranking li > button {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  width: 100%;
+  border: none;
+  padding: 10px 0;
+  min-height: 76px;
+  text-align: left;
+}
+.ranking li b {
+  font-size: 22px;
+  color: #a1854b;
+  min-width: 22px;
+}
+.ranking li div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+}
+.ranking li strong {
+  font-size: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 95px;
+  white-space: nowrap;
+}
+.ranking li small {
+  font-size: 11px;
+  color: #738273;
+}
+.ranking li .stars {
+  justify-content: flex-start;
+}
+.ranking li .stars img {
+  width: 12px;
+  height: 12px;
+}
+.ranking li .fish-image {
+  width: 61px;
+  height: 61px;
+  margin-left: auto;
+}
+.ranking .mine strong {
+  color: #126e62;
+}
+.my-rank {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  padding-top: 15px;
+}
+.rank-empty {
+  font-size: 13px;
+  padding: 28px 2px;
+  color: #84907d;
+}
+.feed {
+  position: absolute;
+  right: 20px;
+  top: 110px;
+  width: 185px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  pointer-events: none;
+}
+.feed-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0;
+  border-width: 15px;
+  border-image-slice: 60 fill;
+}
+.feed-item .fish-image {
+  width: 52px;
+  height: 52px;
+}
+.feed-item > div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  min-width: 0;
+}
+.feed-item strong {
+  font-size: 12px;
+}
+.feed-item span {
+  font-size: 11px;
+}
+.feed-item .stars img {
+  width: 10px;
+  height: 10px;
+}
+.bottom-controls {
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 9px;
+  align-items: center;
+}
+.action {
+  min-width: 205px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 21px;
+  min-height: 66px;
+}
+.action kbd {
+  margin-left: 12px;
+  color: #cbe2d4;
+}
+.chair-button {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.bag-button {
+  position: absolute;
+  right: 28px;
+  bottom: 28px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 17px;
+}
+.key-guide {
+  position: absolute;
+  bottom: 22px;
+  left: 30px;
+  font-size: 12px;
+  color: #fffdf3;
+  text-shadow: 0 1px 3px #254c3a;
+}
+kbd {
+  font-family: inherit;
+  font-size: 11px;
+  opacity: 0.8;
+}
+.modal-backdrop {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #183c2d66;
+  z-index: 100;
+  padding: 24px;
+}
+.modal {
+  width: min(880px, 100%);
+  height: min(690px, calc(100dvh - 48px));
+  display: flex;
+  flex-direction: column;
+  padding: 8px 5px;
+}
+.modal header {
+  display: flex;
+  align-items: center;
+  padding: 0 12px 16px;
+  gap: 16px;
+}
+.modal header h2 {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.balance {
+  margin-left: auto;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  font-weight: 800;
+}
+.icon-button {
+  border: none;
+  padding: 0;
+  min-width: 30px;
+}
+.modal nav {
+  display: flex;
+  gap: 6px;
+  border-bottom: 1px solid #b8baa450;
+  padding-bottom: 12px;
+}
+.modal nav button {
+  flex: 1;
+  border-width: 14px;
+  padding: 0;
+  min-height: 40px;
+  white-space: nowrap;
+}
+.modal nav .active {
+  border-image-source: url("/assets/ui/primary.png");
+  color: #fffbed;
+}
+.modal-content {
+  padding: 18px 10px 0;
+  overflow: auto;
+  flex: 1;
+}
+.gear-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.gear {
+  text-align: center;
+  padding: 24px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+.gear p {
+  font-size: 14px;
+  color: #7c8776;
+}
+.gear button {
+  margin-top: 8px;
+  width: 100%;
+  font-size: 14px;
+  padding: 0;
+  border-width: 16px;
+}
+.quantity {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+.quantity button {
+  font-size: 13px;
+  border-width: 12px;
+  padding: 0;
+}
+.quantity input {
+  width: 70px;
+  border: 1px solid #b3b7a4;
+  border-radius: 6px;
+  padding: 9px;
+  background: #fffdf5;
+  color: inherit;
+}
+.bait-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.bait {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 0;
+  border-bottom: 1px solid #b7b29b35;
+}
+.bait p {
+  font-size: 13px;
+  color: #77816e;
+  margin-top: 5px;
+}
+.bait-actions {
+  display: flex;
+  gap: 5px;
+  margin-left: auto;
+}
+.bait-actions button {
+  font-size: 13px;
+  border-width: 12px;
+  padding: 0;
+}
+.probabilities {
+  max-width: 300px;
+  line-height: 1.6;
+}
+.collection-toolbar {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 14px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+.collection-toolbar > span {
+  margin-right: auto;
+}
+.collection-toolbar button {
+  font-size: 12px;
+  border-width: 12px;
+  padding: 0;
+}
+.fish-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px 10px;
+}
+.fish-card {
+  position: relative;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  padding: 7px 4px;
+  border-radius: 12px;
+}
+.fish-card.chosen {
+  background: #66a58b24;
+}
+.fish-card > input {
+  position: absolute;
+  left: 6px;
+  top: 5px;
+  width: 18px;
+  height: 18px;
+  accent-color: #30786b;
+}
+.fish-card > .fish-image {
+  height: 105px;
+  width: 135px;
+  max-width: 100%;
+}
+.fish-card h3 {
+  font-size: 13px;
+}
+.fish-card p {
+  font-size: 11px;
+  color: #7b836f;
+}
+.card-actions {
+  display: flex;
+  gap: 2px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+.card-actions button,
+.fish-card > button {
+  border-width: 10px;
+  font-size: 11px;
+  padding: 0;
+  min-height: 27px;
+}
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 65px 10px;
+  font-size: 14px;
+  color: #7d8875;
+}
+.sell-footer {
+  position: sticky;
+  bottom: 0;
+  background: #f7f1df;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 13px;
+  font-size: 14px;
+  margin-top: 20px;
+}
+.settings {
+  max-width: 600px;
+  margin: 20px auto;
+  line-height: 1.9;
+}
+.settings p {
+  font-size: 14px;
+  margin: 16px 0;
+  color: #6e7b68;
+}
+.settings a {
+  color: #296f60;
+}
+.profile {
+  width: 320px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+}
+.profile > .fish-image {
+  height: 180px;
+}
+.close-profile {
+  position: absolute;
+  right: 0;
+  top: 0;
+  border: 0;
+  padding: 0;
+}
+.toast,
+.connection-state,
+.loading-screen {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 100px;
+  font-size: 15px;
+  z-index: 200;
+  max-width: 85vw;
+  text-align: center;
+  padding: 0 4px;
+  white-space: normal;
+}
+.toast {
+  top: auto;
+  bottom: 115px;
+  color: #944332;
+}
+.loading-screen {
+  top: 45%;
+}
+.connection-state {
+  top: 95px;
+}
+.collapsed {
+  width: 140px;
+  max-height: 75px;
+}
+.collapsed .rank-heading {
+  padding-bottom: 0;
+  font-size: 16px;
+}
+@media (max-width: 1100px) {
+  .hud {
+    gap: 12px;
+    transform: translateX(-30%);
+    font-size: 14px;
+  }
+  .game-brand {
+    font-size: 24px;
+  }
+  .hud > .charges {
+    gap: 0;
+  }
+  .hud small {
+    display: none;
+  }
+  .ranking {
+    width: 215px;
+  }
+  .feed {
+    width: 145px;
+  }
+  .feed-item {
+    gap: 0;
+  }
+  .feed-item .fish-image {
+    width: 40px;
+    height: 40px;
+  }
+}
+@media (max-width: 760px) {
+  .game-brand {
+    left: 15px;
+    top: 15px;
+    font-size: 22px;
+  }
+  .game-brand span {
+    display: none;
+  }
+  .hud {
+    top: 55px;
+    left: 50%;
+    transform: translateX(-50%);
+    gap: 9px;
+    width: max-content;
+    max-width: 98vw;
+    min-height: 52px;
+    border-width: 18px;
+    font-size: 12px;
+  }
+  .hud > span > .icon {
+    width: 23px;
+    height: 23px;
+  }
+  .hud .charges img {
+    width: 19px;
+    height: 19px;
+  }
+  .ranking {
+    left: 10px;
+    top: 125px;
+    width: 165px;
+    border-width: 18px;
+    max-height: calc(100dvh - 280px);
+  }
+  .ranking li b {
+    font-size: 16px;
+    min-width: 16px;
+  }
+  .ranking li .fish-image {
+    width: 38px;
+    height: 38px;
+  }
+  .ranking li > button {
+    gap: 3px;
+  }
+  .ranking li strong {
+    max-width: 75px;
+    font-size: 12px;
+  }
+  .rank-heading {
+    font-size: 17px;
+  }
+  .ranking.collapsed {
+    width: 120px;
+  }
+  .feed {
+    display: none;
+  }
+  .bag-button {
+    right: 8px;
+    bottom: 18px;
+    font-size: 0;
+    gap: 0;
+    padding: 0;
+    border-width: 14px;
+  }
+  .bag-button > .icon {
+    width: 32px;
+    height: 32px;
+  }
+  .bottom-controls {
+    bottom: 22px;
+    left: 46%;
+    gap: 3px;
+  }
+  .action {
+    min-width: 158px;
+    font-size: 17px;
+    gap: 5px;
+    border-width: 15px;
+  }
+  .action .icon {
+    width: 27px;
+    height: 27px;
+  }
+  .action kbd {
+    margin-left: 4px;
+  }
+  .chair-button {
+    padding: 0;
+    border-width: 14px;
+  }
+  .chair-button .icon {
+    width: 25px;
+    height: 25px;
+  }
+  .key-guide {
+    display: none;
+  }
+  .modal-backdrop {
+    padding: 8px;
+  }
+  .modal {
+    height: calc(100dvh - 16px);
+    border-width: 18px;
+    padding: 5px 0;
+  }
+  .modal nav {
+    gap: 1px;
+  }
+  .modal nav button {
+    font-size: 12px;
+    border-width: 10px;
+  }
+  .modal-content {
+    padding: 12px 0 0;
+  }
+  .fish-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px 2px;
+  }
+  .fish-card > .fish-image {
+    height: 85px;
+  }
+  .card-actions {
+    gap: 0;
+  }
+  .card-actions button {
+    border-width: 8px;
+    font-size: 10px;
+  }
+  .gear-grid {
+    gap: 2px;
+  }
+  .gear {
+    padding: 18px 2px;
+  }
+  .gear h3 {
+    font-size: 13px;
+  }
+  .gear .icon {
+    width: 85px;
+    height: 85px;
+  }
+  .gear button {
+    font-size: 11px;
+    border-width: 10px;
+  }
+  .bait {
+    gap: 5px;
+  }
+  .bait > .icon {
+    width: 43px;
+    height: 43px;
+  }
+  .bait h3 {
+    font-size: 13px;
+  }
+  .bait-actions {
+    flex-direction: column;
+  }
+  .quantity {
+    gap: 4px;
+    font-size: 12px;
+  }
+  .quantity button {
+    font-size: 11px;
+  }
+  .quantity input {
+    width: 48px;
+  }
+  .welcome {
+    padding: 15px;
+    justify-content: center;
+  }
+  .welcome-panel {
+    width: min(370px, 96vw);
+  }
+  .welcome h1 {
+    font-size: 45px;
+  }
+  .profile {
+    width: 290px;
+  }
+}

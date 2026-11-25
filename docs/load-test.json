@@ -1,0 +1,14 @@
+{
+  "at": "2026-11-25T08:04:08.490Z",
+  "runtime": "local Wrangler/workerd, same machine, no browser rendering",
+  "clients": 50,
+  "durationSeconds": 30.001,
+  "sentMoves": 14800,
+  "receivedMessages": 17575,
+  "errors": 0,
+  "openAtEnd": 50,
+  "capacity51stStatus": 503,
+  "pingMedianMs": 18,
+  "pingP95Ms": 98,
+  "receivedMiB": 166.4989948272705
+}
