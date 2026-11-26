@@ -1,0 +1,14 @@
+{
+  "date": "2026-11-26",
+  "tool": "image_gen",
+  "prompt": "Production transparent UI asset atlas for a cute polished modern 3D casual fishing game. Exactly FOUR separate assets arranged precise TWO columns by TWO rows on a 1536x1024 true transparent canvas, no extra objects. Each cell768x512, generous transparent margin, nothing crosses cells. NO WORDS NO LETTERS NO NUMBERS. Top LEFT: a light sky-blue fabric name ribbon, wide and shallow, playful folded swallowtail ends, subtle fabric stitches, white flat center for a short live player name, width640 height160 centered in cell. Top RIGHT: a circular puffy white and sky-blue back button with one clear chunky dark blue LEFT ARROW icon, diameter240 centered in cell. Bottom LEFT: a vivid warm coral-orange wide game start button, playful slightly asymmetric rounded trapezoid, tactile toy-like sidewall and subtle white upper highlight, clean empty broad center for live text, a tiny white-red fishing bobber hanging from its RIGHT edge and short fishing line, width640 height220 centered in cell. Bottom RIGHT: a round sky-blue selection badge with one thick WHITE CHECKMARK, simple confident toy medallion, diameter220 centered in cell. Sophisticated friendly game UI, no gold trim, no metal rivets, no neon borders, no wooden sign, no ornate fantasy framing, no navy pill panels, no perspective, FRONT VIEW. Distinct silhouettes and visual roles. Crisp alpha cutouts no ground plane no hazy shadows outside shapes. Soft material depth, matching a big-head short-body character fishing game.",
+  "source": "art/source/selection-game-ui.png",
+  "packing": "node --import tsx scripts/pack-selection-ui.ts",
+  "runtime": [
+    "selection-name.png",
+    "selection-back.png",
+    "selection-start.png",
+    "selection-check.png"
+  ],
+  "notes": "Actual source layout differs from requested equal cells; packing uses inspected object bounds."
+}

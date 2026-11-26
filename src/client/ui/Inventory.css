@@ -1,0 +1,1253 @@
+/* Selected Blue Pocket design. Base geometry is the 936 × 640 reference window. */
+.game-shell .modal-backdrop {
+  pointer-events: auto;
+  overscroll-behavior: contain;
+}
+.game-shell .pocket-dialog {
+  --pocket-blue: #164777;
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: 166px minmax(0, 1fr);
+  grid-template-rows: 88px minmax(0, 1fr) 88px;
+  column-gap: 16px;
+  width: 936px;
+  max-width: calc(100vw - 48px);
+  height: 640px;
+  max-height: calc(100dvh - 48px);
+  padding: 14px 24px 10px 14px;
+  border: 0;
+  border-radius: 34px;
+  background: url("/assets/redesign/pocket-panel.png") center / 100% 100%
+    no-repeat;
+  color: var(--pocket-blue);
+  font:
+    700 20px/1.25 NotoFishing,
+    sans-serif;
+  text-shadow: none;
+}
+.game-shell .pocket-dialog button {
+  font-weight: 800;
+  color: var(--pocket-blue);
+  text-shadow: none;
+}
+.game-shell .pocket-dialog button:disabled {
+  opacity: 0.65;
+  filter: saturate(0.35);
+}
+.game-shell .pocket-dialog > .modal-header {
+  grid-column: 1/-1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  position: relative;
+  gap: 50px;
+  min-height: 0;
+  height: 88px;
+  padding: 0;
+  margin: 0;
+}
+.game-shell .pocket-dialog .modal-header h2 {
+  position: absolute;
+  left: -14px;
+  top: -30px;
+  translate: none;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 244px;
+  height: 106px;
+  padding: 0 24px 5px 0;
+  background: url("/assets/redesign/pocket-title.png") center / 100% 100%
+    no-repeat;
+  color: white;
+  font-size: 44px;
+  line-height: 1;
+  font-weight: 900;
+  text-shadow: 0 2px 2px #0d58a4;
+}
+.game-shell .pocket-dialog .modal-header .modal-emblem {
+  width: 58px;
+  height: 58px;
+  object-fit: contain;
+}
+.game-shell .pocket-dialog .modal-header .balance {
+  display: flex;
+  min-width: 0;
+  min-height: 58px;
+  margin: 3px 0 0;
+  padding: 0;
+  gap: 10px;
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--pocket-blue);
+  border: 0;
+  background: none;
+}
+.game-shell .pocket-dialog .modal-header .balance .icon {
+  width: 38px;
+  height: 38px;
+}
+.game-shell .pocket-dialog .modal-header .icon-button {
+  width: 58px;
+  height: 58px;
+  min-width: 58px;
+  min-height: 58px;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background: none;
+}
+.game-shell .pocket-dialog .modal-header .icon-button .icon {
+  width: 58px;
+  height: 58px;
+}
+.game-shell .pocket-dialog > .pocket-categories {
+  grid-column: 1;
+  grid-row: 2 / 4;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: 9px;
+  margin: 0;
+  padding: 20px 0 0;
+  overflow: visible;
+}
+.game-shell .pocket-dialog .pocket-categories button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 9px;
+  width: 166px;
+  min-width: 0;
+  height: 64px;
+  min-height: 64px;
+  padding: 0 14px 5px 12px;
+  margin: 0;
+  background: none;
+  border: 0;
+  font-size: 25px;
+  line-height: 1;
+  white-space: nowrap;
+  color: var(--pocket-blue);
+}
+.game-shell .pocket-dialog .pocket-categories button.active {
+  background: url("/assets/redesign/pocket-nav.png") center / 100% 100%
+    no-repeat;
+  color: white;
+  text-shadow: 0 1px 2px #1765ac;
+}
+.game-shell .pocket-dialog .pocket-categories .icon {
+  width: 44px;
+  height: 44px;
+  flex: 0 0 44px;
+  object-fit: contain;
+}
+.game-shell .pocket-dialog > .modal-content {
+  grid-column: 2;
+  grid-row: 2;
+  padding: 0;
+  min-height: 0;
+  min-width: 0;
+  overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #84bce7 transparent;
+}
+.game-shell .pocket-dialog:not(:has(> .inventory-footer)) > .modal-content {
+  grid-row: 2/4;
+  padding-bottom: 24px;
+}
+.game-shell .pocket-dialog > .modal-content.tab-물고기 {
+  overflow: hidden;
+}
+.game-shell .pocket-dialog .inventory-count {
+  display: none;
+}
+.game-shell .pocket-dialog .fish-collection.has-detail {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 212px;
+  gap: 16px;
+  height: 100%;
+  min-height: 0;
+}
+.game-shell .pocket-dialog .fish-tray {
+  background: url("/assets/redesign/pocket-tray.png") center / 100% 100%
+    no-repeat;
+  border-radius: 25px;
+  min-height: 0;
+  overflow: auto;
+  padding: 22px 14px 16px;
+  scrollbar-width: thin;
+}
+.game-shell .pocket-dialog .fish-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-content: start;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+}
+.game-shell .pocket-dialog .fish-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 3px;
+  height: 184px;
+  min-height: 184px;
+  padding: 8px 5px;
+  border: 1px solid #c7dff1;
+  border-image: none;
+  border-radius: 19px;
+  background: url("/assets/redesign/pocket-panel.png") center / 100% 100%
+    no-repeat;
+  box-shadow: none;
+  filter: none;
+}
+.game-shell .pocket-dialog .fish-card.chosen {
+  border: 3px solid #ff927c;
+  padding: 6px 3px;
+}
+.game-shell .pocket-dialog .fish-card > .fish-select {
+  display: block;
+  width: 100%;
+  height: 82px;
+  min-height: 82px;
+  min-width: 0;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  background: none;
+  box-shadow: none;
+}
+.game-shell .pocket-dialog .fish-select .fish-image,
+.game-shell .pocket-dialog .fish-card > .fish-image {
+  display: block;
+  width: 100%;
+  height: 82px;
+  min-height: 0;
+  object-fit: contain;
+  margin: 0;
+}
+.game-shell .pocket-dialog .stars {
+  height: 24px;
+  min-height: 24px;
+  gap: 1px;
+}
+.game-shell .pocket-dialog .stars .icon {
+  width: 22px;
+  height: 22px;
+}
+.game-shell .pocket-dialog .fish-card h3 {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  font-size: 21px;
+  line-height: 26px;
+  text-align: center;
+  white-space: nowrap;
+}
+.game-shell .pocket-dialog .fish-card p {
+  margin: 0;
+  font-size: 20px;
+  line-height: 25px;
+}
+.game-shell .pocket-dialog .price {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  line-height: 1;
+  color: var(--pocket-blue);
+}
+.game-shell .pocket-dialog .price > .icon {
+  width: 24px;
+  height: 24px;
+}
+.game-shell .pocket-dialog .fish-lock {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+.game-shell .pocket-dialog .fish-card > input {
+  position: absolute;
+  z-index: 2;
+  top: 10px;
+  left: 10px;
+  margin: 0;
+  width: 20px;
+  height: 20px;
+  accent-color: #2496f1;
+}
+.game-shell .pocket-dialog .fish-detail {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 28px 0 0 16px;
+  border-left: 1px solid #c7e0f4;
+  min-width: 0;
+}
+.game-shell .pocket-dialog .fish-detail > .fish-image {
+  width: 196px;
+  height: 192px;
+  max-width: 100%;
+  object-fit: contain;
+}
+.game-shell .pocket-dialog .fish-detail h3 {
+  margin: 8px 0 12px;
+  font-size: 35px;
+  line-height: 1.15;
+  max-width: 100%;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+.game-shell .pocket-dialog .fish-detail .stars {
+  height: 36px;
+  gap: 3px;
+}
+.game-shell .pocket-dialog .fish-detail .stars .icon {
+  width: 32px;
+  height: 32px;
+}
+.game-shell .pocket-dialog .fish-detail .price {
+  margin: 16px 0 0;
+  font-size: 32px;
+  font-weight: 800;
+}
+.game-shell .pocket-dialog .fish-detail .price .icon {
+  width: 40px;
+  height: 40px;
+}
+.game-shell .pocket-dialog > .inventory-footer {
+  grid-column: 1/-1;
+  grid-row: 3;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 14px;
+  min-height: 0;
+  margin: 0 6px 0 12px;
+  padding: 14px 0 4px;
+  border-top: 1px solid #c4dcef;
+}
+.game-shell .pocket-dialog .inventory-footer > span {
+  margin-right: auto;
+  font-size: 25px;
+  font-weight: 800;
+}
+.game-shell .pocket-dialog .inventory-footer button,
+.game-shell .pocket-dialog .gear button,
+.game-shell .pocket-dialog .bait-actions button,
+.game-shell .pocket-dialog .collection-share,
+.game-shell .pocket-dialog .refill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 200px;
+  min-width: 0;
+  min-height: 54px;
+  height: 54px;
+  padding: 0 10px 4px;
+  margin: 0;
+  border: 0;
+  background: url("/assets/redesign/pocket-button-blue.png") center / 100% 100%
+    no-repeat;
+  color: white;
+  font-size: 25px;
+  line-height: 1;
+  text-shadow: 0 1px 1px #1d76bd;
+  box-shadow: none;
+  white-space: nowrap;
+}
+.game-shell .pocket-dialog .inventory-footer button.coral {
+  width: 180px;
+  background-image: url("/assets/redesign/pocket-button-coral.png");
+  text-shadow: 0 1px 1px #ca6450;
+}
+.game-shell .pocket-dialog .inventory-footer button .icon {
+  width: 34px;
+  height: 34px;
+}
+.game-shell .pocket-dialog .gear-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  height: 448px;
+  min-height: 0;
+  padding: 24px 10px 22px;
+  background: url("/assets/redesign/pocket-tray.png") center / 100% 100%
+    no-repeat;
+  border-radius: 26px;
+  align-items: stretch;
+}
+.game-shell .pocket-dialog .gear {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: 146px 48px 46px minmax(0, 1fr);
+  justify-items: center;
+  align-items: center;
+  min-height: 0;
+  min-width: 0;
+  height: 100%;
+  border: 0;
+  border-right: 1px solid #c3ddf1;
+  border-image: none;
+  border-radius: 0;
+  background: none;
+  padding: 8px;
+  margin: 0;
+  gap: 2px;
+  filter: none;
+}
+.game-shell .pocket-dialog .gear:last-child {
+  border-right: 0;
+}
+.game-shell .pocket-dialog .gear.pocket-equipped {
+  background: url("/assets/redesign/pocket-panel.png") center / 100% 100%
+    no-repeat;
+  border-radius: 24px;
+}
+.game-shell .pocket-dialog .gear > .icon {
+  width: 180px;
+  height: 146px;
+  max-height: none;
+  max-width: 100%;
+  margin: 0;
+  object-fit: contain;
+}
+.game-shell .pocket-dialog .gear h3 {
+  margin: 0;
+  font-size: 26px;
+  line-height: 1.2;
+  text-align: center;
+  white-space: nowrap;
+}
+.game-shell .pocket-dialog .gear-cap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  margin: 0;
+  font-size: 24px;
+  line-height: 1;
+}
+.game-shell .pocket-dialog .gear-cap .icon {
+  width: 30px;
+  height: 30px;
+}
+.game-shell .pocket-dialog .gear-purchase {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  min-height: 0;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  gap: 12px;
+}
+.game-shell .pocket-dialog .gear .price {
+  font-size: 27px;
+  font-weight: 800;
+}
+.game-shell .pocket-dialog .gear .price .icon {
+  width: 31px;
+  height: 31px;
+}
+.game-shell .pocket-dialog .gear button {
+  width: 100%;
+  font-size: 24px;
+  height: 52px;
+  min-height: 52px;
+  padding-inline: 3px;
+}
+.game-shell .pocket-dialog .gear button:disabled {
+  color: white;
+  opacity: 0.68;
+}
+.game-shell .pocket-dialog .quantity {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  margin: 0 0 12px;
+  min-height: 40px;
+}
+.game-shell .pocket-dialog .quantity > span {
+  margin-right: 6px;
+  font-size: 19px;
+}
+.game-shell .pocket-dialog .quantity input {
+  width: 64px;
+  height: 38px;
+  font-size: 20px;
+  text-align: center;
+  border: 1px solid #a9d0ed;
+  border-radius: 9px;
+  background: white;
+  color: var(--pocket-blue);
+}
+.game-shell .pocket-dialog .quantity button,
+.game-shell .pocket-dialog .collection-toolbar button,
+.game-shell .pocket-dialog .book-pages button,
+.game-shell .pocket-dialog .odds button {
+  min-height: 38px;
+  min-width: 38px;
+  height: 38px;
+  padding: 0 10px 3px;
+  border: 0;
+  background: url("/assets/redesign/pocket-button-blue.png") center / 100% 100%
+    no-repeat;
+  color: white;
+  font-size: 18px;
+}
+.game-shell .pocket-dialog .bait-grid,
+.game-shell .pocket-dialog .bait-shop-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  min-height: 0;
+}
+.game-shell .pocket-dialog .bait {
+  display: grid;
+  grid-template-columns: 80px minmax(0, 1fr);
+  grid-template-rows: 74px 46px;
+  align-items: center;
+  gap: 6px 12px;
+  min-height: 148px;
+  padding: 12px 14px;
+  border: 0;
+  border-radius: 18px;
+  border-image: none;
+  background: url("/assets/redesign/pocket-panel.png") center / 100% 100%
+    no-repeat;
+  filter: none;
+}
+.game-shell .pocket-dialog .bait > .icon {
+  width: 80px;
+  height: 74px;
+  object-fit: contain;
+}
+.game-shell .pocket-dialog .bait-description {
+  min-width: 0;
+  text-align: left;
+}
+.game-shell .pocket-dialog .bait h3 {
+  font-size: 21px;
+  line-height: 28px;
+  margin: 0;
+}
+.game-shell .pocket-dialog .bait p {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 4px;
+  font-size: 17px;
+  line-height: 24px;
+  margin: 2px 0 0;
+}
+.game-shell .pocket-dialog .bait p .icon {
+  width: 22px;
+  height: 22px;
+}
+.game-shell .pocket-dialog .bait-actions {
+  grid-column: 1/-1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  gap: 8px;
+}
+.game-shell .pocket-dialog .bait-actions .price {
+  min-width: 0;
+  font-size: 19px;
+}
+.game-shell .pocket-dialog .bait-actions button {
+  width: 132px;
+  min-width: 0;
+  min-height: 44px;
+  height: 44px;
+  font-size: 21px;
+}
+.game-shell .pocket-dialog .bait-requirement {
+  width: 100%;
+  min-height: 42px;
+  font-size: 17px;
+  gap: 6px;
+}
+.game-shell .pocket-dialog .bait-requirement .icon {
+  width: 24px;
+  height: 24px;
+}
+.game-shell .pocket-dialog .collection-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 38px;
+  margin: 0 0 12px;
+  font-size: 19px;
+  gap: 12px;
+}
+.game-shell .pocket-dialog .collection-toolbar progress {
+  min-width: 40px;
+  max-width: 120px;
+}
+.game-shell .pocket-dialog .collection-toolbar select {
+  min-width: 90px;
+  font-size: 17px;
+  padding: 6px;
+  border: 1px solid #a9cbe5;
+  border-radius: 8px;
+  color: var(--pocket-blue);
+  background: white;
+}
+.game-shell .pocket-dialog .bestiary-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.game-shell .pocket-dialog .bestiary-grid .fish-card {
+  height: 220px;
+  min-height: 220px;
+}
+.game-shell .pocket-dialog .bestiary-grid .fish-card .collection-share {
+  width: 100px;
+  height: 36px;
+  min-height: 36px;
+  font-size: 18px;
+}
+.game-shell .pocket-dialog .book-pages {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin: 14px 0 0;
+  padding: 0;
+}
+.game-shell .pocket-dialog .empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 260px;
+  height: 100%;
+  font-size: 20px;
+}
+.game-shell .pocket-dialog .empty .icon {
+  width: 80px;
+  height: 80px;
+}
+.game-shell .pocket-dialog .settings {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 12px;
+}
+.game-shell .pocket-dialog .settings h3 {
+  margin: 0 0 12px;
+  font-size: 25px;
+}
+.game-shell .pocket-dialog .account-summary {
+  font-size: 17px;
+  padding: 0;
+}
+.game-shell .pocket-dialog .account-summary img {
+  width: 72px;
+  height: 72px;
+}
+.game-shell .pocket-dialog .account-summary strong {
+  font-size: 23px;
+}
+.game-shell .pocket-dialog .account-summary p {
+  font-size: 16px;
+}
+.game-shell .pocket-dialog .keyboard-guide {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+.game-shell .pocket-dialog .keyboard-guide > div {
+  min-height: 110px;
+  padding: 8px;
+  font-size: 18px;
+}
+.game-shell .pocket-dialog .odds {
+  margin-top: 16px;
+  padding: 12px;
+  font-size: 17px;
+  border: 1px solid #c2dcef;
+  border-radius: 14px;
+  background: #e2f2fc;
+}
+.game-shell .pocket-dialog .odds h3 {
+  margin: 0;
+  font-size: 20px;
+}
+.game-shell .pocket-dialog .odds > div > span {
+  font-size: 15px;
+}
+@media (max-width: 970px) and (min-width: 701px) {
+  .game-shell .pocket-dialog {
+    grid-template-columns: 142px minmax(0, 1fr);
+    column-gap: 10px;
+    padding-right: 18px;
+  }
+  .game-shell .pocket-dialog .pocket-categories button {
+    width: 142px;
+    font-size: 21px;
+    padding-left: 8px;
+    gap: 5px;
+  }
+  .game-shell .pocket-dialog .pocket-categories .icon {
+    width: 36px;
+    height: 36px;
+    flex-basis: 36px;
+  }
+  .game-shell .pocket-dialog .fish-collection.has-detail {
+    grid-template-columns: minmax(0, 1fr) 172px;
+    gap: 12px;
+  }
+  .game-shell .pocket-dialog .fish-detail > .fish-image {
+    width: 154px;
+    height: 180px;
+  }
+  .game-shell .pocket-dialog .fish-detail h3 {
+    font-size: 28px;
+  }
+  .game-shell .pocket-dialog .fish-card h3 {
+    font-size: 17px;
+  }
+  .game-shell .pocket-dialog .fish-card p {
+    font-size: 17px;
+  }
+  .game-shell .pocket-dialog .gear h3 {
+    font-size: 21px;
+  }
+  .game-shell .pocket-dialog .gear button {
+    font-size: 18px;
+  }
+  .game-shell .pocket-dialog .gear .price {
+    font-size: 22px;
+  }
+}
+@media (max-width: 700px) {
+  .game-shell .pocket-dialog {
+    width: calc(100vw - 16px);
+    max-width: none;
+    height: calc(100dvh - 34px);
+    max-height: none;
+    padding: 12px 14px;
+    grid-template-columns: 64px minmax(0, 1fr);
+    grid-template-rows: 76px minmax(0, 1fr) 66px;
+    column-gap: 10px;
+    border-radius: 24px;
+  }
+  .game-shell .pocket-dialog > .modal-header {
+    height: 76px;
+    gap: 12px;
+  }
+  .game-shell .pocket-dialog .modal-header h2 {
+    left: -8px;
+    top: -16px;
+    width: 182px;
+    height: 80px;
+    font-size: 32px;
+    padding-right: 16px;
+  }
+  .game-shell .pocket-dialog .modal-header .modal-emblem {
+    width: 40px;
+    height: 40px;
+  }
+  .game-shell .pocket-dialog .modal-header .balance {
+    font-size: 21px;
+    min-height: 40px;
+    margin-top: 0;
+    gap: 4px;
+  }
+  .game-shell .pocket-dialog .modal-header .balance .icon {
+    width: 26px;
+    height: 26px;
+  }
+  .game-shell .pocket-dialog .modal-header .icon-button,
+  .game-shell .pocket-dialog .modal-header .icon-button .icon {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    min-height: 40px;
+  }
+  .game-shell .pocket-dialog > .pocket-categories {
+    padding-top: 12px;
+    gap: 8px;
+  }
+  .game-shell .pocket-dialog .pocket-categories button {
+    width: 64px;
+    height: 64px;
+    padding: 0 3px 3px 0;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2px;
+    font-size: 12px;
+  }
+  .game-shell .pocket-dialog .pocket-categories .icon {
+    width: 30px;
+    height: 30px;
+    flex: 0 0 30px;
+  }
+  .game-shell .pocket-dialog .fish-collection.has-detail {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .game-shell .pocket-dialog .fish-detail {
+    display: none;
+  }
+  .game-shell .pocket-dialog .fish-tray {
+    padding: 12px 8px;
+  }
+  .game-shell .pocket-dialog .fish-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+  .game-shell .pocket-dialog .fish-card {
+    height: 158px;
+    min-height: 158px;
+    padding: 6px 2px;
+  }
+  .game-shell .pocket-dialog .fish-select .fish-image,
+  .game-shell .pocket-dialog .fish-card > .fish-image,
+  .game-shell .pocket-dialog .fish-card > .fish-select {
+    height: 66px;
+    min-height: 66px;
+  }
+  .game-shell .pocket-dialog .fish-card h3 {
+    font-size: 15px;
+    line-height: 22px;
+  }
+  .game-shell .pocket-dialog .fish-card p {
+    font-size: 16px;
+    line-height: 20px;
+  }
+  .game-shell .pocket-dialog .stars .icon {
+    width: 18px;
+    height: 18px;
+  }
+  .game-shell .pocket-dialog > .inventory-footer {
+    margin: 0;
+    gap: 5px;
+    padding-top: 8px;
+  }
+  .game-shell .pocket-dialog .inventory-footer > span {
+    font-size: 14px;
+  }
+  .game-shell .pocket-dialog .inventory-footer button,
+  .game-shell .pocket-dialog .inventory-footer button.coral {
+    width: 108px;
+    height: 42px;
+    min-height: 42px;
+    padding: 0 4px 3px;
+    gap: 3px;
+    font-size: 16px;
+  }
+  .game-shell .pocket-dialog .inventory-footer button .icon {
+    width: 22px;
+    height: 22px;
+  }
+  .game-shell .pocket-dialog .gear-grid {
+    grid-template-columns: 1fr;
+    height: auto;
+    padding: 10px;
+    gap: 10px;
+  }
+  .game-shell .pocket-dialog .gear {
+    height: 320px;
+    border-right: 0;
+    border-bottom: 1px solid #bdd9ee;
+    grid-template-rows: 130px 40px 38px minmax(0, 1fr);
+  }
+  .game-shell .pocket-dialog .gear h3 {
+    font-size: 23px;
+  }
+  .game-shell .pocket-dialog .gear button {
+    max-width: 220px;
+    font-size: 22px;
+  }
+  .game-shell .pocket-dialog .bait-grid,
+  .game-shell .pocket-dialog .bait-shop-list {
+    grid-template-columns: 1fr;
+  }
+  .game-shell .pocket-dialog .bait {
+    grid-template-columns: 60px minmax(0, 1fr);
+    padding: 10px;
+  }
+  .game-shell .pocket-dialog .bait > .icon {
+    width: 60px;
+    height: 60px;
+  }
+  .game-shell .pocket-dialog .bait h3 {
+    font-size: 17px;
+  }
+  .game-shell .pocket-dialog .bait-actions button {
+    font-size: 18px;
+    width: 116px;
+  }
+  .game-shell .pocket-dialog .bait-requirement {
+    font-size: 14px;
+  }
+  .game-shell .pocket-dialog .quantity {
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+  .game-shell .pocket-dialog .quantity > span {
+    font-size: 15px;
+  }
+  .game-shell .pocket-dialog .quantity input {
+    width: 48px;
+  }
+  .game-shell .pocket-dialog .quantity button {
+    min-width: 30px;
+    font-size: 16px;
+    padding-inline: 7px;
+  }
+  .game-shell .pocket-dialog .collection-toolbar {
+    flex-wrap: wrap;
+    font-size: 16px;
+    gap: 8px;
+  }
+  .game-shell .pocket-dialog .keyboard-guide {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Explicit reset for previous modal typography and state styles. */
+.game-shell .pocket-dialog .modal-header h2 {
+  min-width: 0;
+}
+.game-shell .pocket-dialog .collection-toolbar.inventory-count {
+  display: none;
+}
+.game-shell .pocket-dialog .inventory-footer > span {
+  flex: 1;
+  text-align: left;
+}
+.game-shell .pocket-dialog .gear.pocket-equipped button:disabled,
+.game-shell .pocket-dialog.pocket-bag .bait.pocket-equipped button:disabled {
+  border: 0;
+  border-image: none;
+  background: url("/assets/redesign/pocket-button-blue.png") center / 100% 100%
+    no-repeat;
+  color: #fff;
+  text-shadow: 0 1px 1px #1d76bd;
+}
+.game-shell .pocket-dialog .gear.pocket-equipped button:disabled {
+  min-height: 52px;
+  height: 52px;
+}
+.game-shell .pocket-dialog.pocket-bag .bait.pocket-equipped button:disabled {
+  min-height: 44px;
+  height: 44px;
+}
+.game-shell .pocket-dialog .fish-card h3.long-name {
+  font-size: 14px;
+  line-height: 26px;
+}
+.game-shell .pocket-dialog .probability-summary {
+  display: block;
+  width: auto;
+  min-width: 0;
+  min-height: 0;
+  margin: 12px 0 0;
+  padding: 12px;
+  border: 1px solid #bddbf2;
+  border-radius: 16px;
+  border-image: none;
+  background: #eaf6fe;
+  color: #244f74;
+  font-size: 17px;
+}
+.game-shell .pocket-dialog .probability-summary > div:first-child {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  padding: 0;
+  margin: 0;
+  width: auto;
+  min-width: 0;
+}
+.game-shell .pocket-dialog .probability-summary > div:first-child > .icon {
+  width: 36px;
+  height: 36px;
+}
+.game-shell .pocket-dialog .probability-summary > div:first-child > span {
+  font-size: 18px;
+  line-height: 26px;
+  white-space: nowrap;
+  word-break: keep-all;
+}
+.game-shell .pocket-dialog .probability-values {
+  width: 100%;
+  min-width: 0;
+  padding: 0;
+  margin: 0;
+}
+.game-shell .pocket-dialog .probability-values header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  gap: 12px;
+  padding: 8px 0;
+  margin: 0;
+  min-height: 40px;
+  border: 0;
+  background: none;
+  font-size: 17px;
+}
+.game-shell .pocket-dialog .probability-values header > span {
+  white-space: nowrap;
+}
+.game-shell .pocket-dialog .probability-values header button {
+  flex: 0 0 104px;
+  width: 104px;
+  min-width: 104px;
+  min-height: 34px;
+  height: 34px;
+  padding: 0 8px 3px;
+  border: 0;
+  background: url("/assets/redesign/pocket-button-blue.png") center / 100% 100%
+    no-repeat;
+  color: #fff;
+  font-size: 16px;
+}
+.game-shell .pocket-dialog .probability-values > div {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  align-items: start;
+  gap: 8px;
+  padding: 0;
+  margin: 0;
+}
+.game-shell .pocket-dialog .probability-values > div > span {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  min-width: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background: none;
+  font-size: 15px;
+  line-height: 20px;
+  white-space: nowrap;
+}
+.game-shell .pocket-dialog .probability-values .stars {
+  width: auto;
+  min-height: 18px;
+  height: 18px;
+  gap: 0;
+}
+.game-shell .pocket-dialog .probability-values .stars img {
+  width: 14px;
+  height: 14px;
+}
+.game-shell .pocket-dialog .probability-summary > p {
+  font-size: 15px;
+  margin: 10px 0 0;
+}
+@media (max-width: 700px) {
+  .game-shell .pocket-dialog .probability-values > div {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+  }
+  .game-shell .pocket-dialog .probability-summary > div:first-child > span {
+    font-size: 15px;
+  }
+  .game-shell .pocket-dialog .probability-values header {
+    font-size: 14px;
+    gap: 8px;
+  }
+  .game-shell .pocket-dialog .probability-values header button {
+    flex-basis: 90px;
+    width: 90px;
+    min-width: 90px;
+    font-size: 14px;
+  }
+}
+.game-shell .pocket-dialog .gear-grid,
+.game-shell .pocket-dialog .fish-tray {
+  position: relative;
+  isolation: isolate;
+  background: none;
+}
+.game-shell .pocket-dialog .gear-grid::before,
+.game-shell .pocket-dialog .fish-tray::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: url("/assets/redesign/pocket-tray.png") center / 100% 100%
+    no-repeat;
+  opacity: 0.55;
+  pointer-events: none;
+}
+.game-shell .pocket-dialog .gear-grid {
+  padding-top: 42px;
+}
+.game-shell .pocket-dialog .gear.pocket-equipped {
+  background-color: #d9f5fc;
+  background-blend-mode: multiply;
+}
+@media (max-width: 700px) {
+  .game-shell .pocket-dialog .gear-grid {
+    padding-top: 10px;
+  }
+}
+.game-shell .pocket-dialog .pocket-categories button:focus {
+  outline: none;
+  box-shadow: none;
+}
+.game-shell .pocket-dialog .pocket-categories button:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+  text-decoration-thickness: 2px;
+}
+.game-shell .pocket-dialog .gear.pocket-equipped button:disabled,
+.game-shell .pocket-dialog.pocket-bag .bait.pocket-equipped button:disabled {
+  opacity: 1;
+  filter: none;
+}
+.game-shell .pocket-dialog .quantity {
+  padding: 4px 3px 5px;
+  min-height: 48px;
+  height: auto;
+  overflow: visible;
+  flex-wrap: wrap;
+}
+.game-shell .pocket-dialog .quantity > span {
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+.game-shell .pocket-dialog .quantity input[type="number"] {
+  appearance: textfield;
+  -moz-appearance: textfield;
+  width: 76px;
+  min-width: 76px;
+  height: 40px;
+  min-height: 40px;
+  border: 1px solid #a9d0ed;
+  border-image: none;
+  padding: 0 8px;
+  border-radius: 9px;
+  font-size: 20px;
+  line-height: 38px;
+  text-align: center;
+  color: #164777;
+  background: #fff;
+}
+.game-shell .pocket-dialog .quantity input::-webkit-inner-spin-button,
+.game-shell .pocket-dialog .quantity input::-webkit-outer-spin-button {
+  appearance: none;
+  -webkit-appearance: none;
+  margin: 0;
+}
+.game-shell .pocket-dialog .modal-header::after {
+  content: "";
+  position: absolute;
+  width: 110px;
+  height: 40px;
+  left: 184px;
+  top: 30px;
+  z-index: -1;
+  background: url("/assets/redesign/pocket-wave.png") center / contain no-repeat;
+  pointer-events: none;
+}
+@media (max-width: 700px) {
+  .game-shell .pocket-dialog .modal-header::after {
+    width: 70px;
+    height: 28px;
+    left: 122px;
+    top: 28px;
+  }
+}
+.game-shell .pocket-dialog .daily-bait-notice {
+  margin: 0 0 10px;
+  color: #426b8f;
+  font-size: 14px;
+  line-height: 1.5;
+  word-break: keep-all;
+}
+@media (max-width: 700px) {
+  .game-shell .pocket-dialog {
+    grid-template-rows: 100px minmax(0, 1fr) 66px;
+  }
+  .game-shell .pocket-dialog > .modal-header {
+    height: 100px;
+  }
+  .game-shell .pocket-dialog .modal-header .balance {
+    position: absolute;
+    right: 0;
+    top: 58px;
+    min-height: 28px;
+    height: 28px;
+    font-size: 20px;
+  }
+  .game-shell .pocket-dialog .modal-header .icon-button {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}
+
+@media (min-width: 971px) {
+  .game-shell .pocket-dialog .fish-collection.has-detail {
+    gap: 10px;
+    max-height: 420px;
+  }
+  .game-shell .pocket-dialog .fish-tray {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .game-shell .pocket-dialog .fish-grid {
+    gap: 12px;
+  }
+}
+.game-shell .pocket-dialog input:focus-visible,
+.game-shell .pocket-dialog select:focus-visible {
+  outline: 2px solid #438fd6;
+  outline-offset: 2px;
+}
+@media (min-width: 971px) {
+  .game-shell .pocket-dialog.pocket-shop {
+    column-gap: 10px;
+  }
+  .game-shell .pocket-dialog.pocket-shop > .pocket-categories {
+    padding-top: 28px;
+  }
+  .game-shell .pocket-dialog .gear.pocket-equipped {
+    position: relative;
+    isolation: isolate;
+    background: none;
+  }
+  .game-shell .pocket-dialog .gear.pocket-equipped::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: 0 10px;
+    border-radius: 24px;
+    background: #d9f5fc url("/assets/redesign/pocket-panel.png") center / 100%
+      100% no-repeat;
+    background-blend-mode: multiply;
+    pointer-events: none;
+  }
+}

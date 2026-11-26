@@ -1,0 +1,17 @@
+{
+  "tool": "built-in image_gen",
+  "reference": "design/2026-11-26-sky-blue/04-character-select.png",
+  "source": "art/source/blue-male-portrait.png",
+  "nativeSize": {
+    "width": 1122,
+    "height": 1402
+  },
+  "runtime": "public/assets/redesign/male_portrait.png",
+  "runtimeSize": {
+    "width": 512,
+    "height": 640
+  },
+  "processing": "Trim transparent gutter, contain within496x624, add8px transparent padding; no recolor/repainting",
+  "alpha": "RGBA; all four source corners alpha0; inspected runtime on pale-blue matte",
+  "prompt": "Use case: background-extraction / identity-preserve.\nAsset type: full-body UI character portrait cutout from approved game character-selection reference.\nPrimary request: extract/recreate ONLY THE BOY ON THE LEFT, exactly matching his face, hair, clothing, proportions, front-facing stance and joyful open-mouth smile in attached reference. Genuine transparent RGBA background.\nBoy: oversized tousled warm brown wavy hair, large glossy dark oval eyes, tiny eyebrows, rosy cheeks, tiny nose, wide open happy smiling mouth; extremely short cute2-head body; teal green cropped jacket with gold buttons and cuffed sleeves, cream/beige shirt, short beige cuffed pants, stout brown ankle boots; small hands resting at sides. Original selected character identity and silhouette must stay identical.\nComposition: centered, ENTIRE BODY from hair top to boot soles visible, natural standing frontal pose as source, fill about90% of tall canvas, very little transparent gutter. Target high resolution1024x1280 or portrait1024x1536 to preserve fine details. Remove girl, platforms, all cast/contact shadows, lake, UI, name, text, buttons, frames. NO ground disc, NO pedestal, no floating symbols, no glow, no outline. Preserve3Dcasual polished toy-like material/shading on subject only. Background must be TRUE alpha transparency, never white/black/checkerboard painted backdrop. No realism."
+}

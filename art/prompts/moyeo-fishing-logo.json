@@ -1,0 +1,9 @@
+{
+  "brand": "모여라 낚시터",
+  "tool": "image_gen",
+  "prompt": "Edit this exact transparent game logo to rename the Korean game. Replace ALL existing Korean title lettering '물가마을' with the EXACT new Korean title '모여라 낚시터'. Spell precisely: 모 여 라, space, 낚 시 터. No other words. Keep the same adorable blue fish, fishing rod arch, green leaves, wooden fishing sign, rope and red-white bobber, consistent cute high quality 3D casual game style and soft shading. Make the lettering centered on the wood sign, bold, crisp, easy to read. It is fine to place '모여라' as a smaller upper line and '낚시터' as a larger lower line so the new six-syllable title fits comfortably. Keep margins around all lettering, do not clip anything. Preserve transparent alpha around the entire logo. No backdrop, no extra subtitle, no watermark. This is a production game title logo replacement.",
+  "reference": "art/source/blue-logo.png",
+  "source": "art/source/moyeo-fishing-logo.png",
+  "runtime": "public/assets/redesign/logo.png",
+  "packing": "node --import tsx scripts/pack-brand-logo.ts"
+}

@@ -1,0 +1,30 @@
+{
+  "tool": "built-in image_gen",
+  "date": "2026-11-26",
+  "reference": "art/references/blue-primary-button-reference.png",
+  "source": "art/source/blue-button-primary-v2.png",
+  "runtime": "public/assets/redesign/button-primary.png",
+  "prompt": "Use case: precise-object-edit, production game UI asset.\nEdit target FIRST attached image: exact blue capsule '다음' button reference crop. Supporting SECOND image full selected screen locates same button bottomleft.\nProduce ONLY this EXACT blue raised capsule button, remove Korean text '다음' completely and also remove its text drop shadow. Remove surrounding navy page; outside button including shadow should be genuinely transparent alpha. Keep physical button shape, dimensions/proportions, colors and material EXACTLY reference, not a generic substitute.\nTarget button crop1024x260 (~3.94:1 aspect), horizontal straight-on orthographic UI. Strong rich true cobalt/royal-blue face, brighter sky-blue upper-left illumination, smooth uniform center. VERY CRISP fine white/pale-blue specular highlight along upperleft rim, sharp THIN brightblue beveled inset edge, distinct darkerblue lower raised lip and narrow dark contactshadow beneath. Precisely defined hard edges, highresolution game-render finish, not blurred airbrushed pill. NO diffuse outerglow/neon halo, but DO preserve the actual sharp pale-blue physical rim highlight visible in reference. Preserve reference corner radius/end caps and elegantly straight long center.\nSingle blank button asset only, no text, icons, letters, labels, glyphs, secondbutton, grid, extra elements or background. Entire face clean uninterrupted blue where text was. Exact matching blueprint from first image; don't simplify border bevel or desaturate colors. Native transparent background.",
+  "sourceDimensions": [
+    2170,
+    725
+  ],
+  "runtimeDimensions": [
+    1024,
+    260
+  ],
+  "transparent": true,
+  "sourceCrop": {
+    "left": 44,
+    "top": 107,
+    "width": 2079,
+    "height": 528
+  },
+  "nineSlice": {
+    "top": 25,
+    "right": 145,
+    "bottom": 35,
+    "left": 145
+  },
+  "notes": "Crisp reference-matched bevel/rim and darklowerlip; alpha-guttertrim/proportionaldownscaleonly."
+}

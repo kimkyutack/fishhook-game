@@ -1,11 +1,23 @@
 import { FISH } from "../../shared/catalog";
 export const asset = (type: string, id: string) =>
-  `${import.meta.env.VITE_ASSET_BASE || "/assets"}/${type}/${id}.png`;
+  `${import.meta.env.VITE_ASSET_BASE || "/assets"}/${(type === "characters" && id.endsWith("_portrait")) || (type === "equipment" && ["bag", "close", "rod_1", "rod_2", "rod_3", "worm", "mix", "live", "special"].includes(id)) ? "redesign" : type}/${id}.png`;
 export function Icon({ id, size = 28 }: { id: string; size?: number }) {
   return (
     <img
       className="icon"
-      src={asset("equipment", id)}
+      src={
+        ["coin", "close"].includes(id)
+          ? asset(
+              "redesign",
+              id === "coin" ? "pocket-icon-coin" : `quick-${id}`,
+            )
+          : asset(
+              id === "book" || id.startsWith("crown_")
+                ? "redesign"
+                : "equipment",
+              id,
+            )
+      }
       width={size}
       height={size}
       alt=""

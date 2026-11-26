@@ -1,16 +1,25 @@
 import { MAP, distance, fishingSpot, lineClear, vectors } from "../config/map";
 import type { PublicPlayer } from "./protocol";
+import {
+  KNOCKDOWN_MS,
+  GET_UP_MS,
+  KICK_RANGE,
+  KICK_MIN_DOT,
+  KICK_ANIMATION_MS,
+} from "./kick";
 export function motionBusy(p: PublicPlayer, now: number) {
   const duration =
-    p.motion === "run" || p.motion === "kick"
-      ? 1050
-      : p.motion === "startled"
-        ? 650
-        : p.motion === "sit_down"
-          ? 430
-          : p.motion === "reel_in"
-            ? 750
-            : 0;
+    p.motion === "kick"
+      ? KICK_ANIMATION_MS
+      : p.motion === "run"
+        ? 1050
+        : p.motion === "startled" || p.motion === "fallen"
+          ? KNOCKDOWN_MS
+          : p.motion === "sit_down"
+            ? 430
+            : p.motion === "reel_in"
+              ? 750
+              : 0;
   return now - p.stateAt < duration;
 }
 export function targetFor(
@@ -18,17 +27,26 @@ export function targetFor(
   players: PublicPlayer[],
   now: number,
 ) {
-  const v = vectors[me.direction];
+  const facing = me.facing ?? me.direction;
+  const v = facing.includes("-")
+    ? {
+        x: facing.endsWith("left") ? -Math.SQRT1_2 : Math.SQRT1_2,
+        y: facing.startsWith("up") ? -Math.SQRT1_2 : Math.SQRT1_2,
+      }
+    : vectors[facing as keyof typeof vectors];
   return players
     .filter(
       (p) =>
         p.id !== me.id &&
-        p.castStartedAt !== undefined &&
-        now - p.castStartedAt >= 1000 &&
-        p.protectedUntil <= now &&
-        distance(me, p) <= 96 &&
-        distance(me, p) > 1 &&
-        ((p.x - me.x) * v.x + (p.y - me.y) * v.y) / distance(me, p) > 0.45 &&
+        !(
+          (p.motion === "fallen" &&
+            now - p.stateAt < KNOCKDOWN_MS + GET_UP_MS) ||
+          (p.motion === "startled" && now - p.stateAt < KNOCKDOWN_MS)
+        ) &&
+        distance(me, p) <= KICK_RANGE &&
+        (distance(me, p) < 1 ||
+          ((p.x - me.x) * v.x + (p.y - me.y) * v.y) / distance(me, p) >=
+            KICK_MIN_DOT) &&
         lineClear(me, p),
     )
     .sort(
@@ -50,7 +68,7 @@ export function actionFor(
     };
   if (distance(me, MAP.shop) <= 96) return { label: "상점", type: "shop" };
   const t = targetFor(me, players, now);
-  if (t) return { label: "방해", type: "sabotage", target: t.id };
+  if (t) return { label: "발차기", type: "kick", target: t.id };
   if (fishingSpot(me)) return { label: "낚시", type: "cast" };
   return {
     label: me.motion === "seated_idle" ? "일어서기" : "앉기",

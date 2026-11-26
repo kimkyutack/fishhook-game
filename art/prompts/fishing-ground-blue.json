@@ -1,0 +1,14 @@
+{
+  "tool": "built-in image_gen",
+  "requestedDimensions": "3072x2048",
+  "actualDimensions": "1536x1024",
+  "source": "art/source/fishing-ground-blue.png",
+  "runtime": "public/assets/redesign/fishing-ground.png",
+  "optimizedRuntime": "public/assets/redesign/fishing-ground.webp",
+  "references": [
+    "design/2026-11-26-sky-blue/02-world-overview.png",
+    "design/2026-11-26-sky-blue/01-gameplay.png"
+  ],
+  "prompt": "Use case: precise-object-edit.\nAsset type: actual playable game's static environment base map, NOT screenshot/mockup.\nTarget dimensions 3072x2048, as high detail as possible, 3:2 ratio.\nEDIT TARGET FIRST IMAGE: approved entire fishing-ground environment. SECOND IMAGE: gameplay material/style and palette reference only.\nPrimary request: REMOVE EVERY PERSON/CHARACTER from first image, including every boy/girl on every dock and path. REMOVE all bobbers, fishing lines, fishing rods/chairs/buckets associated with people, ALL fish silhouettes in water. Reconstruct the empty wood, gravel or water behind them. This must be clean vacant environment to place real multiplayer avatars over.\nPreserve first image's EXACT terrain geography, composition, natural shoreline, bridges, docks, kiosk, pathways, lighting, camera, tree placements, scenery and blue palette; do not invent new landforms. Keep small bait kiosk, empty roof shelters, lanterns, reeds, rocks, shrubs, natural fishless water ripples/caustics. Every wooden bridge's two ends physically connects dry land, every fishing pier connects walkable shore, no visual dead gaps. Keep broad clear walkable gravel route around left/south lake and through bridge north, sufficient width for player movement.\nSTYLE: high-quality polished cozy 3D casual fishing game, same overhead orthographic 2.5D camera, no perspective horizon, green forests, golden cedar piers, sky blue and true blue lake depth, rich material detail and shadows.\nNo watermarks, no text, no UI, no labels, NO figures/animals/fish/people/bobbers/lines at all. Preserve the illustrated identity and proportions of environment. Output solely the complete empty environment image, edge to edge.",
+  "review": "Visually verified removal of people, fishing equipment, bobbers, lines and fish silhouettes. Terrain layout, piers, blue water, kiosk and bridges preserved. Source is native1536x1024, not falsely described as3072."
+}

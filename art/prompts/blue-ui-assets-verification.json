@@ -1,0 +1,89 @@
+{
+  "tool": "built-in image_gen",
+  "date": "2026-11-26",
+  "assets": [
+    {
+      "id": "panel",
+      "source": "art/source/blue-panel.png",
+      "sourceDimensions": [
+        1448,
+        1086
+      ],
+      "runtime": "public/assets/redesign/panel.png",
+      "runtimeDimensions": [
+        1024,
+        734
+      ],
+      "transparent": true,
+      "processing": "Transparent gutter trim and proportional downscale to1024px wide, no repaint or distortion",
+      "sourceCrop": {
+        "left": 16,
+        "top": 35,
+        "width": 1416,
+        "height": 1015
+      },
+      "nineSlice": {
+        "top": 74,
+        "right": 74,
+        "bottom": 74,
+        "left": 74
+      }
+    },
+    {
+      "id": "button-primary",
+      "source": "art/source/blue-button-primary-v2.png",
+      "sourceDimensions": [
+        2170,
+        725
+      ],
+      "runtime": "public/assets/redesign/button-primary.png",
+      "runtimeDimensions": [
+        1024,
+        260
+      ],
+      "transparent": true,
+      "processing": "Transparent gutter trim and proportional downscale to1024px wide, no repaint or distortion",
+      "sourceCrop": {
+        "left": 44,
+        "top": 107,
+        "width": 2079,
+        "height": 528
+      },
+      "nineSlice": {
+        "top": 25,
+        "right": 145,
+        "bottom": 35,
+        "left": 145
+      },
+      "revisionPrompt": "art/prompts/blue-button-primary-v2.json",
+      "previousRuntime": "art/source/blue-button-primary-v1-runtime.png"
+    },
+    {
+      "id": "button-secondary",
+      "source": "art/source/blue-button-secondary.png",
+      "sourceDimensions": [
+        2172,
+        724
+      ],
+      "runtime": "public/assets/redesign/button-secondary.png",
+      "runtimeDimensions": [
+        1024,
+        233
+      ],
+      "transparent": true,
+      "processing": "Transparent gutter trim and proportional downscale to1024px wide, no repaint or distortion",
+      "sourceCrop": {
+        "left": 18,
+        "top": 121,
+        "width": 2136,
+        "height": 485
+      },
+      "nineSlice": {
+        "top": 30,
+        "right": 145,
+        "bottom": 30,
+        "left": 145
+      }
+    }
+  ]
+}

@@ -1,6 +1,12 @@
+import { CHAT_LIFETIME, type ChatMessage } from "../../shared/chat";
+import { loadContinuousTerrain, drawContinuousTerrain } from "./terrain";
+import { MovementPrediction } from "./prediction";
+import { RouteSteering, KeyboardSteering } from "./navigation";
 import Phaser from "phaser";
 import {
   MAP,
+  TRAILS,
+  walkingRoute,
   SPOTS,
   move,
   fishingSpot,
@@ -9,20 +15,33 @@ import {
 } from "../../config/map";
 import { BALANCE } from "../../config/balance";
 import { FISH } from "../../shared/catalog";
-import { actionFor, motionBusy } from "../../shared/interaction";
-import type { PublicPlayer, Event } from "../../shared/protocol";
+import { targetFor, motionBusy } from "../../shared/interaction";
+import type { PublicPlayer, Event, Motion } from "../../shared/protocol";
 import { gameStore, connection, serverTime } from "../network/store";
 import {
   MOTIONS,
+  DIAGONAL_FISHING,
+  FISHING_ACTIONS,
   DIRECTIONS,
   ROOT,
   ROD_ANCHORS,
   ROD_STATES,
   visibleMotion,
+  locomotionPose,
   grip,
 } from "./animations";
+import {
+  actionDirection,
+  movementFacing,
+  cardinalDirection,
+  type Facing,
+} from "../../shared/movement";
+import { cameraMapView, type MapView } from "./minimap";
+import { FALL_DIRECTIONS, fallFrame } from "../../shared/kick";
 const base = import.meta.env.VITE_ASSET_BASE || "/assets";
 interface Actor {
+  lastMotion?: Motion;
+  idleFrozen?: boolean;
   body: Phaser.GameObjects.Sprite;
   shadow: Phaser.GameObjects.Image;
   chair: Phaser.GameObjects.Image;
@@ -34,6 +53,9 @@ interface Actor {
   state: PublicPlayer;
   samples: { t: number; x: number; y: number }[];
   shownEvent: number;
+  bubble: Phaser.GameObjects.Image;
+  speech: Phaser.GameObjects.Text;
+  chat?: ChatMessage;
   escape?: {
     at: number;
     from: { x: number; y: number };
@@ -48,13 +70,25 @@ export class WorldScene extends Phaser.Scene {
   lastSend = 0;
   lastInput = "";
   direction: Direction = "down";
+  facing: Facing = "down";
+  lastMapView = "";
+  lastMapUpdate = 0;
+  onMapView = (_view: MapView) => {};
   prediction: { x: number; y: number } | null = null;
+  predictor: MovementPrediction | null = null;
   unsubscribe?: () => void;
+  detach = () => {};
+  readyForUpdates = false;
+  route: { x: number; y: number }[] = [];
+  private routeSteering = new RouteSteering();
+  private keyboardSteering = new KeyboardSteering();
   ripples: Phaser.GameObjects.Sprite[] = [];
+  terrainLayers: Phaser.GameObjects.Image[] = [];
   debug!: Phaser.GameObjects.Graphics;
   lastEvent: Event | null = null;
   onReady = () => {};
-  primary = () => {};
+  kick = () => {};
+  fishing = () => {};
   inventory = () => {};
   closeModal = () => {};
   profile = (id: string) => {};
@@ -62,6 +96,31 @@ export class WorldScene extends Phaser.Scene {
     super("world");
   }
   preload() {
+    for (const g of ["male", "female"])
+      this.load.spritesheet(`${g}_fall`, `${base}/redesign/${g}_fall.png`, {
+        frameWidth: 192,
+        frameHeight: 192,
+      });
+    for (const g of ["male", "female"])
+      this.load.spritesheet(
+        `${g}_fishing_diagonal`,
+        `${base}/redesign/${g}_fishing_diagonal.png`,
+        { frameWidth: 192, frameHeight: 192 },
+      );
+    for (const facing of ["down-left", "down-right", "up-left", "up-right"])
+      this.load.image(
+        `chair_${facing}`,
+        `${base}/redesign/chair_${facing}.png`,
+      );
+    this.load.image("chat-bubble", `${base}/redesign/areas-chat.png`);
+    this.load.image("fishing-ground", `${base}/redesign/fishing-ground.webp`);
+    loadContinuousTerrain(this, base);
+    for (const g of ["male", "female"])
+      this.load.spritesheet(
+        `${g}_diagonal`,
+        `${base}/redesign/${g}_diagonal.png`,
+        { frameWidth: 192, frameHeight: 192 },
+      );
     for (const g of ["male", "female"])
       for (const d of DIRECTIONS)
         this.load.spritesheet(`${g}_${d}`, `${base}/characters/${g}_${d}.png`, {
@@ -125,6 +184,31 @@ export class WorldScene extends Phaser.Scene {
     });
   }
   create() {
+    this.readyForUpdates = true;
+    for (const g of ["male", "female"])
+      for (const [row, d] of ["down_right", "up_right"].entries())
+        for (const [motion, spec] of Object.entries(DIAGONAL_FISHING))
+          this.anims.create({
+            key: `${g}_${d}_${motion}`,
+            frames: this.anims.generateFrameNumbers(`${g}_fishing_diagonal`, {
+              start: row * 20 + spec.start,
+              end: row * 20 + spec.start + spec.count - 1,
+            }),
+            frameRate: spec.fps,
+            repeat: spec.loop ? -1 : 0,
+          });
+
+    for (const g of ["male", "female"])
+      for (const [row, diagonal] of ["down_right", "up_right"].entries())
+        this.anims.create({
+          key: `${g}_${diagonal}_walk`,
+          frames: this.anims.generateFrameNumbers(`${g}_diagonal`, {
+            start: row * 6,
+            end: row * 6 + 5,
+          }),
+          frameRate: MOTIONS.walk.fps,
+          repeat: -1,
+        });
     for (const g of ["male", "female"])
       for (const d of DIRECTIONS)
         for (const [m, c] of Object.entries(MOTIONS))
@@ -139,167 +223,129 @@ export class WorldScene extends Phaser.Scene {
           });
     this.cameras.main.setBounds(0, 0, MAP.width, MAP.height);
     this.cameras.main.setZoom(
-      Math.max(0.75, Math.min(1.05, this.scale.height / 850)),
+      Math.max(0.6, Math.min(0.9, (this.scale.height / 1024) * 0.8)),
     );
     this.add
-      .tileSprite(0, 0, MAP.width, MAP.height, "grass")
+      .image(0, 0, "fishing-ground")
       .setOrigin(0)
+      .setDisplaySize(MAP.width, MAP.height)
       .setDepth(-1000);
-    this.add
-      .tileSprite(970, 820, 1460, 280, "stone")
-      .setOrigin(0)
-      .setDepth(-990);
-    this.add
-      .tileSprite(1340, 450, 340, 1200, "stone")
-      .setOrigin(0)
-      .setDepth(-990);
-    for (const r of MAP.waters) {
-      this.add
-        .nineslice(
-          r.x + r.w / 2,
-          r.y + r.h / 2,
-          "shore",
-          undefined,
-          r.w + 64,
-          r.h + 64,
-          60,
-          60,
-          60,
-          60,
-        )
-        .setDepth(-980);
-      this.add
-        .tileSprite(r.x, r.y, r.w, r.h, "water")
-        .setOrigin(0)
-        .setDepth(-970);
-    }
-    const b = MAP.bridge;
-    this.add.tileSprite(b.x, b.y, b.w, b.h, "wood").setOrigin(0).setDepth(-960);
-    for (const o of MAP.obstacles) {
-      const h = o.kind === "tree" ? 235 : o.kind === "stall" ? 210 : 90,
-        w = o.kind === "tree" ? 210 : o.kind === "stall" ? 300 : 115;
-      const layers =
-        o.kind === "stall" ? ["stall_back", "stall_front"] : [o.kind];
-      for (const [index, layer] of layers.entries())
-        this.add
-          .image(o.x + o.w / 2, o.y + o.h, layer)
-          .setOrigin(0.5, 0.88)
-          .setDisplaySize(w, h)
-          .setDepth(o.y + o.h + index);
-    }
+    this.terrainLayers = drawContinuousTerrain(this);
     const npc = this.add
-      .image(MAP.shop.x, MAP.shop.y, "npc")
-      .setDisplaySize(120, 120)
+      .image(MAP.shop.x - 50, MAP.shop.y - 20, "npc")
+      .setDisplaySize(230, 230)
       .setOrigin(0.5, 0.88)
-      .setDepth(MAP.shop.y);
+      .setDepth(MAP.shop.y - 20);
     this.tweens.add({
       targets: npc,
-      y: MAP.shop.y - 2,
+      y: npc.y - 2,
       duration: 1400,
       yoyo: true,
       repeat: -1,
       ease: "Sine.InOut",
     });
     this.add
-      .text(MAP.shop.x, MAP.shop.y - 110, "상점", {
-        fontFamily: "sans-serif",
-        fontSize: "18px",
-        color: "#234e43",
-        backgroundColor: "#fff6df",
-        padding: { x: 12, y: 6 },
+      .text(MAP.shop.x - 50, MAP.shop.y - 235, "상점", {
+        fontFamily: "NotoFishing, sans-serif",
+        fontSize: "20px",
+        color: "#ffffff",
+        backgroundColor: "#1b3558",
+        padding: { x: 15, y: 8 },
       })
       .setOrigin(0.5)
-      .setDepth(3000);
-    for (let i = 0; i < 44; i++) {
-      const x = 120 + ((i * 383) % 2800),
-        y = 530 + ((i * 241) % 1400);
-      if (
-        MAP.waters.some(
-          (r) =>
-            x > r.x - 50 &&
-            x < r.x + r.w + 50 &&
-            y > r.y - 50 &&
-            y < r.y + r.h + 50,
-        )
-      )
-        continue;
-      this.add
-        .image(x, y, "flowers")
-        .setDisplaySize(70, 70)
-        .setOrigin(0.5, 0.9)
-        .setDepth(y);
-    }
-    for (const r of MAP.waters) {
-      for (let i = 0; i < 4; i++)
-        this.add
-          .image(r.x + 80 + (i * (r.w - 140)) / 4, r.y + r.h - 35, "lily")
-          .setDisplaySize(75, 75)
-          .setDepth(-950);
-      this.add
-        .image(r.x + r.w - 70, r.y + r.h + 20, "reeds")
-        .setDisplaySize(100, 100)
-        .setOrigin(0.5, 0.85)
-        .setDepth(r.y + r.h + 20);
-    }
+      .setDepth(MAP.shop.y + 200);
     this.anims.create({
       key: "ripples",
       frames: this.anims.generateFrameNumbers("fx", { start: 0, end: 3 }),
       frameRate: 5,
       repeat: -1,
     });
-    for (const r of MAP.waters)
-      for (let i = 0; i < 4; i++) {
-        this.ripples.push(
-          this.add
-            .sprite(r.x + 70 + ((r.w - 140) * i) / 4, r.y + r.h * 0.4, "fx", 0)
-            .setDisplaySize(110, 80)
-            .setDepth(-955)
-            .setAlpha(0.28)
-            .play({ key: "ripples", delay: i * 100 }),
-        );
-      }
+    for (const [i, spot] of SPOTS.entries()) {
+      if (i % 4) continue;
+      this.ripples.push(
+        this.add
+          .sprite(spot.water.x, spot.water.y, "fx", 0)
+          .setDisplaySize(95, 60)
+          .setDepth(-950)
+          .setAlpha(0.18)
+          .play({ key: "ripples", delay: i * 80 }),
+      );
+    }
     this.debug = this.add.graphics().setDepth(10000);
     if (new URLSearchParams(location.search).has("debug")) {
-      this.debug.lineStyle(2, 0xdd4545, 0.8);
-      for (const r of [...MAP.waters, ...MAP.obstacles])
-        this.debug.strokeRect(r.x, r.y, r.w, r.h);
-      for (const s of SPOTS) {
-        this.debug.lineStyle(1, 0x2255ee, 0.5);
-        this.debug.strokeCircle(s.x, s.y, 8);
-        this.debug.lineBetween(s.x, s.y, s.water.x, s.water.y);
+      for (const trail of TRAILS) {
+        this.debug.lineStyle(2, 0x85bafa, 0.8);
+        for (let i = 1; i < trail.points.length; i++)
+          this.debug.lineBetween(
+            trail.points[i - 1].x,
+            trail.points[i - 1].y,
+            trail.points[i].x,
+            trail.points[i].y,
+          );
+      }
+      for (const spot of SPOTS) {
+        this.debug.lineStyle(1, 0xffffff, 0.6);
+        this.debug.strokeCircle(spot.x, spot.y, 8);
+        this.debug.lineBetween(spot.x, spot.y, spot.water.x, spot.water.y);
       }
     }
+    const pointerdown = (
+      pointer: Phaser.Input.Pointer,
+      objects: Phaser.GameObjects.GameObject[],
+    ) => {
+      if (this.blocked || objects.length || !this.prediction) return;
+      const goal = this.cameras.main.getWorldPoint(pointer.x, pointer.y);
+      this.routeSteering.reset();
+      this.route = walkingRoute(this.prediction, goal);
+    };
+    this.input.on("pointerdown", pointerdown);
     const keydown = (e: KeyboardEvent) => {
       if (
         this.blocked ||
+        e.ctrlKey ||
+        e.metaKey ||
+        e.altKey ||
         /INPUT|TEXTAREA|SELECT/.test((e.target as HTMLElement)?.tagName)
       )
         return;
       if (
-        ["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight", " "].includes(e.key)
+        ["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight", " "].includes(
+          e.key,
+        ) ||
+        ["KeyC", "KeyF", "KeyI"].includes(e.code)
       )
         e.preventDefault();
       if (e.key.startsWith("Arrow")) {
+        this.keyboardSteering.reset();
+        this.route = [];
         this.keys.add(e.key);
-        this.direction = (
-          {
-            ArrowUp: "up",
-            ArrowDown: "down",
-            ArrowLeft: "left",
-            ArrowRight: "right",
-          } as const
-        )[e.key as "ArrowUp"];
       }
       if (e.repeat) return;
-      if (e.key === " ") this.primary();
-      if (e.key.toLowerCase() === "i") this.inventory();
-      if (e.key.toLowerCase() === "c") connection.command({ type: "sit" });
+      if (e.code === "Space") this.kick();
+      if (e.code === "KeyF") {
+        this.flushMovement();
+        this.fishing();
+      }
+      if (e.code === "KeyI") this.inventory();
+      if (e.code === "KeyC") connection.command({ type: "sit" });
       if (e.key === "Escape") connection.command({ type: "cancel" });
     };
-    const keyup = (e: KeyboardEvent) => this.keys.delete(e.key);
+    const keyup = (e: KeyboardEvent) => {
+      const before = this.keyboardSteering.input(this.keys, performance.now());
+      this.keys.delete(e.key);
+      this.keyboardSteering.released(
+        !!before.dx && !!before.dy,
+        performance.now(),
+      );
+    };
     const release = () => {
       this.keys.clear();
-      connection.move(0, 0, this.direction);
+      this.keyboardSteering.reset();
+      this.route = [];
+      this.predictor?.flush((x, y, ms) =>
+        connection.move(x, y, this.direction, ms),
+      );
+      connection.move(0, 0, this.direction, 0);
       this.lastInput = "";
     };
     window.addEventListener("keydown", keydown);
@@ -309,15 +355,29 @@ export class WorldScene extends Phaser.Scene {
     this.unsubscribe = gameStore.subscribe(() => this.receive());
     this.receive();
     this.onReady();
-    this.events.once("shutdown", () => {
+    this.detach = () => {
+      this.readyForUpdates = false;
+      this.onMapView = () => {};
       this.unsubscribe?.();
+      this.unsubscribe = undefined;
       window.removeEventListener("keydown", keydown);
       window.removeEventListener("keyup", keyup);
       window.removeEventListener("blur", release);
       document.removeEventListener("visibilitychange", release);
-    });
+      this.input?.off("pointerdown", pointerdown);
+    };
+    this.events.once("shutdown", this.detach);
+    this.events.once("destroy", this.detach);
+  }
+  flushMovement() {
+    this.predictor?.flush((x, y, ms) =>
+      connection.move(x, y, this.direction, ms),
+    );
+    connection.move(0, 0, this.direction, 0);
   }
   receive() {
+    // Scene destruction and React hot replacement must never leave a live store callback.
+    if (!this.readyForUpdates || !this.sys?.displayList) return;
     const s = gameStore.get(),
       now = performance.now();
     const ids = new Set(s.players.map((p) => p.id));
@@ -328,6 +388,7 @@ export class WorldScene extends Phaser.Scene {
         });
         this.actors.delete(id);
       }
+    const latestChat = new Map(s.chat.map((m) => [m.playerId, m]));
     for (const p of s.players) {
       let a = this.actors.get(p.id);
       if (!a) {
@@ -335,53 +396,87 @@ export class WorldScene extends Phaser.Scene {
           body: this.add
             .sprite(p.x, p.y, `${p.gender}_${p.direction}`, 0)
             .setOrigin(ROOT.x, ROOT.y)
-            .setDisplaySize(136, 136)
+            .setDisplaySize(256, 256)
             .setInteractive({ useHandCursor: true }),
-          shadow: this.add.image(p.x, p.y, "shadow").setDisplaySize(64, 25),
+          shadow: this.add.image(p.x, p.y, "shadow").setDisplaySize(115, 44),
           chair: this.add
             .image(p.x, p.y, "chair_down")
-            .setDisplaySize(100, 100)
+            .setDisplaySize(185, 185)
             .setOrigin(0.5, 0.8),
           rod: this.add
             .image(p.x, p.y, "rod_1")
             .setOrigin(0.18, 0.84)
-            .setDisplaySize(72, 72),
+            .setDisplaySize(134, 134),
           line: this.add.image(0, 0, "line").setOrigin(0.5, 0),
-          bobber: this.add.image(0, 0, "bobber").setDisplaySize(25, 25),
+          bobber: this.add.image(0, 0, "bobber").setDisplaySize(38, 38),
           name: this.add
             .text(p.x, p.y, p.name, {
-              fontFamily: "sans-serif",
-              fontSize: "15px",
+              fontFamily: "NotoFishing, sans-serif",
+              fontSize: "24px",
               fontStyle: "bold",
-              color: "#254439",
-              stroke: "#fffaf0",
-              strokeThickness: 4,
+              color: "#ffffff",
+              stroke: "#17375b",
+              strokeThickness: 5,
             })
             .setOrigin(0.5),
           target: this.add.image(p.x, p.y, "target").setDisplaySize(34, 34),
+          bubble: this.add
+            .image(p.x, p.y, "chat-bubble")
+            .setOrigin(0.5, 1)
+            .setVisible(false),
+          speech: this.add
+            .text(p.x, p.y, "", {
+              fontFamily: "NotoFishing, sans-serif",
+              fontSize: "24px",
+              color: "#244f79",
+              align: "center",
+              wordWrap: { width: 280, useAdvancedWrap: true },
+            })
+            .setOrigin(0.5)
+            .setVisible(false),
           state: p,
           samples: [],
           shownEvent: 0,
         };
-        a.body.on("pointerdown", () => this.profile(p.id));
+        a.body.on("pointerdown", () => {
+          if (!this.blocked) this.profile(p.id);
+        });
         this.actors.set(p.id, a);
       }
+      const message = latestChat.get(p.id);
+      if (message && message.id !== a.chat?.id) {
+        a.chat = message;
+        a.speech.setText(message.text);
+      }
+      if (
+        p.id === s.self?.id &&
+        p.motion === "fallen" &&
+        (a.state.motion !== "fallen" || a.state.stateAt !== p.stateAt)
+      )
+        this.route = [];
       const changedSeq = a.state.seq !== p.seq;
+      const changedPosition = a.state.x !== p.x || a.state.y !== p.y;
       a.state = p;
-      a.samples.push({ t: now, x: p.x, y: p.y });
-      if (a.samples.length > 8) a.samples.shift();
+      if (changedSeq || changedPosition || !a.samples.length) {
+        a.samples.push({ t: now, x: p.x, y: p.y });
+        if (a.samples.length > 12) a.samples.shift();
+      }
       if (p.id === s.self?.id) {
+        if (!this.prediction) {
+          this.direction = p.direction;
+          this.facing = p.facing ?? p.direction;
+        }
+        if (!this.predictor) this.predictor = new MovementPrediction(p);
         if (
-          !this.prediction ||
-          (!this.keys.size && changedSeq) ||
-          p.castStartedAt !== undefined
-        )
-          this.prediction = { x: p.x, y: p.y };
-        else if (
-          changedSeq &&
-          Math.hypot(this.prediction.x - p.x, this.prediction.y - p.y) > 65
-        )
-          this.prediction = { x: p.x, y: p.y };
+          s.status !== "online" ||
+          p.castStartedAt !== undefined ||
+          motionBusy(p, serverTime())
+        ) {
+          this.predictor.reset(p);
+          this.prediction = this.predictor.position;
+        } else if (changedSeq || changedPosition || !this.prediction) {
+          this.prediction = this.predictor.reconcile(p, p.seq);
+        }
       }
     }
     if (s.event && s.event !== this.lastEvent) {
@@ -394,9 +489,9 @@ export class WorldScene extends Phaser.Scene {
       const a = this.actors.get(e.playerId);
       if (!a) return;
       const img = this.add
-        .image(a.state.x, a.state.y - 140, e.fishId)
-        .setDisplaySize(100, 100)
+        .image(a.state.x, a.state.y - 250, e.fishId)
         .setDepth(8000);
+      img.setScale(150 / Math.max(img.width, img.height));
       this.tweens.add({
         targets: img,
         y: img.y - 45,
@@ -407,7 +502,7 @@ export class WorldScene extends Phaser.Scene {
       });
       for (let i = 0; i < FISH.find((f) => f.id === e.fishId)!.star; i++) {
         const star = this.add
-          .image(a.state.x - 28 + i * 15, a.state.y - 95, "star")
+          .image(a.state.x - 28 + i * 15, a.state.y - 180, "star")
           .setDisplaySize(18, 18)
           .setDepth(8000);
         this.time.delayedCall(2600, () => star.destroy());
@@ -420,7 +515,7 @@ export class WorldScene extends Phaser.Scene {
           at: e.at,
           from: e.from,
           to: e.to,
-          kickDirection: a.state.direction,
+          kickDirection: actionDirection(a.state.facing ?? a.state.direction),
         };
       if (t) {
         const fx = this.add
@@ -452,38 +547,46 @@ export class WorldScene extends Phaser.Scene {
       dy = 0;
     const me = this.actors.get(s.self?.id ?? "");
     if (!this.blocked && s.status === "online") {
-      dx =
-        Number(this.keys.has("ArrowRight")) -
-        Number(this.keys.has("ArrowLeft"));
-      dy =
-        Number(this.keys.has("ArrowDown")) - Number(this.keys.has("ArrowUp"));
+      ({ dx, dy } = this.keyboardSteering.input(this.keys, performance.now()));
+      if (!this.keys.size && this.route.length && this.prediction) {
+        while (
+          this.route.length &&
+          Math.hypot(
+            this.route[0].x - this.prediction.x,
+            this.route[0].y - this.prediction.y,
+          ) < 16
+        )
+          this.route.shift();
+        const next = this.route[0];
+        if (next) {
+          ({ dx, dy } = this.routeSteering.toward(this.prediction, next));
+        }
+      }
     }
+    if (this.blocked) this.route = [];
     const busy = me && motionBusy(me.state, now);
     if (busy) {
       dx = 0;
       dy = 0;
     }
-    if (me && this.prediction && (dx || dy)) {
-      const n = Math.max(1, Math.hypot(dx, dy));
-      this.prediction = move(
-        this.prediction,
-        ((dx / n) * BALANCE.speed * Math.min(delta, 50)) / 1000,
-        ((dy / n) * BALANCE.speed * Math.min(delta, 50)) / 1000,
+    this.direction = cardinalDirection(dx, dy, this.direction);
+    if (me && this.predictor && s.status === "online") {
+      const previous = this.predictor.position;
+      this.prediction = this.predictor.advance(dx, dy, delta, (x, y, ms) =>
+        connection.move(x, y, this.direction, ms),
+      );
+      const moved =
+        Math.hypot(
+          this.prediction.x - previous.x,
+          this.prediction.y - previous.y,
+        ) > 0.001;
+      this.facing = movementFacing(
+        moved ? this.prediction.x - previous.x : dx,
+        moved ? this.prediction.y - previous.y : dy,
+        this.facing,
       );
     }
-    if (dx && !dy) this.direction = dx > 0 ? "right" : "left";
-    if (dy && !dx) this.direction = dy > 0 ? "down" : "up";
-    const input = `${dx},${dy},${this.direction}`;
-    if (
-      s.status === "online" &&
-      ((performance.now() - this.lastSend >= 100 && (dx || dy)) ||
-        input !== this.lastInput)
-    ) {
-      connection.move(dx, dy, this.direction);
-      this.lastSend = performance.now();
-      this.lastInput = input;
-    }
-    const action = actionFor(me?.state, s.players, now);
+    const kickTarget = me ? targetFor(me.state, s.players, now) : undefined;
     for (const [id, a] of this.actors) {
       let x = a.state.x,
         y = a.state.y;
@@ -517,38 +620,95 @@ export class WorldScene extends Phaser.Scene {
         }
       }
       let motion = visibleMotion(a.state.motion, now - a.state.stateAt);
-      let direction = a.state.direction;
+      let direction =
+        motion === "kick"
+          ? actionDirection(a.state.facing ?? a.state.direction)
+          : a.state.direction;
       if (a.escape && now - a.escape.at < 450)
         direction = a.escape.kickDirection;
-      if (self && (dx || dy) && !busy) {
-        motion = "walk";
+      if (self && !busy && (motion === "idle" || motion === "walk")) {
+        motion = dx || dy ? "walk" : "idle";
         direction = this.direction;
       }
       a.body.setPosition(x, y).setDepth(y + 1);
-      const anim = `${a.state.gender}_${direction}_${motion}`;
-      a.body.play(anim, true);
+      const fall =
+        motion === "startled"
+          ? Math.sin(
+              Phaser.Math.Clamp((now - a.state.stateAt) / 650, 0, 1) * Math.PI,
+            )
+          : 0;
+      a.body
+        .setY(y - fall * 38)
+        .setAngle(fall * (direction === "left" ? -18 : 18));
+      const pose = locomotionPose(
+        direction,
+        motion,
+        self && (motion === "walk" || motion === "idle")
+          ? this.facing
+          : (a.state.facing ?? direction),
+      );
+      const anim = `${a.state.gender}_${pose.animationDirection}_${motion}`;
+      if (motion === "fallen") {
+        // Server age selects the same pose in every browser, including mid-fall joins.
+        const facing = a.state.facing ?? direction;
+        const row = FALL_DIRECTIONS.indexOf(facing);
+        a.body.anims.stop();
+        a.body
+          .setFlipX(false)
+          .setTexture(
+            `${a.state.gender}_fall`,
+            Math.max(0, row) * 6 + fallFrame(now - a.state.stateAt),
+          );
+      } else if (
+        motion === "idle" &&
+        (a.lastMotion === "walk" || a.idleFrozen) &&
+        a.body.anims.currentAnim?.key ===
+          `${a.state.gender}_${pose.animationDirection}_walk`
+      ) {
+        a.body.setFlipX(pose.flipX).anims.pause();
+        a.idleFrozen = true;
+      } else {
+        a.idleFrozen = false;
+        a.body.setFlipX(pose.flipX);
+        if (a.body.anims.currentAnim?.key === anim && a.body.anims.isPaused)
+          a.body.anims.resume();
+        else a.body.play(anim, true);
+      }
+      a.lastMotion = motion;
       a.shadow.setPosition(x, y).setDepth(y - 3);
-      a.name.setPosition(x, y - 119).setDepth(y + 200);
+      a.name.setPosition(x, y - 240).setDepth(y + 200);
+      const chatAge = a.chat ? now - a.chat.at : CHAT_LIFETIME;
+      const speaking = chatAge >= 0 && chatAge < CHAT_LIFETIME;
+      const alpha = Math.min(1, Math.max(0, (CHAT_LIFETIME - chatAge) / 700));
+      const bw = Math.max(170, a.speech.width + 54),
+        bh = Math.max(90, a.speech.height + 52);
+      a.bubble
+        .setVisible(speaking)
+        .setPosition(x, y - 280)
+        .setDisplaySize(bw, bh)
+        .setDepth(y + 500)
+        .setAlpha(alpha);
+      a.speech
+        .setVisible(speaking)
+        .setPosition(x, y - 280 - bh * 0.55)
+        .setDepth(y + 501)
+        .setAlpha(alpha);
       a.name.setAlpha(a.state.online ? 1 : 0.6);
-      const seated = [
-        "seated_idle",
-        "sit_down",
-        "cast",
-        "fishing_wait",
-        "reel_in",
-        "startled",
-      ].includes(motion);
+      const seated = FISHING_ACTIONS.includes(motion);
+      const fishingFacing = a.state.facing ?? direction;
+      const chairDirection = seated ? fishingFacing : direction;
       a.chair
         .setVisible(seated)
-        .setTexture(`chair_${direction}`)
+        .setTexture(`chair_${chairDirection}`)
         .setPosition(
-          x + (direction === "left" ? 10 : direction === "right" ? -10 : 0),
-          y + 12,
+          x + (direction === "left" ? 18 : direction === "right" ? -18 : 0),
+          y + 10,
         )
-        .setDepth(direction === "up" ? y + 3 : y - 1);
+        .setDepth(chairDirection.startsWith("up") ? y + 3 : y - 1);
+      a.chair.setAngle(fall * -32).setAlpha(1 - fall * 0.7);
       a.target
-        .setVisible(action.type === "sabotage" && action.target === id)
-        .setPosition(x, y - 145)
+        .setVisible(kickTarget?.id === id)
+        .setPosition(x, y - 270)
         .setDepth(8000);
       const fishing = a.state.castStartedAt !== undefined;
       const rodVisible =
@@ -559,10 +719,15 @@ export class WorldScene extends Phaser.Scene {
       a.line.setVisible(fishing);
       a.bobber.setVisible(fishing);
       if (rodVisible) {
+        const rodDirection = actionDirection(fishingFacing);
         const anchor = grip(
-          direction,
+          fishingFacing,
           motion,
-          Math.max(0, Number(a.body.frame.name) - MOTIONS[motion].start),
+          Math.max(
+            0,
+            Number(a.body.frame.name) -
+              (motion === "fallen" ? 0 : MOTIONS[motion].start),
+          ),
         );
         const rodState =
           motion === "startled"
@@ -574,17 +739,24 @@ export class WorldScene extends Phaser.Scene {
               : motion === "reel_in"
                 ? "recover"
                 : "normal";
-        const pose = ROD_ANCHORS[direction];
+        const pose = ROD_ANCHORS[rodDirection];
         a.rod
-          .setTexture(`rod_${a.state.rod}_${direction}_${rodState}`)
+          .setTexture(`rod_${a.state.rod}_${rodDirection}_${rodState}`)
           .setOrigin(pose.grip.x, pose.grip.y)
-          .setDisplaySize(72, 72)
-          .setPosition(x + anchor.x, y + anchor.y)
+          .setDisplaySize(134, 134)
+          .setPosition(x + anchor.x * 1.88, y + anchor.y * 1.88 - 16)
           .setDepth(direction === "up" ? y : y + 3);
+        const diagonalAngle =
+          fishingFacing === "down-right" || fishingFacing === "up-left"
+            ? -45
+            : fishingFacing === "down-left" || fishingFacing === "up-right"
+              ? 45
+              : 0;
         a.rod.setAngle(
-          motion === "startled"
-            ? Math.sin((now - a.state.stateAt) / 70) * 40
-            : 0,
+          diagonalAngle +
+            (motion === "startled"
+              ? Math.sin((now - a.state.stateAt) / 70) * 40
+              : 0),
         );
         if (motion === "startled")
           a.rod.setY(
@@ -592,12 +764,11 @@ export class WorldScene extends Phaser.Scene {
               Math.sin(Math.min(1, (now - a.state.stateAt) / 650) * Math.PI) *
                 38,
           );
-        const spot = fishingSpot(a.state);
-        if (spot) {
-          const end = spot.water;
+        const end = a.state.castWater ?? fishingSpot(a.state)?.water;
+        if (end) {
           const rotation = a.rod.rotation;
-          const tx = 72 * (pose.tip.x - pose.grip.x),
-            ty = 72 * (pose.tip.y - pose.grip.y);
+          const tx = 134 * (pose.tip.x - pose.grip.x),
+            ty = 134 * (pose.tip.y - pose.grip.y);
           const tip = {
             x: a.rod.x + tx * Math.cos(rotation) - ty * Math.sin(rotation),
             y: a.rod.y + tx * Math.sin(rotation) + ty * Math.cos(rotation),
@@ -616,6 +787,19 @@ export class WorldScene extends Phaser.Scene {
     if (me) {
       const p = this.prediction ?? me.state;
       this.cameras.main.centerOn(p.x, p.y - 70);
+      if (performance.now() - this.lastMapUpdate > 100) {
+        const camera = this.cameras.main;
+        const view = cameraMapView(camera, p);
+        const key = Object.values(view)
+          .map((v) => Math.round(v * 10))
+          .join(",");
+        if (key !== this.lastMapView) {
+          this.onMapView(view);
+          this.lastMapView = key;
+        }
+        this.lastMapUpdate = performance.now();
+      }
     }
+    // Keep the coherent source painting visible around independently generated tile joins.
   }
 }

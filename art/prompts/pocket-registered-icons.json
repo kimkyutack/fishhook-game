@@ -1,0 +1,56 @@
+[
+  {
+    "id": "bag",
+    "source": "public/assets/redesign/bag.png",
+    "sourceWidth": 384,
+    "sourceHeight": 384,
+    "runtime": "public/assets/redesign/pocket-icon-bag.png",
+    "derived": true,
+    "notes": "Existing artwork registered from original resolution; not a new AI image or source-detail upscale claim."
+  },
+  {
+    "id": "coin",
+    "source": "public/assets/equipment/coin.png",
+    "sourceWidth": 256,
+    "sourceHeight": 256,
+    "runtime": "public/assets/redesign/pocket-icon-coin.png",
+    "derived": true,
+    "notes": "Existing artwork registered from original resolution; not a new AI image or source-detail upscale claim."
+  },
+  {
+    "id": "rod_1",
+    "source": "public/assets/redesign/rod_1.png",
+    "sourceWidth": 384,
+    "sourceHeight": 384,
+    "runtime": "public/assets/redesign/pocket-icon-rod_1.png",
+    "derived": true,
+    "notes": "Existing artwork registered from original resolution; not a new AI image or source-detail upscale claim."
+  },
+  {
+    "id": "worm",
+    "source": "public/assets/redesign/worm.png",
+    "sourceWidth": 418,
+    "sourceHeight": 418,
+    "runtime": "public/assets/redesign/pocket-icon-worm.png",
+    "derived": true,
+    "notes": "Existing artwork registered from original resolution; not a new AI image or source-detail upscale claim."
+  },
+  {
+    "id": "book",
+    "source": "public/assets/redesign/book.png",
+    "sourceWidth": 256,
+    "sourceHeight": 256,
+    "runtime": "public/assets/redesign/pocket-icon-book.png",
+    "derived": true,
+    "notes": "Existing artwork registered from original resolution; not a new AI image or source-detail upscale claim."
+  },
+  {
+    "id": "settings",
+    "source": "public/assets/equipment/settings.png",
+    "sourceWidth": 256,
+    "sourceHeight": 256,
+    "runtime": "public/assets/redesign/pocket-icon-settings.png",
+    "derived": true,
+    "notes": "Existing artwork registered from original resolution; not a new AI image or source-detail upscale claim."
+  }
+]

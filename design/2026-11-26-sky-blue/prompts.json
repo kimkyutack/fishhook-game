@@ -1,0 +1,105 @@
+{
+  "date": "2026-11-26",
+  "tool": "built-in image_gen",
+  "change": "Teal -> sky blue / blue palette only",
+  "colors": {
+    "shallows": "#79bff0",
+    "water": "#4599df",
+    "deepWater": "#2867ad",
+    "button": "#4587d8",
+    "panel": "#1b3558"
+  },
+  "screens": [
+    {
+      "file": "01-gameplay.png",
+      "title": "게임 화면",
+      "source": "../2026-11-25-fishing-ground/01-gameplay.png",
+      "paletteReference": null,
+      "prompt": "undefined Primary screen is gameplay. Keepexact originalcomposition including HUD/leaderboard/hotbar/players/piers/kiosk. Change the visible lake and UI surfaces to skyblue+trueblue as above. Mainobjective is water visiblyBLUE notgreen; preserve warmgoldenwood and richnaturalgreenplants."
+    },
+    {
+      "file": "02-world-overview.png",
+      "title": "전체 낚시터 맵",
+      "source": "../2026-11-25-fishing-ground/02-world-overview.png",
+      "paletteReference": "01-gameplay.png",
+      "prompt": "undefined Screen: 전체 낚시터 맵. Preserve first image exactly, revise only water and UI palette using second image's blue color direction."
+    },
+    {
+      "file": "03-name-entry.png",
+      "title": "이름 입력",
+      "source": "../2026-11-25-fishing-ground/03-name-entry.png",
+      "paletteReference": "01-gameplay.png",
+      "prompt": "undefined Screen: 이름 입력. Preserve first image exactly, revise only water and UI palette using second image's blue color direction."
+    },
+    {
+      "file": "04-character-select.png",
+      "title": "캐릭터 선택",
+      "source": "../2026-11-25-fishing-ground/04-character-select.png",
+      "paletteReference": "01-gameplay.png",
+      "prompt": "undefined Screen: 캐릭터 선택. Preserve first image exactly, revise only water and UI palette using second image's blue color direction."
+    },
+    {
+      "file": "05-bag-fish.png",
+      "title": "가방 · 물고기",
+      "source": "../2026-11-25-fishing-ground/05-bag-fish.png",
+      "paletteReference": "01-gameplay.png",
+      "prompt": "undefined Screen: 가방 · 물고기. Preserve first image exactly, revise only water and UI palette using second image's blue color direction."
+    },
+    {
+      "file": "06-bag-rods.png",
+      "title": "가방 · 낚싯대",
+      "source": "../2026-11-25-fishing-ground/06-bag-rods.png",
+      "paletteReference": "01-gameplay.png",
+      "prompt": "undefined Screen: 가방 · 낚싯대. Preserve first image exactly, revise only water and UI palette using second image's blue color direction."
+    },
+    {
+      "file": "07-bag-baits.png",
+      "title": "가방 · 미끼",
+      "source": "../2026-11-25-fishing-ground/07-bag-baits.png",
+      "paletteReference": "01-gameplay.png",
+      "prompt": "undefined Screen: 가방 · 미끼. Preserve first image exactly, revise only water and UI palette using second image's blue color direction."
+    },
+    {
+      "file": "08-bestiary.png",
+      "title": "가방 · 도감",
+      "source": "../2026-11-25-fishing-ground/08-bestiary.png",
+      "paletteReference": "01-gameplay.png",
+      "prompt": "undefined Screen: 가방 · 도감. Preserve first image exactly, revise only water and UI palette using second image's blue color direction."
+    },
+    {
+      "file": "09-settings.png",
+      "title": "가방 · 설정",
+      "source": "../2026-11-25-fishing-ground/09-settings.png",
+      "paletteReference": "01-gameplay.png",
+      "prompt": "undefined Screen: 가방 · 설정. Preserve first image exactly, revise only water and UI palette using second image's blue color direction."
+    },
+    {
+      "file": "10-shop-rods.png",
+      "title": "상점 · 낚싯대",
+      "source": "../2026-11-25-fishing-ground/10-shop-rods.png",
+      "paletteReference": "01-gameplay.png",
+      "prompt": "undefined Screen: 상점 · 낚싯대. Preserve first image exactly, revise only water and UI palette using second image's blue color direction."
+    },
+    {
+      "file": "11-shop-baits.png",
+      "title": "상점 · 미끼",
+      "source": "../2026-11-25-fishing-ground/11-shop-baits.png",
+      "paletteReference": "01-gameplay.png",
+      "prompt": "undefined Screen: 상점 · 미끼. Preserve first image exactly, revise only water and UI palette using second image's blue color direction."
+    },
+    {
+      "file": "12-shop-sale.png",
+      "title": "상점 · 판매",
+      "source": "../2026-11-25-fishing-ground/12-shop-sale.png",
+      "paletteReference": "01-gameplay.png",
+      "prompt": "undefined Screen: 상점 · 판매. Preserve first image exactly, revise only water and UI palette using second image's blue color direction."
+    },
+    {
+      "file": "13-player-profile.png",
+      "title": "플레이어 프로필",
+      "source": "../2026-11-25-fishing-ground/13-player-profile.png",
+      "paletteReference": "01-gameplay.png",
+      "prompt": "undefined Screen: 플레이어 프로필. Preserve first image exactly, revise only water and UI palette using second image's blue color direction."
+    }
+  ]
+}

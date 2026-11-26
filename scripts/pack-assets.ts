@@ -8,6 +8,7 @@ import {
   unlink,
 } from "node:fs/promises";
 import { FISH } from "../src/shared/catalog";
+import { characterRegions } from "./character-regions";
 import {
   MOTIONS,
   DIRECTIONS,
@@ -49,7 +50,7 @@ async function image(
   await mkdir(`public/assets/${target.split("/")[0]}`, { recursive: true });
   await pipeline
     .resize(size, size, {
-      fit: "contain",
+      fit: kind === "fish" ? "inside" : "contain",
       background: { r: 0, g: 0, b: 0, alpha: 0 },
     })
     .png({
@@ -60,14 +61,15 @@ async function image(
       dither: 0,
     })
     .toFile(`public/assets/${target}.png`);
+  const packed = await sharp(`public/assets/${target}.png`).metadata();
   entries.push({
     id: target.split("/").at(-1),
     kind,
     status: "ready",
     source: path,
     runtime: `public/assets/${target}.png`,
-    width: size,
-    height: size,
+    width: packed.width,
+    height: packed.height,
     sourceRegion: { left, top, width, height },
     loop: false,
     layers: [kind],
@@ -83,21 +85,43 @@ for (let s = 1; s <= 5; s++)
       rows: 2,
       index: i,
       kind: "fish",
+      trim: true,
     });
 for (const g of ["male", "female"])
   for (const d of DIRECTIONS) {
     const source = `${g}_${d}`,
       path = `art/source/${source}.png`,
       meta = await sharp(path).metadata();
+    const regions = await characterRegions(path);
+    // One scale per direction, with standing height matched across all eight sheets.
+    // Never resize individual poses to their bounding box (that makes limbs/body pulse).
+    const scale = Math.min(
+      158 / regions[0].height,
+      178 / Math.max(...regions.map((r) => r.height)),
+    );
     const frames = [];
     for (let i = 0; i < 40; i++) {
-      const x = Math.round(((i % 8) * meta.width!) / 8),
-        y = Math.round((Math.floor(i / 8) * meta.height!) / 5),
-        w = Math.round((((i % 8) + 1) * meta.width!) / 8) - x,
-        h = Math.round(((Math.floor(i / 8) + 1) * meta.height!) / 5) - y;
-      const body = await sharp(path)
-        .extract({ left: x, top: y, width: w, height: h })
-        .resize(188, 188, { fit: "contain", background: "#00000000" })
+      const r = regions[i];
+      const figure = await sharp(path)
+        .extract({ left: r.left, top: r.top, width: r.width, height: r.height })
+        .resize(Math.round(r.width * scale), Math.round(r.height * scale))
+        .png()
+        .toBuffer();
+      const body = await sharp({
+        create: {
+          width: 188,
+          height: 188,
+          channels: 4,
+          background: "#00000000",
+        },
+      })
+        .composite([
+          {
+            input: figure,
+            left: Math.round(94 - (r.headX - r.left) * scale),
+            top: 178 - Math.round(r.height * scale),
+          },
+        ])
         .png()
         .toBuffer();
       const extruded = await sharp(body)
@@ -168,19 +192,31 @@ for (const g of ["male", "female"])
       frameCount: 39,
       padding: 1,
       extrusion: 1,
+      registration: { method: "intact-figure-bounds", scale, regions },
       sourceSize: { width: meta.width, height: meta.height },
       frames: metadata,
       root: ROOT,
       layers: ["shadow", "chair", "body", "rod", "fish"],
       loop: "per-motion",
     });
-    if (d === "down")
-      await image(source, `characters/${g}_portrait`, {
-        cols: 8,
-        rows: 5,
-        index: 0,
+    if (d === "down") {
+      const r = regions[0];
+      await sharp(path)
+        .extract({ left: r.left, top: r.top, width: r.width, height: r.height })
+        .resize(256, 256, { fit: "contain", background: "#00000000" })
+        .png({ palette: true, quality: 90 })
+        .toFile(`public/assets/characters/${g}_portrait.png`);
+      entries.push({
+        id: `${g}_portrait`,
         kind: "portrait",
+        status: "ready",
+        source: path,
+        runtime: `public/assets/characters/${g}_portrait.png`,
+        width: 256,
+        height: 256,
+        sourceRegion: r,
       });
+    }
   }
 for (const [i, key] of ["grass", "stone", "water", "wood"].entries())
   if (key !== "water")

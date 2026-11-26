@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-11-25T08:28:50.507Z",
+  "generatedAt": "2026-11-26T01:09:44.745Z",
   "generator": "built-in image_gen",
   "notes": "Two-head chibi direction supersedes original 2.7-head specification. Atlas frames use fixed scale; 2px padding. No placeholder assets counted as ready. See docs/art-qa.md for visual review limits.",
   "runtimeFiles": 154,
-  "runtimeBytes": 9709594,
+  "runtimeBytes": 9278290,
   "entries": [
     {
       "id": "fish_001",
@@ -12,7 +12,7 @@
       "source": "art/source/cuteFish1.png",
       "runtime": "public/assets/fish/fish_001.png",
       "width": 256,
-      "height": 256,
+      "height": 117,
       "sourceRegion": {
         "left": 0,
         "top": 0,
@@ -25,7 +25,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -43,7 +43,7 @@
       "source": "art/source/cuteFish1.png",
       "runtime": "public/assets/fish/fish_002.png",
       "width": 256,
-      "height": 256,
+      "height": 194,
       "sourceRegion": {
         "left": 397,
         "top": 0,
@@ -56,7 +56,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -74,7 +74,7 @@
       "source": "art/source/cuteFish1.png",
       "runtime": "public/assets/fish/fish_003.png",
       "width": 256,
-      "height": 256,
+      "height": 185,
       "sourceRegion": {
         "left": 793,
         "top": 0,
@@ -87,7 +87,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -105,7 +105,7 @@
       "source": "art/source/cuteFish1.png",
       "runtime": "public/assets/fish/fish_004.png",
       "width": 256,
-      "height": 256,
+      "height": 186,
       "sourceRegion": {
         "left": 1190,
         "top": 0,
@@ -118,7 +118,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -136,7 +136,7 @@
       "source": "art/source/cuteFish1.png",
       "runtime": "public/assets/fish/fish_005.png",
       "width": 256,
-      "height": 256,
+      "height": 131,
       "sourceRegion": {
         "left": 1586,
         "top": 0,
@@ -149,7 +149,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -167,7 +167,7 @@
       "source": "art/source/cuteFish1.png",
       "runtime": "public/assets/fish/fish_006.png",
       "width": 256,
-      "height": 256,
+      "height": 159,
       "sourceRegion": {
         "left": 0,
         "top": 397,
@@ -180,7 +180,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -198,7 +198,7 @@
       "source": "art/source/cuteFish1.png",
       "runtime": "public/assets/fish/fish_007.png",
       "width": 256,
-      "height": 256,
+      "height": 148,
       "sourceRegion": {
         "left": 397,
         "top": 397,
@@ -211,7 +211,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -229,7 +229,7 @@
       "source": "art/source/cuteFish1.png",
       "runtime": "public/assets/fish/fish_008.png",
       "width": 256,
-      "height": 256,
+      "height": 116,
       "sourceRegion": {
         "left": 793,
         "top": 397,
@@ -242,7 +242,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -260,7 +260,7 @@
       "source": "art/source/cuteFish1.png",
       "runtime": "public/assets/fish/fish_009.png",
       "width": 256,
-      "height": 256,
+      "height": 191,
       "sourceRegion": {
         "left": 1190,
         "top": 397,
@@ -273,7 +273,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -291,7 +291,7 @@
       "source": "art/source/cuteFish1.png",
       "runtime": "public/assets/fish/fish_010.png",
       "width": 256,
-      "height": 256,
+      "height": 128,
       "sourceRegion": {
         "left": 1586,
         "top": 397,
@@ -304,7 +304,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -322,7 +322,7 @@
       "source": "art/source/cuteFish2.png",
       "runtime": "public/assets/fish/fish_011.png",
       "width": 256,
-      "height": 256,
+      "height": 137,
       "sourceRegion": {
         "left": 0,
         "top": 0,
@@ -335,7 +335,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -353,7 +353,7 @@
       "source": "art/source/cuteFish2.png",
       "runtime": "public/assets/fish/fish_012.png",
       "width": 256,
-      "height": 256,
+      "height": 182,
       "sourceRegion": {
         "left": 397,
         "top": 0,
@@ -366,7 +366,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -384,7 +384,7 @@
       "source": "art/source/cuteFish2.png",
       "runtime": "public/assets/fish/fish_013.png",
       "width": 256,
-      "height": 256,
+      "height": 201,
       "sourceRegion": {
         "left": 793,
         "top": 0,
@@ -397,7 +397,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -415,7 +415,7 @@
       "source": "art/source/cuteFish2.png",
       "runtime": "public/assets/fish/fish_014.png",
       "width": 256,
-      "height": 256,
+      "height": 165,
       "sourceRegion": {
         "left": 1190,
         "top": 0,
@@ -428,7 +428,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -446,7 +446,7 @@
       "source": "art/source/cuteFish2.png",
       "runtime": "public/assets/fish/fish_015.png",
       "width": 256,
-      "height": 256,
+      "height": 164,
       "sourceRegion": {
         "left": 1586,
         "top": 0,
@@ -459,7 +459,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -477,7 +477,7 @@
       "source": "art/source/cuteFish2.png",
       "runtime": "public/assets/fish/fish_016.png",
       "width": 256,
-      "height": 256,
+      "height": 149,
       "sourceRegion": {
         "left": 0,
         "top": 397,
@@ -490,7 +490,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -508,7 +508,7 @@
       "source": "art/source/cuteFish2.png",
       "runtime": "public/assets/fish/fish_017.png",
       "width": 256,
-      "height": 256,
+      "height": 198,
       "sourceRegion": {
         "left": 397,
         "top": 397,
@@ -521,7 +521,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -539,7 +539,7 @@
       "source": "art/source/cuteFish2.png",
       "runtime": "public/assets/fish/fish_018.png",
       "width": 256,
-      "height": 256,
+      "height": 171,
       "sourceRegion": {
         "left": 793,
         "top": 397,
@@ -552,7 +552,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -570,7 +570,7 @@
       "source": "art/source/cuteFish2.png",
       "runtime": "public/assets/fish/fish_019.png",
       "width": 256,
-      "height": 256,
+      "height": 175,
       "sourceRegion": {
         "left": 1190,
         "top": 397,
@@ -583,7 +583,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -601,7 +601,7 @@
       "source": "art/source/cuteFish2.png",
       "runtime": "public/assets/fish/fish_020.png",
       "width": 256,
-      "height": 256,
+      "height": 164,
       "sourceRegion": {
         "left": 1586,
         "top": 397,
@@ -614,7 +614,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -632,7 +632,7 @@
       "source": "art/source/cuteFish3.png",
       "runtime": "public/assets/fish/fish_021.png",
       "width": 256,
-      "height": 256,
+      "height": 194,
       "sourceRegion": {
         "left": 0,
         "top": 0,
@@ -645,7 +645,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -663,7 +663,7 @@
       "source": "art/source/cuteFish3.png",
       "runtime": "public/assets/fish/fish_022.png",
       "width": 256,
-      "height": 256,
+      "height": 192,
       "sourceRegion": {
         "left": 397,
         "top": 0,
@@ -676,7 +676,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -694,7 +694,7 @@
       "source": "art/source/cuteFish3.png",
       "runtime": "public/assets/fish/fish_023.png",
       "width": 256,
-      "height": 256,
+      "height": 142,
       "sourceRegion": {
         "left": 793,
         "top": 0,
@@ -707,7 +707,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -725,7 +725,7 @@
       "source": "art/source/cuteFish3.png",
       "runtime": "public/assets/fish/fish_024.png",
       "width": 256,
-      "height": 256,
+      "height": 154,
       "sourceRegion": {
         "left": 1190,
         "top": 0,
@@ -738,7 +738,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -756,7 +756,7 @@
       "source": "art/source/cuteFish3.png",
       "runtime": "public/assets/fish/fish_025.png",
       "width": 256,
-      "height": 256,
+      "height": 157,
       "sourceRegion": {
         "left": 1586,
         "top": 0,
@@ -769,7 +769,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -787,7 +787,7 @@
       "source": "art/source/cuteFish3.png",
       "runtime": "public/assets/fish/fish_026.png",
       "width": 256,
-      "height": 256,
+      "height": 195,
       "sourceRegion": {
         "left": 0,
         "top": 397,
@@ -800,7 +800,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -818,7 +818,7 @@
       "source": "art/source/cuteFish3.png",
       "runtime": "public/assets/fish/fish_027.png",
       "width": 256,
-      "height": 256,
+      "height": 187,
       "sourceRegion": {
         "left": 397,
         "top": 397,
@@ -831,7 +831,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -849,7 +849,7 @@
       "source": "art/source/cuteFish3.png",
       "runtime": "public/assets/fish/fish_028.png",
       "width": 256,
-      "height": 256,
+      "height": 117,
       "sourceRegion": {
         "left": 793,
         "top": 397,
@@ -862,7 +862,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -880,7 +880,7 @@
       "source": "art/source/cuteFish3.png",
       "runtime": "public/assets/fish/fish_029.png",
       "width": 256,
-      "height": 256,
+      "height": 170,
       "sourceRegion": {
         "left": 1190,
         "top": 397,
@@ -893,7 +893,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -911,7 +911,7 @@
       "source": "art/source/cuteFish3.png",
       "runtime": "public/assets/fish/fish_030.png",
       "width": 256,
-      "height": 256,
+      "height": 197,
       "sourceRegion": {
         "left": 1586,
         "top": 397,
@@ -924,7 +924,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -942,7 +942,7 @@
       "source": "art/source/cuteFish4.png",
       "runtime": "public/assets/fish/fish_031.png",
       "width": 256,
-      "height": 256,
+      "height": 219,
       "sourceRegion": {
         "left": 0,
         "top": 0,
@@ -955,7 +955,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -973,7 +973,7 @@
       "source": "art/source/cuteFish4.png",
       "runtime": "public/assets/fish/fish_032.png",
       "width": 256,
-      "height": 256,
+      "height": 210,
       "sourceRegion": {
         "left": 397,
         "top": 0,
@@ -986,7 +986,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -1004,7 +1004,7 @@
       "source": "art/source/cuteFish4.png",
       "runtime": "public/assets/fish/fish_033.png",
       "width": 256,
-      "height": 256,
+      "height": 174,
       "sourceRegion": {
         "left": 793,
         "top": 0,
@@ -1017,7 +1017,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -1035,7 +1035,7 @@
       "source": "art/source/cuteFish4.png",
       "runtime": "public/assets/fish/fish_034.png",
       "width": 256,
-      "height": 256,
+      "height": 154,
       "sourceRegion": {
         "left": 1190,
         "top": 0,
@@ -1048,7 +1048,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -1066,7 +1066,7 @@
       "source": "art/source/cuteFish4.png",
       "runtime": "public/assets/fish/fish_035.png",
       "width": 256,
-      "height": 256,
+      "height": 163,
       "sourceRegion": {
         "left": 1586,
         "top": 0,
@@ -1079,7 +1079,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -1097,7 +1097,7 @@
       "source": "art/source/cuteFish4.png",
       "runtime": "public/assets/fish/fish_036.png",
       "width": 256,
-      "height": 256,
+      "height": 198,
       "sourceRegion": {
         "left": 0,
         "top": 397,
@@ -1110,7 +1110,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -1128,7 +1128,7 @@
       "source": "art/source/cuteFish4.png",
       "runtime": "public/assets/fish/fish_037.png",
       "width": 256,
-      "height": 256,
+      "height": 144,
       "sourceRegion": {
         "left": 397,
         "top": 397,
@@ -1141,7 +1141,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -1159,7 +1159,7 @@
       "source": "art/source/cuteFish4.png",
       "runtime": "public/assets/fish/fish_038.png",
       "width": 256,
-      "height": 256,
+      "height": 180,
       "sourceRegion": {
         "left": 793,
         "top": 397,
@@ -1172,7 +1172,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -1190,7 +1190,7 @@
       "source": "art/source/cuteFish4.png",
       "runtime": "public/assets/fish/fish_039.png",
       "width": 256,
-      "height": 256,
+      "height": 203,
       "sourceRegion": {
         "left": 1190,
         "top": 397,
@@ -1203,7 +1203,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -1221,7 +1221,7 @@
       "source": "art/source/cuteFish4.png",
       "runtime": "public/assets/fish/fish_040.png",
       "width": 256,
-      "height": 256,
+      "height": 148,
       "sourceRegion": {
         "left": 1586,
         "top": 397,
@@ -1234,7 +1234,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -1252,7 +1252,7 @@
       "source": "art/source/cuteFish5.png",
       "runtime": "public/assets/fish/fish_041.png",
       "width": 256,
-      "height": 256,
+      "height": 212,
       "sourceRegion": {
         "left": 0,
         "top": 0,
@@ -1265,7 +1265,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -1283,7 +1283,7 @@
       "source": "art/source/cuteFish5.png",
       "runtime": "public/assets/fish/fish_042.png",
       "width": 256,
-      "height": 256,
+      "height": 223,
       "sourceRegion": {
         "left": 397,
         "top": 0,
@@ -1296,7 +1296,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -1314,7 +1314,7 @@
       "source": "art/source/cuteFish5.png",
       "runtime": "public/assets/fish/fish_043.png",
       "width": 256,
-      "height": 256,
+      "height": 237,
       "sourceRegion": {
         "left": 793,
         "top": 0,
@@ -1327,7 +1327,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -1345,7 +1345,7 @@
       "source": "art/source/cuteFish5.png",
       "runtime": "public/assets/fish/fish_044.png",
       "width": 256,
-      "height": 256,
+      "height": 251,
       "sourceRegion": {
         "left": 1190,
         "top": 0,
@@ -1358,7 +1358,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -1376,7 +1376,7 @@
       "source": "art/source/cuteFish5.png",
       "runtime": "public/assets/fish/fish_045.png",
       "width": 256,
-      "height": 256,
+      "height": 192,
       "sourceRegion": {
         "left": 1586,
         "top": 0,
@@ -1389,7 +1389,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -1407,7 +1407,7 @@
       "source": "art/source/cuteFish5.png",
       "runtime": "public/assets/fish/fish_046.png",
       "width": 256,
-      "height": 256,
+      "height": 227,
       "sourceRegion": {
         "left": 0,
         "top": 397,
@@ -1420,7 +1420,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -1438,7 +1438,7 @@
       "source": "art/source/cuteFish5.png",
       "runtime": "public/assets/fish/fish_047.png",
       "width": 256,
-      "height": 256,
+      "height": 181,
       "sourceRegion": {
         "left": 397,
         "top": 397,
@@ -1451,7 +1451,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -1469,7 +1469,7 @@
       "source": "art/source/cuteFish5.png",
       "runtime": "public/assets/fish/fish_048.png",
       "width": 256,
-      "height": 256,
+      "height": 204,
       "sourceRegion": {
         "left": 793,
         "top": 397,
@@ -1482,7 +1482,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -1500,7 +1500,7 @@
       "source": "art/source/cuteFish5.png",
       "runtime": "public/assets/fish/fish_049.png",
       "width": 256,
-      "height": 256,
+      "height": 218,
       "sourceRegion": {
         "left": 1190,
         "top": 397,
@@ -1513,7 +1513,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -1531,7 +1531,7 @@
       "source": "art/source/cuteFish5.png",
       "runtime": "public/assets/fish/fish_050.png",
       "width": 256,
-      "height": 256,
+      "height": 213,
       "sourceRegion": {
         "left": 1586,
         "top": 397,
@@ -1544,7 +1544,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -1568,6 +1568,292 @@
       "frameCount": 39,
       "padding": 1,
       "extrusion": 1,
+      "registration": {
+        "method": "intact-figure-bounds",
+        "scale": 0.9404761904761905,
+        "regions": [
+          {
+            "left": 40,
+            "top": 22,
+            "width": 132,
+            "height": 168,
+            "headX": 105.5
+          },
+          {
+            "left": 239,
+            "top": 22,
+            "width": 132,
+            "height": 168,
+            "headX": 304.5
+          },
+          {
+            "left": 437,
+            "top": 23,
+            "width": 132,
+            "height": 167,
+            "headX": 502.5
+          },
+          {
+            "left": 635,
+            "top": 22,
+            "width": 132,
+            "height": 164,
+            "headX": 700.5
+          },
+          {
+            "left": 833,
+            "top": 23,
+            "width": 132,
+            "height": 167,
+            "headX": 898.5
+          },
+          {
+            "left": 1031,
+            "top": 23,
+            "width": 132,
+            "height": 166,
+            "headX": 1096.5
+          },
+          {
+            "left": 1229,
+            "top": 23,
+            "width": 132,
+            "height": 166,
+            "headX": 1294.5
+          },
+          {
+            "left": 1428,
+            "top": 22,
+            "width": 132,
+            "height": 168,
+            "headX": 1493.5
+          },
+          {
+            "left": 40,
+            "top": 224,
+            "width": 133,
+            "height": 163,
+            "headX": 106
+          },
+          {
+            "left": 240,
+            "top": 228,
+            "width": 133,
+            "height": 159,
+            "headX": 306
+          },
+          {
+            "left": 436,
+            "top": 234,
+            "width": 133,
+            "height": 154,
+            "headX": 502
+          },
+          {
+            "left": 634,
+            "top": 236,
+            "width": 132,
+            "height": 152,
+            "headX": 699.5
+          },
+          {
+            "left": 832,
+            "top": 233,
+            "width": 131,
+            "height": 155,
+            "headX": 897
+          },
+          {
+            "left": 1031,
+            "top": 227,
+            "width": 130,
+            "height": 161,
+            "headX": 1095.5
+          },
+          {
+            "left": 1230,
+            "top": 229,
+            "width": 128,
+            "height": 159,
+            "headX": 1293.5
+          },
+          {
+            "left": 1429,
+            "top": 228,
+            "width": 128,
+            "height": 160,
+            "headX": 1492.5
+          },
+          {
+            "left": 41,
+            "top": 426,
+            "width": 128,
+            "height": 159,
+            "headX": 104.5
+          },
+          {
+            "left": 240,
+            "top": 427,
+            "width": 129,
+            "height": 157,
+            "headX": 304
+          },
+          {
+            "left": 436,
+            "top": 427,
+            "width": 131,
+            "height": 157,
+            "headX": 501
+          },
+          {
+            "left": 634,
+            "top": 427,
+            "width": 131,
+            "height": 157,
+            "headX": 699
+          },
+          {
+            "left": 833,
+            "top": 425,
+            "width": 128,
+            "height": 160,
+            "headX": 896.5
+          },
+          {
+            "left": 1030,
+            "top": 424,
+            "width": 129,
+            "height": 160,
+            "headX": 1094
+          },
+          {
+            "left": 1229,
+            "top": 423,
+            "width": 127,
+            "height": 162,
+            "headX": 1292
+          },
+          {
+            "left": 1423,
+            "top": 419,
+            "width": 130,
+            "height": 166,
+            "headX": 1487.5
+          },
+          {
+            "left": 37,
+            "top": 621,
+            "width": 121,
+            "height": 163,
+            "headX": 97
+          },
+          {
+            "left": 232,
+            "top": 621,
+            "width": 125,
+            "height": 164,
+            "headX": 294
+          },
+          {
+            "left": 429,
+            "top": 622,
+            "width": 122,
+            "height": 163,
+            "headX": 489.5
+          },
+          {
+            "left": 624,
+            "top": 621,
+            "width": 131,
+            "height": 163,
+            "headX": 691
+          },
+          {
+            "left": 822,
+            "top": 621,
+            "width": 123,
+            "height": 164,
+            "headX": 883
+          },
+          {
+            "left": 1023,
+            "top": 625,
+            "width": 124,
+            "height": 159,
+            "headX": 1084.5
+          },
+          {
+            "left": 1225,
+            "top": 621,
+            "width": 127,
+            "height": 161,
+            "headX": 1288
+          },
+          {
+            "left": 1427,
+            "top": 618,
+            "width": 124,
+            "height": 166,
+            "headX": 1488.5
+          },
+          {
+            "left": 42,
+            "top": 818,
+            "width": 122,
+            "height": 150,
+            "headX": 102.5
+          },
+          {
+            "left": 239,
+            "top": 820,
+            "width": 126,
+            "height": 154,
+            "headX": 301.5
+          },
+          {
+            "left": 436,
+            "top": 815,
+            "width": 126,
+            "height": 150,
+            "headX": 498.5
+          },
+          {
+            "left": 634,
+            "top": 818,
+            "width": 128,
+            "height": 156,
+            "headX": 697.5
+          },
+          {
+            "left": 824,
+            "top": 815,
+            "width": 128,
+            "height": 158,
+            "headX": 885.5
+          },
+          {
+            "left": 1020,
+            "top": 816,
+            "width": 127,
+            "height": 160,
+            "headX": 1083
+          },
+          {
+            "left": 1223,
+            "top": 820,
+            "width": 128,
+            "height": 157,
+            "headX": 1286.5
+          },
+          {
+            "left": 1423,
+            "top": 822,
+            "width": 128,
+            "height": 154,
+            "headX": 1486.5
+          }
+        ]
+      },
       "sourceSize": {
         "width": 1585,
         "height": 992
@@ -1579,7 +1865,7 @@
           "ms": 500,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -1598,7 +1884,7 @@
           "ms": 500,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -1617,7 +1903,7 @@
           "ms": 111,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -1636,7 +1922,7 @@
           "ms": 111,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -1655,7 +1941,7 @@
           "ms": 111,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -1674,7 +1960,7 @@
           "ms": 111,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -1693,7 +1979,7 @@
           "ms": 111,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -1712,7 +1998,7 @@
           "ms": 111,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -1731,7 +2017,7 @@
           "ms": 143,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -1750,7 +2036,7 @@
           "ms": 143,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -1769,7 +2055,7 @@
           "ms": 143,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -1788,7 +2074,7 @@
           "ms": 1000,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -1807,7 +2093,7 @@
           "ms": 125,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -1826,7 +2112,7 @@
           "ms": 125,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -1845,7 +2131,7 @@
           "ms": 125,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -1864,7 +2150,7 @@
           "ms": 125,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -1883,7 +2169,7 @@
           "ms": 125,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -1902,7 +2188,7 @@
           "ms": 500,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -1921,7 +2207,7 @@
           "ms": 500,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -1940,7 +2226,7 @@
           "ms": 143,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -1959,7 +2245,7 @@
           "ms": 143,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -1978,7 +2264,7 @@
           "ms": 143,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -1997,7 +2283,7 @@
           "ms": 143,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -2016,7 +2302,7 @@
           "ms": 143,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -2035,7 +2321,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -2054,7 +2340,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -2073,7 +2359,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -2092,7 +2378,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -2111,7 +2397,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -2130,7 +2416,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -2149,7 +2435,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -2168,7 +2454,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -2187,7 +2473,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -2206,7 +2492,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -2225,7 +2511,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -2244,7 +2530,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -2263,7 +2549,7 @@
           "ms": 200,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -2282,7 +2568,7 @@
           "ms": 200,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -2301,7 +2587,7 @@
           "ms": 200,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -2317,7 +2603,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "layers": [
         "shadow",
@@ -2337,26 +2623,11 @@
       "width": 256,
       "height": 256,
       "sourceRegion": {
-        "left": 0,
-        "top": 0,
-        "width": 198,
-        "height": 198
-      },
-      "loop": false,
-      "layers": [
-        "portrait"
-      ],
-      "root": {
-        "x": 0.5,
-        "y": 0.875
-      },
-      "grip": {
-        "x": 0.25,
-        "y": 0.8
-      },
-      "rodTip": {
-        "x": 0.85,
-        "y": 0.15
+        "left": 40,
+        "top": 22,
+        "width": 132,
+        "height": 168,
+        "headX": 105.5
       }
     },
     {
@@ -2372,6 +2643,292 @@
       "frameCount": 39,
       "padding": 1,
       "extrusion": 1,
+      "registration": {
+        "method": "intact-figure-bounds",
+        "scale": 0.9294117647058824,
+        "regions": [
+          {
+            "left": 40,
+            "top": 14,
+            "width": 134,
+            "height": 170,
+            "headX": 106.5
+          },
+          {
+            "left": 236,
+            "top": 14,
+            "width": 133,
+            "height": 170,
+            "headX": 302
+          },
+          {
+            "left": 432,
+            "top": 14,
+            "width": 132,
+            "height": 178,
+            "headX": 497.5
+          },
+          {
+            "left": 626,
+            "top": 15,
+            "width": 135,
+            "height": 177,
+            "headX": 693
+          },
+          {
+            "left": 823,
+            "top": 15,
+            "width": 134,
+            "height": 176,
+            "headX": 889.5
+          },
+          {
+            "left": 1020,
+            "top": 15,
+            "width": 133,
+            "height": 173,
+            "headX": 1086
+          },
+          {
+            "left": 1219,
+            "top": 14,
+            "width": 132,
+            "height": 178,
+            "headX": 1284.5
+          },
+          {
+            "left": 1416,
+            "top": 14,
+            "width": 133,
+            "height": 171,
+            "headX": 1482
+          },
+          {
+            "left": 40,
+            "top": 215,
+            "width": 134,
+            "height": 166,
+            "headX": 106.5
+          },
+          {
+            "left": 236,
+            "top": 215,
+            "width": 134,
+            "height": 165,
+            "headX": 302.5
+          },
+          {
+            "left": 432,
+            "top": 215,
+            "width": 135,
+            "height": 165,
+            "headX": 499
+          },
+          {
+            "left": 628,
+            "top": 215,
+            "width": 134,
+            "height": 162,
+            "headX": 694.5
+          },
+          {
+            "left": 823,
+            "top": 214,
+            "width": 135,
+            "height": 167,
+            "headX": 890
+          },
+          {
+            "left": 1021,
+            "top": 215,
+            "width": 135,
+            "height": 166,
+            "headX": 1088
+          },
+          {
+            "left": 1219,
+            "top": 214,
+            "width": 134,
+            "height": 167,
+            "headX": 1285.5
+          },
+          {
+            "left": 1416,
+            "top": 215,
+            "width": 136,
+            "height": 167,
+            "headX": 1483.5
+          },
+          {
+            "left": 39,
+            "top": 412,
+            "width": 136,
+            "height": 167,
+            "headX": 106.5
+          },
+          {
+            "left": 236,
+            "top": 414,
+            "width": 135,
+            "height": 165,
+            "headX": 303
+          },
+          {
+            "left": 432,
+            "top": 412,
+            "width": 134,
+            "height": 167,
+            "headX": 498.5
+          },
+          {
+            "left": 628,
+            "top": 412,
+            "width": 134,
+            "height": 167,
+            "headX": 694.5
+          },
+          {
+            "left": 824,
+            "top": 412,
+            "width": 135,
+            "height": 167,
+            "headX": 891
+          },
+          {
+            "left": 1020,
+            "top": 412,
+            "width": 136,
+            "height": 167,
+            "headX": 1087.5
+          },
+          {
+            "left": 1219,
+            "top": 412,
+            "width": 134,
+            "height": 166,
+            "headX": 1285.5
+          },
+          {
+            "left": 1416,
+            "top": 412,
+            "width": 134,
+            "height": 167,
+            "headX": 1482.5
+          },
+          {
+            "left": 51,
+            "top": 610,
+            "width": 139,
+            "height": 175,
+            "headX": 122.5
+          },
+          {
+            "left": 241,
+            "top": 608,
+            "width": 141,
+            "height": 180,
+            "headX": 313.5
+          },
+          {
+            "left": 439,
+            "top": 607,
+            "width": 134,
+            "height": 182,
+            "headX": 506
+          },
+          {
+            "left": 629,
+            "top": 607,
+            "width": 139,
+            "height": 183,
+            "headX": 701
+          },
+          {
+            "left": 827,
+            "top": 608,
+            "width": 136,
+            "height": 181,
+            "headX": 896
+          },
+          {
+            "left": 1028,
+            "top": 608,
+            "width": 133,
+            "height": 177,
+            "headX": 1094
+          },
+          {
+            "left": 1220,
+            "top": 610,
+            "width": 132,
+            "height": 168,
+            "headX": 1285.5
+          },
+          {
+            "left": 1416,
+            "top": 610,
+            "width": 135,
+            "height": 165,
+            "headX": 1483
+          },
+          {
+            "left": 42,
+            "top": 808,
+            "width": 132,
+            "height": 167,
+            "headX": 107.5
+          },
+          {
+            "left": 239,
+            "top": 808,
+            "width": 130,
+            "height": 170,
+            "headX": 303.5
+          },
+          {
+            "left": 434,
+            "top": 808,
+            "width": 133,
+            "height": 167,
+            "headX": 500
+          },
+          {
+            "left": 630,
+            "top": 808,
+            "width": 133,
+            "height": 166,
+            "headX": 696
+          },
+          {
+            "left": 823,
+            "top": 808,
+            "width": 136,
+            "height": 165,
+            "headX": 890.5
+          },
+          {
+            "left": 1021,
+            "top": 808,
+            "width": 135,
+            "height": 165,
+            "headX": 1088
+          },
+          {
+            "left": 1220,
+            "top": 808,
+            "width": 133,
+            "height": 165,
+            "headX": 1286
+          },
+          {
+            "left": 1417,
+            "top": 808,
+            "width": 134,
+            "height": 165,
+            "headX": 1483.5
+          }
+        ]
+      },
       "sourceSize": {
         "width": 1586,
         "height": 992
@@ -2383,7 +2940,7 @@
           "ms": 500,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -2402,7 +2959,7 @@
           "ms": 500,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -2421,7 +2978,7 @@
           "ms": 111,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -2440,7 +2997,7 @@
           "ms": 111,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -2459,7 +3016,7 @@
           "ms": 111,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -2478,7 +3035,7 @@
           "ms": 111,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -2497,7 +3054,7 @@
           "ms": 111,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -2516,7 +3073,7 @@
           "ms": 111,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -2535,7 +3092,7 @@
           "ms": 143,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -2554,7 +3111,7 @@
           "ms": 143,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -2573,7 +3130,7 @@
           "ms": 143,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -2592,7 +3149,7 @@
           "ms": 1000,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -2611,7 +3168,7 @@
           "ms": 125,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -2630,7 +3187,7 @@
           "ms": 125,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -2649,7 +3206,7 @@
           "ms": 125,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -2668,7 +3225,7 @@
           "ms": 125,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -2687,7 +3244,7 @@
           "ms": 125,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -2706,7 +3263,7 @@
           "ms": 500,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -2725,7 +3282,7 @@
           "ms": 500,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -2744,7 +3301,7 @@
           "ms": 143,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -2763,7 +3320,7 @@
           "ms": 143,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -2782,7 +3339,7 @@
           "ms": 143,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -2801,7 +3358,7 @@
           "ms": 143,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -2820,7 +3377,7 @@
           "ms": 143,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -2839,7 +3396,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -2858,7 +3415,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -2877,7 +3434,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -2896,7 +3453,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -2915,7 +3472,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -2934,7 +3491,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -2953,7 +3510,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -2972,7 +3529,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -2991,7 +3548,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -3010,7 +3567,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -3029,7 +3586,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -3048,7 +3605,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -3067,7 +3624,7 @@
           "ms": 200,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -3086,7 +3643,7 @@
           "ms": 200,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -3105,7 +3662,7 @@
           "ms": 200,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -3121,7 +3678,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "layers": [
         "shadow",
@@ -3145,6 +3702,292 @@
       "frameCount": 39,
       "padding": 1,
       "extrusion": 1,
+      "registration": {
+        "method": "intact-figure-bounds",
+        "scale": 0.9132947976878613,
+        "regions": [
+          {
+            "left": 68,
+            "top": 13,
+            "width": 136,
+            "height": 173,
+            "headX": 135.5
+          },
+          {
+            "left": 268,
+            "top": 13,
+            "width": 133,
+            "height": 172,
+            "headX": 334
+          },
+          {
+            "left": 466,
+            "top": 13,
+            "width": 134,
+            "height": 171,
+            "headX": 532.5
+          },
+          {
+            "left": 665,
+            "top": 13,
+            "width": 133,
+            "height": 171,
+            "headX": 731
+          },
+          {
+            "left": 862,
+            "top": 13,
+            "width": 133,
+            "height": 171,
+            "headX": 928
+          },
+          {
+            "left": 1060,
+            "top": 12,
+            "width": 133,
+            "height": 173,
+            "headX": 1126
+          },
+          {
+            "left": 1257,
+            "top": 13,
+            "width": 133,
+            "height": 170,
+            "headX": 1323
+          },
+          {
+            "left": 1444,
+            "top": 14,
+            "width": 135,
+            "height": 170,
+            "headX": 1511
+          },
+          {
+            "left": 63,
+            "top": 220,
+            "width": 138,
+            "height": 170,
+            "headX": 131.5
+          },
+          {
+            "left": 259,
+            "top": 224,
+            "width": 139,
+            "height": 167,
+            "headX": 328
+          },
+          {
+            "left": 454,
+            "top": 231,
+            "width": 140,
+            "height": 161,
+            "headX": 523.5
+          },
+          {
+            "left": 649,
+            "top": 231,
+            "width": 140,
+            "height": 161,
+            "headX": 718.5
+          },
+          {
+            "left": 851,
+            "top": 222,
+            "width": 141,
+            "height": 170,
+            "headX": 921
+          },
+          {
+            "left": 1049,
+            "top": 222,
+            "width": 142,
+            "height": 171,
+            "headX": 1119.5
+          },
+          {
+            "left": 1245,
+            "top": 221,
+            "width": 145,
+            "height": 172,
+            "headX": 1320
+          },
+          {
+            "left": 1430,
+            "top": 223,
+            "width": 150,
+            "height": 170,
+            "headX": 1511.5
+          },
+          {
+            "left": 44,
+            "top": 426,
+            "width": 156,
+            "height": 171,
+            "headX": 131
+          },
+          {
+            "left": 252,
+            "top": 427,
+            "width": 139,
+            "height": 169,
+            "headX": 321
+          },
+          {
+            "left": 450,
+            "top": 428,
+            "width": 140,
+            "height": 169,
+            "headX": 519.5
+          },
+          {
+            "left": 646,
+            "top": 428,
+            "width": 142,
+            "height": 169,
+            "headX": 716.5
+          },
+          {
+            "left": 847,
+            "top": 427,
+            "width": 141,
+            "height": 170,
+            "headX": 917
+          },
+          {
+            "left": 1046,
+            "top": 429,
+            "width": 140,
+            "height": 168,
+            "headX": 1115.5
+          },
+          {
+            "left": 1239,
+            "top": 427,
+            "width": 146,
+            "height": 171,
+            "headX": 1313
+          },
+          {
+            "left": 1437,
+            "top": 428,
+            "width": 145,
+            "height": 167,
+            "headX": 1511
+          },
+          {
+            "left": 43,
+            "top": 624,
+            "width": 139,
+            "height": 166,
+            "headX": 112
+          },
+          {
+            "left": 244,
+            "top": 621,
+            "width": 137,
+            "height": 170,
+            "headX": 312
+          },
+          {
+            "left": 445,
+            "top": 624,
+            "width": 137,
+            "height": 167,
+            "headX": 513
+          },
+          {
+            "left": 637,
+            "top": 626,
+            "width": 138,
+            "height": 164,
+            "headX": 705.5
+          },
+          {
+            "left": 837,
+            "top": 624,
+            "width": 141,
+            "height": 167,
+            "headX": 907
+          },
+          {
+            "left": 1035,
+            "top": 623,
+            "width": 140,
+            "height": 171,
+            "headX": 1104.5
+          },
+          {
+            "left": 1235,
+            "top": 617,
+            "width": 135,
+            "height": 169,
+            "headX": 1302
+          },
+          {
+            "left": 1431,
+            "top": 616,
+            "width": 135,
+            "height": 168,
+            "headX": 1498
+          },
+          {
+            "left": 43,
+            "top": 812,
+            "width": 135,
+            "height": 158,
+            "headX": 110
+          },
+          {
+            "left": 244,
+            "top": 811,
+            "width": 134,
+            "height": 166,
+            "headX": 310.5
+          },
+          {
+            "left": 441,
+            "top": 815,
+            "width": 135,
+            "height": 162,
+            "headX": 508
+          },
+          {
+            "left": 638,
+            "top": 816,
+            "width": 136,
+            "height": 160,
+            "headX": 705.5
+          },
+          {
+            "left": 853,
+            "top": 816,
+            "width": 138,
+            "height": 162,
+            "headX": 921.5
+          },
+          {
+            "left": 1045,
+            "top": 816,
+            "width": 140,
+            "height": 163,
+            "headX": 1114.5
+          },
+          {
+            "left": 1239,
+            "top": 817,
+            "width": 141,
+            "height": 162,
+            "headX": 1309
+          },
+          {
+            "left": 1436,
+            "top": 817,
+            "width": 141,
+            "height": 163,
+            "headX": 1506
+          }
+        ]
+      },
       "sourceSize": {
         "width": 1585,
         "height": 992
@@ -3156,7 +3999,7 @@
           "ms": 500,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.35,
@@ -3175,7 +4018,7 @@
           "ms": 500,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.35,
@@ -3194,7 +4037,7 @@
           "ms": 111,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.35,
@@ -3213,7 +4056,7 @@
           "ms": 111,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.35,
@@ -3232,7 +4075,7 @@
           "ms": 111,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.35,
@@ -3251,7 +4094,7 @@
           "ms": 111,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.35,
@@ -3270,7 +4113,7 @@
           "ms": 111,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.35,
@@ -3289,7 +4132,7 @@
           "ms": 111,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.35,
@@ -3308,7 +4151,7 @@
           "ms": 143,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.35,
@@ -3327,7 +4170,7 @@
           "ms": 143,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.35,
@@ -3346,7 +4189,7 @@
           "ms": 143,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.35,
@@ -3365,7 +4208,7 @@
           "ms": 1000,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.35,
@@ -3384,7 +4227,7 @@
           "ms": 125,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.35,
@@ -3403,7 +4246,7 @@
           "ms": 125,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.35,
@@ -3422,7 +4265,7 @@
           "ms": 125,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.35,
@@ -3441,7 +4284,7 @@
           "ms": 125,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.35,
@@ -3460,7 +4303,7 @@
           "ms": 125,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.35,
@@ -3479,7 +4322,7 @@
           "ms": 500,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.35,
@@ -3498,7 +4341,7 @@
           "ms": 500,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.35,
@@ -3517,7 +4360,7 @@
           "ms": 143,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.35,
@@ -3536,7 +4379,7 @@
           "ms": 143,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.35,
@@ -3555,7 +4398,7 @@
           "ms": 143,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.35,
@@ -3574,7 +4417,7 @@
           "ms": 143,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.35,
@@ -3593,7 +4436,7 @@
           "ms": 143,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.35,
@@ -3612,7 +4455,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.35,
@@ -3631,7 +4474,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.35,
@@ -3650,7 +4493,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.35,
@@ -3669,7 +4512,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.35,
@@ -3688,7 +4531,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.35,
@@ -3707,7 +4550,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.35,
@@ -3726,7 +4569,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.35,
@@ -3745,7 +4588,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.35,
@@ -3764,7 +4607,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.35,
@@ -3783,7 +4626,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.35,
@@ -3802,7 +4645,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.35,
@@ -3821,7 +4664,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.35,
@@ -3840,7 +4683,7 @@
           "ms": 200,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.35,
@@ -3859,7 +4702,7 @@
           "ms": 200,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.35,
@@ -3878,7 +4721,7 @@
           "ms": 200,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.35,
@@ -3894,7 +4737,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "layers": [
         "shadow",
@@ -3918,6 +4761,292 @@
       "frameCount": 39,
       "padding": 1,
       "extrusion": 1,
+      "registration": {
+        "method": "intact-figure-bounds",
+        "scale": 0.8359788359788359,
+        "regions": [
+          {
+            "left": 45,
+            "top": 14,
+            "width": 141,
+            "height": 189,
+            "headX": 115
+          },
+          {
+            "left": 244,
+            "top": 14,
+            "width": 138,
+            "height": 187,
+            "headX": 312.5
+          },
+          {
+            "left": 440,
+            "top": 18,
+            "width": 139,
+            "height": 183,
+            "headX": 509
+          },
+          {
+            "left": 632,
+            "top": 18,
+            "width": 140,
+            "height": 179,
+            "headX": 701.5
+          },
+          {
+            "left": 830,
+            "top": 19,
+            "width": 141,
+            "height": 178,
+            "headX": 900
+          },
+          {
+            "left": 1028,
+            "top": 22,
+            "width": 140,
+            "height": 175,
+            "headX": 1097.5
+          },
+          {
+            "left": 1223,
+            "top": 23,
+            "width": 141,
+            "height": 178,
+            "headX": 1293
+          },
+          {
+            "left": 1421,
+            "top": 24,
+            "width": 139,
+            "height": 177,
+            "headX": 1490
+          },
+          {
+            "left": 40,
+            "top": 229,
+            "width": 140,
+            "height": 169,
+            "headX": 109.5
+          },
+          {
+            "left": 238,
+            "top": 235,
+            "width": 140,
+            "height": 162,
+            "headX": 307.5
+          },
+          {
+            "left": 435,
+            "top": 242,
+            "width": 139,
+            "height": 156,
+            "headX": 504
+          },
+          {
+            "left": 626,
+            "top": 241,
+            "width": 139,
+            "height": 156,
+            "headX": 695
+          },
+          {
+            "left": 820,
+            "top": 235,
+            "width": 136,
+            "height": 162,
+            "headX": 887.5
+          },
+          {
+            "left": 1014,
+            "top": 231,
+            "width": 134,
+            "height": 166,
+            "headX": 1080.5
+          },
+          {
+            "left": 1211,
+            "top": 231,
+            "width": 136,
+            "height": 166,
+            "headX": 1277.5
+          },
+          {
+            "left": 1410,
+            "top": 229,
+            "width": 132,
+            "height": 168,
+            "headX": 1475.5
+          },
+          {
+            "left": 29,
+            "top": 424,
+            "width": 136,
+            "height": 167,
+            "headX": 96.5
+          },
+          {
+            "left": 229,
+            "top": 427,
+            "width": 136,
+            "height": 164,
+            "headX": 296.5
+          },
+          {
+            "left": 426,
+            "top": 427,
+            "width": 136,
+            "height": 164,
+            "headX": 493.5
+          },
+          {
+            "left": 624,
+            "top": 427,
+            "width": 136,
+            "height": 163,
+            "headX": 691.5
+          },
+          {
+            "left": 821,
+            "top": 426,
+            "width": 136,
+            "height": 165,
+            "headX": 888.5
+          },
+          {
+            "left": 1018,
+            "top": 426,
+            "width": 135,
+            "height": 165,
+            "headX": 1085
+          },
+          {
+            "left": 1214,
+            "top": 422,
+            "width": 133,
+            "height": 169,
+            "headX": 1280
+          },
+          {
+            "left": 1412,
+            "top": 423,
+            "width": 134,
+            "height": 167,
+            "headX": 1478
+          },
+          {
+            "left": 44,
+            "top": 618,
+            "width": 130,
+            "height": 165,
+            "headX": 108.5
+          },
+          {
+            "left": 238,
+            "top": 615,
+            "width": 128,
+            "height": 167,
+            "headX": 301.5
+          },
+          {
+            "left": 437,
+            "top": 620,
+            "width": 129,
+            "height": 163,
+            "headX": 501
+          },
+          {
+            "left": 629,
+            "top": 616,
+            "width": 137,
+            "height": 168,
+            "headX": 692.5
+          },
+          {
+            "left": 826,
+            "top": 616,
+            "width": 129,
+            "height": 167,
+            "headX": 890
+          },
+          {
+            "left": 1019,
+            "top": 617,
+            "width": 132,
+            "height": 166,
+            "headX": 1084.5
+          },
+          {
+            "left": 1209,
+            "top": 616,
+            "width": 134,
+            "height": 159,
+            "headX": 1273.5
+          },
+          {
+            "left": 1408,
+            "top": 619,
+            "width": 130,
+            "height": 156,
+            "headX": 1472.5
+          },
+          {
+            "left": 37,
+            "top": 802,
+            "width": 137,
+            "height": 168,
+            "headX": 105
+          },
+          {
+            "left": 237,
+            "top": 801,
+            "width": 134,
+            "height": 167,
+            "headX": 303.5
+          },
+          {
+            "left": 436,
+            "top": 800,
+            "width": 133,
+            "height": 159,
+            "headX": 502
+          },
+          {
+            "left": 629,
+            "top": 804,
+            "width": 136,
+            "height": 167,
+            "headX": 696.5
+          },
+          {
+            "left": 812,
+            "top": 801,
+            "width": 135,
+            "height": 167,
+            "headX": 878.5
+          },
+          {
+            "left": 1007,
+            "top": 802,
+            "width": 138,
+            "height": 164,
+            "headX": 1074
+          },
+          {
+            "left": 1208,
+            "top": 807,
+            "width": 139,
+            "height": 164,
+            "headX": 1277
+          },
+          {
+            "left": 1409,
+            "top": 808,
+            "width": 138,
+            "height": 162,
+            "headX": 1477.5
+          }
+        ]
+      },
       "sourceSize": {
         "width": 1585,
         "height": 992
@@ -3929,7 +5058,7 @@
           "ms": 500,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.65,
@@ -3948,7 +5077,7 @@
           "ms": 500,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.65,
@@ -3967,7 +5096,7 @@
           "ms": 111,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.65,
@@ -3986,7 +5115,7 @@
           "ms": 111,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.65,
@@ -4005,7 +5134,7 @@
           "ms": 111,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.65,
@@ -4024,7 +5153,7 @@
           "ms": 111,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.65,
@@ -4043,7 +5172,7 @@
           "ms": 111,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.65,
@@ -4062,7 +5191,7 @@
           "ms": 111,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.65,
@@ -4081,7 +5210,7 @@
           "ms": 143,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.65,
@@ -4100,7 +5229,7 @@
           "ms": 143,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.65,
@@ -4119,7 +5248,7 @@
           "ms": 143,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.65,
@@ -4138,7 +5267,7 @@
           "ms": 1000,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.65,
@@ -4157,7 +5286,7 @@
           "ms": 125,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.65,
@@ -4176,7 +5305,7 @@
           "ms": 125,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.65,
@@ -4195,7 +5324,7 @@
           "ms": 125,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.65,
@@ -4214,7 +5343,7 @@
           "ms": 125,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.65,
@@ -4233,7 +5362,7 @@
           "ms": 125,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.65,
@@ -4252,7 +5381,7 @@
           "ms": 500,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.65,
@@ -4271,7 +5400,7 @@
           "ms": 500,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.65,
@@ -4290,7 +5419,7 @@
           "ms": 143,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.65,
@@ -4309,7 +5438,7 @@
           "ms": 143,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.65,
@@ -4328,7 +5457,7 @@
           "ms": 143,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.65,
@@ -4347,7 +5476,7 @@
           "ms": 143,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.65,
@@ -4366,7 +5495,7 @@
           "ms": 143,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.65,
@@ -4385,7 +5514,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.65,
@@ -4404,7 +5533,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.65,
@@ -4423,7 +5552,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.65,
@@ -4442,7 +5571,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.65,
@@ -4461,7 +5590,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.65,
@@ -4480,7 +5609,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.65,
@@ -4499,7 +5628,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.65,
@@ -4518,7 +5647,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.65,
@@ -4537,7 +5666,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.65,
@@ -4556,7 +5685,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.65,
@@ -4575,7 +5704,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.65,
@@ -4594,7 +5723,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.65,
@@ -4613,7 +5742,7 @@
           "ms": 200,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.65,
@@ -4632,7 +5761,7 @@
           "ms": 200,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.65,
@@ -4651,7 +5780,7 @@
           "ms": 200,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.65,
@@ -4667,7 +5796,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "layers": [
         "shadow",
@@ -4691,6 +5820,292 @@
       "frameCount": 39,
       "padding": 1,
       "extrusion": 1,
+      "registration": {
+        "method": "intact-figure-bounds",
+        "scale": 0.8729281767955801,
+        "regions": [
+          {
+            "left": 44,
+            "top": 16,
+            "width": 148,
+            "height": 181,
+            "headX": 117
+          },
+          {
+            "left": 239,
+            "top": 17,
+            "width": 146,
+            "height": 181,
+            "headX": 311.5
+          },
+          {
+            "left": 435,
+            "top": 17,
+            "width": 147,
+            "height": 181,
+            "headX": 508
+          },
+          {
+            "left": 633,
+            "top": 17,
+            "width": 146,
+            "height": 181,
+            "headX": 705.5
+          },
+          {
+            "left": 831,
+            "top": 18,
+            "width": 145,
+            "height": 177,
+            "headX": 903
+          },
+          {
+            "left": 1019,
+            "top": 18,
+            "width": 146,
+            "height": 180,
+            "headX": 1091.5
+          },
+          {
+            "left": 1212,
+            "top": 16,
+            "width": 147,
+            "height": 182,
+            "headX": 1285
+          },
+          {
+            "left": 1402,
+            "top": 18,
+            "width": 146,
+            "height": 180,
+            "headX": 1474.5
+          },
+          {
+            "left": 42,
+            "top": 227,
+            "width": 146,
+            "height": 175,
+            "headX": 114.5
+          },
+          {
+            "left": 236,
+            "top": 235,
+            "width": 146,
+            "height": 167,
+            "headX": 308.5
+          },
+          {
+            "left": 430,
+            "top": 239,
+            "width": 146,
+            "height": 163,
+            "headX": 502
+          },
+          {
+            "left": 623,
+            "top": 243,
+            "width": 146,
+            "height": 159,
+            "headX": 695.5
+          },
+          {
+            "left": 816,
+            "top": 236,
+            "width": 147,
+            "height": 166,
+            "headX": 889
+          },
+          {
+            "left": 1010,
+            "top": 233,
+            "width": 145,
+            "height": 169,
+            "headX": 1082
+          },
+          {
+            "left": 1203,
+            "top": 233,
+            "width": 147,
+            "height": 169,
+            "headX": 1276
+          },
+          {
+            "left": 1398,
+            "top": 233,
+            "width": 145,
+            "height": 169,
+            "headX": 1470
+          },
+          {
+            "left": 35,
+            "top": 429,
+            "width": 146,
+            "height": 169,
+            "headX": 107.5
+          },
+          {
+            "left": 232,
+            "top": 433,
+            "width": 145,
+            "height": 165,
+            "headX": 304
+          },
+          {
+            "left": 428,
+            "top": 434,
+            "width": 144,
+            "height": 164,
+            "headX": 499.5
+          },
+          {
+            "left": 623,
+            "top": 435,
+            "width": 144,
+            "height": 163,
+            "headX": 694.5
+          },
+          {
+            "left": 816,
+            "top": 435,
+            "width": 144,
+            "height": 163,
+            "headX": 887.5
+          },
+          {
+            "left": 1010,
+            "top": 434,
+            "width": 144,
+            "height": 164,
+            "headX": 1081.5
+          },
+          {
+            "left": 1206,
+            "top": 432,
+            "width": 144,
+            "height": 166,
+            "headX": 1277.5
+          },
+          {
+            "left": 1400,
+            "top": 431,
+            "width": 145,
+            "height": 167,
+            "headX": 1472
+          },
+          {
+            "left": 43,
+            "top": 624,
+            "width": 147,
+            "height": 174,
+            "headX": 116
+          },
+          {
+            "left": 233,
+            "top": 621,
+            "width": 143,
+            "height": 178,
+            "headX": 304
+          },
+          {
+            "left": 428,
+            "top": 625,
+            "width": 142,
+            "height": 173,
+            "headX": 498.5
+          },
+          {
+            "left": 624,
+            "top": 626,
+            "width": 141,
+            "height": 173,
+            "headX": 694
+          },
+          {
+            "left": 818,
+            "top": 624,
+            "width": 143,
+            "height": 175,
+            "headX": 889
+          },
+          {
+            "left": 1014,
+            "top": 626,
+            "width": 142,
+            "height": 171,
+            "headX": 1084.5
+          },
+          {
+            "left": 1205,
+            "top": 626,
+            "width": 143,
+            "height": 168,
+            "headX": 1276
+          },
+          {
+            "left": 1402,
+            "top": 622,
+            "width": 142,
+            "height": 171,
+            "headX": 1472.5
+          },
+          {
+            "left": 39,
+            "top": 820,
+            "width": 142,
+            "height": 163,
+            "headX": 109.5
+          },
+          {
+            "left": 235,
+            "top": 820,
+            "width": 139,
+            "height": 159,
+            "headX": 304
+          },
+          {
+            "left": 430,
+            "top": 820,
+            "width": 141,
+            "height": 161,
+            "headX": 500
+          },
+          {
+            "left": 623,
+            "top": 822,
+            "width": 139,
+            "height": 160,
+            "headX": 692
+          },
+          {
+            "left": 811,
+            "top": 822,
+            "width": 147,
+            "height": 160,
+            "headX": 884
+          },
+          {
+            "left": 1011,
+            "top": 822,
+            "width": 143,
+            "height": 160,
+            "headX": 1082
+          },
+          {
+            "left": 1206,
+            "top": 824,
+            "width": 143,
+            "height": 158,
+            "headX": 1277
+          },
+          {
+            "left": 1402,
+            "top": 824,
+            "width": 144,
+            "height": 158,
+            "headX": 1473.5
+          }
+        ]
+      },
       "sourceSize": {
         "width": 1585,
         "height": 992
@@ -4702,7 +6117,7 @@
           "ms": 500,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -4721,7 +6136,7 @@
           "ms": 500,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -4740,7 +6155,7 @@
           "ms": 111,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -4759,7 +6174,7 @@
           "ms": 111,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -4778,7 +6193,7 @@
           "ms": 111,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -4797,7 +6212,7 @@
           "ms": 111,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -4816,7 +6231,7 @@
           "ms": 111,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -4835,7 +6250,7 @@
           "ms": 111,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -4854,7 +6269,7 @@
           "ms": 143,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -4873,7 +6288,7 @@
           "ms": 143,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -4892,7 +6307,7 @@
           "ms": 143,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -4911,7 +6326,7 @@
           "ms": 1000,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -4930,7 +6345,7 @@
           "ms": 125,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -4949,7 +6364,7 @@
           "ms": 125,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -4968,7 +6383,7 @@
           "ms": 125,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -4987,7 +6402,7 @@
           "ms": 125,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -5006,7 +6421,7 @@
           "ms": 125,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -5025,7 +6440,7 @@
           "ms": 500,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -5044,7 +6459,7 @@
           "ms": 500,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -5063,7 +6478,7 @@
           "ms": 143,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -5082,7 +6497,7 @@
           "ms": 143,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -5101,7 +6516,7 @@
           "ms": 143,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -5120,7 +6535,7 @@
           "ms": 143,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -5139,7 +6554,7 @@
           "ms": 143,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -5158,7 +6573,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -5177,7 +6592,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -5196,7 +6611,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -5215,7 +6630,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -5234,7 +6649,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -5253,7 +6668,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -5272,7 +6687,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -5291,7 +6706,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -5310,7 +6725,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -5329,7 +6744,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -5348,7 +6763,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -5367,7 +6782,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -5386,7 +6801,7 @@
           "ms": 200,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -5405,7 +6820,7 @@
           "ms": 200,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -5424,7 +6839,7 @@
           "ms": 200,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -5440,7 +6855,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "layers": [
         "shadow",
@@ -5460,26 +6875,11 @@
       "width": 256,
       "height": 256,
       "sourceRegion": {
-        "left": 0,
-        "top": 0,
-        "width": 198,
-        "height": 198
-      },
-      "loop": false,
-      "layers": [
-        "portrait"
-      ],
-      "root": {
-        "x": 0.5,
-        "y": 0.875
-      },
-      "grip": {
-        "x": 0.25,
-        "y": 0.8
-      },
-      "rodTip": {
-        "x": 0.85,
-        "y": 0.15
+        "left": 44,
+        "top": 16,
+        "width": 148,
+        "height": 181,
+        "headX": 117
       }
     },
     {
@@ -5495,6 +6895,292 @@
       "frameCount": 39,
       "padding": 1,
       "extrusion": 1,
+      "registration": {
+        "method": "intact-figure-bounds",
+        "scale": 0.797979797979798,
+        "regions": [
+          {
+            "left": 57,
+            "top": 8,
+            "width": 150,
+            "height": 198,
+            "headX": 131.5
+          },
+          {
+            "left": 248,
+            "top": 9,
+            "width": 151,
+            "height": 197,
+            "headX": 323
+          },
+          {
+            "left": 438,
+            "top": 9,
+            "width": 151,
+            "height": 209,
+            "headX": 513
+          },
+          {
+            "left": 630,
+            "top": 9,
+            "width": 149,
+            "height": 198,
+            "headX": 704
+          },
+          {
+            "left": 819,
+            "top": 10,
+            "width": 149,
+            "height": 201,
+            "headX": 893
+          },
+          {
+            "left": 1009,
+            "top": 9,
+            "width": 149,
+            "height": 199,
+            "headX": 1083
+          },
+          {
+            "left": 1201,
+            "top": 10,
+            "width": 148,
+            "height": 195,
+            "headX": 1274.5
+          },
+          {
+            "left": 1391,
+            "top": 9,
+            "width": 149,
+            "height": 202,
+            "headX": 1465
+          },
+          {
+            "left": 54,
+            "top": 230,
+            "width": 152,
+            "height": 180,
+            "headX": 129.5
+          },
+          {
+            "left": 246,
+            "top": 232,
+            "width": 151,
+            "height": 177,
+            "headX": 321
+          },
+          {
+            "left": 436,
+            "top": 235,
+            "width": 148,
+            "height": 173,
+            "headX": 509.5
+          },
+          {
+            "left": 624,
+            "top": 233,
+            "width": 149,
+            "height": 174,
+            "headX": 698
+          },
+          {
+            "left": 813,
+            "top": 231,
+            "width": 147,
+            "height": 175,
+            "headX": 886
+          },
+          {
+            "left": 1003,
+            "top": 232,
+            "width": 147,
+            "height": 174,
+            "headX": 1076
+          },
+          {
+            "left": 1195,
+            "top": 231,
+            "width": 147,
+            "height": 174,
+            "headX": 1268
+          },
+          {
+            "left": 1387,
+            "top": 231,
+            "width": 149,
+            "height": 174,
+            "headX": 1461
+          },
+          {
+            "left": 56,
+            "top": 430,
+            "width": 151,
+            "height": 165,
+            "headX": 131
+          },
+          {
+            "left": 247,
+            "top": 430,
+            "width": 151,
+            "height": 166,
+            "headX": 322
+          },
+          {
+            "left": 439,
+            "top": 431,
+            "width": 149,
+            "height": 165,
+            "headX": 512.5
+          },
+          {
+            "left": 629,
+            "top": 431,
+            "width": 149,
+            "height": 165,
+            "headX": 702.5
+          },
+          {
+            "left": 818,
+            "top": 432,
+            "width": 149,
+            "height": 164,
+            "headX": 892
+          },
+          {
+            "left": 1008,
+            "top": 430,
+            "width": 150,
+            "height": 166,
+            "headX": 1082.5
+          },
+          {
+            "left": 1201,
+            "top": 427,
+            "width": 147,
+            "height": 169,
+            "headX": 1273.5
+          },
+          {
+            "left": 1394,
+            "top": 428,
+            "width": 146,
+            "height": 168,
+            "headX": 1466.5
+          },
+          {
+            "left": 56,
+            "top": 609,
+            "width": 141,
+            "height": 185,
+            "headX": 126
+          },
+          {
+            "left": 244,
+            "top": 608,
+            "width": 140,
+            "height": 186,
+            "headX": 313.5
+          },
+          {
+            "left": 429,
+            "top": 609,
+            "width": 142,
+            "height": 185,
+            "headX": 499.5
+          },
+          {
+            "left": 621,
+            "top": 608,
+            "width": 142,
+            "height": 186,
+            "headX": 691.5
+          },
+          {
+            "left": 815,
+            "top": 609,
+            "width": 144,
+            "height": 185,
+            "headX": 886.5
+          },
+          {
+            "left": 1007,
+            "top": 609,
+            "width": 145,
+            "height": 185,
+            "headX": 1079
+          },
+          {
+            "left": 1195,
+            "top": 610,
+            "width": 147,
+            "height": 179,
+            "headX": 1268
+          },
+          {
+            "left": 1387,
+            "top": 610,
+            "width": 149,
+            "height": 179,
+            "headX": 1461
+          },
+          {
+            "left": 53,
+            "top": 805,
+            "width": 149,
+            "height": 179,
+            "headX": 127
+          },
+          {
+            "left": 248,
+            "top": 805,
+            "width": 147,
+            "height": 178,
+            "headX": 321
+          },
+          {
+            "left": 437,
+            "top": 805,
+            "width": 145,
+            "height": 179,
+            "headX": 509
+          },
+          {
+            "left": 627,
+            "top": 805,
+            "width": 144,
+            "height": 175,
+            "headX": 698.5
+          },
+          {
+            "left": 815,
+            "top": 806,
+            "width": 148,
+            "height": 178,
+            "headX": 888.5
+          },
+          {
+            "left": 1006,
+            "top": 806,
+            "width": 146,
+            "height": 177,
+            "headX": 1078.5
+          },
+          {
+            "left": 1196,
+            "top": 805,
+            "width": 145,
+            "height": 178,
+            "headX": 1268
+          },
+          {
+            "left": 1389,
+            "top": 805,
+            "width": 147,
+            "height": 178,
+            "headX": 1462
+          }
+        ]
+      },
       "sourceSize": {
         "width": 1586,
         "height": 992
@@ -5506,7 +7192,7 @@
           "ms": 500,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -5525,7 +7211,7 @@
           "ms": 500,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -5544,7 +7230,7 @@
           "ms": 111,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -5563,7 +7249,7 @@
           "ms": 111,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -5582,7 +7268,7 @@
           "ms": 111,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -5601,7 +7287,7 @@
           "ms": 111,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -5620,7 +7306,7 @@
           "ms": 111,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -5639,7 +7325,7 @@
           "ms": 111,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -5658,7 +7344,7 @@
           "ms": 143,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -5677,7 +7363,7 @@
           "ms": 143,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -5696,7 +7382,7 @@
           "ms": 143,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -5715,7 +7401,7 @@
           "ms": 1000,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -5734,7 +7420,7 @@
           "ms": 125,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -5753,7 +7439,7 @@
           "ms": 125,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -5772,7 +7458,7 @@
           "ms": 125,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -5791,7 +7477,7 @@
           "ms": 125,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -5810,7 +7496,7 @@
           "ms": 125,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -5829,7 +7515,7 @@
           "ms": 500,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -5848,7 +7534,7 @@
           "ms": 500,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -5867,7 +7553,7 @@
           "ms": 143,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -5886,7 +7572,7 @@
           "ms": 143,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -5905,7 +7591,7 @@
           "ms": 143,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -5924,7 +7610,7 @@
           "ms": 143,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -5943,7 +7629,7 @@
           "ms": 143,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -5962,7 +7648,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -5981,7 +7667,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -6000,7 +7686,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -6019,7 +7705,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -6038,7 +7724,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -6057,7 +7743,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -6076,7 +7762,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -6095,7 +7781,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -6114,7 +7800,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -6133,7 +7819,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -6152,7 +7838,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -6171,7 +7857,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -6190,7 +7876,7 @@
           "ms": 200,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -6209,7 +7895,7 @@
           "ms": 200,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -6228,7 +7914,7 @@
           "ms": 200,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.6,
@@ -6244,7 +7930,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "layers": [
         "shadow",
@@ -6268,6 +7954,292 @@
       "frameCount": 39,
       "padding": 1,
       "extrusion": 1,
+      "registration": {
+        "method": "intact-figure-bounds",
+        "scale": 0.9132947976878613,
+        "regions": [
+          {
+            "left": 48,
+            "top": 23,
+            "width": 135,
+            "height": 173,
+            "headX": 115
+          },
+          {
+            "left": 244,
+            "top": 23,
+            "width": 133,
+            "height": 173,
+            "headX": 310
+          },
+          {
+            "left": 438,
+            "top": 22,
+            "width": 133,
+            "height": 176,
+            "headX": 504
+          },
+          {
+            "left": 634,
+            "top": 23,
+            "width": 133,
+            "height": 168,
+            "headX": 700
+          },
+          {
+            "left": 828,
+            "top": 23,
+            "width": 132,
+            "height": 173,
+            "headX": 893.5
+          },
+          {
+            "left": 1024,
+            "top": 25,
+            "width": 133,
+            "height": 172,
+            "headX": 1090
+          },
+          {
+            "left": 1220,
+            "top": 23,
+            "width": 131,
+            "height": 174,
+            "headX": 1285
+          },
+          {
+            "left": 1412,
+            "top": 25,
+            "width": 134,
+            "height": 171,
+            "headX": 1478.5
+          },
+          {
+            "left": 45,
+            "top": 237,
+            "width": 138,
+            "height": 162,
+            "headX": 113.5
+          },
+          {
+            "left": 241,
+            "top": 241,
+            "width": 137,
+            "height": 157,
+            "headX": 308.5
+          },
+          {
+            "left": 438,
+            "top": 245,
+            "width": 132,
+            "height": 153,
+            "headX": 502.5
+          },
+          {
+            "left": 634,
+            "top": 248,
+            "width": 133,
+            "height": 151,
+            "headX": 699
+          },
+          {
+            "left": 829,
+            "top": 241,
+            "width": 133,
+            "height": 156,
+            "headX": 894.5
+          },
+          {
+            "left": 1026,
+            "top": 241,
+            "width": 133,
+            "height": 156,
+            "headX": 1090.5
+          },
+          {
+            "left": 1216,
+            "top": 241,
+            "width": 137,
+            "height": 157,
+            "headX": 1285
+          },
+          {
+            "left": 1409,
+            "top": 238,
+            "width": 141,
+            "height": 158,
+            "headX": 1481.5
+          },
+          {
+            "left": 42,
+            "top": 432,
+            "width": 138,
+            "height": 158,
+            "headX": 110
+          },
+          {
+            "left": 242,
+            "top": 433,
+            "width": 135,
+            "height": 158,
+            "headX": 308
+          },
+          {
+            "left": 437,
+            "top": 436,
+            "width": 136,
+            "height": 155,
+            "headX": 503.5
+          },
+          {
+            "left": 631,
+            "top": 435,
+            "width": 136,
+            "height": 156,
+            "headX": 698
+          },
+          {
+            "left": 825,
+            "top": 433,
+            "width": 137,
+            "height": 158,
+            "headX": 892.5
+          },
+          {
+            "left": 1022,
+            "top": 431,
+            "width": 138,
+            "height": 159,
+            "headX": 1090
+          },
+          {
+            "left": 1217,
+            "top": 431,
+            "width": 139,
+            "height": 161,
+            "headX": 1285.5
+          },
+          {
+            "left": 1417,
+            "top": 429,
+            "width": 138,
+            "height": 162,
+            "headX": 1484
+          },
+          {
+            "left": 38,
+            "top": 625,
+            "width": 135,
+            "height": 160,
+            "headX": 105
+          },
+          {
+            "left": 231,
+            "top": 623,
+            "width": 133,
+            "height": 165,
+            "headX": 297
+          },
+          {
+            "left": 427,
+            "top": 622,
+            "width": 133,
+            "height": 165,
+            "headX": 493
+          },
+          {
+            "left": 615,
+            "top": 623,
+            "width": 137,
+            "height": 164,
+            "headX": 686
+          },
+          {
+            "left": 816,
+            "top": 626,
+            "width": 136,
+            "height": 162,
+            "headX": 883.5
+          },
+          {
+            "left": 1017,
+            "top": 624,
+            "width": 134,
+            "height": 164,
+            "headX": 1083.5
+          },
+          {
+            "left": 1210,
+            "top": 616,
+            "width": 137,
+            "height": 168,
+            "headX": 1278
+          },
+          {
+            "left": 1410,
+            "top": 615,
+            "width": 136,
+            "height": 166,
+            "headX": 1477.5
+          },
+          {
+            "left": 39,
+            "top": 808,
+            "width": 132,
+            "height": 162,
+            "headX": 104.5
+          },
+          {
+            "left": 239,
+            "top": 811,
+            "width": 131,
+            "height": 166,
+            "headX": 304
+          },
+          {
+            "left": 436,
+            "top": 815,
+            "width": 130,
+            "height": 161,
+            "headX": 500.5
+          },
+          {
+            "left": 629,
+            "top": 818,
+            "width": 135,
+            "height": 160,
+            "headX": 696
+          },
+          {
+            "left": 832,
+            "top": 814,
+            "width": 134,
+            "height": 163,
+            "headX": 898
+          },
+          {
+            "left": 1025,
+            "top": 812,
+            "width": 142,
+            "height": 164,
+            "headX": 1095.5
+          },
+          {
+            "left": 1216,
+            "top": 821,
+            "width": 139,
+            "height": 156,
+            "headX": 1283.5
+          },
+          {
+            "left": 1413,
+            "top": 822,
+            "width": 138,
+            "height": 156,
+            "headX": 1481
+          }
+        ]
+      },
       "sourceSize": {
         "width": 1585,
         "height": 992
@@ -6279,7 +8251,7 @@
           "ms": 500,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.35,
@@ -6298,7 +8270,7 @@
           "ms": 500,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.35,
@@ -6317,7 +8289,7 @@
           "ms": 111,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.35,
@@ -6336,7 +8308,7 @@
           "ms": 111,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.35,
@@ -6355,7 +8327,7 @@
           "ms": 111,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.35,
@@ -6374,7 +8346,7 @@
           "ms": 111,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.35,
@@ -6393,7 +8365,7 @@
           "ms": 111,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.35,
@@ -6412,7 +8384,7 @@
           "ms": 111,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.35,
@@ -6431,7 +8403,7 @@
           "ms": 143,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.35,
@@ -6450,7 +8422,7 @@
           "ms": 143,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.35,
@@ -6469,7 +8441,7 @@
           "ms": 143,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.35,
@@ -6488,7 +8460,7 @@
           "ms": 1000,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.35,
@@ -6507,7 +8479,7 @@
           "ms": 125,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.35,
@@ -6526,7 +8498,7 @@
           "ms": 125,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.35,
@@ -6545,7 +8517,7 @@
           "ms": 125,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.35,
@@ -6564,7 +8536,7 @@
           "ms": 125,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.35,
@@ -6583,7 +8555,7 @@
           "ms": 125,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.35,
@@ -6602,7 +8574,7 @@
           "ms": 500,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.35,
@@ -6621,7 +8593,7 @@
           "ms": 500,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.35,
@@ -6640,7 +8612,7 @@
           "ms": 143,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.35,
@@ -6659,7 +8631,7 @@
           "ms": 143,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.35,
@@ -6678,7 +8650,7 @@
           "ms": 143,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.35,
@@ -6697,7 +8669,7 @@
           "ms": 143,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.35,
@@ -6716,7 +8688,7 @@
           "ms": 143,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.35,
@@ -6735,7 +8707,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.35,
@@ -6754,7 +8726,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.35,
@@ -6773,7 +8745,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.35,
@@ -6792,7 +8764,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.35,
@@ -6811,7 +8783,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.35,
@@ -6830,7 +8802,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.35,
@@ -6849,7 +8821,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.35,
@@ -6868,7 +8840,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.35,
@@ -6887,7 +8859,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.35,
@@ -6906,7 +8878,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.35,
@@ -6925,7 +8897,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.35,
@@ -6944,7 +8916,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.35,
@@ -6963,7 +8935,7 @@
           "ms": 200,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.35,
@@ -6982,7 +8954,7 @@
           "ms": 200,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.35,
@@ -7001,7 +8973,7 @@
           "ms": 200,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.35,
@@ -7017,7 +8989,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "layers": [
         "shadow",
@@ -7041,6 +9013,292 @@
       "frameCount": 39,
       "padding": 1,
       "extrusion": 1,
+      "registration": {
+        "method": "intact-figure-bounds",
+        "scale": 0.88268156424581,
+        "regions": [
+          {
+            "left": 40,
+            "top": 18,
+            "width": 143,
+            "height": 179,
+            "headX": 111
+          },
+          {
+            "left": 239,
+            "top": 18,
+            "width": 141,
+            "height": 179,
+            "headX": 309
+          },
+          {
+            "left": 437,
+            "top": 19,
+            "width": 140,
+            "height": 177,
+            "headX": 506.5
+          },
+          {
+            "left": 635,
+            "top": 20,
+            "width": 139,
+            "height": 176,
+            "headX": 704
+          },
+          {
+            "left": 831,
+            "top": 23,
+            "width": 140,
+            "height": 174,
+            "headX": 900.5
+          },
+          {
+            "left": 1028,
+            "top": 23,
+            "width": 140,
+            "height": 173,
+            "headX": 1097.5
+          },
+          {
+            "left": 1227,
+            "top": 19,
+            "width": 139,
+            "height": 177,
+            "headX": 1296
+          },
+          {
+            "left": 1424,
+            "top": 22,
+            "width": 139,
+            "height": 173,
+            "headX": 1493
+          },
+          {
+            "left": 38,
+            "top": 235,
+            "width": 141,
+            "height": 163,
+            "headX": 108
+          },
+          {
+            "left": 237,
+            "top": 239,
+            "width": 140,
+            "height": 159,
+            "headX": 306.5
+          },
+          {
+            "left": 433,
+            "top": 247,
+            "width": 139,
+            "height": 151,
+            "headX": 503
+          },
+          {
+            "left": 630,
+            "top": 247,
+            "width": 139,
+            "height": 151,
+            "headX": 700
+          },
+          {
+            "left": 825,
+            "top": 241,
+            "width": 140,
+            "height": 156,
+            "headX": 896
+          },
+          {
+            "left": 1020,
+            "top": 234,
+            "width": 140,
+            "height": 164,
+            "headX": 1091
+          },
+          {
+            "left": 1216,
+            "top": 233,
+            "width": 140,
+            "height": 165,
+            "headX": 1287
+          },
+          {
+            "left": 1411,
+            "top": 233,
+            "width": 143,
+            "height": 164,
+            "headX": 1482
+          },
+          {
+            "left": 27,
+            "top": 433,
+            "width": 141,
+            "height": 157,
+            "headX": 99
+          },
+          {
+            "left": 229,
+            "top": 437,
+            "width": 140,
+            "height": 153,
+            "headX": 300.5
+          },
+          {
+            "left": 428,
+            "top": 437,
+            "width": 139,
+            "height": 153,
+            "headX": 499
+          },
+          {
+            "left": 626,
+            "top": 437,
+            "width": 140,
+            "height": 153,
+            "headX": 697.5
+          },
+          {
+            "left": 822,
+            "top": 435,
+            "width": 141,
+            "height": 155,
+            "headX": 893
+          },
+          {
+            "left": 1021,
+            "top": 434,
+            "width": 140,
+            "height": 156,
+            "headX": 1092
+          },
+          {
+            "left": 1216,
+            "top": 430,
+            "width": 140,
+            "height": 160,
+            "headX": 1286.5
+          },
+          {
+            "left": 1409,
+            "top": 426,
+            "width": 142,
+            "height": 163,
+            "headX": 1480.5
+          },
+          {
+            "left": 37,
+            "top": 620,
+            "width": 140,
+            "height": 167,
+            "headX": 106.5
+          },
+          {
+            "left": 236,
+            "top": 621,
+            "width": 138,
+            "height": 165,
+            "headX": 304.5
+          },
+          {
+            "left": 432,
+            "top": 620,
+            "width": 139,
+            "height": 166,
+            "headX": 501
+          },
+          {
+            "left": 636,
+            "top": 622,
+            "width": 138,
+            "height": 164,
+            "headX": 704.5
+          },
+          {
+            "left": 829,
+            "top": 620,
+            "width": 138,
+            "height": 166,
+            "headX": 897.5
+          },
+          {
+            "left": 1021,
+            "top": 620,
+            "width": 136,
+            "height": 165,
+            "headX": 1088.5
+          },
+          {
+            "left": 1217,
+            "top": 618,
+            "width": 135,
+            "height": 160,
+            "headX": 1284
+          },
+          {
+            "left": 1419,
+            "top": 611,
+            "width": 134,
+            "height": 153,
+            "headX": 1486
+          },
+          {
+            "left": 37,
+            "top": 807,
+            "width": 134,
+            "height": 166,
+            "headX": 103.5
+          },
+          {
+            "left": 239,
+            "top": 809,
+            "width": 135,
+            "height": 162,
+            "headX": 306
+          },
+          {
+            "left": 437,
+            "top": 810,
+            "width": 134,
+            "height": 165,
+            "headX": 503.5
+          },
+          {
+            "left": 632,
+            "top": 810,
+            "width": 136,
+            "height": 157,
+            "headX": 699.5
+          },
+          {
+            "left": 813,
+            "top": 815,
+            "width": 147,
+            "height": 161,
+            "headX": 886
+          },
+          {
+            "left": 1006,
+            "top": 817,
+            "width": 144,
+            "height": 158,
+            "headX": 1078.5
+          },
+          {
+            "left": 1214,
+            "top": 820,
+            "width": 139,
+            "height": 156,
+            "headX": 1283
+          },
+          {
+            "left": 1411,
+            "top": 823,
+            "width": 141,
+            "height": 154,
+            "headX": 1482.5
+          }
+        ]
+      },
       "sourceSize": {
         "width": 1585,
         "height": 992
@@ -7052,7 +9310,7 @@
           "ms": 500,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.65,
@@ -7071,7 +9329,7 @@
           "ms": 500,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.65,
@@ -7090,7 +9348,7 @@
           "ms": 111,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.65,
@@ -7109,7 +9367,7 @@
           "ms": 111,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.65,
@@ -7128,7 +9386,7 @@
           "ms": 111,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.65,
@@ -7147,7 +9405,7 @@
           "ms": 111,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.65,
@@ -7166,7 +9424,7 @@
           "ms": 111,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.65,
@@ -7185,7 +9443,7 @@
           "ms": 111,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.65,
@@ -7204,7 +9462,7 @@
           "ms": 143,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.65,
@@ -7223,7 +9481,7 @@
           "ms": 143,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.65,
@@ -7242,7 +9500,7 @@
           "ms": 143,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.65,
@@ -7261,7 +9519,7 @@
           "ms": 1000,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.65,
@@ -7280,7 +9538,7 @@
           "ms": 125,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.65,
@@ -7299,7 +9557,7 @@
           "ms": 125,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.65,
@@ -7318,7 +9576,7 @@
           "ms": 125,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.65,
@@ -7337,7 +9595,7 @@
           "ms": 125,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.65,
@@ -7356,7 +9614,7 @@
           "ms": 125,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.65,
@@ -7375,7 +9633,7 @@
           "ms": 500,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.65,
@@ -7394,7 +9652,7 @@
           "ms": 500,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.65,
@@ -7413,7 +9671,7 @@
           "ms": 143,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.65,
@@ -7432,7 +9690,7 @@
           "ms": 143,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.65,
@@ -7451,7 +9709,7 @@
           "ms": 143,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.65,
@@ -7470,7 +9728,7 @@
           "ms": 143,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.65,
@@ -7489,7 +9747,7 @@
           "ms": 143,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.65,
@@ -7508,7 +9766,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.65,
@@ -7527,7 +9785,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.65,
@@ -7546,7 +9804,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.65,
@@ -7565,7 +9823,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.65,
@@ -7584,7 +9842,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.65,
@@ -7603,7 +9861,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.65,
@@ -7622,7 +9880,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.65,
@@ -7641,7 +9899,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.65,
@@ -7660,7 +9918,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.65,
@@ -7679,7 +9937,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.65,
@@ -7698,7 +9956,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.65,
@@ -7717,7 +9975,7 @@
           "ms": 83,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.65,
@@ -7736,7 +9994,7 @@
           "ms": 200,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.65,
@@ -7755,7 +10013,7 @@
           "ms": 200,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.65,
@@ -7774,7 +10032,7 @@
           "ms": 200,
           "root": {
             "x": 0.5,
-            "y": 0.875
+            "y": 0.9375
           },
           "gripAnchor": {
             "x": 0.65,
@@ -7790,7 +10048,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "layers": [
         "shadow",
@@ -7821,7 +10079,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -7852,7 +10110,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -7883,7 +10141,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -7914,7 +10172,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -7945,7 +10203,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -7976,7 +10234,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -8007,7 +10265,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -8038,7 +10296,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -8069,7 +10327,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -8100,7 +10358,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -8131,7 +10389,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -8196,7 +10454,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -8227,7 +10485,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -8258,7 +10516,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -8289,7 +10547,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -8320,7 +10578,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -8351,7 +10609,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -8382,7 +10640,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -8413,7 +10671,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -8444,7 +10702,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -8475,7 +10733,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -8506,7 +10764,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -8537,7 +10795,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -8568,7 +10826,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -8599,7 +10857,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -8630,7 +10888,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -8661,7 +10919,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -8692,7 +10950,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -8723,7 +10981,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -8754,7 +11012,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -8785,7 +11043,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -8816,7 +11074,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -8847,7 +11105,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -8878,7 +11136,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -8909,7 +11167,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -8942,7 +11200,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.5,
@@ -8975,7 +11233,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.5,
@@ -9008,7 +11266,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.8,
@@ -9041,7 +11299,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.1,
@@ -9074,7 +11332,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.5,
@@ -9107,7 +11365,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.5,
@@ -9140,7 +11398,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.8,
@@ -9173,7 +11431,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.1,
@@ -9206,7 +11464,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.5,
@@ -9239,7 +11497,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.5,
@@ -9272,7 +11530,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.8,
@@ -9305,7 +11563,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.1,
@@ -9338,7 +11596,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.5,
@@ -9371,7 +11629,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.5,
@@ -9404,7 +11662,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.8,
@@ -9437,7 +11695,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.1,
@@ -9470,7 +11728,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.5,
@@ -9503,7 +11761,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.5,
@@ -9536,7 +11794,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.8,
@@ -9569,7 +11827,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.1,
@@ -9602,7 +11860,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.5,
@@ -9635,7 +11893,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.5,
@@ -9668,7 +11926,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.8,
@@ -9701,7 +11959,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.1,
@@ -9734,7 +11992,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.5,
@@ -9767,7 +12025,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.5,
@@ -9800,7 +12058,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.8,
@@ -9833,7 +12091,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.1,
@@ -9866,7 +12124,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.5,
@@ -9899,7 +12157,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.5,
@@ -9932,7 +12190,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.8,
@@ -9965,7 +12223,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.1,
@@ -9998,7 +12256,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.5,
@@ -10031,7 +12289,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.5,
@@ -10064,7 +12322,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.8,
@@ -10097,7 +12355,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.1,
@@ -10130,7 +12388,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.5,
@@ -10163,7 +12421,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.5,
@@ -10196,7 +12454,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.8,
@@ -10229,7 +12487,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.1,
@@ -10262,7 +12520,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.5,
@@ -10295,7 +12553,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.5,
@@ -10328,7 +12586,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.8,
@@ -10361,7 +12619,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.1,
@@ -10394,7 +12652,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.5,
@@ -10427,7 +12685,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.5,
@@ -10460,7 +12718,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.8,
@@ -10493,7 +12751,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.1,
@@ -10524,7 +12782,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -10555,7 +12813,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -10586,7 +12844,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -10617,7 +12875,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -10648,7 +12906,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -10679,7 +12937,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,
@@ -10722,7 +12980,7 @@
       ],
       "root": {
         "x": 0.5,
-        "y": 0.875
+        "y": 0.9375
       },
       "grip": {
         "x": 0.25,

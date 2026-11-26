@@ -1,0 +1,160 @@
+{
+  "version": 1,
+  "status": "ready",
+  "source": "art/source/terrain-continuity/master.png",
+  "runtime": "public/assets/redesign/terrain-continuous.webp",
+  "width": 3072,
+  "height": 2048,
+  "frameWidth": 1536,
+  "frameHeight": 1024,
+  "frames": [
+    {
+      "id": "nw",
+      "path": "art/source/terrain-continuity/tiles/nw.png",
+      "left": 0,
+      "top": 0,
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "id": "ne",
+      "path": "art/source/terrain-continuity/tiles/ne.png",
+      "left": 1536,
+      "top": 0,
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "id": "sw",
+      "path": "art/source/terrain-continuity/tiles/sw.png",
+      "left": 0,
+      "top": 1024,
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "id": "se",
+      "path": "art/source/terrain-continuity/tiles/se.png",
+      "left": 1536,
+      "top": 1024,
+      "width": 1536,
+      "height": 1024
+    }
+  ],
+  "passes": [
+    {
+      "id": "vertical-north",
+      "source": "art/source/terrain-continuity/vertical-north.png",
+      "sourceSize": [
+        724,
+        2172
+      ],
+      "sourceHash": "4eb15471eadf57c9fb69a96bf2c4e2c11d7cc920c2aaeae9fc7bfc33cda9a3ad",
+      "bounds": {
+        "x": 1472,
+        "y": 0,
+        "w": 128,
+        "h": 1151
+      },
+      "iterations": 61,
+      "maxChange": 0.00004560413927038098
+    },
+    {
+      "id": "vertical-south",
+      "source": "art/source/terrain-continuity/vertical-south.png",
+      "sourceSize": [
+        724,
+        2172
+      ],
+      "sourceHash": "82ff88afee66a45300de92e365742079e50e01ae024699b1d4c259b7271f96f1",
+      "bounds": {
+        "x": 1472,
+        "y": 897,
+        "w": 128,
+        "h": 1151
+      },
+      "iterations": 61,
+      "maxChange": 0.00004880357499132515
+    },
+    {
+      "id": "horizontal-west",
+      "source": "art/source/terrain-continuity/horizontal-west.png",
+      "sourceSize": [
+        2172,
+        724
+      ],
+      "sourceHash": "ab70c446d4cc1117c742e9cae36099c92acd3a877a34354e29b9328f435bac77",
+      "bounds": {
+        "x": 0,
+        "y": 960,
+        "w": 1151,
+        "h": 128
+      },
+      "iterations": 61,
+      "maxChange": 0.00005856428996025897
+    },
+    {
+      "id": "horizontal-center",
+      "source": "art/source/terrain-continuity/horizontal-center.png",
+      "sourceSize": [
+        2172,
+        724
+      ],
+      "sourceHash": "c9c27966a0632630bdfcbb65793e0329747feda5296b48a2510b6ebc0bbbf817",
+      "bounds": {
+        "x": 961,
+        "y": 960,
+        "w": 1150,
+        "h": 128
+      },
+      "iterations": 61,
+      "maxChange": 0.00004886853813331981
+    },
+    {
+      "id": "horizontal-east",
+      "source": "art/source/terrain-continuity/horizontal-east.png",
+      "sourceSize": [
+        2172,
+        724
+      ],
+      "sourceHash": "3bd98e605f2147ccb7a6c8d53ab602048eb787a744c8b9996e7cef165fb12e09",
+      "bounds": {
+        "x": 1921,
+        "y": 960,
+        "w": 1151,
+        "h": 128
+      },
+      "iterations": 61,
+      "maxChange": 0.00005044389476665856
+    }
+  ],
+  "composition": "One opaque master, four frames from one encoded atlas; no runtime crossfade",
+  "solver": {
+    "method": "screened Poisson gradient reconstruction",
+    "lambda": 0.04,
+    "omega": 1.72
+  },
+  "outsideChanged": 0,
+  "changedPixels": 638616,
+  "touchedPixels": 638976,
+  "untouchedFraction": 0.8984375,
+  "seamsBefore": {
+    "northVertical": 34.9560546875,
+    "southVertical": 29.6337890625,
+    "westHorizontal": 37.00151909722222,
+    "eastHorizontal": 31.11284722222222
+  },
+  "seamsAfter": {
+    "northVertical": 14.8798828125,
+    "southVertical": 17.565104166666668,
+    "westHorizontal": 23.436848958333332,
+    "eastHorizontal": 12.493055555555555
+  },
+  "runtimeBytes": 3264736,
+  "runtimeSha256": "1702f355e2147e1b54a88a38a3ac29ed27e36cb17258231e31a7696368e8b389",
+  "baselineRuntimeBytes": 3751522,
+  "textureBytesBefore": 25165824,
+  "textureBytesAfter": 25165824,
+  "terrainObjectsBefore": 16,
+  "terrainObjectsAfter": 4
+}

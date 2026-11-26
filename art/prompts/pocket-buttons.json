@@ -1,0 +1,29 @@
+{
+  "tool": "built-in image_gen",
+  "prompt": "Use case: game UI raster sprite sheet. The attached screenshot is the exact selected design. Reproduce ONLY its two blank compact action-button backgrounds as a sprite sheet, not a UI mockup. TWO isolated buttons, one above the other on true transparent background: TOP the cheerful bright sky-blue rounded action button shown under rods / bottom inventory, BOTTOM the warm coral-orange inventory action button. Exactly SAME geometry and width for both: soft pill with clean rounded corners, subtle lighter upper highlight, very restrained lower blue/coral depth edge and soft tiny contact shadow. No thick decorative rim, no gloss stripe, no navy or gold. Each button approximately 720 wide by190 high, native sheet1600x1000 with generous transparent gutters; top button centered in upper half, bottom centered in lower half. OPAQUE uniform color face for dynamic white UI text, not a hollow border, not a transparent center. No letters, words, icons, numbers, stitching, fish, arrows, symbols or extra objects. Front-facing, axis aligned. Match reference modern cute casual fishing game style exactly: saturated azure-blue top button; peach-coral lower button. Crisp contours at54px displayed height. The only transparent pixels are outside each whole silhouette.",
+  "reference": "design/2026-11-26-shop-bag-concepts/01.png",
+  "source": "art/source/pocket-buttons.png",
+  "sourceWidth": 1568,
+  "sourceHeight": 1003,
+  "alphaNoiseCutoff": 8,
+  "outputs": [
+    {
+      "runtime": "public/assets/redesign/pocket-button-blue.png",
+      "crop": {
+        "left": 199,
+        "top": 165,
+        "width": 1161,
+        "height": 300
+      }
+    },
+    {
+      "runtime": "public/assets/redesign/pocket-button-coral.png",
+      "crop": {
+        "left": 198,
+        "top": 590,
+        "width": 1162,
+        "height": 301
+      }
+    }
+  ]
+}

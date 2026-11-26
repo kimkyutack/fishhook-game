@@ -1,0 +1,6 @@
+{
+  "prompt": "Production transparent UI icon atlas for a cute polished fishing game, THREE isolated assets arranged exactly THREE columns by ONE row on1536x512 transparent canvas, each fully inside its512x512 cell with clear gutters. NO text, letters, numbers, gold, neon. LEFT: small modern chat/message button, a chunky white speech bubble with three blue dots, puffy sky-blue circular backing, soft tactile toy depth, icon centered. MIDDLE: close button, simple thick dark blue X perfectly centered on a small puffy white circular disc with sky-blue edge, front view. RIGHT: a square game quick-slot FRAME, softly rounded square with thick ice-blue/white rim, raised lower edge, completely TRANSPARENT empty center, no symbols. Clean transparent alpha cutouts, no background haze, no ground shadows, friendly 3D cartoon game finish. All three same visual size, front-facing axis-aligned icons, enough empty margin all around. Crisp readable shapes at40px.",
+  "background": "transparent",
+  "source": "art/source/quick-chat-ui.png",
+  "alphaCleanupBelow": 8
+}

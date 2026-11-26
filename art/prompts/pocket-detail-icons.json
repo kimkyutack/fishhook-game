@@ -1,0 +1,162 @@
+{
+  "tool": "built-in image_gen",
+  "reference": "design/2026-11-26-shop-bag-concepts/01.png",
+  "createdAt": "2026-11-26",
+  "status": "generated-and-visually-inspected",
+  "prompt": "Production UI icon atlas for the attached selected fishing-game mockup. Exactly FOUR isolated icons in FOUR EQUAL square cells in ONE HORIZONTAL ROW, target2048x512 transparent canvas. Each icon wholly contained in its own cell with a clear empty gutter; all centered and same optical size about80percent of cell. Match reference's cute polished tactile3D toy rendering, gentle highlights, clean crisp silhouette, modest depth. LEFT cell: small shop/storefront title icon, tan/cream little building with CORAL and WHITE striped awning, blueglass display, no sign text. SECOND cell: small CLOSED padlock, opaque white/silver rounded body and cobalt/blue rounded shackle, one dark blue keyhole, front view. THIRD cell: small loudspeaker/megaphone, opaque white/silver horn, tiny coral handle/accent, front-side view aiming left, no sound symbols. RIGHT cell: neat small stack of shiny GOLD coins, three short overlapping piles, one front coin tilted upright, simple embossed star mark only, no numbers/letters. NO text, labels, border, panel, backdrop, ground plane, extra icons or haze. Keep all white parts of shop/lock/horn fully opaque rather than alpha holes; transparency ONLY outside icons. Same friendly3D art family as reference.",
+  "transparentBackground": true,
+  "alphaCleanupBelow": 8,
+  "alphaBoundsThreshold": 32,
+  "registrationPadding": 3,
+  "canvasSize": 512,
+  "maxFigureSize": 440,
+  "source": {
+    "path": "art/source/pocket-detail-icons.png",
+    "width": 2172,
+    "height": 724,
+    "bytes": 826529,
+    "sha256": "4e190b7b1de0059b177a26f28d4c51acab15ff49432d5f500783e86de3e0d1b6"
+  },
+  "registration": [
+    {
+      "name": "store",
+      "sourceCell": {
+        "left": 0,
+        "top": 0,
+        "width": 543,
+        "height": 724
+      },
+      "crop": {
+        "left": 70,
+        "top": 163,
+        "width": 433,
+        "height": 383
+      },
+      "scale": 1.0161662817551964,
+      "resizedFigure": {
+        "width": 440,
+        "height": 389
+      },
+      "canvas": {
+        "width": 512,
+        "height": 512
+      },
+      "offset": {
+        "left": 36,
+        "top": 62
+      },
+      "runtime": {
+        "path": "public/assets/redesign/pocket-store.png",
+        "width": 512,
+        "height": 512,
+        "bytes": 262765,
+        "sha256": "aa56b4a80e761ad7a2ab8487894248d573959654635648e31995cbd8765b4c45"
+      }
+    },
+    {
+      "name": "lock",
+      "sourceCell": {
+        "left": 543,
+        "top": 0,
+        "width": 543,
+        "height": 724
+      },
+      "crop": {
+        "left": 635,
+        "top": 127,
+        "width": 361,
+        "height": 428
+      },
+      "scale": 1.02803738317757,
+      "resizedFigure": {
+        "width": 371,
+        "height": 440
+      },
+      "canvas": {
+        "width": 512,
+        "height": 512
+      },
+      "offset": {
+        "left": 71,
+        "top": 36
+      },
+      "runtime": {
+        "path": "public/assets/redesign/pocket-lock.png",
+        "width": 512,
+        "height": 512,
+        "bytes": 223884,
+        "sha256": "c1535001236ab7230cb0d092b8e778cecd4f6018cff633ccfc986a809d6515c1"
+      }
+    },
+    {
+      "name": "speaker",
+      "sourceCell": {
+        "left": 1086,
+        "top": 0,
+        "width": 543,
+        "height": 724
+      },
+      "crop": {
+        "left": 1138,
+        "top": 154,
+        "width": 424,
+        "height": 405
+      },
+      "scale": 1.0377358490566038,
+      "resizedFigure": {
+        "width": 440,
+        "height": 420
+      },
+      "canvas": {
+        "width": 512,
+        "height": 512
+      },
+      "offset": {
+        "left": 36,
+        "top": 46
+      },
+      "runtime": {
+        "path": "public/assets/redesign/pocket-speaker.png",
+        "width": 512,
+        "height": 512,
+        "bytes": 268425,
+        "sha256": "7e287ae7e566506d6871ba8d7526e09a9edd4687f8aa457cfb269d7d66890fc0"
+      }
+    },
+    {
+      "name": "coins",
+      "sourceCell": {
+        "left": 1629,
+        "top": 0,
+        "width": 543,
+        "height": 724
+      },
+      "crop": {
+        "left": 1677,
+        "top": 169,
+        "width": 436,
+        "height": 381
+      },
+      "scale": 1.0091743119266054,
+      "resizedFigure": {
+        "width": 440,
+        "height": 384
+      },
+      "canvas": {
+        "width": 512,
+        "height": 512
+      },
+      "offset": {
+        "left": 36,
+        "top": 64
+      },
+      "runtime": {
+        "path": "public/assets/redesign/pocket-coins.png",
+        "width": 512,
+        "height": 512,
+        "bytes": 284632,
+        "sha256": "fc191b04eb7dc0d6c96913a1700ea10af53608c458688fac73f56b49db81e6dc"
+      }
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "entries": [
+    {
+      "id": "female-fishing-down-right-clean",
+      "generated": "/Users/kimkyutack/.codex/generated_images/01a216f5-3aa9-7133-97b4-70965e478c1b/exec-bdf7f01f-ee23-49f3-b0fa-d8b1d3ccf58e.png",
+      "source": "art/source/female-fishing-down-right-clean.png",
+      "prompt": "Edit this sprite sheet: REMOVE ONLY the entire beige/white/brown/checkerboard background and all haze between the20 figures. Output TRUE TRANSPARENT alpha ZERO background, including every corner and every gutter, not a painted transparency pattern. Preserve all20 original character figures pixel-for-pixel in their original five columns/four rows, same size, poses, identity, clothing, perspective, scale and order. Do not add, delete, redraw, shift or crop any figure. Clean antialiased opaque character contours. No floor, no shadows, no text. Keep1536x1024 exact dimensions."
+    },
+    {
+      "id": "female-fishing-up-right-clean",
+      "generated": "/Users/kimkyutack/.codex/generated_images/01a216f5-3aa9-7133-97b4-70965e478c1b/exec-2872779c-aa1f-429e-bebe-29f503e0a66b.png",
+      "source": "art/source/female-fishing-up-right-clean.png",
+      "prompt": "Edit this sprite sheet: REMOVE ONLY the entire beige/white/brown/checkerboard background and all haze between the20 figures. Output TRUE TRANSPARENT alpha ZERO background, including every corner and every gutter, not a painted transparency pattern. Preserve all20 original character figures pixel-for-pixel in their original five columns/four rows, same size, poses, identity, clothing, perspective, scale and order. Do not add, delete, redraw, shift or crop any figure. Clean antialiased opaque character contours. No floor, no shadows, no text. Keep1536x1024 exact dimensions."
+    }
+  ]
+}

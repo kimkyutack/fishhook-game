@@ -1,0 +1,42 @@
+{
+  "tool": "built-in image_gen",
+  "reference": "design/2026-11-26-shop-bag-concepts/01.png",
+  "createdAt": "2026-11-26",
+  "status": "generated-and-visually-inspected",
+  "prompt": "Use case: production game UI raster skin. Match the clean base surface of the inventory and shop windows in the attached screenshot. ONE EMPTY wide rectangular white panel skin. Canvas approximately1872x1280 landscape; fill the ENTIRE image edge-to-edge with the panel, no gutters, no surrounding backdrop or scene. The center must be absolutely FULLY OPAQUE pale ice-white with a very faint sky-blue wash, RGB around242,249,255, no dark patch, no gray fade, NO TRANSPARENCY anywhere. Delicate thin pale-blue outer rim, softly rounded outer corners about32px at a936x640 render, a tiny stronger cornflower-blue lower edge just5px thick. Essentially flat clean white UI surface with restrained casual-game depth, exactly matching the selected reference. Center empty across90 percent. No text, icons, wave, dividers, menus, header tabs, cards, objects, awning, bags, leather, huge plastic bevel, neon or gold. The panel is the entire canvas, cropped to its bounding rectangle. Corners may be solid very pale blue. Crisp high quality native edges.",
+  "transparentBackground": false,
+  "source": {
+    "path": "art/source/pocket-panel.png",
+    "width": 1515,
+    "height": 1038,
+    "bytes": 1040145,
+    "sha256": "3b4d9d67da7b3a2c56f6aba9087d35497a8b333dbf791a2f8bfb4b4acd01e307"
+  },
+  "runtime": {
+    "path": "public/assets/redesign/pocket-panel.png",
+    "width": 1515,
+    "height": 1038,
+    "bytes": 1040145,
+    "sha256": "3b4d9d67da7b3a2c56f6aba9087d35497a8b333dbf791a2f8bfb4b4acd01e307"
+  },
+  "registration": {
+    "mode": "unmodified-full-bleed-copy",
+    "crop": null,
+    "resize": null,
+    "consumerClipping": "Rounded container clips solid pale outer-corner pixels."
+  },
+  "inspection": {
+    "centerAlphaMin": 255,
+    "centerAlphaMax": 255,
+    "centerRGBA": [
+      240,
+      248,
+      254,
+      255
+    ],
+    "notes": [
+      "Transparent first result rejected because its white center was removed.",
+      "Final opaque result has no gray or alpha hole."
+    ]
+  }
+}

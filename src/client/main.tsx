@@ -10,9 +10,9 @@ function App() {
     void connection.boot();
     return () => connection.stop();
   }, []);
-  if (s.status === "loading") return <div className="boot">물가마을</div>;
+  if (s.status === "loading") return <div className="boot">모여라 낚시터</div>;
   return s.self ? (
-    <Suspense fallback={<div className="boot">마을에 들어가는 중…</div>}>
+    <Suspense fallback={<div className="boot">낚시터에 들어가는 중…</div>}>
       <Game />
     </Suspense>
   ) : (

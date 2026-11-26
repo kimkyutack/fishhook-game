@@ -1,0 +1,12 @@
+{
+  "date": "2026-11-26",
+  "tool": "image_gen",
+  "status": "generated-and-connected",
+  "source": "art/source/modern-hud-skins.png",
+  "size": [1536, 1024],
+  "layout": "2 columns by 2 rows, transparent PNG",
+  "brief": "Cute trendy modern casual fishing game UI. Clean friendly sky blue and white, soft toy-like depth, restrained highlights. No gold, navy, ornate borders, rivets, text, icons, neon or perspective. Top left pale ice blue panel, top right light sky blue header, bottom left cornflower blue capsule primary button, bottom right white capsule secondary button. Large flat empty centers for live text, rounded corners and gentle depth.",
+  "packing": "node --import tsx scripts/pack-modern-ui.ts",
+  "runtime": ["modern-panel.png", "modern-header.png", "modern-primary.png", "modern-secondary.png"],
+  "directory": "public/assets/redesign"
+}

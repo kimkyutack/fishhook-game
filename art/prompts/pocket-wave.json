@@ -1,0 +1,14 @@
+{
+  "tool": "built-in image_gen",
+  "prompt": "Use case: stylized-concept game UI decal. Recreate ONLY the small sky-blue water-swoosh ornament below and right of the title badge from the attached reference design (bag reference x244..342,y144..180). ONE isolated tiny raster ornament, no other UI. Two clean flowing pale-sky-blue curved water swishes swept from lower-left toward upper-right and one tiny separate rounded blue droplet above-right. Match the reference's clean friendly stylized3D toy finish and subtle upper highlight. It is a low wide asymmetrical swoosh, no dark outlines, no foam texture, no heavy shadows, not a circular wave. Native target800x320 landscape; actual design occupies85percent centered with generous transparent margin. Displayed110x40. Genuine transparent background. NO panel/card, text, letters, icons, fish, rods, bubbles except the one small separate droplet, no extra decorative elements, no colored background or surrounding haze. Solid pale blue water forms with transparency only outside shapes. Crisp clean silhouette suitable at40px high.",
+  "reference": "design/2026-11-26-shop-bag-concepts/01.png",
+  "source": "art/source/pocket-wave.png",
+  "runtime": "public/assets/redesign/pocket-wave.png",
+  "alphaNoiseCutoff": 8,
+  "crop": {
+    "left": 250,
+    "top": 200,
+    "width": 1285,
+    "height": 490
+  }
+}

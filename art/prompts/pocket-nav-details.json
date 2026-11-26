@@ -1,0 +1,12 @@
+{
+  "tool": "built-in image_gen",
+  "prompt": "Use case: stylized-concept game UI icon atlas. Attached image is exact selected reference. Create ONE horizontal TWO-CELL transparent atlas, each cell768x768, total1536x768. Reference LEFT sidebar gear and worm silhouettes precisely. LEFT CELL: the settings icon from the reference sidebar near x92,y538, a simple pale sky-blue / silver-white gear with exactly SIX rounded chunky teeth, a centered round open hole, front-facing, soft icy blue bevels and tiny blue inner ring. Not green, not teal, no brown or gold. Gear is regular symmetric centered, opaque silver-white body with transparency only in center hole and outside. RIGHT CELL: the pink worm icon from the reference sidebar near x95,y394, a simple short curved candy-pink worm body bending as an S with little raised head at upper-right, one smiling black eye and tiny friendly smile, rounded toy-like volume. No head accessories, hands, legs, antennae, ground, soil, leaves or rocks. Clean high-quality 3D casual fishing-game icons, simple readable shapes, match exact reference style, not photorealistic. Both icons same visual size filling70percent of each cell, 100px gutters, fully contained without overlaps. Genuinely transparent background, NO text, symbols, framing circle, card or surrounding haze. No other objects. Keep shapes front-view and crisp at32px.",
+  "reference": "design/2026-11-26-shop-bag-concepts/01.png",
+  "source": "art/source/pocket-nav-details.png",
+  "runtimes": [
+    "public/assets/redesign/pocket-settings.png",
+    "public/assets/redesign/pocket-worm.png"
+  ],
+  "alphaNoiseCutoff": 8,
+  "registration": "Each half split, alpha24 bounds +3px crop,448px maximum content centered on512px canvas."
+}

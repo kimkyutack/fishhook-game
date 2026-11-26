@@ -1,0 +1,47 @@
+{
+  "created": "2026-11-26",
+  "tool": "image_gen",
+  "status": "generated-and-connected",
+  "spec": {
+    "source": [
+      1536,
+      1024
+    ],
+    "grid": [
+      6,
+      2
+    ],
+    "runtime": [
+      1152,
+      384
+    ],
+    "frame": [
+      192,
+      192
+    ],
+    "framesPerGender": 12,
+    "anchor": [
+      0.5,
+      0.9375
+    ],
+    "leftDirections": "Mirror matching right-facing gait horizontally"
+  },
+  "prompts": {
+    "male": "Production animation sprite sheet for the EXACT cute two-head-tall boy with tousled brown hair, teal jacket with gold buttons, beige short shorts and brown boots in the reference. Keep the same face, hair, clothing, colors, short chunky body proportions and casual 3D clay/toy game rendering. TRUE transparent background. Exactly TWELVE isolated whole-body sprites in a precise SIX columns by TWO rows grid, even gutters, no touching figures, no text or accessories. Top row: SIX sequential frames of a smooth WALK cycle facing DIAGONALLY DOWN-RIGHT (southeast, 3/4 front view, both eyes visible but body and feet turned 45 degrees right). Bottom row: SIX sequential frames of the SAME WALK cycle facing DIAGONALLY UP-RIGHT (northeast, clearly 3/4 REAR view, back of head and jacket visible, tiny right cheek at most; do not show a frontal face). Feet alternate contact, passing, opposing contact, passing, with natural arm counter swing; walking rather than running or jumping. Same character size, head size, camera angle, baseline and stationary frame center in every cell; every body fully inside its cell with transparent margin on all sides, no cast shadows. Match the reference character closely, not a new design. Canvas 1536x1024 landscape, 6 columns 2 rows, 12 figures only.",
+    "female": "Production animation sprite sheet for the EXACT cute two-head-tall girl with orange brown bob hair, coral jacket, beige short shorts and brown boots in the reference. Keep the same face, hair, clothing, colors, short chunky body proportions and casual 3D clay/toy game rendering. TRUE transparent background. Exactly TWELVE isolated whole-body sprites in a precise SIX columns by TWO rows grid, even gutters, no touching figures, no text or accessories. Top row: SIX sequential frames of a smooth WALK cycle facing DIAGONALLY DOWN-RIGHT (southeast, 3/4 front view, both eyes visible but body and feet turned 45 degrees right). Bottom row: SIX sequential frames of the SAME WALK cycle facing DIAGONALLY UP-RIGHT (northeast, clearly 3/4 REAR view, back of head and jacket visible, tiny right cheek at most; do not show a frontal face). Feet alternate contact, passing, opposing contact, passing, with natural arm counter swing; walking rather than running or jumping. Same character size, head size, camera angle, baseline and stationary frame center in every cell; every body fully inside its cell with transparent margin on all sides, no cast shadows. Match the reference character closely, not a new design. Canvas 1536x1024 landscape, 6 columns 2 rows, 12 figures only."
+  },
+  "cleanup": "Alpha cleanup ONLY. Keep these exact TWELVE character sprites pixel-positioned in the same SIX columns and TWO rows, same poses, identical character design and scale. Remove every brown background haze, shadow, mist and glow outside each figure to genuine fully transparent alpha. Clean sharp antialiased silhouette edges with no colored halo. Do not redraw, change pose, add or remove any figure; preserve all hair, hands, clothes and boots intact. Keep the canvas size and layout exactly unchanged.",
+  "references": [
+    "art/references/male-gait-reference.png",
+    "art/references/female-gait-reference.png"
+  ],
+  "sources": [
+    "art/source/male-diagonal-walk-clean.png",
+    "art/source/female-diagonal-walk-clean.png"
+  ],
+  "runtime": [
+    "public/assets/redesign/male_diagonal.png",
+    "public/assets/redesign/female_diagonal.png"
+  ],
+  "review": "art/references/diagonal-walk-registered-review.png"
+}

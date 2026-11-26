@@ -1,0 +1,1932 @@
+{
+  "version": 1,
+  "reference": "design/2026-11-26-sky-blue",
+  "logicalAssets": 88,
+  "notes": [
+    "Generated with ImageGen and inspected; no placeholders.",
+    "Each detail tile uses local 64-source-pixel edge alpha blending over the coherent base map; the remaining tile stays at native detail.",
+    "PNG environmental variants retained for asset review; runtime loads WebP.",
+    "Live text and gameplay actors are rendered separately from the generated backgrounds."
+  ],
+  "entries": [
+    {
+      "id": "fishing-ground",
+      "status": "ready",
+      "kind": "environment",
+      "source": "art/source/fishing-ground-blue.png",
+      "variants": [
+        {
+          "runtime": "public/assets/redesign/fishing-ground.webp",
+          "width": 1536,
+          "height": 1024,
+          "bytes": 841660,
+          "sha256": "7fc63235b4896f1b133d913cbcb7ba9ad6e52eb329d101fc37fd3c5342453205",
+          "used": true
+        },
+        {
+          "runtime": "public/assets/redesign/fishing-ground.png",
+          "width": 1536,
+          "height": 1024,
+          "bytes": 3446226,
+          "sha256": "46b2b6a6f7acd394607f10c54b3d9d4e3fd70250b559da121de08fd750d1d988",
+          "used": false
+        }
+      ]
+    },
+    {
+      "id": "welcome",
+      "status": "ready",
+      "kind": "environment",
+      "source": "art/source/blue-welcome.png",
+      "variants": [
+        {
+          "runtime": "public/assets/redesign/welcome.webp",
+          "width": 1536,
+          "height": 1024,
+          "bytes": 378308,
+          "sha256": "5fa70d65d860b56b4444beb71f6c62ffe143d4abd9d3a796e7cd6fa30c50be72",
+          "used": true
+        },
+        {
+          "runtime": "public/assets/redesign/welcome.png",
+          "width": 1536,
+          "height": 1024,
+          "bytes": 2465699,
+          "sha256": "06e8278396a73f0cecb39d6b78e845643955162d9ab68c7b71ab06de7bfd1731",
+          "used": false
+        }
+      ]
+    },
+    {
+      "id": "selection-background",
+      "status": "ready",
+      "kind": "environment",
+      "source": "art/source/blue-selection-background.png",
+      "variants": [
+        {
+          "runtime": "public/assets/redesign/selection-background.webp",
+          "width": 1536,
+          "height": 1024,
+          "bytes": 273748,
+          "sha256": "91329988ce3ffbb65e5ce0cb31d5d9e02ee8518495dd441116281aa1d478162c",
+          "used": true
+        },
+        {
+          "runtime": "public/assets/redesign/selection-background.png",
+          "width": 1536,
+          "height": 1024,
+          "bytes": 2156142,
+          "sha256": "c597698d3945a25f07ac8d1534d7bf4ae4cc75a2d9219d5334a14456d71a589d",
+          "used": false
+        }
+      ]
+    },
+    {
+      "id": "character-platform",
+      "status": "ready",
+      "kind": "ui",
+      "source": "art/source/character-platform.png",
+      "variants": [
+        {
+          "runtime": "public/assets/redesign/character-platform.png",
+          "width": 768,
+          "height": 384,
+          "bytes": 310852,
+          "sha256": "d6ee56378eb0876c503dee575fcab3d9668a346da124acc2a75c4565038bd66f",
+          "used": true
+        }
+      ]
+    },
+    {
+      "id": "panel",
+      "status": "ready",
+      "kind": "ui",
+      "source": "art/source/blue-panel.png",
+      "variants": [
+        {
+          "runtime": "public/assets/redesign/panel.png",
+          "width": 1024,
+          "height": 734,
+          "bytes": 315108,
+          "sha256": "d00e6eae7e28ba87ee8229ee1fa12d3fbc5f6cc7604c16c4917d9c35aecb7c5f",
+          "used": true
+        }
+      ]
+    },
+    {
+      "id": "button-primary",
+      "status": "ready",
+      "kind": "ui",
+      "source": "art/source/blue-button-primary-v2.png",
+      "variants": [
+        {
+          "runtime": "public/assets/redesign/button-primary.png",
+          "width": 1024,
+          "height": 260,
+          "bytes": 95024,
+          "sha256": "7b932faf4e11731b040837e714188eac74752110d1f063d8c4926a77f453d6a9",
+          "used": true
+        }
+      ]
+    },
+    {
+      "id": "button-secondary",
+      "status": "ready",
+      "kind": "ui",
+      "source": "art/source/blue-button-secondary.png",
+      "variants": [
+        {
+          "runtime": "public/assets/redesign/button-secondary.png",
+          "width": 1024,
+          "height": 233,
+          "bytes": 69555,
+          "sha256": "b15367560dca62dada01969c1859a2a26b6caddfac1b3a966463442c99b36f61",
+          "used": true
+        }
+      ]
+    },
+    {
+      "id": "logo",
+      "status": "ready",
+      "kind": "ui",
+      "source": "art/source/moyeo-fishing-logo.png",
+      "variants": [
+        {
+          "runtime": "public/assets/redesign/logo.png",
+          "width": 800,
+          "height": 430,
+          "bytes": 680523,
+          "sha256": "ca8dad062196c564b433cfbf43eb1921cedf5b128012016695146a10439f64fe",
+          "used": true
+        }
+      ],
+      "brand": "모여라 낚시터"
+    },
+    {
+      "id": "male_portrait",
+      "status": "ready",
+      "kind": "portrait",
+      "source": "art/source/blue-male-portrait.png",
+      "variants": [
+        {
+          "runtime": "public/assets/redesign/male_portrait.png",
+          "width": 512,
+          "height": 640,
+          "bytes": 440213,
+          "sha256": "cdaaade97e207b2a558b7650b0d4e8454cc51f5142797ea845064dacee8a4791",
+          "used": true
+        }
+      ]
+    },
+    {
+      "id": "female_portrait",
+      "status": "ready",
+      "kind": "portrait",
+      "source": "art/source/blue-female-portrait.png",
+      "variants": [
+        {
+          "runtime": "public/assets/redesign/female_portrait.png",
+          "width": 512,
+          "height": 640,
+          "bytes": 84911,
+          "sha256": "b0285b6b34474c36989debf060036093e7b4b591d67bb68c7d315d785473b38b",
+          "used": true
+        }
+      ]
+    },
+    {
+      "id": "book",
+      "status": "ready",
+      "kind": "ui",
+      "source": "art/source/blue-extra-icons.png",
+      "variants": [
+        {
+          "runtime": "public/assets/redesign/book.png",
+          "width": 256,
+          "height": 256,
+          "bytes": 27666,
+          "sha256": "a865a2ba72bc1629dbb91f14cd5f96adb6ec1c990ba03b228336301b629489f8",
+          "used": true
+        }
+      ]
+    },
+    {
+      "id": "crown_gold",
+      "status": "ready",
+      "kind": "ui",
+      "source": "art/source/blue-extra-icons.png",
+      "variants": [
+        {
+          "runtime": "public/assets/redesign/crown_gold.png",
+          "width": 256,
+          "height": 256,
+          "bytes": 24806,
+          "sha256": "c00098f77a664c567d3311710ebc8bb17e1efbf1b2c5b6895b0ac4d07b97628c",
+          "used": true
+        }
+      ]
+    },
+    {
+      "id": "crown_silver",
+      "status": "ready",
+      "kind": "ui",
+      "source": "art/source/blue-extra-icons.png",
+      "variants": [
+        {
+          "runtime": "public/assets/redesign/crown_silver.png",
+          "width": 256,
+          "height": 256,
+          "bytes": 25955,
+          "sha256": "18796c7461100a87e399cc49de1103092672b4dea40333bb5d7ccc7642c541ba",
+          "used": true
+        }
+      ]
+    },
+    {
+      "id": "crown_bronze",
+      "status": "ready",
+      "kind": "ui",
+      "source": "art/source/blue-extra-icons.png",
+      "variants": [
+        {
+          "runtime": "public/assets/redesign/crown_bronze.png",
+          "width": 256,
+          "height": 256,
+          "bytes": 25161,
+          "sha256": "ca192ab3f709011683931bcc868eb609139c6e6c7f805e5d6d3fa968fcee72d3",
+          "used": true
+        }
+      ]
+    },
+    {
+      "id": "bag",
+      "status": "ready",
+      "kind": "ui",
+      "source": "art/source/blue-bag-close.png",
+      "variants": [
+        {
+          "runtime": "public/assets/redesign/bag.png",
+          "width": 384,
+          "height": 384,
+          "bytes": 82130,
+          "sha256": "100b36ae6acf829e0647fee4cbf37027f984bfc8027c247a0caa1797ee052ef9",
+          "used": true
+        }
+      ]
+    },
+    {
+      "id": "close",
+      "status": "ready",
+      "kind": "ui",
+      "source": "art/source/blue-bag-close.png",
+      "variants": [
+        {
+          "runtime": "public/assets/redesign/close.png",
+          "width": 384,
+          "height": 384,
+          "bytes": 59158,
+          "sha256": "070d7c8d67dbefc58a53bd2374248fbd03fa2086f95f57257aa5c76b3894f0ea",
+          "used": true
+        }
+      ]
+    },
+    {
+      "id": "rod_1",
+      "status": "ready",
+      "kind": "ui",
+      "source": "art/source/blue-rods-icons.png",
+      "variants": [
+        {
+          "runtime": "public/assets/redesign/rod_1.png",
+          "width": 384,
+          "height": 384,
+          "bytes": 35239,
+          "sha256": "75998056373d341ab7ab610f74fd02e083eba7388ca4d4ae5a6201c878563f44",
+          "used": true
+        }
+      ]
+    },
+    {
+      "id": "rod_2",
+      "status": "ready",
+      "kind": "ui",
+      "source": "art/source/blue-rods-icons.png",
+      "variants": [
+        {
+          "runtime": "public/assets/redesign/rod_2.png",
+          "width": 384,
+          "height": 384,
+          "bytes": 32728,
+          "sha256": "7b7e636a2d12067ea22a1fa45505f6a70faec84adb3f45ec836d645639608d7d",
+          "used": true
+        }
+      ]
+    },
+    {
+      "id": "rod_3",
+      "status": "ready",
+      "kind": "ui",
+      "source": "art/source/blue-rods-icons.png",
+      "variants": [
+        {
+          "runtime": "public/assets/redesign/rod_3.png",
+          "width": 384,
+          "height": 384,
+          "bytes": 37330,
+          "sha256": "b5c38ca11dc6b2327d2ab1cff65a45f8d8d7c5e87f6159b9e9ad120594887142",
+          "used": true
+        }
+      ]
+    },
+    {
+      "id": "worm",
+      "status": "ready",
+      "kind": "ui",
+      "source": "art/source/blue-baits-icons-clean.png",
+      "variants": [
+        {
+          "runtime": "public/assets/redesign/worm.png",
+          "width": 418,
+          "height": 418,
+          "bytes": 192594,
+          "sha256": "6b94fee6e021250104f6126fa055579afc92d2ccb1d81072b638216b858ecfc5",
+          "used": true
+        }
+      ]
+    },
+    {
+      "id": "mix",
+      "status": "ready",
+      "kind": "ui",
+      "source": "art/source/blue-baits-icons-clean.png",
+      "variants": [
+        {
+          "runtime": "public/assets/redesign/mix.png",
+          "width": 418,
+          "height": 418,
+          "bytes": 259073,
+          "sha256": "154d88e5394830369fec4e05162268619c23c99b39458ce48fe12c3e1bb7c866",
+          "used": true
+        }
+      ]
+    },
+    {
+      "id": "live",
+      "status": "ready",
+      "kind": "ui",
+      "source": "art/source/blue-baits-icons-clean.png",
+      "variants": [
+        {
+          "runtime": "public/assets/redesign/live.png",
+          "width": 418,
+          "height": 418,
+          "bytes": 179231,
+          "sha256": "6c3647ce2612ead8c30d5e65aec4931bf9d9c0f5aa6dfb194019d44394d4d929",
+          "used": true
+        }
+      ]
+    },
+    {
+      "id": "special",
+      "status": "ready",
+      "kind": "ui",
+      "source": "art/source/blue-baits-icons-clean.png",
+      "variants": [
+        {
+          "runtime": "public/assets/redesign/special.png",
+          "width": 418,
+          "height": 418,
+          "bytes": 290390,
+          "sha256": "c7bd879b4108e0c7df0fc29a1ed81abe805b1042fefb1fec3d52382e4688db10",
+          "used": true
+        }
+      ]
+    },
+    {
+      "id": "modal-frame",
+      "status": "ready",
+      "kind": "ui",
+      "source": "art/source/blue-modal-frame.png",
+      "variants": [
+        {
+          "runtime": "public/assets/redesign/modal-frame.png",
+          "width": 1536,
+          "height": 1115,
+          "bytes": 1277147,
+          "sha256": "f0e4ef24bea0c578bc5c6e32b207ac064428bea274cee741766e43f7359537f7",
+          "used": true
+        }
+      ]
+    },
+    {
+      "id": "button-pill",
+      "status": "ready",
+      "kind": "ui",
+      "source": "art/source/blue-button-pill.png",
+      "variants": [
+        {
+          "runtime": "public/assets/redesign/button-pill.png",
+          "width": 1024,
+          "height": 287,
+          "bytes": 304984,
+          "sha256": "657cd159608d6100f958bcf6bda58f15a62802c62816ac05f20c20f79dafd7a6",
+          "used": true
+        }
+      ]
+    },
+    {
+      "id": "terrain-nw",
+      "status": "ready",
+      "kind": "environment",
+      "source": "art/source/terrain-nw.png",
+      "variants": [
+        {
+          "runtime": "public/assets/redesign/terrain-nw.webp",
+          "width": 1536,
+          "height": 1024,
+          "bytes": 1001900,
+          "sha256": "4c2ac6a705a25d07ac811905d1672cab22af6f7f6794d4df23f80d1b0db64baf",
+          "used": true
+        },
+        {
+          "runtime": "public/assets/redesign/terrain-nw.png",
+          "width": 1536,
+          "height": 1024,
+          "bytes": 3979967,
+          "sha256": "7010b409dbe096d3409ce9f99fe96d0110311bb70de6195296edc04b984926e9",
+          "used": false
+        }
+      ]
+    },
+    {
+      "id": "terrain-ne",
+      "status": "ready",
+      "kind": "environment",
+      "source": "art/source/terrain-ne.png",
+      "variants": [
+        {
+          "runtime": "public/assets/redesign/terrain-ne.webp",
+          "width": 1536,
+          "height": 1024,
+          "bytes": 937408,
+          "sha256": "7b9418c9611ff2f4dc97b603f539018dbb8c946ed07f794d4611c714f4d25b4c",
+          "used": true
+        },
+        {
+          "runtime": "public/assets/redesign/terrain-ne.png",
+          "width": 1536,
+          "height": 1024,
+          "bytes": 3680722,
+          "sha256": "4b0877189d9f37c0785a08ca152411797ec712fbfd133639caf9f097e87d5fae",
+          "used": false
+        }
+      ]
+    },
+    {
+      "id": "terrain-sw",
+      "status": "ready",
+      "kind": "environment",
+      "source": "art/source/terrain-sw.png",
+      "variants": [
+        {
+          "runtime": "public/assets/redesign/terrain-sw.webp",
+          "width": 1536,
+          "height": 1024,
+          "bytes": 968788,
+          "sha256": "04fc7d9f0017d565331826899c9f95df868b21c146cb12e6b24eaa6c79227527",
+          "used": true
+        },
+        {
+          "runtime": "public/assets/redesign/terrain-sw.png",
+          "width": 1536,
+          "height": 1024,
+          "bytes": 3959141,
+          "sha256": "ef881003f0b1caba5437671ccb926fb7aada7a171819b41cf9b0f0e2faad8780",
+          "used": false
+        }
+      ]
+    },
+    {
+      "id": "terrain-se",
+      "status": "ready",
+      "kind": "environment",
+      "source": "art/source/terrain-se.png",
+      "variants": [
+        {
+          "runtime": "public/assets/redesign/terrain-se.webp",
+          "width": 1536,
+          "height": 1024,
+          "bytes": 843426,
+          "sha256": "428cda4e35038c86115858f11519ed2206d0e26554351e5f38da497350f0f1ae",
+          "used": true
+        },
+        {
+          "runtime": "public/assets/redesign/terrain-se.png",
+          "width": 1536,
+          "height": 1024,
+          "bytes": 3534872,
+          "sha256": "352c9d4816b23295895e02413b7436c3f9850445cb4ffa25156a7da705b78dc9",
+          "used": false
+        }
+      ]
+    },
+    {
+      "id": "panel-pill",
+      "status": "ready",
+      "kind": "ui",
+      "source": "art/source/blue-panel-pill.png",
+      "variants": [
+        {
+          "runtime": "public/assets/redesign/panel-pill.png",
+          "width": 1024,
+          "height": 229,
+          "bytes": 253303,
+          "sha256": "a341a588c8c8a3a264cea561f5048c7e78fc3e45f71641d1720ef1a5f64b5b11",
+          "used": true
+        }
+      ]
+    },
+    {
+      "id": "medal_gold",
+      "status": "ready",
+      "kind": "ui",
+      "source": "art/source/blue-rank-medals.png",
+      "variants": [
+        {
+          "runtime": "public/assets/redesign/medal_gold.png",
+          "width": 384,
+          "height": 384,
+          "bytes": 240107,
+          "sha256": "6819da7c67a92089475405c50efd28c35e75363c7a37e6483ab84379e1128ffe",
+          "used": true
+        }
+      ]
+    },
+    {
+      "id": "medal_silver",
+      "status": "ready",
+      "kind": "ui",
+      "source": "art/source/blue-rank-medals.png",
+      "variants": [
+        {
+          "runtime": "public/assets/redesign/medal_silver.png",
+          "width": 384,
+          "height": 384,
+          "bytes": 229613,
+          "sha256": "ab438c6c2e94d2fd87a837f7fbda82ddde46da43f883345312a1ef5f8cab8fc7",
+          "used": true
+        }
+      ]
+    },
+    {
+      "id": "medal_bronze",
+      "status": "ready",
+      "kind": "ui",
+      "source": "art/source/blue-rank-medals.png",
+      "variants": [
+        {
+          "runtime": "public/assets/redesign/medal_bronze.png",
+          "width": 384,
+          "height": 384,
+          "bytes": 245754,
+          "sha256": "d4b8e21d0f140c9d1368f7ff7b4f8fb7798df7ed806b0f45755bbf74bca9eecc",
+          "used": true
+        }
+      ]
+    },
+    {
+      "id": "male_diagonal",
+      "kind": "diagonal-walk-atlas",
+      "status": "ready",
+      "source": "art/source/male-diagonal-walk-clean.png",
+      "frameCount": 12,
+      "columns": 6,
+      "rows": 2,
+      "frameWidth": 192,
+      "frameHeight": 192,
+      "root": {
+        "x": 0.5,
+        "y": 0.9375
+      },
+      "registration": {
+        "scale": 0.511196067722556,
+        "regions": [
+          {
+            "left": 15,
+            "top": 97,
+            "width": 231,
+            "height": 307,
+            "headX": 130
+          },
+          {
+            "left": 272,
+            "top": 99,
+            "width": 230,
+            "height": 304,
+            "headX": 386.5
+          },
+          {
+            "left": 530,
+            "top": 98,
+            "width": 228,
+            "height": 307,
+            "headX": 643.5
+          },
+          {
+            "left": 785,
+            "top": 99,
+            "width": 228,
+            "height": 305,
+            "headX": 898.5
+          },
+          {
+            "left": 1042,
+            "top": 99,
+            "width": 224,
+            "height": 306,
+            "headX": 1153.5
+          },
+          {
+            "left": 1294,
+            "top": 100,
+            "width": 227,
+            "height": 302,
+            "headX": 1407
+          },
+          {
+            "left": 20,
+            "top": 591,
+            "width": 225,
+            "height": 314,
+            "headX": 132
+          },
+          {
+            "left": 279,
+            "top": 592,
+            "width": 223,
+            "height": 314,
+            "headX": 390
+          },
+          {
+            "left": 533,
+            "top": 592,
+            "width": 222,
+            "height": 312,
+            "headX": 643.5
+          },
+          {
+            "left": 786,
+            "top": 593,
+            "width": 224,
+            "height": 308,
+            "headX": 897.5
+          },
+          {
+            "left": 1043,
+            "top": 592,
+            "width": 221,
+            "height": 312,
+            "headX": 1153
+          },
+          {
+            "left": 1298,
+            "top": 593,
+            "width": 219,
+            "height": 312,
+            "headX": 1407
+          }
+        ]
+      },
+      "notes": [
+        "Top row southeast; bottom row northeast. Horizontal mirroring supplies southwest and northwest.",
+        "One scale per character; fixed head center and foot baseline."
+      ],
+      "variants": [
+        {
+          "runtime": "public/assets/redesign/male_diagonal.png",
+          "width": 1152,
+          "height": 384,
+          "bytes": 115825,
+          "sha256": "7034936777f66884b9b7fb6056c64244460ec666d9251911282be48c4acf4e15",
+          "used": true
+        }
+      ]
+    },
+    {
+      "id": "female_diagonal",
+      "kind": "diagonal-walk-atlas",
+      "status": "ready",
+      "source": "art/source/female-diagonal-walk-clean.png",
+      "frameCount": 12,
+      "columns": 6,
+      "rows": 2,
+      "frameWidth": 192,
+      "frameHeight": 192,
+      "root": {
+        "x": 0.5,
+        "y": 0.9375
+      },
+      "registration": {
+        "scale": 0.5179856115107914,
+        "regions": [
+          {
+            "left": 31,
+            "top": 106,
+            "width": 231,
+            "height": 305,
+            "headX": 146
+          },
+          {
+            "left": 285,
+            "top": 106,
+            "width": 227,
+            "height": 301,
+            "headX": 398
+          },
+          {
+            "left": 534,
+            "top": 106,
+            "width": 229,
+            "height": 291,
+            "headX": 648
+          },
+          {
+            "left": 783,
+            "top": 107,
+            "width": 226,
+            "height": 304,
+            "headX": 895.5
+          },
+          {
+            "left": 1032,
+            "top": 106,
+            "width": 225,
+            "height": 307,
+            "headX": 1144
+          },
+          {
+            "left": 1281,
+            "top": 107,
+            "width": 224,
+            "height": 299,
+            "headX": 1392.5
+          },
+          {
+            "left": 36,
+            "top": 597,
+            "width": 221,
+            "height": 311,
+            "headX": 146
+          },
+          {
+            "left": 290,
+            "top": 597,
+            "width": 218,
+            "height": 304,
+            "headX": 398.5
+          },
+          {
+            "left": 541,
+            "top": 594,
+            "width": 218,
+            "height": 303,
+            "headX": 649.5
+          },
+          {
+            "left": 789,
+            "top": 595,
+            "width": 218,
+            "height": 312,
+            "headX": 897.5
+          },
+          {
+            "left": 1040,
+            "top": 595,
+            "width": 215,
+            "height": 308,
+            "headX": 1147
+          },
+          {
+            "left": 1293,
+            "top": 593,
+            "width": 211,
+            "height": 308,
+            "headX": 1398
+          }
+        ]
+      },
+      "notes": [
+        "Top row southeast; bottom row northeast. Horizontal mirroring supplies southwest and northwest.",
+        "One scale per character; fixed head center and foot baseline."
+      ],
+      "variants": [
+        {
+          "runtime": "public/assets/redesign/female_diagonal.png",
+          "width": 1152,
+          "height": 384,
+          "bytes": 118355,
+          "sha256": "5f1650cf60ff4a904d8a15eef959a8cc2e1e23f8b9634f3544030ef9fe95d044",
+          "used": true
+        }
+      ]
+    },
+    {
+      "id": "modern-panel",
+      "kind": "ui-skin",
+      "status": "ready",
+      "source": "art/source/modern-hud-skins.png",
+      "crop": {
+        "left": 60,
+        "top": 106,
+        "width": 694,
+        "height": 416
+      },
+      "variants": [
+        {
+          "runtime": "public/assets/redesign/modern-panel.png",
+          "width": 694,
+          "height": 416,
+          "bytes": 266639,
+          "sha256": "95094c82e6f2bd50d4e2de41c09459e3688b6bb99ea6cc409bd2f71fe25d0f45",
+          "used": true
+        }
+      ]
+    },
+    {
+      "id": "modern-header",
+      "kind": "ui-skin",
+      "status": "ready",
+      "source": "art/source/modern-hud-skins.png",
+      "crop": {
+        "left": 784,
+        "top": 106,
+        "width": 696,
+        "height": 416
+      },
+      "variants": [
+        {
+          "runtime": "public/assets/redesign/modern-header.png",
+          "width": 696,
+          "height": 416,
+          "bytes": 288501,
+          "sha256": "9090edb2b56d191a69adfc7d7acc190404f82f32e22fad53a0086bf1188fdc87",
+          "used": true
+        }
+      ]
+    },
+    {
+      "id": "modern-primary",
+      "kind": "ui-skin",
+      "status": "ready",
+      "source": "art/source/modern-hud-skins.png",
+      "crop": {
+        "left": 48,
+        "top": 594,
+        "width": 708,
+        "height": 280
+      },
+      "variants": [
+        {
+          "runtime": "public/assets/redesign/modern-primary.png",
+          "width": 708,
+          "height": 280,
+          "bytes": 261125,
+          "sha256": "8ba731ecca7191b0b67da35b0a758b2aeddd8a6eac843136c641051f9b7f94ac",
+          "used": true
+        }
+      ]
+    },
+    {
+      "id": "modern-secondary",
+      "kind": "ui-skin",
+      "status": "ready",
+      "source": "art/source/modern-hud-skins.png",
+      "crop": {
+        "left": 782,
+        "top": 594,
+        "width": 706,
+        "height": 280
+      },
+      "variants": [
+        {
+          "runtime": "public/assets/redesign/modern-secondary.png",
+          "width": 706,
+          "height": 280,
+          "bytes": 215942,
+          "sha256": "5475fe236862a22fe6a2823ac0f788c872120c6a1e93e2b95d1595d4a20c5f8f",
+          "used": true
+        }
+      ]
+    },
+    {
+      "id": "selection-name",
+      "kind": "ui-skin",
+      "status": "ready",
+      "source": "art/source/selection-game-ui.png",
+      "crop": {
+        "left": 34,
+        "top": 155,
+        "width": 884,
+        "height": 229
+      },
+      "variants": [
+        {
+          "runtime": "public/assets/redesign/selection-name.png",
+          "width": 884,
+          "height": 229,
+          "bytes": 445388,
+          "sha256": "783be022f19786107334753356a54b5859deca83edd2dc0ab22e048737f13659",
+          "used": true
+        }
+      ]
+    },
+    {
+      "id": "selection-back",
+      "kind": "ui-skin",
+      "status": "ready",
+      "source": "art/source/selection-game-ui.png",
+      "crop": {
+        "left": 1042,
+        "top": 77,
+        "width": 368,
+        "height": 374
+      },
+      "variants": [
+        {
+          "runtime": "public/assets/redesign/selection-back.png",
+          "width": 368,
+          "height": 374,
+          "bytes": 268668,
+          "sha256": "d400ea07b5f79d893700daa320bd306e77fee2f252a3748a5b62c24e0d331358",
+          "used": true
+        }
+      ]
+    },
+    {
+      "id": "selection-start",
+      "kind": "ui-skin",
+      "status": "ready",
+      "source": "art/source/selection-game-ui.png",
+      "crop": {
+        "left": 22,
+        "top": 609,
+        "width": 881,
+        "height": 314
+      },
+      "variants": [
+        {
+          "runtime": "public/assets/redesign/selection-start.png",
+          "width": 881,
+          "height": 314,
+          "bytes": 442789,
+          "sha256": "0c43a6093e24fd74e218003adc35e06682cc86bd210bdd36c7e9cbb85b060c52",
+          "used": true
+        }
+      ]
+    },
+    {
+      "id": "selection-check",
+      "kind": "ui-skin",
+      "status": "ready",
+      "source": "art/source/selection-game-ui.png",
+      "crop": {
+        "left": 1034,
+        "top": 574,
+        "width": 372,
+        "height": 378
+      },
+      "variants": [
+        {
+          "runtime": "public/assets/redesign/selection-check.png",
+          "width": 372,
+          "height": 378,
+          "bytes": 265866,
+          "sha256": "d215a3e98583b8b2629b38293e7856cbfe32f26369e215eb6bdf756e93003e81",
+          "used": true
+        }
+      ]
+    },
+    {
+      "id": "areas-bag",
+      "kind": "ui-skin",
+      "status": "ready",
+      "source": "art/source/game-area-skins.png",
+      "crop": {
+        "left": 0,
+        "top": 50,
+        "width": 443,
+        "height": 460
+      },
+      "alphaNoiseCutoff": 8,
+      "variants": [
+        {
+          "runtime": "public/assets/redesign/areas-bag.png",
+          "width": 432,
+          "height": 443,
+          "bytes": 278917,
+          "sha256": "b4713e4a61d4f6d5fc607794cf60f25282125cedc8b0749b6d716a32ecb21a5c",
+          "used": false
+        }
+      ]
+    },
+    {
+      "id": "areas-shop",
+      "kind": "ui-skin",
+      "status": "ready",
+      "source": "art/source/game-area-skins.png",
+      "crop": {
+        "left": 448,
+        "top": 80,
+        "width": 439,
+        "height": 420
+      },
+      "alphaNoiseCutoff": 8,
+      "variants": [
+        {
+          "runtime": "public/assets/redesign/areas-shop.png",
+          "width": 430,
+          "height": 390,
+          "bytes": 252139,
+          "sha256": "64acb174776a0182a72aa1e732adc193f27a064dfd37996d6411bab46f89c58c",
+          "used": false
+        }
+      ]
+    },
+    {
+      "id": "areas-rank",
+      "kind": "ui-skin",
+      "status": "ready",
+      "source": "art/source/game-area-skins.png",
+      "crop": {
+        "left": 0,
+        "top": 610,
+        "width": 440,
+        "height": 220
+      },
+      "alphaNoiseCutoff": 8,
+      "variants": [
+        {
+          "runtime": "public/assets/redesign/areas-rank.png",
+          "width": 425,
+          "height": 174,
+          "bytes": 111296,
+          "sha256": "85270ec130d4c247e5eb74c372d6e0c8d3f69fcdc1547b55d10cea6bec6dab5f",
+          "used": true
+        }
+      ]
+    },
+    {
+      "id": "areas-currency",
+      "kind": "ui-skin",
+      "status": "ready",
+      "source": "art/source/game-area-skins.png",
+      "crop": {
+        "left": 450,
+        "top": 630,
+        "width": 437,
+        "height": 185
+      },
+      "alphaNoiseCutoff": 8,
+      "variants": [
+        {
+          "runtime": "public/assets/redesign/areas-currency.png",
+          "width": 416,
+          "height": 162,
+          "bytes": 72777,
+          "sha256": "c66b061601b1edf7fc6fe9ca9385744678f73b9b9d235a5c0f93704830250206",
+          "used": true
+        }
+      ]
+    },
+    {
+      "id": "areas-dock",
+      "kind": "ui-skin",
+      "status": "ready",
+      "source": "art/source/game-area-skins.png",
+      "crop": {
+        "left": 0,
+        "top": 990,
+        "width": 443,
+        "height": 240
+      },
+      "alphaNoiseCutoff": 8,
+      "variants": [
+        {
+          "runtime": "public/assets/redesign/areas-dock.png",
+          "width": 430,
+          "height": 213,
+          "bytes": 154779,
+          "sha256": "cbbbc524a3091054a9d43617b4726a3acb61d395db162de764f6e8dac0eb9135",
+          "used": false
+        }
+      ],
+      "notes": [
+        "Retained source asset; superseded by the requested compact quick-slot controls."
+      ]
+    },
+    {
+      "id": "areas-chat",
+      "kind": "ui-skin",
+      "status": "ready",
+      "source": "art/source/game-area-skins.png",
+      "crop": {
+        "left": 450,
+        "top": 970,
+        "width": 437,
+        "height": 280
+      },
+      "alphaNoiseCutoff": 8,
+      "variants": [
+        {
+          "runtime": "public/assets/redesign/areas-chat.png",
+          "width": 433,
+          "height": 251,
+          "bytes": 91317,
+          "sha256": "5612a39637a117c688124d91bb2600d64346d73c9ea5a804f83a108aaa26cd72",
+          "used": true
+        }
+      ]
+    },
+    {
+      "id": "areas-map",
+      "kind": "ui-skin",
+      "status": "ready",
+      "source": "art/source/game-area-skins.png",
+      "crop": {
+        "left": 0,
+        "top": 1330,
+        "width": 440,
+        "height": 410
+      },
+      "alphaNoiseCutoff": 8,
+      "variants": [
+        {
+          "runtime": "public/assets/redesign/areas-map.png",
+          "width": 417,
+          "height": 386,
+          "bytes": 146918,
+          "sha256": "d765536e69339a67d7b17a9968f2f712843b9a0e32437dfce129b572147b7d2e",
+          "used": true
+        }
+      ]
+    },
+    {
+      "id": "areas-tab",
+      "kind": "ui-skin",
+      "status": "ready",
+      "source": "art/source/game-area-skins.png",
+      "crop": {
+        "left": 450,
+        "top": 1410,
+        "width": 437,
+        "height": 255
+      },
+      "alphaNoiseCutoff": 8,
+      "variants": [
+        {
+          "runtime": "public/assets/redesign/areas-tab.png",
+          "width": 418,
+          "height": 217,
+          "bytes": 112058,
+          "sha256": "c6b554096d3089c7ef5c892084e6f471f308493f94e883307371dde53de3c3e0",
+          "used": true
+        }
+      ]
+    },
+    {
+      "id": "quick-chat",
+      "kind": "ui-skin",
+      "status": "ready",
+      "source": "art/source/quick-chat-ui.png",
+      "crop": {
+        "left": 0,
+        "top": 0,
+        "width": 724,
+        "height": 724
+      },
+      "alphaNoiseCutoff": 8,
+      "variants": [
+        {
+          "runtime": "public/assets/redesign/quick-chat.png",
+          "width": 128,
+          "height": 128,
+          "bytes": 26850,
+          "sha256": "31194fe0ea62e711d15735e65da2970bd7156775b619699a8825d5602c9b27f2",
+          "used": true
+        }
+      ]
+    },
+    {
+      "id": "quick-close",
+      "kind": "ui-skin",
+      "status": "ready",
+      "source": "art/source/quick-chat-ui.png",
+      "crop": {
+        "left": 724,
+        "top": 0,
+        "width": 724,
+        "height": 724
+      },
+      "alphaNoiseCutoff": 8,
+      "variants": [
+        {
+          "runtime": "public/assets/redesign/quick-close.png",
+          "width": 128,
+          "height": 128,
+          "bytes": 28109,
+          "sha256": "38f0505e092086b3400b8f39d2c5f8074aebeffc8e878bc7dc0268eae3d55959",
+          "used": true
+        }
+      ]
+    },
+    {
+      "id": "quick-slot",
+      "kind": "ui-skin",
+      "status": "ready",
+      "source": "art/source/quick-chat-ui.png",
+      "crop": {
+        "left": 1448,
+        "top": 0,
+        "width": 724,
+        "height": 724
+      },
+      "alphaNoiseCutoff": 8,
+      "variants": [
+        {
+          "runtime": "public/assets/redesign/quick-slot.png",
+          "width": 128,
+          "height": 128,
+          "bytes": 17662,
+          "sha256": "50cb681c2480c187066802dbbf49378a3b886e620d4c63ce7b4a895e00713107",
+          "used": true
+        }
+      ]
+    },
+    {
+      "id": "quick-coin",
+      "kind": "registered-ui-icon",
+      "status": "ready",
+      "source": "public/assets/equipment/coin.png",
+      "derived": true,
+      "notes": [
+        "Derived from an existing game icon; not a new AI generation.",
+        "Alpha bounds centered on a96px canvas with84px maximum content."
+      ],
+      "variants": [
+        {
+          "runtime": "public/assets/redesign/quick-coin.png",
+          "width": 96,
+          "height": 96,
+          "bytes": 11915,
+          "sha256": "a0d10f0ff57ff010d345c0db1679744a705796f7b0cbbd08b1cb6bd7afe1c433",
+          "used": true
+        }
+      ]
+    },
+    {
+      "id": "quick-fish_001",
+      "kind": "registered-ui-icon",
+      "status": "ready",
+      "source": "public/assets/fish/fish_001.png",
+      "derived": true,
+      "notes": [
+        "Derived from an existing game icon; not a new AI generation.",
+        "Alpha bounds centered on a96px canvas with84px maximum content."
+      ],
+      "variants": [
+        {
+          "runtime": "public/assets/redesign/quick-fish_001.png",
+          "width": 96,
+          "height": 96,
+          "bytes": 8372,
+          "sha256": "b724a7d407dbe73e2e1e4c519a5e905631ada9f8e7bf3086dc9d8e6ff2ec6ef0",
+          "used": true
+        }
+      ]
+    },
+    {
+      "id": "quick-worm",
+      "kind": "registered-ui-icon",
+      "status": "ready",
+      "source": "public/assets/redesign/worm.png",
+      "derived": true,
+      "notes": [
+        "Derived from an existing game icon; not a new AI generation.",
+        "Alpha bounds centered on a96px canvas with84px maximum content."
+      ],
+      "variants": [
+        {
+          "runtime": "public/assets/redesign/quick-worm.png",
+          "width": 96,
+          "height": 96,
+          "bytes": 11727,
+          "sha256": "e5b39b2b43aae97bfeb9a2caf9b5a065807806cd24f884ba1cb202680293bc4f",
+          "used": true
+        }
+      ]
+    },
+    {
+      "id": "quick-book",
+      "kind": "registered-ui-icon",
+      "status": "ready",
+      "source": "public/assets/redesign/book.png",
+      "derived": true,
+      "notes": [
+        "Derived from an existing game icon; not a new AI generation.",
+        "Alpha bounds centered on a96px canvas with84px maximum content."
+      ],
+      "variants": [
+        {
+          "runtime": "public/assets/redesign/quick-book.png",
+          "width": 96,
+          "height": 96,
+          "bytes": 12234,
+          "sha256": "13d0016fb73aee3b914807d3b93248fc3cd814be34b4b4553a605b76c47e6fab",
+          "used": true
+        }
+      ]
+    },
+    {
+      "id": "quick-settings",
+      "kind": "registered-ui-icon",
+      "status": "ready",
+      "source": "public/assets/equipment/settings.png",
+      "derived": true,
+      "notes": [
+        "Derived from an existing game icon; not a new AI generation.",
+        "Alpha bounds centered on a96px canvas with84px maximum content."
+      ],
+      "variants": [
+        {
+          "runtime": "public/assets/redesign/quick-settings.png",
+          "width": 96,
+          "height": 96,
+          "bytes": 14547,
+          "sha256": "578f096105c8e716dcfb15612dd07d3ae26e742222c3e389e415190b42ff46e0",
+          "used": true
+        }
+      ]
+    },
+    {
+      "id": "quick-chair_down",
+      "kind": "registered-ui-icon",
+      "status": "ready",
+      "source": "public/assets/equipment/chair_down.png",
+      "derived": true,
+      "notes": [
+        "Derived from an existing game icon; not a new AI generation.",
+        "Alpha bounds centered on a96px canvas with84px maximum content."
+      ],
+      "variants": [
+        {
+          "runtime": "public/assets/redesign/quick-chair_down.png",
+          "width": 96,
+          "height": 96,
+          "bytes": 15502,
+          "sha256": "da71d3cd9e4dbd12b72aee4d0439d66d2fd72faefb5b17861a454eab2d52498e",
+          "used": true
+        }
+      ]
+    },
+    {
+      "id": "quick-rod_1",
+      "kind": "registered-ui-icon",
+      "status": "ready",
+      "source": "public/assets/redesign/rod_1.png",
+      "derived": true,
+      "notes": [
+        "Derived from an existing game icon; not a new AI generation.",
+        "Alpha bounds centered on a96px canvas with84px maximum content."
+      ],
+      "variants": [
+        {
+          "runtime": "public/assets/redesign/quick-rod_1.png",
+          "width": 96,
+          "height": 96,
+          "bytes": 8715,
+          "sha256": "e34b7d1babf6195505721ad62344510a5b730e79199fe781cecedfffe07a359a",
+          "used": true
+        }
+      ]
+    },
+    {
+      "id": "quick-rod_2",
+      "kind": "registered-ui-icon",
+      "status": "ready",
+      "source": "public/assets/redesign/rod_2.png",
+      "derived": true,
+      "notes": [
+        "Derived from an existing game icon; not a new AI generation.",
+        "Alpha bounds centered on a96px canvas with84px maximum content."
+      ],
+      "variants": [
+        {
+          "runtime": "public/assets/redesign/quick-rod_2.png",
+          "width": 96,
+          "height": 96,
+          "bytes": 8250,
+          "sha256": "6dd1233290c67663a31fa8042a9a9129b624bed4642a976877178cc9b944fbbb",
+          "used": true
+        }
+      ]
+    },
+    {
+      "id": "quick-rod_3",
+      "kind": "registered-ui-icon",
+      "status": "ready",
+      "source": "public/assets/redesign/rod_3.png",
+      "derived": true,
+      "notes": [
+        "Derived from an existing game icon; not a new AI generation.",
+        "Alpha bounds centered on a96px canvas with84px maximum content."
+      ],
+      "variants": [
+        {
+          "runtime": "public/assets/redesign/quick-rod_3.png",
+          "width": 96,
+          "height": 96,
+          "bytes": 8843,
+          "sha256": "5f9b84de0eea625434239021b88e444cf7997655dfd9a808e23221516449597d",
+          "used": true
+        }
+      ]
+    },
+    {
+      "id": "quick-charge",
+      "kind": "registered-ui-icon",
+      "status": "ready",
+      "source": "public/assets/equipment/charge.png",
+      "derived": true,
+      "notes": [
+        "Derived from an existing game icon; not a new AI generation.",
+        "Alpha bounds centered on a96px canvas with84px maximum content."
+      ],
+      "variants": [
+        {
+          "runtime": "public/assets/redesign/quick-charge.png",
+          "width": 96,
+          "height": 96,
+          "bytes": 11532,
+          "sha256": "a88a7efcd463b3ada84f38971901b27d1f2bb32126b5840752f99cc5dd051ec3",
+          "used": true
+        }
+      ]
+    },
+    {
+      "id": "quick-bag",
+      "kind": "registered-ui-icon",
+      "status": "ready",
+      "source": "public/assets/redesign/bag.png",
+      "derived": true,
+      "notes": [
+        "Derived from an existing game icon; not a new AI generation.",
+        "Alpha bounds centered on a96px canvas with84px maximum content."
+      ],
+      "variants": [
+        {
+          "runtime": "public/assets/redesign/quick-bag.png",
+          "width": 96,
+          "height": 96,
+          "bytes": 17887,
+          "sha256": "56526ec623530d2a8ff3977ea98a5ad10ea7f4fab65ff9397cd6388b24afcafe",
+          "used": true
+        }
+      ]
+    },
+    {
+      "id": "quick-shop",
+      "kind": "registered-ui-icon",
+      "status": "ready",
+      "source": "public/assets/equipment/shop.png",
+      "derived": true,
+      "notes": [
+        "Derived from an existing game icon; not a new AI generation.",
+        "Alpha bounds centered on a96px canvas with84px maximum content."
+      ],
+      "variants": [
+        {
+          "runtime": "public/assets/redesign/quick-shop.png",
+          "width": 96,
+          "height": 96,
+          "bytes": 15793,
+          "sha256": "4ab94f07af90b4a113ef6efdd7a6d5959f987d475881020b51831b806d55dfc7",
+          "used": true
+        }
+      ]
+    },
+    {
+      "id": "shop-frame-hd",
+      "kind": "ui-skin",
+      "status": "ready",
+      "source": "art/source/shop-frame-hd.png",
+      "alphaNoiseCutoff": 8,
+      "variants": [
+        {
+          "runtime": "public/assets/redesign/shop-frame-hd.png",
+          "width": 1513,
+          "height": 1040,
+          "bytes": 1762409,
+          "sha256": "cadc9fad64f1e718ea4f8c9837811937c6fdece893d9fbb038c80a76d4a289e3",
+          "used": false
+        }
+      ]
+    },
+    {
+      "id": "shop-card-hd",
+      "kind": "ui-skin",
+      "status": "ready",
+      "source": "art/source/shop-card-hd.png",
+      "alphaNoiseCutoff": 8,
+      "variants": [
+        {
+          "runtime": "public/assets/redesign/shop-card-hd.png",
+          "width": 1254,
+          "height": 1254,
+          "bytes": 2247400,
+          "sha256": "b4bab90b94e35adb387e220aca3e2cada76901f9e4a2be569495bb097ad1839d",
+          "used": false
+        }
+      ]
+    },
+    {
+      "id": "pocket-panel",
+      "kind": "selected-pocket-ui",
+      "derived": false,
+      "opaqueSurface": true,
+      "status": "ready",
+      "source": "art/source/pocket-panel.png",
+      "reference": "design/2026-11-26-shop-bag-concepts/01.png",
+      "variants": [
+        {
+          "runtime": "public/assets/redesign/pocket-panel.png",
+          "width": 1515,
+          "height": 1038,
+          "bytes": 1040145,
+          "sha256": "3b4d9d67da7b3a2c56f6aba9087d35497a8b333dbf791a2f8bfb4b4acd01e307",
+          "used": true
+        }
+      ]
+    },
+    {
+      "id": "pocket-title",
+      "kind": "selected-pocket-ui",
+      "derived": false,
+      "opaqueSurface": false,
+      "status": "ready",
+      "source": "art/source/pocket-title.png",
+      "reference": "design/2026-11-26-shop-bag-concepts/01.png",
+      "variants": [
+        {
+          "runtime": "public/assets/redesign/pocket-title.png",
+          "width": 1693,
+          "height": 677,
+          "bytes": 1567833,
+          "sha256": "40d7d09b6fbbf1541a6a7bb7591b098c9dcac7ffa0f6388aa07e1c04aafa3e94",
+          "used": true
+        }
+      ]
+    },
+    {
+      "id": "pocket-nav",
+      "kind": "selected-pocket-ui",
+      "derived": false,
+      "opaqueSurface": false,
+      "status": "ready",
+      "source": "art/source/pocket-nav.png",
+      "reference": "design/2026-11-26-shop-bag-concepts/01.png",
+      "variants": [
+        {
+          "runtime": "public/assets/redesign/pocket-nav.png",
+          "width": 1820,
+          "height": 533,
+          "bytes": 766764,
+          "sha256": "dc5e5c0809c563a94acb484b43efb874574a0ae1bdd4622f15f8b99f1186aff8",
+          "used": true
+        }
+      ]
+    },
+    {
+      "id": "pocket-tray",
+      "kind": "selected-pocket-ui",
+      "derived": false,
+      "opaqueSurface": true,
+      "status": "ready",
+      "source": "art/source/pocket-tray.png",
+      "reference": "design/2026-11-26-shop-bag-concepts/01.png",
+      "variants": [
+        {
+          "runtime": "public/assets/redesign/pocket-tray.png",
+          "width": 1374,
+          "height": 1145,
+          "bytes": 1130526,
+          "sha256": "8fab069f22e41a3deb6dc20c5b147d9b64bc0d8270d4884cf93e281b05483029",
+          "used": true
+        }
+      ]
+    },
+    {
+      "id": "pocket-fish-icon",
+      "kind": "selected-pocket-ui",
+      "derived": false,
+      "opaqueSurface": false,
+      "status": "ready",
+      "source": "art/source/pocket-fish-icon.png",
+      "reference": "design/2026-11-26-shop-bag-concepts/01.png",
+      "variants": [
+        {
+          "runtime": "public/assets/redesign/pocket-fish-icon.png",
+          "width": 512,
+          "height": 512,
+          "bytes": 212119,
+          "sha256": "cbe3d9e1913582e5e31766d3e07aaee746f796bfe6c986963562b39bdda11501",
+          "used": true
+        }
+      ]
+    },
+    {
+      "id": "pocket-button-blue",
+      "kind": "selected-pocket-ui",
+      "derived": false,
+      "opaqueSurface": false,
+      "status": "ready",
+      "source": "art/source/pocket-buttons.png",
+      "reference": "design/2026-11-26-shop-bag-concepts/01.png",
+      "variants": [
+        {
+          "runtime": "public/assets/redesign/pocket-button-blue.png",
+          "width": 1161,
+          "height": 300,
+          "bytes": 300765,
+          "sha256": "97683986d27d6bce1f251bd634f52a8c3fa859fd0ba21a88aba35c4d053fe3b1",
+          "used": true
+        }
+      ]
+    },
+    {
+      "id": "pocket-button-coral",
+      "kind": "selected-pocket-ui",
+      "derived": false,
+      "opaqueSurface": false,
+      "status": "ready",
+      "source": "art/source/pocket-buttons.png",
+      "reference": "design/2026-11-26-shop-bag-concepts/01.png",
+      "variants": [
+        {
+          "runtime": "public/assets/redesign/pocket-button-coral.png",
+          "width": 1162,
+          "height": 301,
+          "bytes": 305760,
+          "sha256": "b84b82eb67753fce96e90dbcd87637a7ce58226a0d5d1d30ff2481efbf349c29",
+          "used": true
+        }
+      ]
+    },
+    {
+      "id": "pocket-store",
+      "kind": "selected-pocket-ui",
+      "derived": false,
+      "opaqueSurface": false,
+      "status": "ready",
+      "source": "art/source/pocket-detail-icons.png",
+      "reference": "design/2026-11-26-shop-bag-concepts/01.png",
+      "variants": [
+        {
+          "runtime": "public/assets/redesign/pocket-store.png",
+          "width": 512,
+          "height": 512,
+          "bytes": 262765,
+          "sha256": "aa56b4a80e761ad7a2ab8487894248d573959654635648e31995cbd8765b4c45",
+          "used": true
+        }
+      ]
+    },
+    {
+      "id": "pocket-lock",
+      "kind": "selected-pocket-ui",
+      "derived": false,
+      "opaqueSurface": false,
+      "status": "ready",
+      "source": "art/source/pocket-detail-icons.png",
+      "reference": "design/2026-11-26-shop-bag-concepts/01.png",
+      "variants": [
+        {
+          "runtime": "public/assets/redesign/pocket-lock.png",
+          "width": 512,
+          "height": 512,
+          "bytes": 223884,
+          "sha256": "c1535001236ab7230cb0d092b8e778cecd4f6018cff633ccfc986a809d6515c1",
+          "used": true
+        }
+      ]
+    },
+    {
+      "id": "pocket-speaker",
+      "kind": "selected-pocket-ui",
+      "derived": false,
+      "opaqueSurface": false,
+      "status": "ready",
+      "source": "art/source/pocket-detail-icons.png",
+      "reference": "design/2026-11-26-shop-bag-concepts/01.png",
+      "variants": [
+        {
+          "runtime": "public/assets/redesign/pocket-speaker.png",
+          "width": 512,
+          "height": 512,
+          "bytes": 268425,
+          "sha256": "7e287ae7e566506d6871ba8d7526e09a9edd4687f8aa457cfb269d7d66890fc0",
+          "used": true
+        }
+      ]
+    },
+    {
+      "id": "pocket-coins",
+      "kind": "selected-pocket-ui",
+      "derived": false,
+      "opaqueSurface": false,
+      "status": "ready",
+      "source": "art/source/pocket-detail-icons.png",
+      "reference": "design/2026-11-26-shop-bag-concepts/01.png",
+      "variants": [
+        {
+          "runtime": "public/assets/redesign/pocket-coins.png",
+          "width": 512,
+          "height": 512,
+          "bytes": 284632,
+          "sha256": "fc191b04eb7dc0d6c96913a1700ea10af53608c458688fac73f56b49db81e6dc",
+          "used": true
+        }
+      ]
+    },
+    {
+      "id": "pocket-wave",
+      "kind": "selected-pocket-ui",
+      "derived": false,
+      "opaqueSurface": false,
+      "status": "ready",
+      "source": "art/source/pocket-wave.png",
+      "reference": "design/2026-11-26-shop-bag-concepts/01.png",
+      "variants": [
+        {
+          "runtime": "public/assets/redesign/pocket-wave.png",
+          "width": 1285,
+          "height": 490,
+          "bytes": 330621,
+          "sha256": "ca8e00583d6a4982d39e391bd223fde6f2f3e98e267be59e3478eee190c7a423",
+          "used": true
+        }
+      ]
+    },
+    {
+      "id": "pocket-settings",
+      "kind": "selected-pocket-ui",
+      "derived": false,
+      "opaqueSurface": false,
+      "status": "ready",
+      "source": "art/source/pocket-nav-details.png",
+      "reference": "design/2026-11-26-shop-bag-concepts/01.png",
+      "variants": [
+        {
+          "runtime": "public/assets/redesign/pocket-settings.png",
+          "width": 512,
+          "height": 512,
+          "bytes": 291891,
+          "sha256": "3e17ee6884203cf104093858abeaa576290bd64debf0207f008480979e3dc88b",
+          "used": true
+        }
+      ]
+    },
+    {
+      "id": "pocket-worm",
+      "kind": "selected-pocket-ui",
+      "derived": false,
+      "opaqueSurface": false,
+      "status": "ready",
+      "source": "art/source/pocket-nav-details.png",
+      "reference": "design/2026-11-26-shop-bag-concepts/01.png",
+      "variants": [
+        {
+          "runtime": "public/assets/redesign/pocket-worm.png",
+          "width": 512,
+          "height": 512,
+          "bytes": 200322,
+          "sha256": "8c5faae1964f79355bb4c3634c3c5926e75859f8d395f9a6f43f86a92ffdc566",
+          "used": true
+        }
+      ]
+    },
+    {
+      "id": "pocket-icon-bag",
+      "kind": "registered-ui-icon",
+      "derived": true,
+      "opaqueSurface": false,
+      "status": "ready",
+      "source": "public/assets/redesign/bag.png",
+      "reference": "design/2026-11-26-shop-bag-concepts/01.png",
+      "variants": [
+        {
+          "runtime": "public/assets/redesign/pocket-icon-bag.png",
+          "width": 512,
+          "height": 512,
+          "bytes": 339689,
+          "sha256": "d9915c30efb787daff5fcdba34d8e32482c1fd9015bb0b3666fecf3cb3fde15d",
+          "used": true
+        }
+      ]
+    },
+    {
+      "id": "pocket-icon-coin",
+      "kind": "registered-ui-icon",
+      "derived": true,
+      "opaqueSurface": false,
+      "status": "ready",
+      "source": "public/assets/equipment/coin.png",
+      "reference": "design/2026-11-26-shop-bag-concepts/01.png",
+      "variants": [
+        {
+          "runtime": "public/assets/redesign/pocket-icon-coin.png",
+          "width": 512,
+          "height": 512,
+          "bytes": 215075,
+          "sha256": "ad80bb3514e3a1426def5d8127e9a6d2790f22ac4b520b7094b04f44ccde0b4b",
+          "used": true
+        }
+      ]
+    },
+    {
+      "id": "pocket-icon-rod_1",
+      "kind": "registered-ui-icon",
+      "derived": true,
+      "opaqueSurface": false,
+      "status": "ready",
+      "source": "public/assets/redesign/rod_1.png",
+      "reference": "design/2026-11-26-shop-bag-concepts/01.png",
+      "variants": [
+        {
+          "runtime": "public/assets/redesign/pocket-icon-rod_1.png",
+          "width": 512,
+          "height": 512,
+          "bytes": 161822,
+          "sha256": "8611638ceeb1b00215658d05e63ec146cb73363518d7ffa785e6c57314ea8169",
+          "used": true
+        }
+      ]
+    },
+    {
+      "id": "pocket-icon-worm",
+      "kind": "registered-ui-icon",
+      "derived": true,
+      "opaqueSurface": false,
+      "status": "ready",
+      "source": "public/assets/redesign/worm.png",
+      "reference": "design/2026-11-26-shop-bag-concepts/01.png",
+      "variants": [
+        {
+          "runtime": "public/assets/redesign/pocket-icon-worm.png",
+          "width": 512,
+          "height": 512,
+          "bytes": 249494,
+          "sha256": "5617aeb143490c16fdd4e62a9a569b26d45baf0382bb25f27b27c79460d9e9ac",
+          "used": true
+        }
+      ]
+    },
+    {
+      "id": "pocket-icon-book",
+      "kind": "registered-ui-icon",
+      "derived": true,
+      "opaqueSurface": false,
+      "status": "ready",
+      "source": "public/assets/redesign/book.png",
+      "reference": "design/2026-11-26-shop-bag-concepts/01.png",
+      "variants": [
+        {
+          "runtime": "public/assets/redesign/pocket-icon-book.png",
+          "width": 512,
+          "height": 512,
+          "bytes": 204762,
+          "sha256": "49686ef63d67c953415a5e8834c40f108964b6e207ffc571c409b76d4964a3ff",
+          "used": true
+        }
+      ]
+    },
+    {
+      "id": "pocket-icon-settings",
+      "kind": "registered-ui-icon",
+      "derived": true,
+      "opaqueSurface": false,
+      "status": "ready",
+      "source": "public/assets/equipment/settings.png",
+      "reference": "design/2026-11-26-shop-bag-concepts/01.png",
+      "variants": [
+        {
+          "runtime": "public/assets/redesign/pocket-icon-settings.png",
+          "width": 512,
+          "height": 512,
+          "bytes": 264321,
+          "sha256": "e975a00118c59f403bec0247ef1647b22a4a58674ed03ab8a0703bb37a39f7c9",
+          "used": true
+        }
+      ]
+    }
+  ]
+}

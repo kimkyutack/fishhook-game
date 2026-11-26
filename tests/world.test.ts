@@ -6,6 +6,11 @@ import {
 import { describe, it, expect } from "vitest";
 import type { GameWorldDO } from "../src/server/world";
 import type { Command, PublicPlayer } from "../src/shared/protocol";
+import { MAP, SPOTS } from "../src/config/map";
+import { Store } from "../src/server/store";
+const TEST_SPOT = SPOTS.find(
+  (s) => s.habitat === "lake" && s.direction === "down",
+)!;
 import { BALANCE } from "../src/config/balance";
 const origin = "https://game.test";
 function stub() {
@@ -43,13 +48,14 @@ async function place(
   id: string,
   x: number,
   y: number,
-  direction = "left",
+  direction = TEST_SPOT.direction,
 ) {
   await runInDurableObject(s, (o) => {
     o.db.exec(
-      "UPDATE players SET x=?,y=?,direction=?,motion='idle',state_at=0 WHERE id=?",
+      "UPDATE players SET x=?,y=?,direction=?,facing=?,motion='idle',state_at=0 WHERE id=?",
       x,
       y,
+      direction,
       direction,
       id,
     );
@@ -72,16 +78,49 @@ async function seed(
       Date.now() - 5000,
       due,
       status,
-      962,
-      900,
-      "left",
-      890,
-      900,
+      TEST_SPOT.x,
+      TEST_SPOT.y,
+      TEST_SPOT.direction,
+      TEST_SPOT.water.x,
+      TEST_SPOT.water.y,
     );
     return castId;
   });
 }
 describe("SQLite Durable Object integration", () => {
+  it("migrates the enlarged map once without changing pending rewards, sessions or balances", async () => {
+    const s = stub(),
+      a = await register(s, "맵이전검증");
+    const id = a.body.player.id,
+      due = Date.now() + 30000;
+    const castId = await seed(s, id, "fish_001", due);
+    await runInDurableObject(s, (o, state) => {
+      o.db.exec("DELETE FROM schema_migrations WHERE version=2");
+      o.db.exec("UPDATE players SET x=100,y=100,coins=777 WHERE id=?", id);
+      const before = o.db.active(id)!;
+      const db = new Store(state.storage);
+      db.init();
+      const after = db.active(id)!;
+      expect(after.id).toBe(castId);
+      expect(after.fish_id).toBe(before.fish_id);
+      expect(after.due_at).toBe(due);
+      expect(after.cast_order).toBe(before.cast_order);
+      expect(after.status).toBe("ACTIVE");
+      expect(SPOTS.some((p) => p.x === after.x && p.y === after.y)).toBe(true);
+      expect(db.player(id).coins).toBe(777);
+      expect(db.player(id).x).toBe(MAP.spawn.x);
+      db.exec("UPDATE players SET x=? WHERE id=?", MAP.spawn.x + 10, id);
+      db.init();
+      expect(db.player(id).x).toBe(MAP.spawn.x + 10);
+    });
+    const session = await s.fetch(`${origin}/api/session`, {
+      headers: { Cookie: a.cookie },
+    });
+    expect(session.status).toBe(200);
+    expect(
+      ((await session.json()) as { player: { id: string } }).player.id,
+    ).toBe(id);
+  });
   it("atomically creates only one normalized name, never logs in by name", async () => {
     const s = stub();
     const [a, b] = await Promise.all([
@@ -139,7 +178,7 @@ describe("SQLite Durable Object integration", () => {
     const s = stub(),
       a = await register(s);
     const id = a.body.player.id;
-    await place(s, id, 962, 900);
+    await place(s, id, TEST_SPOT.x, TEST_SPOT.y);
     const cmd: Command = { type: "cast", commandId: crypto.randomUUID() };
     expect((await command(s, id, cmd)).ok).toBe(true);
     expect((await command(s, id, cmd)).ok).toBe(true);
@@ -156,6 +195,111 @@ describe("SQLite Durable Object integration", () => {
       (await command(s, id, { type: "cast", commandId: crypto.randomUUID() }))
         .ok,
     ).toBe(false);
+  });
+  it("movement refunds exactly the cast bait once and cancelled fish never settle", async () => {
+    const s = stub(),
+      a = await register(s),
+      id = a.body.player.id;
+    await place(s, id, TEST_SPOT.x, TEST_SPOT.y);
+    await command(s, id, { type: "cast", commandId: crypto.randomUUID() });
+    const result = await runInDurableObject(s, (o) => {
+      // Even if the equipped bait changes, refund the bait consumed by this cast.
+      o.db.exec("UPDATE players SET bait='special' WHERE id=?", id);
+      const first = o.cancelForMovement(id, Date.now());
+      const repeated = o.cancelForMovement(id, Date.now());
+      o.db.exec(
+        "UPDATE active_casts SET due_at=? WHERE player_id=?",
+        Date.now() - 1,
+        id,
+      );
+      o.settle();
+      return {
+        first,
+        repeated,
+        self: o.db.private(id, Date.now()),
+        cast: o.db.one<{ status: string }>(
+          "SELECT status FROM active_casts WHERE player_id=?",
+          id,
+        ),
+      };
+    });
+    expect(result.first).toBe(true);
+    expect(result.repeated).toBe(false);
+    expect(result.self.baits.worm).toBe(20);
+    expect(result.self.baits.special).toBe(0);
+    expect(result.self.inventory).toHaveLength(0);
+    expect(result.self.rank).toBeNull();
+    expect(result.cast?.status).toBe("CANCELLED_BY_MOVEMENT");
+  });
+  it("real socket movement sends the bait refund immediately, key release leaves a cast intact", async () => {
+    const s = stub(),
+      a = await register(s),
+      id = a.body.player.id;
+    await place(s, id, TEST_SPOT.x, TEST_SPOT.y);
+    const response = await s.fetch(`${origin}/ws`, {
+      headers: { Origin: origin, Cookie: a.cookie, Upgrade: "websocket" },
+    });
+    const client = response.webSocket!;
+    client.accept();
+    const updated = new Promise<{
+      self: { baits: { worm: number } };
+      players: PublicPlayer[];
+    }>((resolve) => {
+      client.addEventListener("message", (event) => {
+        const value = JSON.parse(String(event.data));
+        if (
+          value.type === "snapshot" &&
+          value.self.baits.worm === 20 &&
+          value.players.some(
+            (p: PublicPlayer) => p.id === id && p.motion === "walk",
+          )
+        )
+          resolve(value);
+      });
+    });
+    const state = await runInDurableObject(s, (o) => {
+      const now = Date.now(),
+        ws = o.socketFor(id)!;
+      o.execute(id, { type: "cast", commandId: crypto.randomUUID() }, now);
+      o.onMove(ws, { seq: 1, dx: 0, dy: 0, direction: "left" }, now + 50);
+      const stillCasting = o.attachment(ws).player.castStartedAt !== undefined;
+      o.onMove(ws, { seq: 2, dx: 1, dy: 0, direction: "right" }, now + 150);
+      o.onMove(ws, { seq: 3, dx: 1, dy: 0, direction: "right" }, now + 250);
+      return {
+        stillCasting,
+        player: o.attachment(ws).player,
+        bait: o.db.private(id, now).baits.worm,
+      };
+    });
+    const snapshot = await updated;
+    expect(state.stillCasting).toBe(true);
+    expect(state.player.castStartedAt).toBeUndefined();
+    expect(state.player.x).toBeGreaterThan(TEST_SPOT.x);
+    expect(state.bait).toBe(20);
+    expect(snapshot.self.baits.worm).toBe(20);
+    client.close();
+  });
+  it("movement after completion cannot refund a bait or revoke the fish", async () => {
+    const s = stub(),
+      a = await register(s),
+      id = a.body.player.id;
+    await place(s, id, TEST_SPOT.x, TEST_SPOT.y);
+    await command(s, id, { type: "cast", commandId: crypto.randomUUID() });
+    const result = await runInDurableObject(s, (o) => {
+      o.db.exec(
+        "UPDATE active_casts SET due_at=? WHERE player_id=?",
+        Date.now() - 1,
+        id,
+      );
+      o.settle();
+      return {
+        refunded: o.cancelForMovement(id, Date.now()),
+        self: o.db.private(id, Date.now()),
+      };
+    });
+    expect(result.refunded).toBe(false);
+    expect(result.self.baits.worm).toBe(19);
+    expect(result.self.inventory).toHaveLength(1);
   });
   it("finishes offline and repeated alarms never grant twice", async () => {
     const s = stub(),
@@ -175,7 +319,7 @@ describe("SQLite Durable Object integration", () => {
   it("ranks by scheduled finish time and creation order, keeps record after sale and later same-star catch", async () => {
     const s = stub(),
       a = await register(s, "먼저"),
-      b = await register(s, "나중");
+      b = await register(s, "나중", "female");
     const first = a.body.player.id,
       second = b.body.player.id,
       now = Date.now();
@@ -184,7 +328,8 @@ describe("SQLite Durable Object integration", () => {
     await runInDurableObject(s, (o) => o.settle(now));
     const initial = await runInDurableObject(s, (o) => o.db.ranking());
     expect(initial.map((r) => r.id)).toEqual([first, second]);
-    await place(s, first, 1536, 850);
+    expect(initial[1].gender).toBe("female");
+    await place(s, first, MAP.shop.x, MAP.shop.y);
     const inv = await runInDurableObject(
       s,
       (o) => o.db.private(first, now).inventory,
@@ -221,7 +366,7 @@ describe("SQLite Durable Object integration", () => {
         })
       ).ok,
     ).toBe(false);
-    await place(s, id, 1536, 850);
+    await place(s, id, MAP.shop.x, MAP.shop.y);
     expect(
       (
         await command(s, id, {
@@ -283,7 +428,7 @@ describe("SQLite Durable Object integration", () => {
     const victim = a.body.player.id,
       bid = b.body.player.id,
       cid = c.body.player.id;
-    await place(s, victim, 962, 900, "left");
+    await place(s, victim, TEST_SPOT.x, TEST_SPOT.y, TEST_SPOT.direction);
     await command(s, victim, { type: "cast", commandId: crypto.randomUUID() });
     await runInDurableObject(s, (o) =>
       o.db.exec(
@@ -292,8 +437,8 @@ describe("SQLite Durable Object integration", () => {
         victim,
       ),
     );
-    await place(s, bid, 1030, 900, "left");
-    await place(s, cid, 1020, 920, "left");
+    await place(s, bid, TEST_SPOT.x + 68, TEST_SPOT.y, "left");
+    await place(s, cid, TEST_SPOT.x + 58, TEST_SPOT.y + 20, "left");
     const r = await Promise.all([
       command(s, bid, {
         type: "sabotage",
@@ -327,14 +472,24 @@ describe("SQLite Durable Object integration", () => {
     expect(check.cast?.status).toBe("CANCELLED_BY_SABOTAGE");
     expect(check.v.baits.worm).toBe(19);
     expect(check.v.inventory).toHaveLength(0);
-    expect(check.b.charges + check.c.charges).toBe(5);
+    expect(check.b.charges + check.c.charges).toBe(6);
     expect(check.v.rank).toBeNull();
+    const standing = await runInDurableObject(s, (o) => {
+      const p = o.current(victim);
+      return o.normalize({
+        ...p,
+        motion: "startled",
+        stateAt: Date.now() - 1600,
+      });
+    });
+    expect(standing.motion).toBe("idle");
+    expect(standing.castStartedAt).toBeUndefined();
   });
   it("late sabotage settles due fish first and consumes no charge", async () => {
     const s = stub(),
       a = await register(s, "잡는이"),
       b = await register(s, "늦은이");
-    await place(s, b.body.player.id, 1020, 900, "left");
+    await place(s, b.body.player.id, TEST_SPOT.x + 58, TEST_SPOT.y, "left");
     await seed(s, a.body.player.id, "fish_001", Date.now() - 5);
     await runInDurableObject(s, (o) => o.settle());
     const result = await command(s, b.body.player.id, {
@@ -362,7 +517,7 @@ describe("SQLite Durable Object integration", () => {
     const s = stub(),
       a = await register(s);
     const id = a.body.player.id;
-    await place(s, id, 1536, 850);
+    await place(s, id, MAP.shop.x, MAP.shop.y);
     await runInDurableObject(s, (o) => {
       o.db.exec("UPDATE players SET coins=0 WHERE id=?", id);
       o.db.exec("UPDATE player_baits SET quantity=0 WHERE player_id=?", id);
@@ -416,17 +571,65 @@ describe("SQLite Durable Object integration", () => {
     wb.close();
     wc.close();
   });
+  it("derives diagonal facing on the server and shares it with peers and hibernation attachments", async () => {
+    const s = stub(),
+      a = await register(s, "대각남"),
+      b = await register(s, "대각녀", "female");
+    await place(s, a.body.player.id, MAP.shop.x, MAP.shop.y);
+    const wa = (
+      await s.fetch(`${origin}/ws`, {
+        headers: { Cookie: a.cookie, Origin: origin, Upgrade: "websocket" },
+      })
+    ).webSocket!;
+    wa.accept();
+    const wb = (
+      await s.fetch(`${origin}/ws`, {
+        headers: { Cookie: b.cookie, Origin: origin, Upgrade: "websocket" },
+      })
+    ).webSocket!;
+    wb.accept();
+    const shared = new Promise<PublicPlayer>((resolve) =>
+      wb.addEventListener("message", (event) => {
+        const msg = JSON.parse(String(event.data));
+        const p = msg.players?.find(
+          (p: PublicPlayer) =>
+            p.id === a.body.player.id && p.facing === "down-left",
+        );
+        if (p) resolve(p);
+      }),
+    );
+    const result = await runInDurableObject(s, (o) => {
+      const ws = o.socketFor(a.body.player.id)!,
+        attachment = o.attachment(ws),
+        now = Date.now();
+      attachment.lastMove = now - 100;
+      ws.serializeAttachment(attachment);
+      o.onMove(ws, { seq: 1, dx: -1, dy: 1, direction: "right" }, now);
+      const moving = o.attachment(ws).player;
+      expect(moving.x).toBeLessThan(MAP.shop.x);
+      expect(moving.y).toBeGreaterThan(MAP.shop.y);
+      expect(moving.facing).toBe("down-left");
+      expect(moving.direction).toBe("down");
+      o.onMove(ws, { seq: 2, dx: 0, dy: 0, direction: "down" }, now + 100);
+      return o.attachment(ws).player;
+    });
+    expect(result.facing).toBe("down-left");
+    expect(result.motion).toBe("idle");
+    expect((await shared).facing).toBe("down-left");
+    wa.close();
+    wb.close();
+  });
 });
 
 describe("recovery and protocol edges", () => {
-  it("recharges offline without restarting the existing recharge timer on another successful use", async () => {
+  it("unlimited kicks leave legacy charge and recharge data untouched", async () => {
     const s = stub(),
       a = await register(s, "충전자"),
       b = await register(s, "대상자");
     const id = a.body.player.id,
       target = b.body.player.id,
       now = Date.now();
-    await place(s, id, 1030, 900, "left");
+    await place(s, id, TEST_SPOT.x + 68, TEST_SPOT.y, "left");
     await seed(s, target, "fish_001", now + 10000);
     await runInDurableObject(s, (o) => {
       o.db.exec(
@@ -445,7 +648,7 @@ describe("recovery and protocol edges", () => {
       ).ok,
     ).toBe(true);
     const after = await runInDurableObject(s, (o) => o.db.private(id, now));
-    expect(after.charges).toBe(1);
+    expect(after.charges).toBe(2);
     expect(after.nextRechargeAt).toBe(now + 100000);
     expect(
       (
@@ -459,8 +662,8 @@ describe("recovery and protocol edges", () => {
     const s = stub(),
       a = await register(s, "예약자"),
       b = await register(s, "앉는이");
-    await place(s, a.body.player.id, 962, 900);
-    await place(s, b.body.player.id, 962, 920);
+    await place(s, a.body.player.id, TEST_SPOT.x, TEST_SPOT.y);
+    await place(s, b.body.player.id, TEST_SPOT.x, TEST_SPOT.y + 20);
     expect(
       (
         await command(s, a.body.player.id, {
@@ -521,7 +724,7 @@ it("sells all unlocked inventory atomically beyond the visible bag page and pres
   const s = stub(),
     a = await register(s, "대량판매");
   const id = a.body.player.id;
-  await place(s, id, 1536, 850);
+  await place(s, id, MAP.shop.x, MAP.shop.y);
   await runInDurableObject(s, (o) =>
     o.db.tx(() => {
       for (let i = 0; i < 501; i++)
@@ -553,4 +756,137 @@ it("sells all unlocked inventory atomically beyond the visible bag page and pres
   expect(after.coins).toBe(10100);
   expect(after.inventory).toHaveLength(1);
   expect(after.inventory[0].locked).toBe(1);
+});
+
+it.each(["fish_031", "fish_041"])(
+  "broadcasts confirmed rare catch %s with its player name to both sockets once",
+  async (fishId) => {
+    const s = stub(),
+      a = await register(s, "희귀포획"),
+      b = await register(s, "관찰자");
+    const connect = async (cookie: string) => {
+      const ws = (
+        await s.fetch(`${origin}/ws`, {
+          headers: { Cookie: cookie, Origin: origin, Upgrade: "websocket" },
+        })
+      ).webSocket!;
+      ws.accept();
+      return ws;
+    };
+    const wa = await connect(a.cookie),
+      wb = await connect(b.cookie);
+    const caught = (ws: WebSocket) =>
+      new Promise<any>((resolve) =>
+        ws.addEventListener("message", (e) => {
+          const m = JSON.parse(String(e.data));
+          if (m.type === "caught") resolve(m);
+        }),
+      );
+    const pa = caught(wa),
+      pb = caught(wb);
+    await seed(s, a.body.player.id, fishId, Date.now() - 100);
+    await runInDurableObject(s, (o) => o.settle());
+    const [ea, eb] = await Promise.all([pa, pb]);
+    expect(ea).toEqual(eb);
+    expect(ea.playerName).toBe("희귀포획");
+    expect(ea.fishId).toBe(fishId);
+    await runInDurableObject(s, (o) => o.settle());
+    expect(
+      (
+        await runInDurableObject(s, (o) =>
+          o.db.private(a.body.player.id, Date.now()),
+        )
+      ).inventory,
+    ).toHaveLength(1);
+    wa.close();
+    wb.close();
+  },
+);
+it("uses elapsed input time despite packet bunching while bounding forged movement time", async () => {
+  const s = stub(),
+    a = await register(s, "입력시간");
+  const client = (
+    await s.fetch(`${origin}/ws`, {
+      headers: { Cookie: a.cookie, Origin: origin, Upgrade: "websocket" },
+    })
+  ).webSocket!;
+  client.accept();
+  const result = await runInDurableObject(s, (o, ctx) => {
+    const ws = ctx.getWebSockets()[0],
+      now = Date.now();
+    const start = o.attachment(ws).player;
+    o.onMove(ws, { seq: 1, dx: -1, dy: 0, direction: "left", dtMs: 50 }, now);
+    o.onMove(
+      ws,
+      { seq: 2, dx: -1, dy: 0, direction: "left", dtMs: 50 },
+      now + 1,
+    );
+    const after = o.attachment(ws).player;
+    for (let seq = 3; seq < 50; seq++)
+      o.onMove(
+        ws,
+        { seq, dx: -1, dy: 0, direction: "left", dtMs: 150 },
+        now + 2,
+      );
+    return { start, after, final: o.attachment(ws).player };
+  });
+  expect(result.start.x - result.after.x).toBeCloseTo(22, 1);
+  expect(result.start.x - result.final.x).toBeLessThanOrEqual(55.5);
+  client.close();
+});
+
+it("shares chat with canonical identity, enforces cooldown after reconnect and never changes inventory", async () => {
+  const s = stub(),
+    a = await register(s, "채팅남"),
+    b = await register(s, "채팅여", "female");
+  const connect = async (cookie: string) => {
+    const ws = (
+      await s.fetch(`${origin}/ws`, {
+        headers: { Cookie: cookie, Origin: origin, Upgrade: "websocket" },
+      })
+    ).webSocket!;
+    ws.accept();
+    return ws;
+  };
+  const wa = await connect(a.cookie),
+    wb = await connect(b.cookie);
+  const receive = (ws: WebSocket, type: string) =>
+    new Promise<any>((resolve) =>
+      ws.addEventListener("message", (e) => {
+        const m = JSON.parse(String(e.data));
+        if (m.type === type) resolve(m);
+      }),
+    );
+  const pa = receive(wa, "chat"),
+    pb = receive(wb, "chat");
+  wa.send(JSON.stringify({ type: "chat", text: "  안녕하세요!  " }));
+  const [ma, mb] = await Promise.all([pa, pb]);
+  expect(ma).toEqual(mb);
+  expect(ma.playerId).toBe(a.body.player.id);
+  expect(ma.name).toBe("채팅남");
+  expect(ma.text).toBe("안녕하세요!");
+  expect(ma.id).toBeTruthy();
+  const error = receive(wa, "chat-error");
+  wa.send(JSON.stringify({ type: "chat", text: "너무 빠른 메시지" }));
+  expect((await error).error).toContain("잠시");
+  const later = await connect(a.cookie);
+  const cooldown = await runInDurableObject(s, (o) => {
+    const ws = o.socketFor(a.body.player.id)!;
+    try {
+      o.onChat(ws, { type: "chat", text: "재접속 우회" }, ma.at + 500);
+      return false;
+    } catch {
+      return true;
+    }
+  });
+  expect(cooldown).toBe(true);
+  const p = await runInDurableObject(s, (o) =>
+    o.db.private(a.body.player.id, Date.now()),
+  );
+  expect(p.coins).toBe(100);
+  expect(p.baits.worm).toBe(20);
+  expect(p.inventory).toHaveLength(0);
+  wa.close();
+  wb.close();
+  later.close();
 });

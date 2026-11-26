@@ -1,0 +1,73 @@
+{
+  "finalScreens": 13,
+  "dimensions": "1536x1024",
+  "method": "Built-in ImageGen palette edits, visually reviewed in generation results",
+  "gameApplied": false,
+  "files": [
+    {
+      "file": "01-gameplay.png",
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "file": "02-world-overview.png",
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "file": "03-name-entry.png",
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "file": "04-character-select.png",
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "file": "05-bag-fish.png",
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "file": "06-bag-rods.png",
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "file": "07-bag-baits.png",
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "file": "08-bestiary.png",
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "file": "09-settings.png",
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "file": "10-shop-rods.png",
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "file": "11-shop-baits.png",
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "file": "12-shop-sale.png",
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "file": "13-player-profile.png",
+      "width": 1536,
+      "height": 1024
+    }
+  ]
+}

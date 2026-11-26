@@ -1,0 +1,5 @@
+{
+  "prompt": "Use case: game asset. ONE high-resolution production UI window frame, landscape 2048x1408, true transparent background outside silhouette. Cute modern polished sky-blue casual fishing game, tactile toy-like 3D materials. Front view, perfectly axis aligned. A WIDE fishing tackle shop window. Slim pale sky-blue outer rim, generous completely EMPTY solid very pale ice-blue content surface, subtle white upper highlight. Small white and cornflower blue striped canvas awning covers ONLY TOP 14 percent, not a huge roof. Thin warm light wood counter along ONLY bottom 5 percent. Rounded outer corners, soft contact shadows contained near silhouette. The middle 75 percent must be a plain clean EMPTY rectangle for a real responsive UI grid, no dividers or placeholders. No icons, no merchandise, no characters, NO TEXT, letters, numbers, gold, neon. Crisp native high-resolution edges and fine fabric detail, avoid blur and tiny source image. Frame fills canvas with only 3 percent transparent margin.",
+  "source": "art/source/shop-frame-hd.png",
+  "transparentBackground": true
+}

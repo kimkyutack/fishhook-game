@@ -1,15 +1,17 @@
 import { z } from "zod";
 import type { Direction } from "../config/map";
 import type { BaitId } from "../config/balance";
+import type { Facing } from "./movement";
 const commandId = z.string().uuid();
 export const CommandSchema = z.discriminatedUnion("type", [
   z.object({ type: z.literal("cast"), commandId }),
   z.object({ type: z.literal("cancel"), commandId }),
   z.object({ type: z.literal("sit"), commandId }),
   z.object({
-    type: z.literal("sabotage"),
+    // Accept older open clients while all current controls send "kick".
+    type: z.enum(["kick", "sabotage"]),
     commandId,
-    target: z.string().uuid(),
+    target: z.string().uuid().optional(),
   }),
   z.object({
     type: z.literal("buyRod"),
@@ -48,6 +50,7 @@ export const CommandSchema = z.discriminatedUnion("type", [
   z.object({ type: z.literal("refill"), commandId }),
 ]);
 export const MoveSchema = z.object({
+  dtMs: z.number().min(0).max(150).optional(),
   type: z.literal("move"),
   seq: z.number().int().nonnegative(),
   dx: z.number().min(-1).max(1),
@@ -65,7 +68,8 @@ export type Motion =
   | "reel_in"
   | "kick"
   | "run"
-  | "startled";
+  | "startled"
+  | "fallen";
 export interface PublicPlayer {
   id: string;
   name: string;
@@ -73,9 +77,11 @@ export interface PublicPlayer {
   x: number;
   y: number;
   direction: Direction;
+  facing?: Facing;
   motion: Motion;
   stateAt: number;
   castStartedAt?: number;
+  castWater?: { x: number; y: number };
   protectedUntil: number;
   rod: number;
   online: boolean;
@@ -105,6 +111,7 @@ export interface PrivatePlayer {
 export interface Rank {
   id: string;
   name: string;
+  gender: "male" | "female";
   fishId: string;
   star: number;
   caughtAt: number;
@@ -128,6 +135,7 @@ export interface Snapshot {
 export type Event =
   | {
       type: "caught";
+      playerName?: string;
       playerId: string;
       fishId: string;
       catchId: number;

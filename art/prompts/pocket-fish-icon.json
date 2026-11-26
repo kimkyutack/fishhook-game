@@ -1,0 +1,57 @@
+{
+  "tool": "built-in image_gen",
+  "reference": "design/2026-11-26-shop-bag-concepts/01.png",
+  "createdAt": "2026-11-26",
+  "status": "generated-and-visually-inspected",
+  "prompt": "Use case: production UI navigation icon for the selected cute fishing game design. Generate ONE isolated little pink round cartoon fish matching the fish-category icon near x70 y229 in the attached selected reference. Fish side view facing RIGHT, fat round pink body, tiny reddish-pink fins and tail, one large friendly glossy black eye with white highlight, tiny smiling mouth, soft toy/clay-like 3D game rendering. Short cute proportions, absolutely not realistic fish anatomy or photograph. Solid opaque subject with clean alpha silhouette on true transparent background. Native512x512 square, fish occupies about85percent of canvas width and centered. No text, labels, badge, frame, circle backing, water, bubbles, shadow plane or other objects. Only the single small pink fish, polished clean edges, readable at36px.",
+  "transparentBackground": true,
+  "alphaCleanupBelow": 8,
+  "alphaBoundsThreshold": 32,
+  "registrationPadding": 4,
+  "canvasSize": 512,
+  "maxFigureSize": 440,
+  "source": {
+    "path": "art/source/pocket-fish-icon.png",
+    "width": 1254,
+    "height": 1254,
+    "bytes": 769366,
+    "sha256": "de42bedb0c4151754dbb7f73973d0dfcb4215ec2bd8d1cebd456b66ef7ceab7d"
+  },
+  "registration": [
+    {
+      "name": "fish-icon",
+      "sourceCell": {
+        "left": 0,
+        "top": 0,
+        "width": 1254,
+        "height": 1254
+      },
+      "crop": {
+        "left": 113,
+        "top": 235,
+        "width": 994,
+        "height": 740
+      },
+      "scale": 0.4426559356136821,
+      "resizedFigure": {
+        "width": 440,
+        "height": 328
+      },
+      "canvas": {
+        "width": 512,
+        "height": 512
+      },
+      "offset": {
+        "left": 36,
+        "top": 92
+      },
+      "runtime": {
+        "path": "public/assets/redesign/pocket-fish-icon.png",
+        "width": 512,
+        "height": 512,
+        "bytes": 212119,
+        "sha256": "cbe3d9e1913582e5e31766d3e07aaee746f796bfe6c986963562b39bdda11501"
+      }
+    }
+  ]
+}

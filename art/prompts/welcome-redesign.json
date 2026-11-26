@@ -1,0 +1,24 @@
+{
+  "tool": "built-in image_gen",
+  "welcomeOutput": {
+    "runtime": "public/assets/redesign/welcome.png",
+    "source": "art/source/blue-welcome.png",
+    "width": 1536,
+    "height": 1024
+  },
+  "platformOutput": {
+    "runtime": "public/assets/redesign/character-platform.png",
+    "source": "art/source/character-platform.png",
+    "sourceWidth": 1774,
+    "sourceHeight": 887,
+    "runtimeWidth": 768,
+    "runtimeHeight": 384,
+    "hasAlpha": true
+  },
+  "selectionBackgroundOutput": {
+    "runtime": "public/assets/redesign/selection-background.png",
+    "source": "art/source/blue-selection-background.png",
+    "width": 1536,
+    "height": 1024
+  }
+}

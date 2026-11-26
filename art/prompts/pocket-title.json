@@ -1,0 +1,16 @@
+{
+  "tool": "built-in image_gen",
+  "prompt": "Use case: ui-mockup game raster asset. Use attached reference only to faithfully recreate its TOP LEFT BLUE TITLE PENNANT (behind 가방 and 상점) as ONE separate blank production asset. Not a full UI mockup. Wide asymmetrical rounded fabric quadrilateral, edges slightly tilted, top edge rising gently toward right, rounded corners, white running stitches inset around edge, small pale-blue lower folded depth. Match its cheerful azure/cornflower gradient fabric, light upper sheen and stronger lower blue edge. Silhouette approximately 240px wide by104px high when displayed; generate native canvas1200x520, aspect2.3:1. True transparent background outside the pennant and no ground haze. Full completely opaque blue center for dynamic title text and a separate bag/shop icon later. NO letters, NO icons, NO numbers, no logo. No gold, no navy panel, no generic rounded pill, no giant curled tails. Flat front view with only the same modest cloth depth seen in reference. Keep the source selected game's exact restrained cute tactile design. Leave the tiny water swoosh OUT; only the title pennant. Fill canvas with small transparent margin all around.",
+  "reference": "design/2026-11-26-shop-bag-concepts/01.png",
+  "source": "art/source/pocket-title.png",
+  "runtime": "public/assets/redesign/pocket-title.png",
+  "sourceWidth": 1905,
+  "sourceHeight": 825,
+  "crop": {
+    "left": 97,
+    "top": 69,
+    "width": 1693,
+    "height": 677
+  },
+  "alphaNoiseCutoff": 8
+}

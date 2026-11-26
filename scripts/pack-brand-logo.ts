@@ -1,0 +1,15 @@
+import sharp from 'sharp';
+import {readFile,writeFile} from 'node:fs/promises';
+import {createHash} from 'node:crypto';
+const source='art/source/moyeo-fishing-logo.png';
+const runtime='public/assets/redesign/logo.png';
+await sharp(source).resize({width:800,withoutEnlargement:true}).png().toFile(runtime+'.next');
+const bytes=await readFile(runtime+'.next'),m=await sharp(bytes).metadata();
+const manifest=JSON.parse(await readFile('art/redesign-manifest.json','utf8'));
+const logo=manifest.entries.find((e:{id:string})=>e.id==='logo');
+if(!logo)throw Error('Missing logo manifest entry');
+Object.assign(logo,{source,brand:'모여라 낚시터',variants:[{runtime,width:m.width,height:m.height,bytes:bytes.length,sha256:createHash('sha256').update(bytes).digest('hex'),used:true}]});
+const{rename}=await import('node:fs/promises');
+await rename(runtime+'.next',runtime);
+await writeFile('art/redesign-manifest.json',JSON.stringify(manifest,null,2)+'\n');
+console.log(`모여라 낚시터 logo: ${m.width}×${m.height}`);

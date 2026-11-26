@@ -10,6 +10,9 @@ import type {
   Feed,
 } from "../shared/protocol";
 import { recharge } from "../shared/rules";
+import { MAP, SPOTS } from "../config/map";
+import type { Facing } from "../shared/movement";
+import { dailyBaitPeriod, DAILY_BAIT_AMOUNT } from "../shared/daily-bait";
 export interface PlayerRow {
   id: string;
   name: string;
@@ -21,6 +24,7 @@ export interface PlayerRow {
   x: number;
   y: number;
   direction: Direction;
+  facing: Facing | null;
   motion: Motion;
   state_at: number;
   protected_until: number;
@@ -39,6 +43,7 @@ export interface CastRow {
   x: number;
   y: number;
   direction: Direction;
+  facing: Facing | null;
   water_x: number;
   water_y: number;
   cast_order: number;
@@ -72,6 +77,8 @@ export class Store {
  CREATE INDEX IF NOT EXISTS session_player ON sessions(player_id);
  CREATE TABLE IF NOT EXISTS player_rods(player_id TEXT NOT NULL,rod INTEGER NOT NULL,PRIMARY KEY(player_id,rod));
  CREATE TABLE IF NOT EXISTS player_baits(player_id TEXT NOT NULL,bait TEXT NOT NULL,quantity INTEGER NOT NULL CHECK(quantity>=0),PRIMARY KEY(player_id,bait));
+ CREATE TABLE IF NOT EXISTS daily_bait_grants(player_id TEXT PRIMARY KEY,last_period INTEGER NOT NULL);
+ CREATE INDEX IF NOT EXISTS daily_bait_due ON daily_bait_grants(last_period);
  CREATE TABLE IF NOT EXISTS sabotage_state(player_id TEXT PRIMARY KEY,charges INTEGER NOT NULL CHECK(charges BETWEEN 0 AND 3),next_recharge_at INTEGER);
  CREATE TABLE IF NOT EXISTS active_casts(cast_order INTEGER PRIMARY KEY AUTOINCREMENT,id TEXT NOT NULL UNIQUE,player_id TEXT NOT NULL,fish_id TEXT NOT NULL,rod INTEGER NOT NULL,bait TEXT NOT NULL,started_at INTEGER NOT NULL,due_at INTEGER NOT NULL,status TEXT NOT NULL,x REAL NOT NULL,y REAL NOT NULL,direction TEXT NOT NULL,water_x REAL NOT NULL,water_y REAL NOT NULL);
  CREATE UNIQUE INDEX IF NOT EXISTS one_active_cast ON active_casts(player_id) WHERE status='ACTIVE';
@@ -85,6 +92,83 @@ export class Store {
  CREATE TABLE IF NOT EXISTS recent_feed(id INTEGER PRIMARY KEY AUTOINCREMENT,player_id TEXT NOT NULL,fish_id TEXT NOT NULL,at INTEGER NOT NULL);
  CREATE TABLE IF NOT EXISTS request_limits(key TEXT PRIMARY KEY,window INTEGER NOT NULL,count INTEGER NOT NULL);
  `);
+    // Relocate legacy map positions once, retaining sessions, balances, records and pending results.
+    if (!this.one("SELECT version FROM schema_migrations WHERE version=2")) {
+      this.tx(() => {
+        this.exec(
+          "UPDATE players SET x=?,y=?,motion='idle',state_at=?",
+          MAP.spawn.x,
+          MAP.spawn.y,
+          Date.now(),
+        );
+        const casts = this.all<CastRow & Record<string, SqlStorageValue>>(
+          "SELECT * FROM active_casts WHERE status='ACTIVE' ORDER BY cast_order",
+        );
+        for (const [i, cast] of casts.entries()) {
+          const habitat = fishById(cast.fish_id).habitat;
+          const options = SPOTS.filter((s) => s.habitat === habitat);
+          const spot = options[i % options.length] ?? SPOTS[0];
+          this.exec(
+            "UPDATE active_casts SET x=?,y=?,direction=?,water_x=?,water_y=? WHERE id=?",
+            spot.x,
+            spot.y,
+            spot.direction,
+            spot.water.x,
+            spot.water.y,
+            cast.id,
+          );
+        }
+        this.exec("INSERT INTO schema_migrations VALUES(2)");
+      });
+    }
+    if (!this.one("SELECT version FROM schema_migrations WHERE version=3")) {
+      this.tx(() => {
+        this.exec("ALTER TABLE players ADD COLUMN facing TEXT");
+        this.exec("INSERT INTO schema_migrations VALUES(3)");
+      });
+    }
+    if (!this.one("SELECT version FROM schema_migrations WHERE version=4")) {
+      this.tx(() => {
+        this.exec("ALTER TABLE active_casts ADD COLUMN facing TEXT");
+        this.exec(
+          "UPDATE active_casts SET facing=direction WHERE facing IS NULL",
+        );
+        this.exec("INSERT INTO schema_migrations VALUES(4)");
+      });
+    }
+    // Start existing accounts from activation, not their historical creation date.
+    this.exec(
+      "INSERT OR IGNORE INTO daily_bait_grants(player_id,last_period) SELECT id,? FROM players",
+      dailyBaitPeriod(Date.now()),
+    );
+  }
+  grantDailyBait(now: number) {
+    const period = dailyBaitPeriod(now);
+    if (
+      !this.one(
+        "SELECT 1 FROM daily_bait_grants WHERE last_period<? LIMIT 1",
+        period,
+      )
+    )
+      return 0;
+    return this.tx(() => {
+      const count = this.one<{ n: number }>(
+        "SELECT COUNT(*) AS n FROM daily_bait_grants WHERE last_period<?",
+        period,
+      )!.n;
+      this.exec(
+        "UPDATE player_baits SET quantity=quantity+(?- (SELECT last_period FROM daily_bait_grants WHERE player_id=player_baits.player_id))*? WHERE bait='worm' AND player_id IN (SELECT player_id FROM daily_bait_grants WHERE last_period<?)",
+        period,
+        DAILY_BAIT_AMOUNT,
+        period,
+      );
+      this.exec(
+        "UPDATE daily_bait_grants SET last_period=? WHERE last_period<?",
+        period,
+        period,
+      );
+      return count;
+    });
   }
   player(id: string) {
     return this.one<PlayerRow>("SELECT * FROM players WHERE id=?", id)!;
@@ -97,10 +181,11 @@ export class Store {
   }
   savePosition(p: PublicPlayer) {
     this.exec(
-      "UPDATE players SET x=?,y=?,direction=?,motion=?,state_at=? WHERE id=?",
+      "UPDATE players SET x=?,y=?,direction=?,facing=?,motion=?,state_at=? WHERE id=?",
       p.x,
       p.y,
       p.direction,
+      p.facing ?? p.direction,
       p.motion,
       p.stateAt,
       p.id,
@@ -120,9 +205,15 @@ export class Store {
       x: c?.x ?? p.x,
       y: c?.y ?? p.y,
       direction: c?.direction ?? p.direction,
+      facing: c?.facing ?? c?.direction ?? p.facing ?? p.direction,
       motion: c ? "fishing_wait" : p.motion,
       stateAt: c?.started_at ?? p.state_at,
-      ...(c ? { castStartedAt: c.started_at } : {}),
+      ...(c
+        ? {
+            castStartedAt: c.started_at,
+            castWater: { x: c.water_x, y: c.water_y },
+          }
+        : {}),
       protectedUntil: p.protected_until,
       rod: p.rod,
       online,
@@ -204,12 +295,13 @@ export class Store {
     return this.all<{
       id: string;
       name: string;
+      gender: "male" | "female";
       fishId: string;
       star: number;
       caughtAt: number;
       sequence: number;
     }>(
-      "SELECT p.id,p.name,b.fish_id AS fishId,b.star,b.caught_at AS caughtAt,b.sequence FROM best_records b JOIN players p ON p.id=b.player_id ORDER BY b.star DESC,b.caught_at,b.sequence LIMIT 20",
+      "SELECT p.id,p.name,p.gender,b.fish_id AS fishId,b.star,b.caught_at AS caughtAt,b.sequence FROM best_records b JOIN players p ON p.id=b.player_id ORDER BY b.star DESC,b.caught_at,b.sequence LIMIT 20",
     );
   }
   feed(): Feed[] {

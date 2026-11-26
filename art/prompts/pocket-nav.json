@@ -1,0 +1,7 @@
+{
+  "tool": "built-in image_gen",
+  "prompt": "Use case: ui-mockup game asset extraction. Reference image is the selected actual design. Recreate ONLY the active left sidebar BLUE bookmark ribbon from the reference (the shape behind 물고기/낚싯대 at left). ONE isolated blank raster UI asset on genuinely transparent background. Native target700x260 wide, render168x64. Perfect front view: short wide bright azure/saturated sky-blue ribbon rectangle with softly rounded front-left vertical corners, a V-shaped fishtail notch at the right end, very subtle lighter blue top highlight and small lower depth/shadow. Match reference proportions and modern cute casual game style precisely, no exaggerated bevels. Full face opaque clean blue. NO text, letters, icons, fish, rods, symbols, gold, navy border, neon, extra graphic or surrounding haze. Preserve an empty content-safe region from10% to84% of width and17% to78% of height. Transparent outside silhouette only. Do not create the entire reference UI. No gray/dark patches or holes inside the blue face.",
+  "reference": "design/2026-11-26-shop-bag-concepts/01.png",
+  "source": "art/source/pocket-nav.png",
+  "runtime": "public/assets/redesign/pocket-nav.png"
+}

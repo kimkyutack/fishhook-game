@@ -1,0 +1,36 @@
+{
+  "tool": "built-in image_gen",
+  "date": "2026-11-26",
+  "assets": [
+    {
+      "id": "blue-panel",
+      "source": "art/source/blue-panel.png",
+      "runtime": "public/assets/redesign/panel.png",
+      "target": [
+        1024,
+        768
+      ],
+      "prompt": "Use case: stylized-concept, production raster UI asset. Reference image is visual style only. Generate ONE blank reusable modal panel frame for the matching cute high-quality 3D casual fishing game. Target1024x768, single horizontal landscape rounded rectangle filling canvas with only8pxtransparentmargin. Genuine transparent background OUTSIDE panel; center fully opaque deep desaturated navy-blue#17375c, subtlylit smooth uniform material, extremely faint brushed texture, sufficient contrast forwhite readableUItext. Thin delicate warm brass bevel perimeter, four TINY brass fasteners inside corners, roundedrectangle corner radius about28px. Straight unobstructed edges suitable for nine-slice resizing; center uniform and undecorated, no internaldividers or extraprotrusions. Exactly same navy/brass material as selected reference. No brightcyan/neon outlines, no glow, no fakecheckerboard, no text, no icons, no characters, no objects, no background scene, no drop shadow outsidecanvas. Orthographic straight-on UI surface not tilted perspective. Image asset only."
+    },
+    {
+      "id": "blue-button-primary",
+      "source": "art/source/blue-button-primary.png",
+      "runtime": "public/assets/redesign/button-primary.png",
+      "target": [
+        1024,
+        320
+      ],
+      "prompt": "Use case: stylized-concept, production raster UI asset. Reference is visual style only. Generate ONE reusable blank primary button image for this cute highquality3D casual fishing game. Target1024x320 wide horizontal capsule/softlyroundedrectangle, singlebutton fillingcanvas with only8pxtransparentmargin. Truly transparent outside button. Rich sky-blue and true-blue palette, facecornflower/azureblue#3986d7, subtle lighter skyblue topedge, deepblue lowerbevel, tactile soft3Draised material, smooth wide UNIFORM center suitable for white editabletext overlay. No text or icon whatsoever. No neon border, no outerglow, no brightcyanrim, no glossy plastic whitehot glare; restrained highqualitycasualgame shading and subtle bevel. Straight horizontal stretchable midsection and symmetricallyroundedends suitable for CSSnine-slice border-image. Orthographic straight-on, not angled. No ground, scene, checkerboard, props, arrows, labels, glyphs, symbols. Onlyonebutton, no variations sheet. Material should match reference blueactionbuttons but remove alltextandicons."
+    },
+    {
+      "id": "blue-button-secondary",
+      "source": "art/source/blue-button-secondary.png",
+      "runtime": "public/assets/redesign/button-secondary.png",
+      "target": [
+        1024,
+        320
+      ],
+      "prompt": "Use case: stylized-concept, production raster UI asset. Reference is visual style only. Generate ONE reusable blank secondary/inactive button image for this cute highquality3D casual fishing game. Target1024x320 widehorizontalcapsule/softlyroundedrectangle fillingcanvaswithonly8pxtransparentmargin. Truly transparent outside. Rich deep desaturated navy-blue face#18385f with subduedslatebluebevel#41698f, subtle lighterblue topedge and darkblue lowerbevel. Tactile soft3Draised roundedmaterial matching reference inactive tabs. Wide UNIFORM center forwhite editabletext overlay. No text oricon, no labels. No neon border/glow, no brightcyanrim, no glosswhitehotglare, no goldtrim. Straight horizontal stretchablemidsection withsymmetricalroundedends suitable forCSSnine-slice border-image. Orthographicstraight-on notangled. No ground, scene, fakecheckerboard, props, arrows, glyphs orsymbols. Single button only, no variationssheet. Material shouldmatch deepnavy reference tabs with alltexticonsremoved."
+    }
+  ]
+}

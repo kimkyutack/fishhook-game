@@ -1,0 +1,39 @@
+{
+  "sizes": [
+    {
+      "name": "nw",
+      "width": 1536,
+      "height": 1024,
+      "pngBytes": 3979967,
+      "webpBytes": 1001900
+    },
+    {
+      "name": "ne",
+      "width": 1536,
+      "height": 1024,
+      "pngBytes": 3680722,
+      "webpBytes": 937408
+    },
+    {
+      "name": "sw",
+      "width": 1536,
+      "height": 1024,
+      "pngBytes": 3959141,
+      "webpBytes": 968788
+    },
+    {
+      "name": "se",
+      "width": 1536,
+      "height": 1024,
+      "pngBytes": 3534872,
+      "webpBytes": 843426
+    }
+  ],
+  "seamDiff": {
+    "northVertical": 34.96,
+    "southVertical": 29.63,
+    "westHorizontal": 37,
+    "eastHorizontal": 31.11
+  },
+  "note": "Boundary RGB differences quantify discontinuities, not proof of geometric alignment. Four tiles generated independently; no claim of seamless output. They preserve overall geometry but foliage and water caustics are reinterpreted."
+}

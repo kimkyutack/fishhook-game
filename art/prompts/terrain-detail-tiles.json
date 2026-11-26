@@ -1,0 +1,78 @@
+{
+  "tool": "built-in image_gen",
+  "basePrompt": "Use case: precise-object-edit; high-detail terrain tile for actual game. FIRST image is EXACT 768x512 quadrant edit target cropped from approved1536x1024map. SECONDimage is complete approvedmap for style/context only. Output1536x1024 (exact2x target dimensions), same3:2aspect. Re-render FIRSTimage at twice the spatial detail, sharp rich leaf/moss/wood/gravel/water material texture while preserving its EXACT composition and all geometry/positions/palette/camera. This will be joined edge-to-edge with3neighbor tiles, so EVERY feature hitting an image edge must stay at exactly the same proportional coordinate: do not move shorelines, roads, bridges, roofs, pier decks, stone contours, tree trunks, or any boundary crossing. Do not zoom, recrop, rotate, move camera, add objects or redesign landscape. Preserve overhead orthographic2.5D fishinggame style, sunnygoldenwood, skyblue/blue water, greenforest, beautiful softshadows. No characters, people, animals, fish silhouettes, fishingrods, bobbers, fishinglines, UI, text, labels, watermarks. Keep vacant playableterrain. Goal: identical tile geometry but genuinely finer raster detail, NOT new concept, NOT viewpointchange. Preserve FIRST image's exact framing and boundary colors as much as possible.",
+  "tiles": [
+    {
+      "name": "nw",
+      "sourceCrop": {
+        "left": 0,
+        "top": 0,
+        "width": 768,
+        "height": 512
+      },
+      "input": "art/references/terrain-input-nw.png",
+      "source": "art/source/terrain-nw.png",
+      "runtime": "public/assets/redesign/terrain-nw.png",
+      "optimizedRuntime": "public/assets/redesign/terrain-nw.webp",
+      "actualSize": {
+        "width": 1536,
+        "height": 1024
+      },
+      "appendPrompt": " This is the NORTHWEST quadrant; keep exact firstimage."
+    },
+    {
+      "name": "ne",
+      "sourceCrop": {
+        "left": 768,
+        "top": 0,
+        "width": 768,
+        "height": 512
+      },
+      "input": "art/references/terrain-input-ne.png",
+      "source": "art/source/terrain-ne.png",
+      "runtime": "public/assets/redesign/terrain-ne.png",
+      "optimizedRuntime": "public/assets/redesign/terrain-ne.webp",
+      "actualSize": {
+        "width": 1536,
+        "height": 1024
+      },
+      "appendPrompt": " This is the NORTHEAST quadrant; keep exact firstimage."
+    },
+    {
+      "name": "sw",
+      "sourceCrop": {
+        "left": 0,
+        "top": 512,
+        "width": 768,
+        "height": 512
+      },
+      "input": "art/references/terrain-input-sw.png",
+      "source": "art/source/terrain-sw.png",
+      "runtime": "public/assets/redesign/terrain-sw.png",
+      "optimizedRuntime": "public/assets/redesign/terrain-sw.webp",
+      "actualSize": {
+        "width": 1536,
+        "height": 1024
+      },
+      "appendPrompt": " This is the SOUTHWEST quadrant; keep exact firstimage."
+    },
+    {
+      "name": "se",
+      "sourceCrop": {
+        "left": 768,
+        "top": 512,
+        "width": 768,
+        "height": 512
+      },
+      "input": "art/references/terrain-input-se.png",
+      "source": "art/source/terrain-se.png",
+      "runtime": "public/assets/redesign/terrain-se.png",
+      "optimizedRuntime": "public/assets/redesign/terrain-se.webp",
+      "actualSize": {
+        "width": 1536,
+        "height": 1024
+      },
+      "appendPrompt": " This is the SOUTHEAST quadrant; keep exact firstimage."
+    }
+  ]
+}

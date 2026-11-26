@@ -1,0 +1,81 @@
+{
+  "reference": "design/2026-11-26-sky-blue",
+  "tool": "image_gen.imagegen",
+  "note": "Production asset specifications and reconstruction prompts; earlier raw generation wording is not reconstructed verbatim.",
+  "assets": [
+    {
+      "ids": [
+        "logo"
+      ],
+      "source": "art/source/moyeo-fishing-logo.png",
+      "prompt": "Wooden 모여라 낚시터 title sign, blue cute fish, leaves and fishing float; same typography and game style as name entry reference; transparent background. Center 모여라 on the smaller upper line and 낚시터 on the larger lower line."
+    },
+    {
+      "ids": [
+        "book",
+        "crown_gold",
+        "crown_silver",
+        "crown_bronze"
+      ],
+      "source": "art/source/blue-extra-icons.png",
+      "prompt": "Four isolated 3D casual game icons: open book, gold crown, silver crown, bronze crown; consistent size, transparent alpha, no text."
+    },
+    {
+      "ids": [
+        "bag",
+        "close"
+      ],
+      "source": "art/source/blue-bag-close.png",
+      "prompt": "Two isolated matching game icons from approved blue UI: a caramel leather satchel with clasp, and a blue circular close button with white X and brass rim. Transparent background."
+    },
+    {
+      "ids": [
+        "rod_1",
+        "rod_2",
+        "rod_3"
+      ],
+      "source": "art/source/blue-rods-icons.png",
+      "prompt": "Three isolated equipment icons matching bag rods reference: wooden basic rod, silver blue experienced rod, ornate gold master rod; each with red-white float, same scale, transparent background."
+    },
+    {
+      "ids": [
+        "worm",
+        "mix",
+        "live",
+        "special"
+      ],
+      "source": "art/source/blue-baits-icons-clean.png",
+      "prompt": "Four cute casual game bait icons matching approved bag bait reference: smiling pink worm on earth, wood bowl of yellow orange mix, cute silver blue live fish, glass jar with blue special bait. Remove external haze to true alpha transparency."
+    },
+    {
+      "ids": [
+        "modal-frame"
+      ],
+      "source": "art/source/blue-modal-frame.png",
+      "prompt": "Extract only the empty navy main window with connected raised rounded central header arch, exact gold rim and bolts from approved rod bag reference. Remove all text, controls, icons and card contents; transparent outside."
+    },
+    {
+      "ids": [
+        "button-pill"
+      ],
+      "source": "art/source/blue-button-pill.png",
+      "prompt": "Empty blue rounded capsule game button matching approved equipped rod button; sky blue top highlight, deep blue convex shading, silver blue rim, slight navy shadow; no text, icons, pointed tabs or rectangular cut corners; transparent outside."
+    },
+    {
+      "ids": [
+        "panel-pill"
+      ],
+      "source": "art/source/blue-panel-pill.png",
+      "prompt": "Empty dark navy blue capsule plaque matching the character selection title, fully round end caps, thin double metallic gold and cream rim, opaque navy interior, transparent exterior, no text or icons."
+    },
+    {
+      "ids": [
+        "medal_gold",
+        "medal_silver",
+        "medal_bronze"
+      ],
+      "source": "art/source/blue-rank-medals.png",
+      "prompt": "Three matching round ranking medals with laurel leaves and blue ribbons from the approved profile reference. Gold, silver and bronze, blank metal centers for live rank text, no numbers or words, equal atlas cells, transparent background."
+    }
+  ]
+}

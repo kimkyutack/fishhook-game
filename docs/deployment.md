@@ -1,5 +1,9 @@
 # Cloudflare / Git 배포
 
+## 2026-11-26 운영 반영
+
+두 실제 브라우저에서 방해 → 서 있기 → 49.815초 대기 → 새로고침 → 수동 낚시 재개를 확인한 뒤 로컬 Wrangler CLI로 배포했다. 운영 버전은 `d5e96c4a-4dbc-458f-bce5-d774d1f461b6`이며, 운영 HTTP/API/이미지 해시와 브라우저 입장·이동·자동 로그인·위치 저장을 확인했다. `--keep-vars`로 기존 변수는 보존했다. 이번 배포는 Git commit/push 및 Workers Builds 실행과 별개다. 검증 증거는 [검증 기록](verification.md)에 있다.
+
 GitHub [kimkyutack/fishhook-game](https://github.com/kimkyutack/fishhook-game)의 `main` 브랜치가 Cloudflare `fishhook-game` Worker에 연결되어 있다. 실제 Worker 이름과 wrangler.jsonc의 name을 동일하게 유지한다. 기본 게임 주소는 `https://fishhook-game.ddr1323.workers.dev`이며 활성화와 배포 결과는 Cloudflare에서 확인한다.
 
 2026-11-25 최초 빌드 #0d1908d2는 scripts/simulate.ts에서 가격 변수가 리터럴 유니온 타입으로 추론돼 0을 넣을 수 없는 TS2322 오류로 실패했다. 가격 변수를 number로 명시해 수정했고, 코드의 기본 Worker 이름도 연결 대상에 맞춰 수정했다.

@@ -1,3 +1,5 @@
+import type { ChatMessage } from "../../shared/chat";
+import { fishById } from "../../shared/catalog";
 import type {
   Snapshot,
   PublicPlayer,
@@ -7,7 +9,16 @@ import type {
   Command,
   Event,
 } from "../../shared/protocol";
+export interface CatchNotice {
+  catchId: number;
+  playerName: string;
+  fishId: string;
+  at: number;
+}
 export interface ClientState {
+  catchNotices: CatchNotice[];
+  chat: ChatMessage[];
+  chatError: string | null;
   status:
     | "loading"
     | "login"
@@ -30,6 +41,9 @@ type CommandInput = Command extends infer T
     : never
   : never;
 let state: ClientState = {
+  catchNotices: [],
+  chat: [],
+  chatError: null,
   status: "loading",
   self: null,
   players: [],
@@ -129,7 +143,15 @@ export class Connection {
         });
         const own = s.players.find((p) => p.id === s.self.id);
         if (own) this.seq = Math.max(this.seq, own.seq);
-      } else if (m.type === "players") gameStore.set({ players: m.players });
+      } else if (m.type === "chat") {
+        const old = gameStore.get().chat;
+        if (!old.some((c) => c.id === m.id))
+          gameStore.set({
+            chat: [...old, m as ChatMessage].slice(-40),
+            chatError: null,
+          });
+      } else if (m.type === "chat-error") gameStore.set({ chatError: m.error });
+      else if (m.type === "players") gameStore.set({ players: m.players });
       else if (m.type === "delta") {
         const map = new Map(gameStore.get().players.map((p) => [p.id, p]));
         for (const p of m.players) map.set(p.id, p);
@@ -141,8 +163,26 @@ export class Connection {
         gameStore.set({
           error: "입력을 처리하지 못했습니다. 잠시 후 다시 시도해 주세요.",
         });
-      else if (m.type === "caught" || m.type === "sabotaged")
-        gameStore.set({ event: m });
+      else if (m.type === "caught" || m.type === "sabotaged") {
+        const current = gameStore.get();
+        const rare = m.type === "caught" && fishById(m.fishId).star >= 4;
+        const notices =
+          rare && !current.catchNotices.some((n) => n.catchId === m.catchId)
+            ? [
+                ...current.catchNotices,
+                {
+                  catchId: m.catchId,
+                  fishId: m.fishId,
+                  at: m.at,
+                  playerName:
+                    m.playerName ??
+                    current.players.find((p) => p.id === m.playerId)?.name ??
+                    "낚시꾼",
+                },
+              ].slice(-30)
+            : current.catchNotices;
+        gameStore.set({ event: m, catchNotices: notices });
+      }
     };
     ws.onclose = (e) => {
       if (this.stopped) return;
@@ -175,11 +215,34 @@ export class Connection {
     this.pending.set(cmd.commandId, cmd);
     this.ws.send(JSON.stringify(cmd));
   }
-  move(dx: number, dy: number, direction: PublicPlayer["direction"]) {
+  move(
+    dx: number,
+    dy: number,
+    direction: PublicPlayer["direction"],
+    dtMs?: number,
+  ) {
     if (this.ws?.readyState === WebSocket.OPEN)
       this.ws.send(
-        JSON.stringify({ type: "move", seq: ++this.seq, dx, dy, direction }),
+        JSON.stringify({
+          type: "move",
+          seq: ++this.seq,
+          dx,
+          dy,
+          direction,
+          dtMs,
+        }),
       );
+    return this.ws?.readyState === WebSocket.OPEN ? this.seq : 0;
+  }
+  sendChat(text: string) {
+    if (
+      this.ws?.readyState !== WebSocket.OPEN ||
+      gameStore.get().status !== "online"
+    )
+      return false;
+    gameStore.set({ chatError: null });
+    this.ws.send(JSON.stringify({ type: "chat", text }));
+    return true;
   }
   stop() {
     this.stopped = true;

@@ -1,5 +1,5 @@
 {
-  "name": "waterside-village",
+  "name": "moyeo-fishing",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -16,6 +16,7 @@
     "deploy:staging": "npm run build && wrangler deploy --env staging",
     "types": "wrangler types",
     "assets:pack": "node --import tsx scripts/pack-assets.ts",
+    "assets:pack:diagonal": "node --import tsx scripts/pack-diagonal-assets.ts",
     "test:load": "node --import tsx scripts/load-test.ts",
     "format": "prettier --write \"src/**/*.{ts,tsx,css}\" \"scripts/*.ts\" \"tests/*.ts\" \"*.ts\" package.json tsconfig.json wrangler.jsonc"
   },

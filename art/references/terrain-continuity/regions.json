@@ -1,0 +1,42 @@
+[
+  {
+    "id": "vertical-north",
+    "x": 1344,
+    "y": 0,
+    "w": 384,
+    "h": 1152,
+    "orientation": "vertical"
+  },
+  {
+    "id": "vertical-south",
+    "x": 1344,
+    "y": 896,
+    "w": 384,
+    "h": 1152,
+    "orientation": "vertical"
+  },
+  {
+    "id": "horizontal-west",
+    "x": 0,
+    "y": 832,
+    "w": 1152,
+    "h": 384,
+    "orientation": "horizontal"
+  },
+  {
+    "id": "horizontal-center",
+    "x": 960,
+    "y": 832,
+    "w": 1152,
+    "h": 384,
+    "orientation": "horizontal"
+  },
+  {
+    "id": "horizontal-east",
+    "x": 1920,
+    "y": 832,
+    "w": 1152,
+    "h": 384,
+    "orientation": "horizontal"
+  }
+]

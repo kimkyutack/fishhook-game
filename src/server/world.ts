@@ -1,3 +1,6 @@
+import { fishingAim } from "../shared/fishing";
+import { ChatSchema } from "../shared/chat-schema";
+import type { ChatMessage } from "../shared/chat";
 import { DurableObject } from "cloudflare:workers";
 import { Store, type PlayerRow } from "./store";
 import { BALANCE, BAITS, RODS } from "../config/balance";
@@ -5,8 +8,8 @@ import {
   MAP,
   distance,
   move,
-  fishingSpot,
   walkable,
+  vectors,
   type Direction,
 } from "../config/map";
 import { normalizeName, drawFish } from "../shared/rules";
@@ -19,11 +22,15 @@ import {
   type Event,
 } from "../shared/protocol";
 import { targetFor, motionBusy } from "../shared/interaction";
+import { movementFacing, cardinalDirection } from "../shared/movement";
+import { KNOCKDOWN_MS, GET_UP_MS, KICK_ANIMATION_MS } from "../shared/kick";
+import { dailyBaitPeriod, DAILY_BAIT_PERIOD_MS } from "../shared/daily-bait";
 interface Attachment {
   id: string;
   hash: string;
   player: PublicPlayer;
   lastMove: number;
+  moveCredit?: number;
   window: number;
   count: number;
 }
@@ -55,7 +62,10 @@ export class GameWorldDO extends DurableObject<Env> {
   constructor(ctx: DurableObjectState, env: Env) {
     super(ctx, env);
     this.db = new Store(ctx.storage);
-    ctx.blockConcurrencyWhile(async () => this.db.init());
+    ctx.blockConcurrencyWhile(async () => {
+      this.db.init();
+      if ((await ctx.storage.getAlarm()) === null) await this.schedule();
+    });
   }
   sockets() {
     return this.ctx.getWebSockets().filter((ws) => ws.readyState === 1);
@@ -70,10 +80,15 @@ export class GameWorldDO extends DurableObject<Env> {
     const age = Date.now() - p.stateAt;
     if (
       (p.motion === "sit_down" && age > 430) ||
-      (p.motion === "startled" && age > 650) ||
       (p.motion === "reel_in" && age > 750)
     )
       return { ...p, motion: "seated_idle" as const };
+    if (
+      (p.motion === "kick" && age >= KICK_ANIMATION_MS) ||
+      (p.motion === "startled" && age >= KNOCKDOWN_MS) ||
+      (p.motion === "fallen" && age >= KNOCKDOWN_MS + GET_UP_MS)
+    )
+      return { ...p, motion: "idle" as const };
     if (p.motion === "run" && age > 1050)
       return { ...p, motion: "idle" as const };
     return p;
@@ -99,6 +114,7 @@ export class GameWorldDO extends DurableObject<Env> {
     return [...list.values()].map((p) => this.normalize(p));
   }
   setPlayer(p: PublicPlayer, save = true) {
+    this.dirty.delete(p.id);
     if (save) this.db.savePosition(p);
     const ws = this.socketFor(p.id);
     if (ws) {
@@ -139,6 +155,7 @@ export class GameWorldDO extends DurableObject<Env> {
     for (const ws of this.sockets()) this.snapshot(ws);
   }
   settle(now = Date.now()) {
+    const dailyGrants = this.db.grantDailyBait(now);
     const events = this.db.complete(now);
     for (const e of events) {
       const p = this.current(e.playerId);
@@ -147,16 +164,24 @@ export class GameWorldDO extends DurableObject<Env> {
       p.best = this.db.public(e.playerId).best;
       delete p.castStartedAt;
       this.setPlayer(p, false);
-      this.broadcast(e);
+      this.broadcast({ ...e, playerName: p.name });
     }
-    return events.length;
+    return events.length + dailyGrants;
   }
   async schedule() {
     // synchronous SQL decision followed by the storage promise, with no intervening await
-    const next = this.db.one<{ due: number }>(
+    const castDue = this.db.one<{ due: number | null }>(
       "SELECT MIN(due_at) AS due FROM active_casts WHERE status='ACTIVE'",
     )?.due;
-    if (next) await this.ctx.storage.setAlarm(Math.max(Date.now() + 1, next));
+    const daily = this.db.one<{ period: number | null }>(
+      "SELECT MIN(last_period) AS period FROM daily_bait_grants",
+    )?.period;
+    const next = Math.min(
+      castDue ?? Infinity,
+      daily == null ? Infinity : (daily + 1) * DAILY_BAIT_PERIOD_MS,
+    );
+    if (Number.isFinite(next))
+      await this.ctx.storage.setAlarm(Math.max(Date.now() + 1, next));
     else await this.ctx.storage.deleteAlarm();
   }
   async alarm() {
@@ -251,6 +276,14 @@ export class GameWorldDO extends DurableObject<Env> {
             )
           )
             fail("이미 사용 중인 이름입니다.");
+          const candidate = {
+            x: MAP.spawn.x + ((parseInt(id.slice(0, 2), 16) % 4) - 1.5) * 38,
+            y:
+              MAP.spawn.y +
+              (Math.floor(parseInt(id.slice(0, 2), 16) / 4) % 4) * 20 -
+              30,
+          };
+          const spawn = walkable(candidate) ? candidate : MAP.spawn;
           this.db.exec(
             "INSERT INTO players(id,name,name_key,gender,coins,rod,bait,x,y,direction,motion,state_at,created_at) VALUES(?,?,?,?,?,1,'worm',?,?,'down','idle',?,?)",
             id,
@@ -258,9 +291,8 @@ export class GameWorldDO extends DurableObject<Env> {
             normalized.key,
             String(body.gender),
             BALANCE.starterCoins,
-            MAP.spawn.x + ((parseInt(id.slice(0, 2), 16) % 4) - 1.5) * 38,
-            MAP.spawn.y +
-              (Math.floor(parseInt(id.slice(0, 2), 16) / 4) % 4) * 38,
+            spawn.x,
+            spawn.y,
             now,
             now,
           );
@@ -279,7 +311,13 @@ export class GameWorldDO extends DurableObject<Env> {
               b.id === "worm" ? BALANCE.starterBait : 0,
             );
           this.db.exec("INSERT INTO sabotage_state VALUES(?,3,NULL)", id);
+          this.db.exec(
+            "INSERT INTO daily_bait_grants VALUES(?,?)",
+            id,
+            dailyBaitPeriod(now),
+          );
         });
+        await this.schedule();
         return Response.json(
           { player: this.db.private(id, now) },
           {
@@ -325,12 +363,20 @@ export class GameWorldDO extends DurableObject<Env> {
         let p = old
           ? this.attachment(old).player
           : this.db.public(auth.id, true);
+        if (!walkable(p)) {
+          p = { ...this.db.public(auth.id, true), ...MAP.spawn };
+          this.db.savePosition(p);
+        }
         if (old) {
           this.db.savePosition(p);
           old.close(4001, "다른 창에서 접속했습니다.");
         }
         p = { ...p, online: true };
-        if (!this.db.active(auth.id) && !old) {
+        if (
+          !this.db.active(auth.id) &&
+          !old &&
+          !["fallen", "startled"].includes(p.motion)
+        ) {
           p.motion = "idle";
           p.stateAt = now;
         }
@@ -403,6 +449,20 @@ export class GameWorldDO extends DurableObject<Env> {
         ws.send(JSON.stringify({ type: "pong", serverNow: now }));
         return;
       }
+      if (raw.type === "chat") {
+        try {
+          this.onChat(ws, raw, now);
+        } catch (e) {
+          ws.send(
+            JSON.stringify({
+              type: "chat-error",
+              error:
+                e instanceof Error ? e.message : "채팅을 보낼 수 없습니다.",
+            }),
+          );
+        }
+        return;
+      }
       const settled = this.settle(now);
       if (raw.type === "move") {
         this.onMove(ws, MoveSchema.parse(raw), now);
@@ -416,7 +476,7 @@ export class GameWorldDO extends DurableObject<Env> {
       const result = this.execute(a.id, cmd, now);
       await this.schedule();
       ws.send(
-        JSON.stringify({ type: "ack", commandId: cmd.commandId, ...result }),
+        JSON.stringify({ ...result, type: "ack", commandId: cmd.commandId }),
       );
       this.snapshots();
     } catch (e) {
@@ -428,33 +488,90 @@ export class GameWorldDO extends DurableObject<Env> {
       );
     }
   }
+  onChat(ws: WebSocket, raw: unknown, now: number) {
+    const parsed = ChatSchema.safeParse(raw);
+    if (!parsed.success) fail("채팅은 1~100자로 입력해 주세요.");
+    const a = this.attachment(ws),
+      key = `chat:${a.id}`;
+    const prior = this.db.one<{ window: number }>(
+      "SELECT window FROM request_limits WHERE key=?",
+      key,
+    );
+    if (prior && now - prior.window < 1200) fail("잠시 뒤에 다시 보내 주세요.");
+    this.db.exec(
+      "INSERT INTO request_limits(key,window,count) VALUES(?,?,1) ON CONFLICT(key) DO UPDATE SET window=excluded.window,count=1",
+      key,
+      now,
+    );
+    const message: ChatMessage = {
+      type: "chat",
+      id: crypto.randomUUID(),
+      playerId: a.id,
+      name: a.player.name,
+      text: parsed.data!.text,
+      at: now,
+    };
+    this.broadcast(message);
+  }
   onMove(
     ws: WebSocket,
-    m: { seq: number; dx: number; dy: number; direction: Direction },
+    m: {
+      seq: number;
+      dx: number;
+      dy: number;
+      direction: Direction;
+      dtMs?: number;
+    },
     now: number,
   ) {
     const a = this.attachment(ws);
     if (m.seq <= a.player.seq) return;
-    const elapsed = Math.min(150, Math.max(0, now - a.lastMove));
+    if (!walkable(a.player))
+      a.player = { ...this.db.public(a.id, true), seq: a.player.seq };
+    const available = Math.min(
+      250,
+      (a.moveCredit ?? 150) + Math.max(0, now - a.lastMove),
+    );
+    const elapsed =
+      m.dtMs === undefined
+        ? Math.min(150, Math.max(0, now - a.lastMove))
+        : Math.min(m.dtMs, available);
+    a.moveCredit = available - elapsed;
     a.lastMove = now;
     a.player.seq = m.seq;
     if (motionBusy(a.player, now)) {
       ws.serializeAttachment(a);
       return;
     }
-    if (this.db.active(a.id) && (m.dx || m.dy)) this.cancel(a.id, now);
+    const active = this.db.active(a.id);
+    // A delayed key-release packet must not hide a still-active cast.
+    if (!m.dx && !m.dy && active) {
+      ws.serializeAttachment(a);
+      return;
+    }
+    const cancelled =
+      !!active && !!(m.dx || m.dy) && this.cancelForMovement(a.id, now);
     const norm = Math.max(1, Math.hypot(m.dx, m.dy)),
       speed = (BALANCE.speed * elapsed) / 1000;
     const next = move(a.player, (m.dx / norm) * speed, (m.dy / norm) * speed);
+    const moved = Math.hypot(next.x - a.player.x, next.y - a.player.y) > 0.001;
+    const facing = movementFacing(
+      moved ? next.x - a.player.x : m.dx,
+      moved ? next.y - a.player.y : m.dy,
+      a.player.facing ?? a.player.direction,
+    );
     a.player = {
       ...a.player,
       ...next,
-      direction: m.direction,
+      direction: cardinalDirection(m.dx, m.dy, m.direction),
+      facing,
       motion: m.dx || m.dy ? "walk" : "idle",
       stateAt: now,
     };
     delete a.player.castStartedAt;
+    delete a.player.castWater;
     ws.serializeAttachment(a);
+    if (cancelled) this.snapshot(ws);
     if (!m.dx && !m.dy) this.db.savePosition(a.player);
     this.dirty.set(a.id, a.player);
     if (!this.flushTimer)
@@ -469,17 +586,29 @@ export class GameWorldDO extends DurableObject<Env> {
       }, 50);
     if (m.dx || m.dy) this.ctx.waitUntil(this.schedule());
   }
-  cancel(id: string, now: number, status = "CANCELLED") {
-    this.db.exec(
-      "UPDATE active_casts SET status=? WHERE player_id=? AND status='ACTIVE'",
-      status,
-      id,
-    );
-    const p = this.current(id);
-    p.motion = status === "CANCELLED_BY_SABOTAGE" ? "startled" : "idle";
-    p.stateAt = now;
-    delete p.castStartedAt;
-    this.setPlayer(p);
+  cancelForMovement(id: string, now: number) {
+    const cancelled = this.db.tx(() => {
+      const cast = this.db.active(id);
+      if (!cast) return false;
+      this.db.exec(
+        "UPDATE active_casts SET status='CANCELLED_BY_MOVEMENT' WHERE id=? AND status='ACTIVE'",
+        cast.id,
+      );
+      this.db.exec(
+        "UPDATE player_baits SET quantity=quantity+1 WHERE player_id=? AND bait=?",
+        id,
+        cast.bait,
+      );
+      return true;
+    });
+    if (cancelled) {
+      const p = this.current(id);
+      p.motion = "idle";
+      p.stateAt = now;
+      delete p.castStartedAt;
+      this.setPlayer(p);
+    }
+    return cancelled;
   }
   execute(id: string, cmd: Command, now: number): Result {
     const prior = this.db.one<{ result: string }>(
@@ -523,8 +652,8 @@ export class GameWorldDO extends DurableObject<Env> {
           if (cmd.type === "cast") {
             if (active) fail("이미 낚시 중입니다.");
             availableChair();
-            const spot = fishingSpot(me);
-            if (!spot) fail("물가로 이동해 주세요.");
+            const spot = fishingAim(me, me.facing ?? me.direction);
+            if (!spot) fail("물가에서 물을 바라보고 낚시해 주세요.");
             const bait = this.db.one<{ quantity: number }>(
               "SELECT quantity FROM player_baits WHERE player_id=? AND bait=?",
               id,
@@ -538,7 +667,7 @@ export class GameWorldDO extends DurableObject<Env> {
               p.bait,
             );
             this.db.exec(
-              "INSERT INTO active_casts(id,player_id,fish_id,rod,bait,started_at,due_at,status,x,y,direction,water_x,water_y) VALUES(?,?,?,?,?,?,?,'ACTIVE',?,?,?,?,?)",
+              "INSERT INTO active_casts(id,player_id,fish_id,rod,bait,started_at,due_at,status,x,y,direction,water_x,water_y,facing) VALUES(?,?,?,?,?,?,?,'ACTIVE',?,?,?,?,?,?)",
               crypto.randomUUID(),
               id,
               draw.fish.id,
@@ -551,11 +680,14 @@ export class GameWorldDO extends DurableObject<Env> {
               spot.direction,
               spot.water.x,
               spot.water.y,
+              spot.facing,
             );
             updates.push({
               ...me,
               motion: "cast",
               direction: spot.direction,
+              facing: spot.facing,
+              castWater: spot.water,
               stateAt: now,
               castStartedAt: now,
             });
@@ -566,6 +698,7 @@ export class GameWorldDO extends DurableObject<Env> {
             );
             const q = { ...me, motion: "idle" as const, stateAt: now };
             delete q.castStartedAt;
+            delete q.castWater;
             updates.push(q);
           } else if (cmd.type === "sit") {
             if (active) {
@@ -583,66 +716,61 @@ export class GameWorldDO extends DurableObject<Env> {
               stateAt: now,
             };
             delete q.castStartedAt;
+            delete q.castWater;
             updates.push(q);
-          } else if (cmd.type === "sabotage") {
-            if (active) fail("낚시 중에는 방해할 수 없습니다.");
+          } else if (cmd.type === "kick" || cmd.type === "sabotage") {
+            if (active) fail("낚시 중에는 발차기할 수 없습니다.");
             const target = targetFor(me, this.players(), now);
-            if (!target || target.id !== cmd.target)
-              fail("정면에 방해할 상대가 없습니다.");
-            const cast = this.db.active(target.id);
-            if (!cast || cast.due_at <= now) fail("이미 끝난 낚시입니다.");
-            const charge = this.db.charges(id, now);
-            if (charge.charges <= 0) fail("방해 충전이 부족합니다.");
-            this.db.exec(
-              "UPDATE sabotage_state SET charges=?,next_recharge_at=? WHERE player_id=?",
-              charge.charges - 1,
-              charge.next ?? now + BALANCE.rechargeMs,
-              id,
-            );
-            this.db.exec(
-              "UPDATE active_casts SET status='CANCELLED_BY_SABOTAGE' WHERE id=? AND status='ACTIVE'",
-              cast.id,
-            );
-            this.db.exec(
-              "UPDATE players SET protected_until=? WHERE id=?",
-              now + BALANCE.protectionMs,
-              target.id,
-            );
-            const d = distance(me, target);
-            const to = move(
-              me,
-              ((me.x - target.x) / d) * 96,
-              ((me.y - target.y) / d) * 96,
-            );
-            const victim = {
-              ...target,
-              motion: "startled" as const,
-              stateAt: now,
-              protectedUntil: now + BALANCE.protectionMs,
-            };
-            delete victim.castStartedAt;
-            updates.push(victim, {
-              ...me,
-              ...to,
-              direction: (
-                {
-                  up: "down",
-                  down: "up",
-                  left: "right",
-                  right: "left",
-                } as const
-              )[me.direction],
-              motion: "run",
-              stateAt: now,
-            });
-            events.push({
-              type: "sabotaged",
-              attacker: id,
-              target: target.id,
-              at: now,
-              from: { x: me.x, y: me.y },
-              to,
-            });
+            if (cmd.target && (!target || target.id !== cmd.target))
+              fail("정면에 발차기할 상대가 없습니다.");
+            if (!target) {
+              updates.push({ ...me, motion: "kick", stateAt: now });
+            } else {
+              const cast = this.db.active(target.id);
+              if (cast && cast.due_at <= now) fail("이미 끝난 낚시입니다.");
+              if (cast)
+                this.db.exec(
+                  "UPDATE active_casts SET status='CANCELLED_BY_SABOTAGE' WHERE id=? AND status='ACTIVE'",
+                  cast.id,
+                );
+              const d = distance(me, target);
+              const v = vectors[me.direction];
+              const to = move(
+                me,
+                (d > 0 ? (me.x - target.x) / d : -v.x) * 96,
+                (d > 0 ? (me.y - target.y) / d : -v.y) * 96,
+              );
+              const victim = {
+                ...target,
+                motion: cast ? ("startled" as const) : ("fallen" as const),
+                stateAt: now,
+                protectedUntil: 0,
+              };
+              delete victim.castStartedAt;
+              delete victim.castWater;
+              updates.push(victim, {
+                ...me,
+                ...to,
+                direction: (
+                  {
+                    up: "down",
+                    down: "up",
+                    left: "right",
+                    right: "left",
+                  } as const
+                )[me.direction],
+                motion: "run",
+                stateAt: now,
+              });
+              events.push({
+                type: "sabotaged",
+                attacker: id,
+                target: target.id,
+                at: now,
+                from: { x: me.x, y: me.y },
+                to,
+              });
+            }
           } else if (cmd.type === "buyRod") {
             shop();
             const rod = RODS[cmd.rod - 1];

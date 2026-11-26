@@ -7,7 +7,15 @@ import {
   recharge,
 } from "../src/shared/rules";
 import { BAITS, BALANCE } from "../src/config/balance";
-import { MAP, SPOTS, walkable, move } from "../src/config/map";
+import {
+  MAP,
+  SPOTS,
+  TRAILS,
+  walkable,
+  move,
+  lineClear,
+  walkingRoute,
+} from "../src/config/map";
 describe("catalog and authoritative rules", () => {
   it("has 50 fixed distinct species in exact requested order", () => {
     expect(FISH).toHaveLength(50);
@@ -58,13 +66,45 @@ describe("catalog and authoritative rules", () => {
     expect(recharge(3, h, h * 20)).toEqual({ charges: 3, next: null });
   });
   it("collides with water, obstacles and preserves passable bridge and reachable shore points", () => {
-    expect(walkable({ x: 400, y: 800 })).toBe(false);
-    expect(walkable({ x: 1500, y: 720 })).toBe(false);
-    expect(walkable({ x: 1500, y: 330 })).toBe(true);
-    const m = move({ x: 1000, y: 900 }, -500, 0);
-    expect(m.x).toBeGreaterThan(940);
-    expect(SPOTS.length).toBeGreaterThan(200);
+    expect(MAP.width * MAP.height).toBe(6144 * 4096);
+    expect(walkable({ x: 4400, y: 2200 })).toBe(false);
+    expect(walkable({ x: 2150, y: 1900 })).toBe(false);
+    for (const name of ["west-bridge", "north-bridge"]) {
+      const trail = TRAILS.find((t) => t.id === name)!;
+      for (const direction of [trail.points, [...trail.points].reverse()]) {
+        let q = direction[0];
+        for (const next of direction.slice(1)) {
+          expect(lineClear(q, next)).toBe(true);
+          const result = move(q, next.x - q.x, next.y - q.y);
+          expect(result.x).toBeCloseTo(next.x, 6);
+          expect(result.y).toBeCloseTo(next.y, 6);
+          q = result;
+        }
+      }
+    }
+    expect(SPOTS.length).toBeGreaterThan(40);
     for (const p of SPOTS) expect(walkable(p)).toBe(true);
+    for (const habitat of ["pond", "river", "lake"])
+      expect(SPOTS.some((s) => s.habitat === habitat)).toBe(true);
+    expect(walkable(MAP.shop)).toBe(true);
     expect(walkable(MAP.spawn)).toBe(true);
+  });
+  it("routes from the spawn to the shop and each habitat without crossing water", () => {
+    for (const goal of [
+      MAP.shop,
+      ...["pond", "river", "lake"].map((h) =>
+        SPOTS.find((s) => s.habitat === h)!,
+      ),
+    ]) {
+      const route = walkingRoute(MAP.spawn, goal);
+      expect(route.length).toBeGreaterThan(0);
+      let previous = MAP.spawn;
+      for (const step of route) {
+        expect(lineClear(previous, step)).toBe(true);
+        previous = step;
+      }
+      expect(previous).toEqual(goal);
+    }
+    expect(walkingRoute(MAP.spawn, { x: 4400, y: 2200 })).toEqual([]);
   });
 });

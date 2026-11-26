@@ -1,0 +1,8 @@
+{
+  "tool": "built-in image_gen",
+  "prompt": "Use case: ui-mockup game asset. Recreate ONE empty pale-blue inset content tray from the attached selected design: bag collection tray x238..730,y198..619, matching the same rounded softly inset surface. Target1500x1250 near-square landscape. A full-bleed opaque raster with a softly rounded rectangular very subtle pale cyan-blue raised/inset edge, entirely clean uniform very pale ice-blue opaque interior, restrained soft upper-edge depth. The center is solid opaque light blue, never transparent, hollow, gray, dark or shadowed. Color family pale icy cyan-blue (#d3ecfa center, slightly stronger#b8ddef edge), polished contemporary cute casual fishing game. Edge is only3 percent of width, no thick heavy frame. No contents, no text, no icons, no slots, no compartments, no highlights in the middle, no shadow blobs, no extra elements. Background must be solid pale iceblue fullbleed too; consumer will clip outer corners. Front view perfectly axis-aligned. Preserve subtle soft depth and highly legible plain area. Do not create the complete UI.",
+  "reference": "design/2026-11-26-shop-bag-concepts/01.png",
+  "source": "art/source/pocket-tray.png",
+  "runtime": "public/assets/redesign/pocket-tray.png",
+  "transparentBackground": false
+}

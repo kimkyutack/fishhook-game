@@ -1,0 +1,28 @@
+{
+  "tool": "built-in image_gen",
+  "date": "2026-11-26",
+  "reference": "art/references/blue-female-portrait-reference.png",
+  "source": "art/source/blue-female-portrait.png",
+  "runtime": "public/assets/redesign/female_portrait.png",
+  "sourceDimensions": [
+    1122,
+    1402
+  ],
+  "runtimeDimensions": [
+    512,
+    640
+  ],
+  "sourceCrop": {
+    "left": 81,
+    "top": 24,
+    "width": 958,
+    "height": 1329
+  },
+  "subjectRuntimeDimensions": [
+    450,
+    624
+  ],
+  "transparent": true,
+  "notes": "Front-facing selected04 character extraction; sourceoriginalretained; runtimealpha-guttertrim/proportionalcontain, no worldatlasreplacement.",
+  "prompt": "Use case: background-extraction / identity-preserve, game selection portrait asset.\nFIRST image edit target is a crop of the EXACT selected front-facing girl character from the reference game screen. SECOND image provides full screen context. Extract ONLY this SAME girl as a highresolution transparent PNG: remove blue lake, platforms, ground shadow, props and all other surroundings, no background of anycolor.\nPreserve IDENTICAL face/expression, dark large oval eyes, brows, open smilingmouth, pinkcheeks, roundedhead, smooth warm auburn/orange bob haircut with sweptbangs; preserve coraljacket, yellow-gold buttons, creamshirt, beigeshortcuffedpants, brownbuckleboots, tinyhands, veryshort cute2-headbodyproportions. EXACT frontal straight-on standingpose, symmetrical weight onbothfeet, arms relaxed downwardslightlyout. Do not rotate tothreequarter, do not elongatebody/legs, no photorealism or realisticadultbody.\nComposition one fullbody girl centered, entirehair and boots visible with verylittletransparentgutter. Target portrait1024x1280 (4:5), sharp clean alpha edge, veryhighqualitysoft3Dcasualgamerendermatchingexactreference. Textnone, UI none, platformnone, ground shadow none, no extra objects/characters. Maintain source clothingcolors andfaceidentity. Genuine transparent background."
+}
