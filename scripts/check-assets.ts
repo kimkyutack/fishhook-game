@@ -150,4 +150,6 @@ console.log(
   "96 fall/get-up frames checked: both characters, all eight directions, clear frame edges.",
 );
 
+await import("./check-continuous-terrain");
+
 await import("./check-fishing-assets.ts");
