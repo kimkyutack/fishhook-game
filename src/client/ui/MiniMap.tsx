@@ -2,7 +2,7 @@ import { useState } from "react";
 import type { PublicPlayer } from "../../shared/protocol";
 import { MAP } from "../../config/map";
 import { mapPosition, mapViewport, type MapView } from "../game/minimap";
-import { asset } from "./Art";
+import { asset, characterPortrait } from "./Art";
 import type { Facing } from "../../shared/movement";
 const headingNames: Record<Facing, string> = {
   up: "상단",
@@ -75,10 +75,7 @@ export function MiniMap({
                   className={`minimap-player ${mine ? "is-me" : ""} ${p.online ? "" : "is-offline"}`}
                   style={mapPosition(position.x, position.y)}
                 >
-                  <img
-                    src={asset("characters", `${p.gender}_portrait`)}
-                    alt=""
-                  />
+                  <img src={characterPortrait(p.gender, p.costume)} alt="" />
                   {p.castStartedAt !== undefined && (
                     <img
                       className="minimap-fishing"

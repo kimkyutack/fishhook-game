@@ -25,6 +25,7 @@ import { targetFor, motionBusy } from "../shared/interaction";
 import { movementFacing, cardinalDirection } from "../shared/movement";
 import { KNOCKDOWN_MS, GET_UP_MS, KICK_ANIMATION_MS } from "../shared/kick";
 import { dailyBaitPeriod, DAILY_BAIT_PERIOD_MS } from "../shared/daily-bait";
+import { COSTUME_PRICE } from "../shared/costumes";
 interface Attachment {
   id: string;
   hash: string;
@@ -771,6 +772,45 @@ export class GameWorldDO extends DurableObject<Env> {
                 to,
               });
             }
+          } else if (cmd.type === "buyCostume") {
+            shop();
+            if (
+              this.db.one(
+                "SELECT 1 FROM player_costumes WHERE player_id=? AND costume=?",
+                id,
+                cmd.costume,
+              )
+            )
+              fail("이미 보유한 외형입니다.");
+            if (p.coins < COSTUME_PRICE) fail("코인이 부족합니다.");
+            this.db.exec(
+              "UPDATE players SET coins=coins-? WHERE id=?",
+              COSTUME_PRICE,
+              id,
+            );
+            this.db.exec(
+              "INSERT INTO player_costumes VALUES(?,?,?)",
+              id,
+              cmd.costume,
+              now,
+            );
+          } else if (cmd.type === "equipCostume") {
+            if (active) fail("낚시를 마친 뒤 외형을 바꿔 주세요.");
+            if (
+              cmd.costume !== "default" &&
+              !this.db.one(
+                "SELECT 1 FROM player_costumes WHERE player_id=? AND costume=?",
+                id,
+                cmd.costume,
+              )
+            )
+              fail("보유하지 않은 외형입니다.");
+            this.db.exec(
+              "UPDATE players SET costume=? WHERE id=?",
+              cmd.costume,
+              id,
+            );
+            updates.push({ ...me, costume: cmd.costume });
           } else if (cmd.type === "buyRod") {
             shop();
             const rod = RODS[cmd.rod - 1];

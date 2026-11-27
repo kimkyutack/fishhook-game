@@ -1,0 +1,185 @@
+{
+  "purpose": "Six gender-specific full-motion outfits",
+  "entries": [
+    {
+      "id": "male-duck-locomotion",
+      "source": "art/source/costumes/male-duck-locomotion.png",
+      "prompt": "Use case: identity-preserve. Asset: transparent 3D chibi game animation sprite sheet, 8 columns x 5 rows, exactly 40 separate intact figures on a 1536x1024 or larger landscape transparent canvas. Reference image is the BOY identity and rendering style, NOT a pose layout. Dress the SAME short-body big-head brown curly-haired boy in a cute kindergarten outfit: bright yellow duck bucket hat with two small black eyes and orange duck bill above brow, sky blue smock with yellow bow, short navy shorts, white socks, round yellow shoes, tiny yellow backpack. Keep proportions identical in all cells, toy-like high-quality casual game render, no realism. Five rows = same 8 locomotion poses in five camera views: row1 FRONT facing down toward viewer; row2 BACK facing up away viewer with NO face; row3 RIGHT PROFILE facing screen right; row4 FRONT-RIGHT 45 degree facing southeast; row5 BACK-RIGHT 45 degree facing northeast with mostly back of head. Columns: 1 standing relaxed; 2 walking left foot forward/right arm forward; 3 walking passing stance left foot under body; 4 walking right foot forward/left arm forward; 5 walking passing stance right foot under body; 6 running long left stride arms bent; 7 running long right stride arms bent; 8 startled standing arms raised surprised. Clear genuinely different leg and arm poses. All 40 figures fully visible including hat, feet and backpack, same apparent size and camera pitch, enough empty transparent gutter between figures, no overlap, no text, no labels, no border, no background, no floor, no chair, no fishing rod, no shadows disconnected from figures.",
+      "tool": "built-in image_gen",
+      "transparentBackground": true,
+      "columns": 8,
+      "rows": 5,
+      "paintedFrames": 40
+    },
+    {
+      "id": "male-duck-fishing",
+      "source": "art/source/costumes/male-duck-fishing.png",
+      "prompt": "Use case: identity-preserve. Transparent animation sprite sheet for the SAME cute 3D CHIBI BOY as reference: brown curls, yellow duck bucket hat with bill and eyes, sky blue kindergarten smock/yellow bow, navy shorts, yellow shoes, yellow duck backpack. Preserve exactly this outfit, face, large head and VERY SHORT body proportions in every pose. Exactly 40 fully separate figures arranged 8 columns by 5 rows, landscape1536x1024. Same scale, clear transparent gutters and margins, all intact including hats feet arms. Five ROW views in exact order: 1 FRONT toward viewer/down; 2 BACK away/up NO face; 3 RIGHT PROFILE facing screen right; 4 FRONT-RIGHT 45deg southeast; 5 BACK-RIGHT 45deg northeast, back of head visible. EACH row repeats the following eight pose COLUMNS. No words, numbers, labels, panels, floor, detached shadow, chair, fishing rod, props or water. Background must be true transparent alpha. POSE COLUMNS: 1 half-lowered sitting transition knees bending; 2 fully seated on invisible stool knees forward feet lower, hands in lap; 3 seated fishing cast WINDUP arm raised behind head holding invisible rod; 4 seated fishing cast RELEASE hands extending forward holding invisible rod; 5 seated waiting hands forward invisible rod, relaxed; 6 seated waiting slightly leaned forward hands moved up; 7 seated reeling hands near belly, elbows bent; 8 seated reeling pulling hands near chest, joyful. Both sitting and fishing should have feet positioned naturally for the same stool, no stool is drawn.",
+      "tool": "built-in image_gen",
+      "transparentBackground": true,
+      "columns": 8,
+      "rows": 5,
+      "paintedFrames": 40
+    },
+    {
+      "id": "male-duck-action",
+      "source": "art/source/costumes/male-duck-action.png",
+      "prompt": "Use case: identity-preserve. Transparent animation sprite sheet for the SAME cute 3D CHIBI BOY as reference: brown curls, yellow duck bucket hat with bill and eyes, sky blue kindergarten smock/yellow bow, navy shorts, yellow shoes, yellow duck backpack. Preserve exactly this outfit, face, large head and VERY SHORT body proportions in every pose. Exactly 40 fully separate figures arranged 8 columns by 5 rows, landscape1536x1024. Same scale, clear transparent gutters and margins, all intact including hats feet arms. Five ROW views in exact order: 1 FRONT toward viewer/down; 2 BACK away/up NO face; 3 RIGHT PROFILE facing screen right; 4 FRONT-RIGHT 45deg southeast; 5 BACK-RIGHT 45deg northeast, back of head visible. EACH row repeats the following eight pose COLUMNS. No words, numbers, labels, panels, floor, detached shadow, chair, fishing rod, props or water. Background must be true transparent alpha. POSE COLUMNS: 1 kick windup standing on one foot lifting other knee high; 2 KICK full leg extension forward in this row's facing, arms counterbalancing; 3 kick leg lowering recovery; 4 losing balance stumble leaning backward flailing arms; 5 falling backward sideways body angled45 degrees hands out; 6 fallen lying flat on ground, hat STILL WORN, legs visible, NO chair; 7 pushing up from ground on hands and knees, hat stays on; 8 half-standing getting up from crouch. Clear progression and natural dynamic anatomy, hat never detaches. Lying frames wider and lower, never cropped.",
+      "tool": "built-in image_gen",
+      "transparentBackground": true,
+      "columns": 8,
+      "rows": 5,
+      "paintedFrames": 40
+    },
+    {
+      "id": "male-office-locomotion",
+      "source": "art/source/costumes/male-office-locomotion.png",
+      "prompt": "Use case: identity-preserve. Create game locomotion animation sheet for the SAME BOY identity as reference, changing costume only: cute tiny OFFICE WORKER: fitted navy business suit jacket and short navy trousers, white shirt, sky-blue necktie, black rounded loafers, white socks, small rectangular glasses and tiny plain badge clipped to jacket. NO briefcase, no handheld props. Keep boy's same brown curly hair. Comically short body and large head, not realistic adult proportions. Exactly 40 figures: 8 columns x5 rows, transparent landscape1536x1024. Five rows views: FRONT toward viewer/down; BACK away/up NO face; RIGHT PROFILE; FRONT-RIGHT45deg southeast; BACK-RIGHT45deg northeast. Eight columns in EVERY row: standing idle; walk left-foot contact; walk passing-left; walk right-foot contact; walk passing-right; run left stride; run right stride; standing startled arms up. Keep views clearly different, especially full back row. Same scale, figure complete, generous transparent gaps, no labels, no text, no floor, no detached shadows, no chair or rod. Very short chibi body, big head, cute glossy toy3D rendering matching reference. Background true transparent alpha.",
+      "tool": "built-in image_gen",
+      "transparentBackground": true,
+      "columns": 8,
+      "rows": 5,
+      "paintedFrames": 40
+    },
+    {
+      "id": "male-office-fishing",
+      "source": "art/source/costumes/male-office-fishing.png",
+      "prompt": "Use case: identity-preserve. Make a new transparent 3D game sprite sheet of EXACTLY SAME character as reference, same hair face clothing colors and very SHORT chibi proportions. Do not change costume. Exactly40 intact figures in8columns x5rows landscape1536x1024. Same scale across figures. Five rows:1FRONT down/toward viewer;2BACK up/away NO face;3RIGHT PROFILE screen right;4FRONT-RIGHT45deg southeast;5BACK-RIGHT45deg northeast. Every row uses these8column poses: 1 lowering to sit knees bending; 2 fully seated on invisible stool, legs forward feet below, hands lap; 3 seated cast windup hand raised back holding INVISIBLE rod; 4 seated cast release hands forward holding invisible rod; 5 seated fishing waiting hands relaxed forward; 6 seated waiting leaning slightly forward; 7 seated reeling hands near belly; 8 seated reeling hands pulled near chest. NO fishing rod, no chair: game draws them separately. Large head, short limbs. Separate intact figures with generous transparent gaps. No text, labels, frames, floor or background; true alpha transparency. Do not copy reference poses, use specified action poses.",
+      "tool": "built-in image_gen",
+      "transparentBackground": true,
+      "columns": 8,
+      "rows": 5,
+      "paintedFrames": 40
+    },
+    {
+      "id": "male-office-action",
+      "source": "art/source/costumes/male-office-action.png",
+      "prompt": "Use case: identity-preserve. Make a new transparent 3D game sprite sheet of EXACTLY SAME character as reference, same hair face clothing colors and very SHORT chibi proportions. Do not change costume. Exactly40 intact figures in8columns x5rows landscape1536x1024. Same scale across figures. Five rows:1FRONT down/toward viewer;2BACK up/away NO face;3RIGHT PROFILE screen right;4FRONT-RIGHT45deg southeast;5BACK-RIGHT45deg northeast. Every row uses these8column poses: 1 kick windup knee lifted; 2 kick leg fully extended forward in row facing; 3 kick recovery leg lowering; 4 stumbling losing balance backward flailing arms; 5 falling backward tilted45deg; 6 fallen lying flat; 7 pushing up hands and knees; 8 half-standing from crouch. Hat, glasses and outfit stay worn. Full body in every cell, clear fall progression. Large head, short limbs. Separate intact figures with generous transparent gaps. No text, labels, frames, floor or background; true alpha transparency. Do not copy reference poses, use specified action poses.",
+      "tool": "built-in image_gen",
+      "transparentBackground": true,
+      "columns": 8,
+      "rows": 5,
+      "paintedFrames": 40
+    },
+    {
+      "id": "male-santa-locomotion",
+      "source": "art/source/costumes/male-santa-locomotion.png",
+      "prompt": "Use case: identity-preserve. Create game locomotion animation sheet for the SAME BOY identity as reference, changing costume only: cute tiny SANTA: red Santa hat white fur brim and white pompom, same brown curls visible, red fur-trimmed coat, black belt gold square buckle, red short trousers, brown rounded boots, red mittens. Same youthful clean-shaven face; NO beard, no sack or handheld props. Very short chibi body. Exactly 40 figures: 8 columns x5 rows, transparent landscape1536x1024. Five rows views: FRONT toward viewer/down; BACK away/up NO face; RIGHT PROFILE; FRONT-RIGHT45deg southeast; BACK-RIGHT45deg northeast. Eight columns in EVERY row: standing idle; walk left-foot contact; walk passing-left; walk right-foot contact; walk passing-right; run left stride; run right stride; standing startled arms up. Keep views clearly different, especially full back row. Same scale, figure complete, generous transparent gaps, no labels, no text, no floor, no detached shadows, no chair or rod. Very short chibi body, big head, cute glossy toy3D rendering matching reference. Background true transparent alpha.",
+      "tool": "built-in image_gen",
+      "transparentBackground": true,
+      "columns": 8,
+      "rows": 5,
+      "paintedFrames": 40
+    },
+    {
+      "id": "male-santa-fishing",
+      "source": "art/source/costumes/male-santa-fishing.png",
+      "prompt": "Use case: identity-preserve. Make a new transparent 3D game sprite sheet of EXACTLY SAME character as reference, same hair face clothing colors and very SHORT chibi proportions. Do not change costume. Exactly40 intact figures in8columns x5rows landscape1536x1024. Same scale across figures. Five rows:1FRONT down/toward viewer;2BACK up/away NO face;3RIGHT PROFILE screen right;4FRONT-RIGHT45deg southeast;5BACK-RIGHT45deg northeast. Every row uses these8column poses: 1 lowering to sit knees bending; 2 fully seated on invisible stool, legs forward feet below, hands lap; 3 seated cast windup hand raised back holding INVISIBLE rod; 4 seated cast release hands forward holding invisible rod; 5 seated fishing waiting hands relaxed forward; 6 seated waiting leaning slightly forward; 7 seated reeling hands near belly; 8 seated reeling hands pulled near chest. NO fishing rod, no chair: game draws them separately. Large head, short limbs. Separate intact figures with generous transparent gaps. No text, labels, frames, floor or background; true alpha transparency. Do not copy reference poses, use specified action poses.",
+      "tool": "built-in image_gen",
+      "transparentBackground": true,
+      "columns": 8,
+      "rows": 5,
+      "paintedFrames": 40
+    },
+    {
+      "id": "male-santa-action",
+      "source": "art/source/costumes/male-santa-action.png",
+      "prompt": "Use case: identity-preserve. Make a new transparent 3D game sprite sheet of EXACTLY SAME character as reference, same hair face clothing colors and very SHORT chibi proportions. Do not change costume. Exactly40 intact figures in8columns x5rows landscape1536x1024. Same scale across figures. Five rows:1FRONT down/toward viewer;2BACK up/away NO face;3RIGHT PROFILE screen right;4FRONT-RIGHT45deg southeast;5BACK-RIGHT45deg northeast. Every row uses these8column poses: 1 kick windup knee lifted; 2 kick leg fully extended forward in row facing; 3 kick recovery leg lowering; 4 stumbling losing balance backward flailing arms; 5 falling backward tilted45deg; 6 fallen lying flat; 7 pushing up hands and knees; 8 half-standing from crouch. Hat, glasses and outfit stay worn. Full body in every cell, clear fall progression. Large head, short limbs. Separate intact figures with generous transparent gaps. No text, labels, frames, floor or background; true alpha transparency. Do not copy reference poses, use specified action poses.",
+      "tool": "built-in image_gen",
+      "transparentBackground": true,
+      "columns": 8,
+      "rows": 5,
+      "paintedFrames": 40
+    },
+    {
+      "id": "female-duck-locomotion",
+      "source": "art/source/costumes/female-duck-locomotion.png",
+      "prompt": "Use case: identity-preserve. Create game locomotion animation sheet for the SAME GIRL identity as reference, changing costume only: yellow duck bucket hat with orange bill and black eyes above brim, sky blue kindergarten smock with yellow bow, navy shorts, white socks, yellow shoes and tiny yellow duck backpack. FEMALE has the reference girl's orange chin-length bob, visible below hat. Same duck outfit as second reference. Exactly 40 figures: 8 columns x5 rows, transparent landscape1536x1024. Five rows views: FRONT toward viewer/down; BACK away/up NO face; RIGHT PROFILE; FRONT-RIGHT45deg southeast; BACK-RIGHT45deg northeast. Eight columns in EVERY row: standing idle; walk left-foot contact; walk passing-left; walk right-foot contact; walk passing-right; run left stride; run right stride; standing startled arms up. Keep views clearly different, especially full back row. Same scale, figure complete, generous transparent gaps, no labels, no text, no floor, no detached shadows, no chair or rod. Very short chibi body, big head, cute glossy toy3D rendering matching reference. Background true transparent alpha.",
+      "tool": "built-in image_gen",
+      "transparentBackground": true,
+      "columns": 8,
+      "rows": 5,
+      "paintedFrames": 40
+    },
+    {
+      "id": "female-duck-fishing",
+      "source": "art/source/costumes/female-duck-fishing.png",
+      "prompt": "Use case: identity-preserve. Make a new transparent 3D game sprite sheet of EXACTLY SAME character as reference, same hair face clothing colors and very SHORT chibi proportions. Do not change costume. Exactly40 intact figures in8columns x5rows landscape1536x1024. Same scale across figures. Five rows:1FRONT down/toward viewer;2BACK up/away NO face;3RIGHT PROFILE screen right;4FRONT-RIGHT45deg southeast;5BACK-RIGHT45deg northeast. Every row uses these8column poses: 1 lowering to sit knees bending; 2 fully seated on invisible stool, legs forward feet below, hands lap; 3 seated cast windup hand raised back holding INVISIBLE rod; 4 seated cast release hands forward holding invisible rod; 5 seated fishing waiting hands relaxed forward; 6 seated waiting leaning slightly forward; 7 seated reeling hands near belly; 8 seated reeling hands pulled near chest. NO fishing rod, no chair: game draws them separately. Large head, short limbs. Separate intact figures with generous transparent gaps. No text, labels, frames, floor or background; true alpha transparency. Do not copy reference poses, use specified action poses.",
+      "tool": "built-in image_gen",
+      "transparentBackground": true,
+      "columns": 8,
+      "rows": 5,
+      "paintedFrames": 40
+    },
+    {
+      "id": "female-duck-action",
+      "source": "art/source/costumes/female-duck-action.png",
+      "prompt": "Use case: identity-preserve. Make a new transparent 3D game sprite sheet of EXACTLY SAME character as reference, same hair face clothing colors and very SHORT chibi proportions. Do not change costume. Exactly40 intact figures in8columns x5rows landscape1536x1024. Same scale across figures. Five rows:1FRONT down/toward viewer;2BACK up/away NO face;3RIGHT PROFILE screen right;4FRONT-RIGHT45deg southeast;5BACK-RIGHT45deg northeast. Every row uses these8column poses: 1 kick windup knee lifted; 2 kick leg fully extended forward in row facing; 3 kick recovery leg lowering; 4 stumbling losing balance backward flailing arms; 5 falling backward tilted45deg; 6 fallen lying flat; 7 pushing up hands and knees; 8 half-standing from crouch. Hat, glasses and outfit stay worn. Full body in every cell, clear fall progression. Large head, short limbs. Separate intact figures with generous transparent gaps. No text, labels, frames, floor or background; true alpha transparency. Do not copy reference poses, use specified action poses.",
+      "tool": "built-in image_gen",
+      "transparentBackground": true,
+      "columns": 8,
+      "rows": 5,
+      "paintedFrames": 40
+    },
+    {
+      "id": "female-office-locomotion",
+      "source": "art/source/costumes/female-office-locomotion.png",
+      "prompt": "Use case: identity-preserve. Girl version of the second reference's outfit. Reference1 is GIRL identity: orange chin-length bob hair, huge brown eyes, cute round face. Reference2 is OUTFIT and five-view layout only. Keep girl's face/hair, put her in navy tiny business suit jacket and navy short trousers, white shirt, sky-blue necktie, round black loafers, white socks, small rectangular glasses, tiny badge on jacket. NO bags or handheld props. Match same very short body and big head. Exactly 40 figures: 8 columns x5 rows, transparent landscape1536x1024. Five rows views: FRONT toward viewer/down; BACK away/up NO face; RIGHT PROFILE; FRONT-RIGHT45deg southeast; BACK-RIGHT45deg northeast. Eight columns in EVERY row: standing idle; walk left-foot contact; walk passing-left; walk right-foot contact; walk passing-right; run left stride; run right stride; standing startled arms up. Keep views clearly different, especially full back row. Same scale, figure complete, generous transparent gaps, no labels, no text, no floor, no detached shadows, no chair or rod. Very short chibi body, big head, cute glossy toy3D rendering matching reference. Background true transparent alpha.",
+      "tool": "built-in image_gen",
+      "transparentBackground": true,
+      "columns": 8,
+      "rows": 5,
+      "paintedFrames": 40
+    },
+    {
+      "id": "female-office-fishing",
+      "source": "art/source/costumes/female-office-fishing.png",
+      "prompt": "Use case: identity-preserve. Make a new transparent 3D game sprite sheet of EXACTLY SAME character as reference, same hair face clothing colors and very SHORT chibi proportions. Do not change costume. Exactly40 intact figures in8columns x5rows landscape1536x1024. Same scale across figures. Five rows:1FRONT down/toward viewer;2BACK up/away NO face;3RIGHT PROFILE screen right;4FRONT-RIGHT45deg southeast;5BACK-RIGHT45deg northeast. Every row uses these8column poses: 1 lowering to sit knees bending; 2 fully seated on invisible stool, legs forward feet below, hands lap; 3 seated cast windup hand raised back holding INVISIBLE rod; 4 seated cast release hands forward holding invisible rod; 5 seated fishing waiting hands relaxed forward; 6 seated waiting leaning slightly forward; 7 seated reeling hands near belly; 8 seated reeling hands pulled near chest. NO fishing rod, no chair: game draws them separately. Same GIRL: orange bob hair, big eyes, extremely short chibi body. Keep hat/glasses/clothing identical. Draw actual different specified actions, not standing duplicates. Full transparent gutters, no text, no labels, no chairs, no rods, no background or floor; true alpha transparency.",
+      "tool": "built-in image_gen",
+      "transparentBackground": true,
+      "columns": 8,
+      "rows": 5,
+      "paintedFrames": 40
+    },
+    {
+      "id": "female-office-action",
+      "source": "art/source/costumes/female-office-action.png",
+      "prompt": "Use case: identity-preserve. Make a new transparent 3D game sprite sheet of EXACTLY SAME character as reference, same hair face clothing colors and very SHORT chibi proportions. Do not change costume. Exactly40 intact figures in8columns x5rows landscape1536x1024. Same scale across figures. Five rows:1FRONT down/toward viewer;2BACK up/away NO face;3RIGHT PROFILE screen right;4FRONT-RIGHT45deg southeast;5BACK-RIGHT45deg northeast. Every row uses these8column poses: 1 kick windup knee lifted; 2 kick leg fully extended forward in row facing; 3 kick recovery leg lowering; 4 stumbling losing balance backward flailing arms; 5 falling backward tilted45deg; 6 fallen lying flat; 7 pushing up hands and knees; 8 half-standing from crouch. Hat, glasses and outfit stay worn. Full body in every cell, clear fall progression. Same GIRL: orange bob hair, big eyes, extremely short chibi body. Keep hat/glasses/clothing identical. Draw actual different specified actions, not standing duplicates. Full transparent gutters, no text, no labels, no chairs, no rods, no background or floor; true alpha transparency.",
+      "tool": "built-in image_gen",
+      "transparentBackground": true,
+      "columns": 8,
+      "rows": 5,
+      "paintedFrames": 40
+    },
+    {
+      "id": "female-santa-locomotion",
+      "source": "art/source/costumes/female-santa-locomotion.png",
+      "prompt": "Use case: identity-preserve. Girl version of the second reference's outfit. Reference1 is GIRL identity: orange chin-length bob hair, huge brown eyes, cute round face. Reference2 is OUTFIT and five-view layout only. Keep girl's face/hair, put her in red Santa hat with white pompom and fur brim, red white-fur-trimmed coat, gold-buckle black belt, red short trousers, red mittens, brown round boots. NO beard and no sack. Match same very short body and big head. Exactly 40 figures: 8 columns x5 rows, transparent landscape1536x1024. Five rows views: FRONT toward viewer/down; BACK away/up NO face; RIGHT PROFILE; FRONT-RIGHT45deg southeast; BACK-RIGHT45deg northeast. Eight columns in EVERY row: standing idle; walk left-foot contact; walk passing-left; walk right-foot contact; walk passing-right; run left stride; run right stride; standing startled arms up. Keep views clearly different, especially full back row. Same scale, figure complete, generous transparent gaps, no labels, no text, no floor, no detached shadows, no chair or rod. Very short chibi body, big head, cute glossy toy3D rendering matching reference. Background true transparent alpha.",
+      "tool": "built-in image_gen",
+      "transparentBackground": true,
+      "columns": 8,
+      "rows": 5,
+      "paintedFrames": 40
+    },
+    {
+      "id": "female-santa-fishing",
+      "source": "art/source/costumes/female-santa-fishing.png",
+      "prompt": "Use case: identity-preserve. Make a new transparent 3D game sprite sheet of EXACTLY SAME character as reference, same hair face clothing colors and very SHORT chibi proportions. Do not change costume. Exactly40 intact figures in8columns x5rows landscape1536x1024. Same scale across figures. Five rows:1FRONT down/toward viewer;2BACK up/away NO face;3RIGHT PROFILE screen right;4FRONT-RIGHT45deg southeast;5BACK-RIGHT45deg northeast. Every row uses these8column poses: 1 lowering to sit knees bending; 2 fully seated on invisible stool, legs forward feet below, hands lap; 3 seated cast windup hand raised back holding INVISIBLE rod; 4 seated cast release hands forward holding invisible rod; 5 seated fishing waiting hands relaxed forward; 6 seated waiting leaning slightly forward; 7 seated reeling hands near belly; 8 seated reeling hands pulled near chest. NO fishing rod, no chair: game draws them separately. Same GIRL: orange bob hair, big eyes, extremely short chibi body. Keep hat/glasses/clothing identical. Draw actual different specified actions, not standing duplicates. Full transparent gutters, no text, no labels, no chairs, no rods, no background or floor; true alpha transparency.",
+      "tool": "built-in image_gen",
+      "transparentBackground": true,
+      "columns": 8,
+      "rows": 5,
+      "paintedFrames": 40
+    },
+    {
+      "id": "female-santa-action",
+      "source": "art/source/costumes/female-santa-action.png",
+      "prompt": "Use case: identity-preserve. Make a new transparent 3D game sprite sheet of EXACTLY SAME character as reference, same hair face clothing colors and very SHORT chibi proportions. Do not change costume. Exactly40 intact figures in8columns x5rows landscape1536x1024. Same scale across figures. Five rows:1FRONT down/toward viewer;2BACK up/away NO face;3RIGHT PROFILE screen right;4FRONT-RIGHT45deg southeast;5BACK-RIGHT45deg northeast. Every row uses these8column poses: 1 kick windup knee lifted; 2 kick leg fully extended forward in row facing; 3 kick recovery leg lowering; 4 stumbling losing balance backward flailing arms; 5 falling backward tilted45deg; 6 fallen lying flat; 7 pushing up hands and knees; 8 half-standing from crouch. Hat, glasses and outfit stay worn. Full body in every cell, clear fall progression. Same GIRL: orange bob hair, big eyes, extremely short chibi body. Keep hat/glasses/clothing identical. Draw actual different specified actions, not standing duplicates. Full transparent gutters, no text, no labels, no chairs, no rods, no background or floor; true alpha transparency.",
+      "tool": "built-in image_gen",
+      "transparentBackground": true,
+      "columns": 8,
+      "rows": 5,
+      "paintedFrames": 40
+    }
+  ]
+}

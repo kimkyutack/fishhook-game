@@ -1,4 +1,79 @@
 /* Selected Blue Pocket design. Base geometry is the 936 × 640 reference window. */
+.game-shell .pocket-dialog .costume-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  padding: 12px;
+  min-height: 100%;
+  align-items: start;
+}
+.game-shell .pocket-dialog .costume-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+  padding: 16px 10px;
+  min-width: 0;
+  min-height: 348px;
+  text-align: center;
+  border: 1px solid #c8e7f8;
+  border-radius: 24px;
+  background: #f6fcff;
+}
+.game-shell .pocket-dialog .costume-card.pocket-equipped {
+  background: #dff5ff;
+  border-color: #65c1ed;
+}
+.game-shell .pocket-dialog .costume-preview {
+  width: 100%;
+  height: 192px;
+  object-fit: contain;
+}
+.game-shell .pocket-dialog .costume-card h3 {
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+.game-shell .pocket-dialog .costume-price {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 28px;
+  font-size: 20px;
+  line-height: 1;
+}
+.game-shell .pocket-dialog .costume-card button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 44px;
+  min-height: 44px;
+  margin: 0;
+  padding: 0 8px;
+  border: 0;
+  background: url("/assets/redesign/pocket-button-blue.png") center / 100% 100%
+    no-repeat;
+  color: #fff;
+  font-size: 18px;
+  line-height: 1;
+  white-space: nowrap;
+}
+.game-shell .pocket-dialog .costume-card.pocket-equipped button:disabled {
+  opacity: 1;
+  filter: none;
+}
+@media (max-width: 700px) {
+  .game-shell .pocket-dialog .costume-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .game-shell .pocket-dialog .costume-card h3 {
+    font-size: 16px;
+  }
+}
 .game-shell .modal-backdrop {
   pointer-events: auto;
   overscroll-behavior: contain;

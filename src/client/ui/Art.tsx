@@ -1,4 +1,11 @@
 import { FISH } from "../../shared/catalog";
+import {
+  costumePortrait,
+  type CostumeId,
+  type Gender,
+} from "../../shared/costumes";
+export const characterPortrait = (gender: Gender, costume?: CostumeId) =>
+  `${import.meta.env.VITE_ASSET_BASE || "/assets"}/${costumePortrait(gender, costume)}`;
 export const asset = (type: string, id: string) =>
   `${import.meta.env.VITE_ASSET_BASE || "/assets"}/${(type === "characters" && id.endsWith("_portrait")) || (type === "equipment" && ["bag", "close", "rod_1", "rod_2", "rod_3", "worm", "mix", "live", "special"].includes(id)) ? "redesign" : type}/${id}.png`;
 export function Icon({ id, size = 28 }: { id: string; size?: number }) {

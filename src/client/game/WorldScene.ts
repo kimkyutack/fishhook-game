@@ -38,6 +38,13 @@ import {
 } from "../../shared/movement";
 import { cameraMapView, type MapView } from "./minimap";
 import { FALL_DIRECTIONS, fallFrame } from "../../shared/kick";
+import { COSTUMES, costumeKey } from "../../shared/costumes";
+import {
+  COSTUME_POSES,
+  COSTUME_VIEWS,
+  costumeView,
+  costumeAnimationKey,
+} from "./costume-animations";
 const base = import.meta.env.VITE_ASSET_BASE || "/assets";
 interface Actor {
   lastMotion?: Motion;
@@ -96,6 +103,13 @@ export class WorldScene extends Phaser.Scene {
     super("world");
   }
   preload() {
+    for (const gender of ["male", "female"] as const)
+      for (const costume of COSTUMES.filter((c) => c.id !== "default"))
+        this.load.spritesheet(
+          costumeKey(gender, costume.id),
+          `${base}/costumes/${costumeKey(gender, costume.id)}.webp`,
+          { frameWidth: 192, frameHeight: 192 },
+        );
     for (const g of ["male", "female"])
       this.load.spritesheet(`${g}_fall`, `${base}/redesign/${g}_fall.png`, {
         frameWidth: 192,
@@ -185,6 +199,24 @@ export class WorldScene extends Phaser.Scene {
   }
   create() {
     this.readyForUpdates = true;
+    for (const gender of ["male", "female"] as const)
+      for (const costume of COSTUMES.filter((c) => c.id !== "default"))
+        for (const [row, view] of COSTUME_VIEWS.entries())
+          for (const [motion, spec] of Object.entries(COSTUME_POSES))
+            this.anims.create({
+              key: costumeAnimationKey(
+                gender,
+                costume.id,
+                view,
+                motion as Motion,
+              ),
+              frames: spec.frames.map((frame) => ({
+                key: costumeKey(gender, costume.id),
+                frame: frame + row * 8,
+              })),
+              frameRate: spec.fps,
+              repeat: spec.loop ? -1 : 0,
+            });
     for (const g of ["male", "female"])
       for (const [row, d] of ["down_right", "up_right"].entries())
         for (const [motion, spec] of Object.entries(DIAGONAL_FISHING))
@@ -648,7 +680,36 @@ export class WorldScene extends Phaser.Scene {
           : (a.state.facing ?? direction),
       );
       const anim = `${a.state.gender}_${pose.animationDirection}_${motion}`;
-      if (motion === "fallen") {
+      if (a.state.costume && a.state.costume !== "default") {
+        const facing =
+          motion === "run" || (a.escape && motion === "kick")
+            ? direction
+            : self && (motion === "idle" || motion === "walk")
+              ? this.facing
+              : (a.state.facing ?? direction);
+        const view = costumeView(facing);
+        a.body.setFlipX(view.flipX);
+        if (motion === "fallen") {
+          a.body.anims.stop();
+          a.body.setTexture(
+            costumeKey(a.state.gender, a.state.costume),
+            80 +
+              view.row * 8 +
+              [3, 4, 5, 5, 6, 7][fallFrame(now - a.state.stateAt)],
+          );
+        } else {
+          a.body.play(
+            costumeAnimationKey(
+              a.state.gender,
+              a.state.costume,
+              view.view,
+              motion,
+            ),
+            true,
+          );
+        }
+        a.idleFrozen = false;
+      } else if (motion === "fallen") {
         // Server age selects the same pose in every browser, including mid-fall joins.
         const facing = a.state.facing ?? direction;
         const row = FALL_DIRECTIONS.indexOf(facing);

@@ -153,3 +153,5 @@ console.log(
 await import("./check-continuous-terrain");
 
 await import("./check-fishing-assets.ts");
+
+await import("./check-costume-assets.ts");

@@ -5,7 +5,8 @@ import { probabilities } from "../../shared/rules";
 import { fishingSpot } from "../../config/map";
 import type { PrivatePlayer, PublicPlayer } from "../../shared/protocol";
 import { connection } from "../network/store";
-import { FishImage, Icon, Stars, asset } from "./Art";
+import { FishImage, Icon, Stars, asset, characterPortrait } from "./Art";
+import { COSTUMES } from "../../shared/costumes";
 import "./Inventory.css";
 export function Inventory({
   self,
@@ -26,8 +27,8 @@ export function Inventory({
     [bookPage, setBookPage] = useState(0),
     [details, setDetails] = useState(false);
   const tabs = shop
-    ? ["낚싯대", "미끼", "판매"]
-    : ["물고기", "낚싯대", "미끼", "도감", "설정"];
+    ? ["낚싯대", "미끼", "외형", "판매"]
+    : ["물고기", "낚싯대", "미끼", "외형", "도감", "설정"];
   const tabIcons: Record<string, string> = {
     물고기: "fish_001",
     낚싯대: "rod_1",
@@ -94,18 +95,22 @@ export function Inventory({
             >
               <img
                 className="icon"
-                src={asset(
-                  "redesign",
-                  t === "물고기"
-                    ? "pocket-fish-icon"
-                    : t === "판매"
-                      ? "pocket-coins"
-                      : t === "미끼"
-                        ? "pocket-worm"
-                        : t === "설정"
-                          ? "pocket-settings"
-                          : `pocket-icon-${tabIcons[t]}`,
-                )}
+                src={
+                  t === "외형"
+                    ? characterPortrait(self.gender, "duck")
+                    : asset(
+                        "redesign",
+                        t === "물고기"
+                          ? "pocket-fish-icon"
+                          : t === "판매"
+                            ? "pocket-coins"
+                            : t === "미끼"
+                              ? "pocket-worm"
+                              : t === "설정"
+                                ? "pocket-settings"
+                                : `pocket-icon-${tabIcons[t]}`,
+                      )
+                }
                 alt=""
               />
               <span>{t}</span>
@@ -113,6 +118,64 @@ export function Inventory({
           ))}
         </nav>
         <div className={`modal-content tab-${tab}`}>
+          {tab === "외형" && (
+            <div className="costume-grid">
+              {COSTUMES.filter((c) =>
+                shop ? c.id !== "default" : self.costumes.includes(c.id),
+              ).map((c) => {
+                const owned = self.costumes.includes(c.id),
+                  equipped = self.costume === c.id;
+                return (
+                  <article
+                    className={`costume-card ${equipped ? "pocket-equipped" : ""}`}
+                    key={c.id}
+                  >
+                    <img
+                      className="costume-preview"
+                      src={characterPortrait(self.gender, c.id)}
+                      alt={`${c.name} ${self.gender === "male" ? "남자" : "여자"} 외형`}
+                    />
+                    <h3>{c.name}</h3>
+                    <div className="costume-price">
+                      {!owned && (
+                        <>
+                          <Icon id="coin" />
+                          {c.price.toLocaleString()}
+                        </>
+                      )}
+                    </div>
+                    <button
+                      className="primary"
+                      disabled={
+                        equipped ||
+                        (owned ? busy : !shop || self.coins < c.price)
+                      }
+                      onClick={() =>
+                        owned
+                          ? connection.command({
+                              type: "equipCostume",
+                              costume: c.id,
+                            })
+                          : c.id !== "default" &&
+                            connection.command({
+                              type: "buyCostume",
+                              costume: c.id,
+                            })
+                      }
+                    >
+                      {equipped
+                        ? "장착 중"
+                        : owned
+                          ? "장착"
+                          : shop
+                            ? "구매"
+                            : "미보유"}
+                    </button>
+                  </article>
+                );
+              })}
+            </div>
+          )}
           {tab === "낚싯대" && (
             <div className="gear-grid">
               {RODS.map((r) => {
@@ -506,7 +569,7 @@ export function Inventory({
                 <h3>계정</h3>
                 <div className="account-summary">
                   <img
-                    src={asset("characters", `${self.gender}_portrait`)}
+                    src={characterPortrait(self.gender, self.costume)}
                     alt=""
                   />
                   <div>

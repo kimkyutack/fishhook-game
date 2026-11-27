@@ -13,11 +13,13 @@ import { recharge } from "../shared/rules";
 import { MAP, SPOTS } from "../config/map";
 import type { Facing } from "../shared/movement";
 import { dailyBaitPeriod, DAILY_BAIT_AMOUNT } from "../shared/daily-bait";
+import type { CostumeId } from "../shared/costumes";
 export interface PlayerRow {
   id: string;
   name: string;
   name_key: string;
   gender: "male" | "female";
+  costume: CostumeId;
   coins: number;
   rod: number;
   bait: BaitId;
@@ -136,6 +138,17 @@ export class Store {
         this.exec("INSERT INTO schema_migrations VALUES(4)");
       });
     }
+    if (!this.one("SELECT version FROM schema_migrations WHERE version=5")) {
+      this.tx(() => {
+        this.exec(
+          "ALTER TABLE players ADD COLUMN costume TEXT NOT NULL DEFAULT 'default'",
+        );
+        this.exec(
+          "CREATE TABLE player_costumes(player_id TEXT NOT NULL,costume TEXT NOT NULL,purchased_at INTEGER NOT NULL,PRIMARY KEY(player_id,costume))",
+        );
+        this.exec("INSERT INTO schema_migrations VALUES(5)");
+      });
+    }
     // Start existing accounts from activation, not their historical creation date.
     this.exec(
       "INSERT OR IGNORE INTO daily_bait_grants(player_id,last_period) SELECT id,? FROM players",
@@ -202,6 +215,7 @@ export class Store {
       id: p.id,
       name: p.name,
       gender: p.gender,
+      costume: p.costume,
       x: c?.x ?? p.x,
       y: c?.y ?? p.y,
       direction: c?.direction ?? p.direction,
@@ -256,6 +270,14 @@ export class Store {
       name: p.name,
       gender: p.gender,
       coins: p.coins,
+      costume: p.costume,
+      costumes: [
+        "default",
+        ...this.all<{ costume: CostumeId }>(
+          "SELECT costume FROM player_costumes WHERE player_id=? ORDER BY purchased_at,costume",
+          id,
+        ).map((r) => r.costume),
+      ],
       rod: p.rod,
       bait: p.bait,
       rods: this.all<{ rod: number }>(
@@ -301,7 +323,7 @@ export class Store {
       caughtAt: number;
       sequence: number;
     }>(
-      "SELECT p.id,p.name,p.gender,b.fish_id AS fishId,b.star,b.caught_at AS caughtAt,b.sequence FROM best_records b JOIN players p ON p.id=b.player_id ORDER BY b.star DESC,b.caught_at,b.sequence LIMIT 20",
+      "SELECT p.id,p.name,p.gender,p.costume,b.fish_id AS fishId,b.star,b.caught_at AS caughtAt,b.sequence FROM best_records b JOIN players p ON p.id=b.player_id ORDER BY b.star DESC,b.caught_at,b.sequence LIMIT 20",
     );
   }
   feed(): Feed[] {

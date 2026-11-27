@@ -2,6 +2,7 @@ import { z } from "zod";
 import type { Direction } from "../config/map";
 import type { BaitId } from "../config/balance";
 import type { Facing } from "./movement";
+import { COSTUME_IDS, type CostumeId } from "./costumes";
 const commandId = z.string().uuid();
 export const CommandSchema = z.discriminatedUnion("type", [
   z.object({ type: z.literal("cast"), commandId }),
@@ -12,6 +13,16 @@ export const CommandSchema = z.discriminatedUnion("type", [
     type: z.enum(["kick", "sabotage"]),
     commandId,
     target: z.string().uuid().optional(),
+  }),
+  z.object({
+    type: z.literal("buyCostume"),
+    commandId,
+    costume: z.enum(["duck", "office", "santa"]),
+  }),
+  z.object({
+    type: z.literal("equipCostume"),
+    commandId,
+    costume: z.enum(COSTUME_IDS),
   }),
   z.object({
     type: z.literal("buyRod"),
@@ -74,6 +85,7 @@ export interface PublicPlayer {
   id: string;
   name: string;
   gender: "male" | "female";
+  costume?: CostumeId;
   x: number;
   y: number;
   direction: Direction;
@@ -92,6 +104,8 @@ export interface PrivatePlayer {
   id: string;
   name: string;
   gender: "male" | "female";
+  costume: CostumeId;
+  costumes: CostumeId[];
   coins: number;
   rod: number;
   bait: BaitId;
@@ -112,6 +126,7 @@ export interface Rank {
   id: string;
   name: string;
   gender: "male" | "female";
+  costume?: CostumeId;
   fishId: string;
   star: number;
   caughtAt: number;

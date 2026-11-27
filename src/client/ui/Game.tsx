@@ -15,7 +15,7 @@ import { connection, gameStore, serverTime } from "../network/store";
 import { actionFor, motionBusy } from "../../shared/interaction";
 import { BAITS } from "../../config/balance";
 import { fishById, HABITAT_NAMES } from "../../shared/catalog";
-import { FishImage, Icon, Stars, asset } from "./Art";
+import { FishImage, Icon, Stars, asset, characterPortrait } from "./Art";
 import { fishingSpot } from "../../config/map";
 import { Inventory } from "./Inventory";
 import { MiniMap } from "./MiniMap";
@@ -177,7 +177,7 @@ export function Game() {
         aria-label="내 기록"
         onClick={() => setProfile(self.id)}
       >
-        <img src={asset("characters", `${self.gender}_portrait`)} alt="" />
+        <img src={characterPortrait(self.gender, self.costume)} alt="" />
         <span>
           <strong>{self.name}</strong>
           {me?.best && <Stars star={me.best.star} />}
@@ -233,7 +233,7 @@ export function Game() {
                       )}
                       <img
                         className="rank-avatar"
-                        src={asset("characters", `${r.gender}_portrait`)}
+                        src={characterPortrait(r.gender, r.costume)}
                         alt=""
                       />
                       <span>
@@ -409,9 +409,11 @@ export function Game() {
             </button>
             <header>
               <img
-                src={asset(
-                  "characters",
-                  `${other?.gender ?? (best && "gender" in best ? best.gender : self.gender)}_portrait`,
+                src={characterPortrait(
+                  other?.gender ??
+                    (best && "gender" in best ? best.gender : self.gender),
+                  other?.costume ??
+                    (best && "costume" in best ? best.costume : self.costume),
                 )}
                 alt=""
               />
