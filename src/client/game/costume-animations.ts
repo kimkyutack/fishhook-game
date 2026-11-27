@@ -1,6 +1,13 @@
 import type { Motion } from "../../shared/protocol";
 import type { Facing } from "../../shared/movement";
 import { costumeKey, type CostumeId, type Gender } from "../../shared/costumes";
+import { locomotionPose } from "./animations";
+import type { Direction } from "../../config/map";
+
+// Same world pixel scale as the 192px base frames; the extra transparent space
+// holds hats without fitting the character down to a smaller size.
+export const COSTUME_FRAME_SIZE = 224;
+export const COSTUME_FOOT_BASELINE = 210;
 
 export const COSTUME_VIEWS = [
   "down",
@@ -35,6 +42,15 @@ export function costumeView(facing: Facing) {
     view,
     flipX,
   };
+}
+export function costumePose(
+  direction: Direction,
+  motion: Motion,
+  facing: Facing,
+) {
+  const pose = locomotionPose(direction, motion, facing);
+  const view = costumeView(pose.animationDirection.replace("_", "-") as Facing);
+  return { ...view, flipX: view.flipX !== pose.flipX };
 }
 export function costumeAnimationKey(
   gender: Gender,

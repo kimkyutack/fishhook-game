@@ -3,22 +3,33 @@ import { readFile, writeFile, mkdir } from "node:fs/promises";
 import { createHash } from "node:crypto";
 import { characterRegions } from "./character-regions";
 import { COSTUMES, costumeKey } from "../src/shared/costumes";
-import { COSTUME_VIEWS } from "../src/client/game/costume-animations";
+import {
+  COSTUME_VIEWS,
+  COSTUME_FRAME_SIZE as SIZE,
+  COSTUME_FOOT_BASELINE as FOOT,
+} from "../src/client/game/costume-animations";
+import { costumeHead } from "./costume-registration";
 
 await mkdir("public/assets/costumes", { recursive: true });
 const entries = [];
+const only = process.argv[2];
 for (const gender of ["male", "female"] as const) {
   for (const costume of COSTUMES.filter((c) => c.id !== "default")) {
     const key = costumeKey(gender, costume.id);
+    if (only && only !== key) continue;
     const sources = ["locomotion", "fishing", "action"].map(
-      (kind) => `art/source/costumes/${gender}-${costume.id}-${kind}.png`,
+      (kind) => `art/source/costumes/v2/${gender}-${costume.id}-${kind}.png`,
+    );
+    const references = ["locomotion", "fishing", "action"].map(
+      (kind) => `art/references/costume-fit/${gender}-${kind}.png`,
     );
     const regions = await Promise.all(
       sources.map((source) => characterRegions(source)),
     );
-    const scales = COSTUME_VIEWS.map(
-      (_, row) => 156 / regions[0][row * 8].height,
+    const referenceRegions = await Promise.all(
+      references.map((p) => characterRegions(p)),
     );
+    const calibration = [];
     const frames = [];
     const registrations = [];
     for (const [sheet, source] of sources.entries()) {
@@ -28,41 +39,84 @@ for (const gender of ["male", "female"] as const) {
         .toBuffer({ resolveWithObject: true });
       for (let i = 3; i < data.length; i += 4)
         if (data[i] < 64) data.fill(0, i - 3, i + 1);
-      const clean = await sharp(data, { raw: info }).png().toBuffer();
+      const ref = await sharp(references[sheet])
+        .ensureAlpha()
+        .raw()
+        .toBuffer({ resolveWithObject: true });
+      const allowance = costume.id === "office" ? 0 : 12;
+      const fits = COSTUME_VIEWS.map((_, row) => {
+        const sourceRegion = regions[sheet][row * 8],
+          targetRegion = referenceRegions[sheet][row * 8];
+        const sourceHead = costumeHead(data, info.width, sourceRegion),
+          targetHead = costumeHead(ref.data, ref.info.width, targetRegion);
+        return {
+          scaleX: targetHead.width / sourceHead.width,
+          scaleY: (targetRegion.height + allowance) / sourceRegion.height,
+          targetHeadWidth: targetHead.width,
+          hatAllowance: allowance,
+          referenceHeight: targetRegion.height,
+        };
+      });
+      calibration.push({ source, reference: references[sheet], fits });
       for (const [i, r] of regions[sheet].entries()) {
         const row = Math.floor(i / 8),
-          scale = scales[row];
-        const width = Math.round(r.width * scale),
-          height = Math.round(r.height * scale);
+          { scaleX, scaleY } = fits[row];
+        const referenceRegion = referenceRegions[sheet][i];
+        const width = Math.round(r.width * scaleX),
+          height = Math.round(r.height * scaleY);
         const prone = sheet === 2 && [4, 5, 6].includes(i % 8);
+        const sourceHead = prone ? undefined : costumeHead(data, info.width, r);
+        const targetHead = prone
+          ? undefined
+          : costumeHead(ref.data, ref.info.width, referenceRegion);
         const left = Math.round(
-          prone ? (192 - width) / 2 : 96 - (r.headX - r.left) * scale,
+          prone
+            ? SIZE / 2 +
+                (referenceRegion.left +
+                  referenceRegion.width / 2 -
+                  (i % 8) * 192 -
+                  96) -
+                width / 2
+            : SIZE / 2 +
+                (targetHead!.x - (i % 8) * 192 - 96) -
+                (sourceHead!.x - r.left) * scaleX,
         );
-        const top = 180 - height;
-        if (left < 3 || top < 3 || left + width > 189 || top + height > 189)
+        const top =
+          FOOT +
+          (referenceRegion.top + referenceRegion.height - row * 192 - 180) -
+          height;
+        if (
+          left < 3 ||
+          top < 3 ||
+          left + width > SIZE - 3 ||
+          top + height > SIZE - 3
+        )
           throw Error(
             `Clipped costume ${key}/${sheet}/${i}: ${JSON.stringify({ left, top, width, height })}`,
           );
-        const input = await sharp(clean)
+        const input = await sharp(data, { raw: info })
           .extract({
             left: r.left,
             top: r.top,
             width: r.width,
             height: r.height,
           })
-          .resize(width, height)
+          .resize(width, height, { fit: "fill" })
           .png()
           .toBuffer();
         const frame = sheet * 40 + i;
         frames.push({
           input,
-          left: (frame % 8) * 192 + left,
-          top: Math.floor(frame / 8) * 192 + top,
+          left: (frame % 8) * SIZE + left,
+          top: Math.floor(frame / 8) * SIZE + top,
         });
         registrations.push({
           source,
           sourceRegion: r,
-          scale,
+          scaleX,
+          scaleY,
+          reference: references[sheet],
+          referenceRegion,
           frame,
           bounds: { left, top, width, height },
         });
@@ -76,14 +130,14 @@ for (const gender of ["male", "female"] as const) {
     const runtime = `public/assets/costumes/${key}.webp`;
     await sharp({
       create: {
-        width: 1536,
-        height: 2880,
+        width: SIZE * 8,
+        height: SIZE * 15,
         channels: 4,
         background: "#00000000",
       },
     })
       .composite(frames)
-      .webp({ quality: 95, alphaQuality: 100, effort: 6 })
+      .webp({ quality: 95, alphaQuality: 100, effort: 4 })
       .toFile(runtime);
     const bytes = await readFile(runtime);
     entries.push({
@@ -91,12 +145,14 @@ for (const gender of ["male", "female"] as const) {
       gender,
       costume: costume.id,
       sources,
+      references,
+      calibration,
       runtime,
       portrait: `public/assets/costumes/${key}_portrait.png`,
-      width: 1536,
-      height: 2880,
-      frameWidth: 192,
-      frameHeight: 192,
+      width: SIZE * 8,
+      height: SIZE * 15,
+      frameWidth: SIZE,
+      frameHeight: SIZE,
       frameCount: 120,
       views: COSTUME_VIEWS,
       mirroredViews: ["left", "down-left", "up-left"],
@@ -108,12 +164,16 @@ for (const gender of ["male", "female"] as const) {
   }
 }
 await writeFile(
-  "art/costume-manifest.json",
+  only
+    ? `output/costume-fit-qa/${only}-manifest.json`
+    : "art/costume-manifest.json",
   JSON.stringify(
     {
       tool: "built-in image_gen",
-      generatedSheets: 18,
-      uniquePaintedFrames: 720,
+      registrationVersion: 2,
+      fit: "Base frame camera and poses; head width and foot anchors; hats retain extra space without shrinking the body.",
+      generatedSheets: entries.length * 3,
+      uniquePaintedFrames: entries.length * 120,
       entries,
     },
     null,

@@ -6,7 +6,10 @@ import {
   COSTUME_POSES,
   COSTUME_VIEWS,
   costumeView,
+  COSTUME_FRAME_SIZE as SIZE,
+  COSTUME_FOOT_BASELINE as FOOT,
 } from "../src/client/game/costume-animations";
+import { costumeHead } from "./costume-registration";
 import { FALL_DIRECTIONS } from "../src/shared/kick";
 
 const manifest = JSON.parse(
@@ -15,7 +18,8 @@ const manifest = JSON.parse(
 if (
   manifest.entries.length !== 6 ||
   manifest.generatedSheets !== 18 ||
-  manifest.uniquePaintedFrames !== 720
+  manifest.uniquePaintedFrames !== 720 ||
+  manifest.registrationVersion !== 2
 )
   throw Error(
     "Incomplete costume set: expected both genders × three outfits × 120 painted frames",
@@ -38,25 +42,45 @@ for (const gender of ["male", "female"] as const) {
       .ensureAlpha()
       .raw()
       .toBuffer({ resolveWithObject: true });
-    if (info.width !== 1536 || info.height !== 2880)
+    if (info.width !== SIZE * 8 || info.height !== SIZE * 15)
       throw Error(`Wrong canvas ${id}`);
     for (let frame = 0; frame < 120; frame++) {
       let pixels = 0;
-      for (let y = 0; y < 192; y++)
-        for (let x = 0; x < 192; x++) {
+      for (let y = 0; y < SIZE; y++)
+        for (let x = 0; x < SIZE; x++) {
           const alpha =
             data[
-              ((Math.floor(frame / 8) * 192 + y) * info.width +
-                (frame % 8) * 192 +
+              ((Math.floor(frame / 8) * SIZE + y) * info.width +
+                (frame % 8) * SIZE +
                 x) *
                 4 +
                 3
             ];
           if (alpha > 64) pixels++;
-          if ((x < 2 || x >= 190 || y < 2 || y >= 190) && alpha > 32)
+          if ((x < 2 || x >= SIZE - 2 || y < 2 || y >= SIZE - 2) && alpha > 32)
             throw Error(`Clipped ${id}/${frame}`);
         }
       if (pixels < 2000) throw Error(`Empty ${id}/${frame}`);
+    }
+    for (let row = 0; row < 5; row++) {
+      const registration = entry.registrations[row * 8],
+        b = registration.bounds;
+      const head = costumeHead(data, info.width, {
+        ...b,
+        left: b.left,
+        top: row * SIZE + b.top,
+        headX: 0,
+      });
+      const fit = entry.calibration[0].fits[row];
+      if (Math.abs(head.width - fit.targetHeadWidth) > 3)
+        throw Error(
+          `Head size differs from base: ${id}/${row}: ${head.width} vs ${fit.targetHeadWidth}`,
+        );
+      if (
+        Math.abs(b.height - fit.referenceHeight - fit.hatAllowance) > 1 ||
+        Math.abs(b.top + b.height - FOOT) > 1
+      )
+        throw Error(`Wrong body registration ${id}/${row}`);
     }
     const portrait = await sharp(await readFile(entry.portrait)).metadata();
     if (portrait.width !== 384 || portrait.height !== 384 || !portrait.hasAlpha)
@@ -76,5 +100,5 @@ for (const direction of FALL_DIRECTIONS) {
       throw Error(`Bad ${direction}/${motion}`);
 }
 console.log(
-  "Costumes: 18 generated sheets, 6 outfits, 720 nonempty unclipped frames, 6 portraits; every motion in all 8 directions.",
+  "Costumes: 720 unclipped frames, 6 portraits; base head widths within3px, fixed foot anchors, shared direction contract and unchanged world scale.",
 );

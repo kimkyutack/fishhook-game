@@ -44,11 +44,15 @@ import {
   COSTUME_VIEWS,
   costumeView,
   costumeAnimationKey,
+  costumePose,
+  COSTUME_FRAME_SIZE,
 } from "./costume-animations";
 const base = import.meta.env.VITE_ASSET_BASE || "/assets";
 interface Actor {
   lastMotion?: Motion;
   idleFrozen?: boolean;
+  walkPoseKey?: string;
+  frozenWalkProgress?: number;
   body: Phaser.GameObjects.Sprite;
   shadow: Phaser.GameObjects.Image;
   chair: Phaser.GameObjects.Image;
@@ -108,7 +112,7 @@ export class WorldScene extends Phaser.Scene {
         this.load.spritesheet(
           costumeKey(gender, costume.id),
           `${base}/costumes/${costumeKey(gender, costume.id)}.webp`,
-          { frameWidth: 192, frameHeight: 192 },
+          { frameWidth: COSTUME_FRAME_SIZE, frameHeight: COSTUME_FRAME_SIZE },
         );
     for (const g of ["male", "female"])
       this.load.spritesheet(`${g}_fall`, `${base}/redesign/${g}_fall.png`, {
@@ -429,7 +433,11 @@ export class WorldScene extends Phaser.Scene {
             .sprite(p.x, p.y, `${p.gender}_${p.direction}`, 0)
             .setOrigin(ROOT.x, ROOT.y)
             .setDisplaySize(256, 256)
-            .setInteractive({ useHandCursor: true }),
+            .setInteractive({
+              useHandCursor: true,
+              hitArea: new Phaser.Geom.Rectangle(0, 0, 192, 192),
+              hitAreaCallback: Phaser.Geom.Rectangle.Contains,
+            }),
           shadow: this.add.image(p.x, p.y, "shadow").setDisplaySize(115, 44),
           chair: this.add
             .image(p.x, p.y, "chair_down")
@@ -680,14 +688,25 @@ export class WorldScene extends Phaser.Scene {
           : (a.state.facing ?? direction),
       );
       const anim = `${a.state.gender}_${pose.animationDirection}_${motion}`;
+      const poseKey = `${pose.animationDirection}:${pose.flipX}`;
+      if (motion === "walk") a.walkPoseKey = poseKey;
+      const freezeWalk =
+        motion === "idle" &&
+        (a.lastMotion === "walk" || a.idleFrozen) &&
+        a.walkPoseKey === poseKey;
+      if (freezeWalk && a.lastMotion === "walk")
+        a.frozenWalkProgress = a.body.anims.getProgress();
       if (a.state.costume && a.state.costume !== "default") {
-        const facing =
-          motion === "run" || (a.escape && motion === "kick")
-            ? direction
-            : self && (motion === "idle" || motion === "walk")
-              ? this.facing
-              : (a.state.facing ?? direction);
-        const view = costumeView(facing);
+        const view =
+          motion === "fallen"
+            ? costumeView(a.state.facing ?? direction)
+            : costumePose(
+                direction,
+                motion,
+                self && (motion === "idle" || motion === "walk")
+                  ? this.facing
+                  : (a.state.facing ?? direction),
+              );
         a.body.setFlipX(view.flipX);
         if (motion === "fallen") {
           a.body.anims.stop();
@@ -697,18 +716,32 @@ export class WorldScene extends Phaser.Scene {
               view.row * 8 +
               [3, 4, 5, 5, 6, 7][fallFrame(now - a.state.stateAt)],
           );
-        } else {
-          a.body.play(
-            costumeAnimationKey(
-              a.state.gender,
-              a.state.costume,
-              view.view,
-              motion,
-            ),
-            true,
+          a.idleFrozen = false;
+        } else if (freezeWalk) {
+          const walk = costumeAnimationKey(
+            a.state.gender,
+            a.state.costume,
+            view.view,
+            "walk",
           );
+          if (a.body.anims.currentAnim?.key !== walk) {
+            a.body.play(walk);
+            a.body.anims.setProgress(a.frozenWalkProgress ?? 0);
+          }
+          a.body.anims.pause();
+          a.idleFrozen = true;
+        } else {
+          a.idleFrozen = false;
+          const key = costumeAnimationKey(
+            a.state.gender,
+            a.state.costume,
+            view.view,
+            motion,
+          );
+          if (a.body.anims.currentAnim?.key === key && a.body.anims.isPaused)
+            a.body.anims.resume();
+          else a.body.play(key, true);
         }
-        a.idleFrozen = false;
       } else if (motion === "fallen") {
         // Server age selects the same pose in every browser, including mid-fall joins.
         const facing = a.state.facing ?? direction;
@@ -720,12 +753,12 @@ export class WorldScene extends Phaser.Scene {
             `${a.state.gender}_fall`,
             Math.max(0, row) * 6 + fallFrame(now - a.state.stateAt),
           );
-      } else if (
-        motion === "idle" &&
-        (a.lastMotion === "walk" || a.idleFrozen) &&
-        a.body.anims.currentAnim?.key ===
-          `${a.state.gender}_${pose.animationDirection}_walk`
-      ) {
+      } else if (freezeWalk) {
+        const walk = `${a.state.gender}_${pose.animationDirection}_walk`;
+        if (a.body.anims.currentAnim?.key !== walk) {
+          a.body.play(walk);
+          a.body.anims.setProgress(a.frozenWalkProgress ?? 0);
+        }
         a.body.setFlipX(pose.flipX).anims.pause();
         a.idleFrozen = true;
       } else {
@@ -736,6 +769,17 @@ export class WorldScene extends Phaser.Scene {
         else a.body.play(anim, true);
       }
       a.lastMotion = motion;
+      // Transparent hat padding must not enlarge the map/profile click target.
+      const padding =
+        a.state.costume && a.state.costume !== "default"
+          ? COSTUME_FRAME_SIZE - 192
+          : 0;
+      (a.body.input?.hitArea as Phaser.Geom.Rectangle | undefined)?.setTo(
+        padding / 2,
+        padding * ROOT.y,
+        192,
+        192,
+      );
       a.shadow.setPosition(x, y).setDepth(y - 3);
       a.name.setPosition(x, y - 240).setDepth(y + 200);
       const chatAge = a.chat ? now - a.chat.at : CHAT_LIFETIME;
