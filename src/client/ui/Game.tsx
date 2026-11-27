@@ -273,6 +273,7 @@ export function Game() {
       </div>
       <Chat
         messages={state.chat}
+        incomingCount={state.chatIncomingCount}
         error={state.chatError}
         disabled={!!modal || !!profile || state.status !== "online"}
         onFocusChange={chatFocus}

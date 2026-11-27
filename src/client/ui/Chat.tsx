@@ -4,17 +4,21 @@ import { connection } from "../network/store";
 import { asset } from "./Art";
 export function Chat({
   messages,
+  incomingCount,
   error,
   disabled,
   onFocusChange,
 }: {
   messages: ChatMessage[];
+  incomingCount: number;
   error: string | null;
   disabled: boolean;
   onFocusChange: (focused: boolean) => void;
 }) {
   const [open, setOpen] = useState(false),
-    [text, setText] = useState("");
+    [text, setText] = useState(""),
+    [readCount, setReadCount] = useState(incomingCount);
+  const unreadCount = Math.max(0, incomingCount - readCount);
   const field = useRef<HTMLInputElement>(null),
     composing = useRef(false);
   useEffect(() => {
@@ -25,6 +29,9 @@ export function Chat({
   useEffect(() => {
     if (disabled) setOpen(false);
   }, [disabled]);
+  useEffect(() => {
+    if (open && !disabled) setReadCount(incomingCount);
+  }, [open, disabled, incomingCount]);
   useEffect(() => {
     const key = (e: KeyboardEvent) => {
       if (!open || e.key !== "Escape" || e.isComposing) return;
@@ -41,11 +48,25 @@ export function Chat({
         <button
           className="chat-toggle"
           aria-label="채팅 열기"
+          aria-describedby={unreadCount > 0 ? "chat-unread-count" : undefined}
           title="채팅 열기"
-          onClick={() => setOpen(true)}
+          onClick={() => {
+            setReadCount(incomingCount);
+            setOpen(true);
+          }}
           disabled={disabled}
         >
           <img src={asset("redesign", "quick-chat")} alt="" />
+          {unreadCount > 0 && (
+            <span
+              id="chat-unread-count"
+              className="chat-unread-count"
+              role="status"
+              aria-label={`읽지 않은 채팅 ${unreadCount}개`}
+            >
+              {unreadCount > 99 ? "99+" : unreadCount}
+            </span>
+          )}
         </button>
       )}
       {open && (

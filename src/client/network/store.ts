@@ -18,6 +18,7 @@ export interface CatchNotice {
 export interface ClientState {
   catchNotices: CatchNotice[];
   chat: ChatMessage[];
+  chatIncomingCount: number;
   chatError: string | null;
   status:
     | "loading"
@@ -43,6 +44,7 @@ type CommandInput = Command extends infer T
 let state: ClientState = {
   catchNotices: [],
   chat: [],
+  chatIncomingCount: 0,
   chatError: null,
   status: "loading",
   self: null,
@@ -144,10 +146,14 @@ export class Connection {
         const own = s.players.find((p) => p.id === s.self.id);
         if (own) this.seq = Math.max(this.seq, own.seq);
       } else if (m.type === "chat") {
-        const old = gameStore.get().chat;
+        const current = gameStore.get();
+        const old = current.chat;
         if (!old.some((c) => c.id === m.id))
           gameStore.set({
             chat: [...old, m as ChatMessage].slice(-40),
+            chatIncomingCount:
+              current.chatIncomingCount +
+              (m.playerId !== current.self?.id ? 1 : 0),
             chatError: null,
           });
       } else if (m.type === "chat-error") gameStore.set({ chatError: m.error });
